@@ -530,6 +530,57 @@ async def analyze_images(
     )
 
 
+@app.post("/api/save-annotated-pdfs")
+async def save_annotated_pdfs(
+    files: List[UploadFile] = File(...),
+    job_id: Optional[str] = None,
+):
+    """
+    Save complete annotated PDF documents.
+    
+    - Accepts PDF files with annotations already embedded
+    - Saves to annotated_forms directory with proper naming
+    - Links to job_id if provided
+    """
+    if not files:
+        raise HTTPException(status_code=400, detail="No files provided")
+    
+    # Validate file types
+    for f in files:
+        if not f.filename.lower().endswith('.pdf'):
+            raise HTTPException(
+                status_code=400,
+                detail=f"Only PDF files allowed. Got: {f.filename}",
+            )
+    
+    # Create directory for this batch
+    batch_id = job_id or str(uuid.uuid4())[:8]
+    save_dir = ANNOTATED_FORMS_DIR / batch_id
+    save_dir.mkdir(exist_ok=True)
+    
+    saved_files = []
+    
+    for file in files:
+        # Save the PDF
+        save_path = save_dir / file.filename
+        content = await file.read()
+        with open(save_path, "wb") as f:
+            f.write(content)
+        saved_files.append(str(save_path))
+        print(f"📄 Saved annotated PDF: {save_path}")
+    
+    # Update job status if linked to a job
+    if job_id and job_id in job_status:
+        job_status[job_id]["annotated_pdfs_path"] = str(save_dir)
+        job_status[job_id]["annotated_pdfs"] = saved_files
+    
+    return {
+        "success": True,
+        "savedFiles": saved_files,
+        "directory": str(save_dir),
+    }
+
+
 @app.get("/api/jobs/{job_id}", response_model=JobStatusResponse)
 async def get_job_status(job_id: str):
     """Get the status of an analysis job."""
