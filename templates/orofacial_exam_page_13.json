@@ -1,0 +1,348 @@
+{
+  "page_number": 13,
+  "page_title": "Activities of Daily Living",
+  "sections": [
+    {
+      "section_id": "self_care_hygiene",
+      "section_title": "Self-Care Hygiene",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p13_brushing_teeth_severity",
+          "field_label": "Brushing Teeth",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Self-Care Hygiene",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p13_flossing_teeth_severity",
+          "field_label": "Flossing Teeth",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Self-Care Hygiene",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "communication",
+      "section_title": "Communication",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p13_speak_extended_period_severity",
+          "field_label": "Speak for Extended Period of Time",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Communication",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p13_max_time_speak",
+          "field_label": "Max Time Speak ______Min",
+          "field_type": "text_numeric",
+          "data_type": "Optional[int]",
+          "expected_format": "Minutes",
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Communication",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p13_speaking_difficulty_severity",
+          "field_label": "Speaking Difficulty",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Communication",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p13_asked_to_repeat_severity",
+          "field_label": "Asked to Repeat Themselves",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Communication",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "motor_function",
+      "section_title": "Motor Function",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p13_mastication_severity",
+          "field_label": "Mastication",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Motor Function",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p13_tasting_severity",
+          "field_label": "Tasting",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Motor Function",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p13_tasting_vas",
+          "field_label": "VAS ____",
+          "field_type": "vas_scale",
+          "data_type": "Optional[int]",
+          "expected_format": null,
+          "options": null,
+          "scale_min": 0,
+          "scale_max": 100,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Motor Function",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p13_tasting_taste_change",
+          "field_label": "Due to dryness of the mouth causing a change in taste",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Bitter",
+            "Metallic",
+            "Bland"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Motor Function",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p13_swallowing_severity",
+          "field_label": "Swallowing",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Motor Function",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "bruxism",
+      "section_title": "Bruxism",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p13_bruxism_severity",
+          "field_label": "Bruxism",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Bruxism",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "sexual_function",
+      "section_title": "Sexual Function",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p13_kissing_oral_activities_severity",
+          "field_label": "Kissing, Oral Activities",
+          "field_type": "radio_group",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "None",
+            "Mild",
+            "Moderate",
+            "Severe"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Sexual Function",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    }
+  ],
+  "standalone_fields": [],
+  "standalone_tables": [],
+  "complexity_score": 4,
+  "notes": "Page contains severity ratings for various activities of daily living. Most fields are radio button groups with None/Mild/Moderate/Severe options. The tasting section includes both a severity rating and a VAS scale, plus taste change descriptors."
+}

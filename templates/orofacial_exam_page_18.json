@@ -1,0 +1,200 @@
+{
+  "page_number": 18,
+  "page_title": "Trigeminal Nerve Neuropathic QST Testing",
+  "sections": [
+    {
+      "section_id": "p18_qst_section",
+      "section_title": "QST",
+      "instructions": null,
+      "fields": [],
+      "tables": [
+        {
+          "table_id": "p18_qst_table",
+          "table_title": "QST",
+          "columns": [
+            {
+              "column_id": "location",
+              "header": "Location",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "vas_score",
+              "header": "VAS",
+              "data_type": "float",
+              "width_hint": null
+            },
+            {
+              "column_id": "seconds",
+              "header": "Seconds",
+              "data_type": "float",
+              "width_hint": null
+            },
+            {
+              "column_id": "sharp",
+              "header": "Sharp",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "electrical",
+              "header": "Electrical",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "burning",
+              "header": "Burning",
+              "data_type": "string",
+              "width_hint": null
+            }
+          ],
+          "row_type": "fixed",
+          "expected_rows": 8,
+          "row_labels": [
+            "Right Forearm",
+            "Right Temporalis",
+            "Right TMJ",
+            "Right Masseter",
+            "Left Temporalis",
+            "Left TMJ",
+            "Left Masseter",
+            "Additional Location"
+          ],
+          "section_name": null,
+          "extraction_hints": "VAS scores are numeric values, seconds are durations, other columns contain qualitative descriptors"
+        }
+      ],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p18_qst_cold_section",
+      "section_title": "QST Cold",
+      "instructions": null,
+      "fields": [],
+      "tables": [
+        {
+          "table_id": "p18_qst_cold_table",
+          "table_title": "QST Cold",
+          "columns": [
+            {
+              "column_id": "location",
+              "header": "Location",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "vas_score",
+              "header": "VAS",
+              "data_type": "float",
+              "width_hint": null
+            },
+            {
+              "column_id": "sharp",
+              "header": "Sharp",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "electrical",
+              "header": "Electrical",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "burning",
+              "header": "Burning",
+              "data_type": "string",
+              "width_hint": null
+            }
+          ],
+          "row_type": "fixed",
+          "expected_rows": 7,
+          "row_labels": [
+            "Right Temporalis",
+            "Right TMJ",
+            "Right Masseter",
+            "Left Temporalis",
+            "Left TMJ",
+            "Left Masseter",
+            "Additional Location"
+          ],
+          "section_name": null,
+          "extraction_hints": "VAS scores are numeric values, other columns contain qualitative descriptors"
+        }
+      ],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p18_qst_bilateral_section",
+      "section_title": "QST After Bilateral SPGB, if necessary",
+      "instructions": null,
+      "fields": [],
+      "tables": [
+        {
+          "table_id": "p18_qst_bilateral_table",
+          "table_title": "QST After Bilateral SPGB, if necessary",
+          "columns": [
+            {
+              "column_id": "location",
+              "header": "Location",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "vas_score",
+              "header": "VAS",
+              "data_type": "float",
+              "width_hint": null
+            },
+            {
+              "column_id": "seconds",
+              "header": "Seconds",
+              "data_type": "float",
+              "width_hint": null
+            },
+            {
+              "column_id": "sharp",
+              "header": "Sharp",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "electrical",
+              "header": "Electrical",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "burning",
+              "header": "Burning",
+              "data_type": "string",
+              "width_hint": null
+            }
+          ],
+          "row_type": "fixed",
+          "expected_rows": 7,
+          "row_labels": [
+            "Right Temporalis",
+            "Right TMJ",
+            "Right Masseter",
+            "Left Temporalis",
+            "Left TMJ",
+            "Left Masseter",
+            "Additional Location"
+          ],
+          "section_name": null,
+          "extraction_hints": "VAS scores are numeric values, seconds are durations, other columns contain qualitative descriptors"
+        }
+      ],
+      "subsections": [],
+      "position_description": null
+    }
+  ],
+  "standalone_fields": [],
+  "standalone_tables": [],
+  "complexity_score": 6,
+  "notes": "This page contains three structured testing tables for trigeminal nerve neuropathic quantitative sensory testing (QST). Each table has pre-defined anatomical locations with multiple measurement parameters including VAS scores, timing, and qualitative descriptors."
+}

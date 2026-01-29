@@ -1,0 +1,448 @@
+{
+  "page_number": 6,
+  "page_title": "History of Industrial Injury",
+  "sections": [
+    {
+      "section_id": "p6_trauma_history",
+      "section_title": "Trauma History",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p6_doctor_name",
+          "field_label": "Reviewed History of Trauma with patient as per the report of Dr.",
+          "field_type": "text_short",
+          "data_type": "string",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_report_date",
+          "field_label": "Date",
+          "field_type": "date",
+          "data_type": "date",
+          "expected_format": "MM/DD/YYYY",
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": "top section"
+    },
+    {
+      "section_id": "p6_patient_signature",
+      "section_title": "Patient's Signature",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p6_patient_signature",
+          "field_label": "Patient's Signature",
+          "field_type": "signature",
+          "data_type": "string",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_signature_date",
+          "field_label": "Date",
+          "field_type": "date",
+          "data_type": "date",
+          "expected_format": "MM/DD/YYYY",
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": "below trauma history"
+    },
+    {
+      "section_id": "p6_industrial_injury",
+      "section_title": "History of Industrial Injury",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p6_poor_historian",
+          "field_label": "(Patient is a Poor Historian: Yes No)",
+          "field_type": "yes_no",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [
+        {
+          "table_id": "p6_orthopedic_injuries",
+          "table_title": "Orthopedic Injuries",
+          "columns": [
+            {
+              "column_id": "body_part",
+              "header": "Orthopedic injuries to:",
+              "data_type": "string",
+              "width_hint": "wide"
+            },
+            {
+              "column_id": "frequency",
+              "header": "Freq.-%",
+              "data_type": "string",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "vas_score",
+              "header": "VAS",
+              "data_type": "string",
+              "width_hint": "narrow"
+            }
+          ],
+          "row_type": "fixed",
+          "expected_rows": 24,
+          "row_labels": [
+            "Neck",
+            "R Shoulder",
+            "L Shoulder",
+            "R Arm",
+            "L Arm",
+            "R Elbow",
+            "L Elbow",
+            "R Wrist",
+            "L Wrist",
+            "R Hand",
+            "L Hand",
+            "R Fingers",
+            "L Fingers",
+            "Upper Back",
+            "Mid Back",
+            "Low Back",
+            "R Hip",
+            "L Hip",
+            "R Leg",
+            "L Leg",
+            "R Knee",
+            "L Knee",
+            "R ankle",
+            "L ankle",
+            "R Foot",
+            "L Foot"
+          ],
+          "section_name": null,
+          "extraction_hints": "Each body part has corresponding frequency and VAS score fields"
+        }
+      ],
+      "subsections": [],
+      "position_description": "main section"
+    },
+    {
+      "section_id": "p6_mva_details",
+      "section_title": "MVA Details",
+      "instructions": "If MVA",
+      "fields": [
+        {
+          "field_id": "p6_vehicle_position",
+          "field_label": "Driver Passenger Right Rear Seat Left Rear Seat",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Driver",
+            "Passenger",
+            "Right Rear Seat",
+            "Left Rear Seat"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_vehicle_hit_on",
+          "field_label": "Vehicle Hit On:",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "R",
+            "L",
+            "Front",
+            "Rear"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_wearing_seatbelt",
+          "field_label": "Wearing a seatbelt?",
+          "field_type": "yes_no",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_airbag_deployed",
+          "field_label": "Airbag Deployed?",
+          "field_type": "yes_no",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_thrown_about",
+          "field_label": "Thrown About?",
+          "field_type": "yes_no",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_struck_mouth_face",
+          "field_label": "Struck Mouth Face?",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Steering Wheel",
+            "Door",
+            "Window"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_struck_back_of_head",
+          "field_label": "Struck back of head on headrest?",
+          "field_type": "yes_no",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_direct_trauma_face_jaw",
+          "field_label": "Direct Trauma to the Face/Jaw?",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "R",
+            "L"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_scars",
+          "field_label": "Scars?",
+          "field_type": "text_short",
+          "data_type": "string",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_fractured_jaw",
+          "field_label": "Fractured Jaw?",
+          "field_type": "yes_no",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_fractured_teeth_count",
+          "field_label": "Fractured Teeth? #",
+          "field_type": "text_numeric",
+          "data_type": "int",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p6_lost_teeth_count",
+          "field_label": "Lost Teeth? #",
+          "field_type": "text_numeric",
+          "data_type": "int",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": "bottom section"
+    }
+  ],
+  "standalone_fields": [],
+  "standalone_tables": [],
+  "complexity_score": 7,
+  "notes": "Page contains a complex orthopedic injuries table with 26 body parts, each having frequency and VAS score columns. The MVA section has detailed questions about motor vehicle accident specifics including position, impact location, safety equipment, and injury details. The numbered sections (1), 2), 3) next to the table appear to be referencing spaces for additional injury descriptions but no actual input fields are provided for these."
+}

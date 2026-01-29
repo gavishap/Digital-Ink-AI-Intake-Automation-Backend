@@ -1,0 +1,146 @@
+{
+  "page_number": 8,
+  "page_title": "Prior History - Page 8",
+  "sections": [
+    {
+      "section_id": "tx_received",
+      "section_title": "Tx Received",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p8_tx_received",
+          "field_label": "Tx Received",
+          "field_type": "checkbox_multi",
+          "data_type": "List[str]",
+          "expected_format": null,
+          "options": [
+            "Physical Therapy",
+            "Chiropractic Manipulations",
+            "Acupuncture",
+            "Injections",
+            "Steroid",
+            "Spinal",
+            "Trigger Point"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": "Multiple treatments can be selected",
+          "helper_text": null
+        },
+        {
+          "field_id": "p8_psychological_therapy_evaluated_by",
+          "field_label": "Psychological Therapy: Evaluated by",
+          "field_type": "text_short",
+          "data_type": "Optional[str]",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p8_neurologist_evaluated_by",
+          "field_label": "Neurologist: Evaluated by",
+          "field_type": "text_short",
+          "data_type": "Optional[str]",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "prior_history",
+      "section_title": "Prior History",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p8_injuries_after_industrial_date",
+          "field_label": "Any Injuries After the Date of Industrial Injury (Industrial or Non-Industrial)",
+          "field_type": "text_long",
+          "data_type": "Optional[str]",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": null,
+          "extraction_hints": "Large text area for post-injury details",
+          "helper_text": null
+        }
+      ],
+      "tables": [
+        {
+          "table_id": "p8_mva_history",
+          "table_title": "MVA History",
+          "columns": [
+            {
+              "column_id": "mva_date",
+              "header": "MVA",
+              "data_type": "Optional[str]",
+              "width_hint": null
+            },
+            {
+              "column_id": "injured",
+              "header": "Injured",
+              "data_type": "Optional[str]",
+              "width_hint": null
+            },
+            {
+              "column_id": "facial_jaw_problems",
+              "header": "No facial/Jaw problems or pain",
+              "data_type": "Optional[str]",
+              "width_hint": null
+            },
+            {
+              "column_id": "residual_problems",
+              "header": "Residual Problems: None",
+              "data_type": "Optional[str]",
+              "width_hint": null
+            }
+          ],
+          "row_type": "fixed",
+          "expected_rows": 4,
+          "row_labels": null,
+          "section_name": null,
+          "extraction_hints": "4 rows for MVA history entries"
+        }
+      ],
+      "subsections": [],
+      "position_description": null
+    }
+  ],
+  "standalone_fields": [],
+  "standalone_tables": [],
+  "complexity_score": 6,
+  "notes": "Page contains mix of checkbox selections, text input fields, and a structured table for MVA history. Several large text areas for detailed medical history information."
+}

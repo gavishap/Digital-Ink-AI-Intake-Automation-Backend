@@ -1,0 +1,36 @@
+Form Schema Summary: consents_2026
+==================================================
+Form ID: consents_2026
+Total Pages: 3
+Total Fields: 68
+Total Tables: 1
+
+Page 1: AUTHORIZATION FOR RELEASE OF HEALTH CARE INFORMATION TO AGENT(S) UNDER HIPAA AND CALIFORNIA LAW
+  Fields: 6
+  Tables: 0
+  Sections: 0
+  Complexity: 3/10
+
+Page 2: THE DENTAL TRAUMA CENTER - E-MAIL CONSENT FORM
+  Fields: 6
+  Tables: 0
+  Sections: 2
+  Complexity: 4/10
+    - Patient Information: 2 fields
+    - Signatures: 4 fields
+
+Page 3: ADA Dental Claim Form
+  Fields: 56
+  Tables: 1
+  Sections: 10
+  Complexity: 8/10
+    - HEADER INFORMATION: 2 fields
+    - INSURANCE COMPANY/DENTAL BENEFIT PLAN INFORMATION: 1 fields
+    - OTHER COVERAGE: 8 fields
+    - POLICYHOLDER/SUBSCRIBER INFORMATION: 6 fields
+    - PATIENT INFORMATION: 6 fields
+    - MISSING TEETH INFORMATION: 5 fields
+    - AUTHORIZATIONS: 4 fields
+    - ANCILLARY CLAIM/TREATMENT INFORMATION: 10 fields
+    - BILLING DENTIST OR DENTAL ENTITY: 8 fields
+    - TREATING DENTIST AND TREATMENT LOCATION INFORMATION: 6 fields
