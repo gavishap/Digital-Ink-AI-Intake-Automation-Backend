@@ -679,6 +679,124 @@ async def list_extractions(user_id: str = Depends(_require_user)):
 
 
 # =============================================================================
+# Document Management
+# =============================================================================
+
+@app.get("/api/documents")
+async def list_documents(
+    search: Optional[str] = None,
+    status: Optional[str] = None,
+    limit: int = 50,
+    offset: int = 0,
+    user_id: str = Depends(_require_user),
+):
+    """List all documents with patient info, job status, and report counts."""
+    return job_manager.list_documents(search=search, status=status, limit=limit, offset=offset)
+
+
+@app.get("/api/documents/{document_id}")
+async def get_document_detail(document_id: str, user_id: str = Depends(_require_user)):
+    """Get full document detail with jobs, results, reports, and audit log."""
+    detail = job_manager.get_document_detail(document_id)
+    if not detail:
+        raise HTTPException(status_code=404, detail="Document not found")
+    return detail
+
+
+@app.get("/api/documents/{document_id}/pages")
+async def get_document_pages(document_id: str, user_id: str = Depends(_require_user)):
+    """Get annotated page images for a document (signed URLs for re-opening in annotator)."""
+    pages = job_manager.get_document_pages(document_id)
+    if not pages:
+        raise HTTPException(status_code=404, detail="No pages found for this document")
+
+    page_urls = []
+    for p in pages:
+        path = p.get("annotated_image_path") or p.get("original_image_path")
+        signed_url = None
+        if path:
+            bucket = storage_manager.BUCKET_ANNOTATED if "annotated" in (path or "") else storage_manager.BUCKET_PAGES
+            clean_path = path.replace(f"{bucket}/", "", 1) if path.startswith(bucket) else path
+            # Remove leading bucket name prefix like "annotated/" if present
+            for prefix in ("annotated/", "pages/", "originals/"):
+                if clean_path.startswith(prefix):
+                    clean_path = clean_path[len(prefix):]
+                    break
+            try:
+                signed_url = storage_manager.get_signed_url(bucket, clean_path, expires_in=3600)
+            except Exception as e:
+                logger.warning("Failed to get signed URL for %s: %s", path, e)
+
+        page_urls.append({
+            "page_number": p["page_number"],
+            "signed_url": signed_url,
+            "annotated_image_path": p.get("annotated_image_path"),
+            "original_image_path": p.get("original_image_path"),
+        })
+
+    return {"document_id": document_id, "pages": page_urls}
+
+
+@app.post("/api/documents/{document_id}/reanalyze")
+async def reanalyze_document(
+    document_id: str,
+    background_tasks: BackgroundTasks,
+    user_id: str = Depends(_require_user),
+):
+    """Re-analyze an existing document by creating a new extraction job."""
+    pages = job_manager.get_document_pages(document_id)
+    if not pages:
+        raise HTTPException(status_code=404, detail="No pages found for this document")
+
+    # Download annotated page images from storage
+    tmp_dir = Path(tempfile.mkdtemp(prefix="di_reanalyze_"))
+    image_paths = []
+    page_info = []
+
+    for p in pages:
+        path = p.get("annotated_image_path") or p.get("original_image_path")
+        if not path:
+            continue
+
+        bucket = storage_manager.BUCKET_ANNOTATED if "annotated" in path else storage_manager.BUCKET_PAGES
+        clean_path = path
+        for prefix in ("annotated/", "pages/", "originals/"):
+            if clean_path.startswith(prefix):
+                clean_path = clean_path[len(prefix):]
+                break
+
+        try:
+            content = storage_manager.download_file(bucket, clean_path)
+            filename = f"page_{p['page_number']:03d}.png"
+            tmp_path = tmp_dir / filename
+            tmp_path.write_bytes(content)
+            image_paths.append(tmp_path)
+            page_info.append(f"Page {p['page_number']}")
+        except Exception as e:
+            logger.warning("Failed to download page %d: %s", p["page_number"], e)
+
+    if not image_paths:
+        raise HTTPException(status_code=400, detail="Could not retrieve any page images for re-analysis")
+
+    job_id = job_manager.create_job(document_id=document_id, total_pages=len(image_paths))
+    job_manager.update_document(document_id, status="processing")
+
+    job_manager.write_audit_log(
+        action="reanalysis_started",
+        resource_type="extraction_job",
+        resource_id=job_id,
+        user_id=user_id,
+        details={"document_id": document_id, "pages": len(image_paths)},
+    )
+
+    background_tasks.add_task(
+        run_extraction_images, job_id, document_id, image_paths, f"reanalysis_{document_id[:8]}", page_info,
+    )
+
+    return {"job_id": job_id, "status": "pending", "message": f"Re-analysis started for {len(image_paths)} pages"}
+
+
+# =============================================================================
 # Report Persistence
 # =============================================================================
 

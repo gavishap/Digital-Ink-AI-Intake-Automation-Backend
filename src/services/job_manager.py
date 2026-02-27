@@ -333,3 +333,201 @@ def write_audit_log(
         logger.debug("Audit: %s %s/%s", action, resource_type, resource_id and resource_id[:8])
     except Exception as e:
         logger.warning("Failed to write audit log: %s", e)
+
+
+# =============================================================================
+# Document management queries
+# =============================================================================
+
+def list_documents(
+    search: Optional[str] = None,
+    status: Optional[str] = None,
+    limit: int = 50,
+    offset: int = 0,
+) -> dict:
+    """List documents with patient info, latest job status, and report count."""
+    sb = get_supabase()
+    query = (
+        sb.table("documents")
+        .select("*, patients(first_name, last_name), extraction_jobs(id, status, completed_at, percentage)")
+        .order("created_at", desc=True)
+        .range(offset, offset + limit - 1)
+    )
+    if status:
+        query = query.eq("status", status)
+
+    result = query.execute()
+    docs = result.data or []
+
+    # Get total count
+    count_query = sb.table("documents").select("id", count="exact")
+    if status:
+        count_query = count_query.eq("status", status)
+    count_result = count_query.execute()
+    total = count_result.count if count_result.count is not None else len(docs)
+
+    # Get report counts per document
+    doc_ids = [d["id"] for d in docs]
+    report_counts: dict = {}
+    if doc_ids:
+        for doc_id in doc_ids:
+            rc = sb.table("reports").select("id", count="exact").contains("source_document_ids", [doc_id]).execute()
+            report_counts[doc_id] = rc.count if rc.count is not None else 0
+
+    # Search filter (client-side since Supabase text search on joined fields is limited)
+    if search:
+        search_lower = search.lower()
+        docs = [
+            d for d in docs
+            if search_lower in (d.get("file_name") or "").lower()
+            or search_lower in _patient_display_name(d.get("patients")).lower()
+        ]
+
+    formatted = []
+    for d in docs:
+        patient = d.get("patients")
+        jobs = d.get("extraction_jobs") or []
+        latest_job = jobs[0] if jobs else None
+        formatted.append({
+            "id": d["id"],
+            "file_name": d.get("file_name", ""),
+            "file_type": d.get("file_type", ""),
+            "status": d.get("status", "uploaded"),
+            "total_pages": d.get("total_pages"),
+            "created_at": d.get("created_at", ""),
+            "updated_at": d.get("updated_at", ""),
+            "patient_name": _patient_display_name(patient),
+            "patient_id": d.get("patient_id"),
+            "latest_job": {
+                "id": latest_job["id"],
+                "status": latest_job["status"],
+                "completed_at": latest_job.get("completed_at"),
+                "percentage": latest_job.get("percentage"),
+            } if latest_job else None,
+            "report_count": report_counts.get(d["id"], 0),
+        })
+
+    return {"documents": formatted, "total": total}
+
+
+def _patient_display_name(patient) -> str:
+    if not patient:
+        return ""
+    if isinstance(patient, list):
+        patient = patient[0] if patient else None
+    if not patient:
+        return ""
+    first = patient.get("first_name", "")
+    last = patient.get("last_name", "")
+    return f"{first} {last}".strip()
+
+
+def get_document_detail(document_id: str) -> Optional[dict]:
+    """Get full document detail with jobs, results, reports, and audit log."""
+    sb = get_supabase()
+
+    # Document with patient
+    doc_result = sb.table("documents").select("*, patients(*)").eq("id", document_id).execute()
+    if not doc_result.data:
+        return None
+    doc = doc_result.data[0]
+
+    # All jobs for this document
+    jobs_result = (
+        sb.table("extraction_jobs")
+        .select("*")
+        .eq("document_id", document_id)
+        .order("created_at", desc=True)
+        .execute()
+    )
+
+    # Get extraction results for the latest completed job
+    extraction_pages = []
+    jobs = jobs_result.data or []
+    latest_completed = next((j for j in jobs if j["status"] == "completed"), None)
+    if latest_completed:
+        extraction_pages = get_extraction_results(latest_completed["id"])
+
+    # Reports linked to this document
+    reports_result = (
+        sb.table("reports")
+        .select("*")
+        .contains("source_document_ids", [document_id])
+        .order("created_at", desc=True)
+        .execute()
+    )
+
+    # Audit log for this document
+    audit_result = (
+        sb.table("audit_log")
+        .select("*")
+        .or_(f"resource_id.eq.{document_id},details->>document_id.eq.{document_id}")
+        .order("created_at", desc=True)
+        .limit(50)
+        .execute()
+    )
+
+    return {
+        "document": {
+            "id": doc["id"],
+            "file_name": doc.get("file_name", ""),
+            "file_type": doc.get("file_type", ""),
+            "status": doc.get("status", "uploaded"),
+            "total_pages": doc.get("total_pages"),
+            "storage_path": doc.get("storage_path"),
+            "created_at": doc.get("created_at", ""),
+            "updated_at": doc.get("updated_at", ""),
+            "patient": doc.get("patients"),
+        },
+        "jobs": [
+            {
+                "id": j["id"],
+                "status": j["status"],
+                "progress": j.get("progress"),
+                "total_pages": j.get("total_pages"),
+                "percentage": j.get("percentage"),
+                "current_stage": j.get("current_stage"),
+                "ai_model_used": j.get("ai_model_used"),
+                "processing_time_ms": j.get("processing_time_ms"),
+                "created_at": j.get("created_at", ""),
+                "completed_at": j.get("completed_at"),
+            }
+            for j in jobs
+        ],
+        "latest_results": extraction_pages,
+        "reports": [
+            {
+                "id": r["id"],
+                "report_type": r.get("report_type"),
+                "status": r.get("status"),
+                "storage_path": r.get("storage_path"),
+                "created_at": r.get("created_at", ""),
+                "metadata": r.get("metadata"),
+            }
+            for r in (reports_result.data or [])
+        ],
+        "audit_log": [
+            {
+                "id": a["id"],
+                "action": a.get("action"),
+                "resource_type": a.get("resource_type"),
+                "user_id": a.get("user_id"),
+                "details": a.get("details"),
+                "created_at": a.get("created_at", ""),
+            }
+            for a in (audit_result.data or [])
+        ],
+    }
+
+
+def get_document_pages(document_id: str) -> list[dict]:
+    """Get all page records for a document with their storage paths."""
+    sb = get_supabase()
+    result = (
+        sb.table("document_pages")
+        .select("*")
+        .eq("document_id", document_id)
+        .order("page_number")
+        .execute()
+    )
+    return result.data or []
