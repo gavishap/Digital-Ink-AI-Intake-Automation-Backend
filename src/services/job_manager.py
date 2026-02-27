@@ -423,16 +423,14 @@ def _patient_display_name(patient) -> str:
 
 
 def get_document_detail(document_id: str) -> Optional[dict]:
-    """Get full document detail with jobs, results, reports, and audit log."""
+    """Get full document detail with jobs, results, reports, page images, and audit log."""
     sb = get_supabase()
 
-    # Document with patient
     doc_result = sb.table("documents").select("*, patients(*)").eq("id", document_id).execute()
     if not doc_result.data:
         return None
     doc = doc_result.data[0]
 
-    # All jobs for this document
     jobs_result = (
         sb.table("extraction_jobs")
         .select("*")
@@ -441,14 +439,12 @@ def get_document_detail(document_id: str) -> Optional[dict]:
         .execute()
     )
 
-    # Get extraction results for the latest completed job
     extraction_pages = []
     jobs = jobs_result.data or []
     latest_completed = next((j for j in jobs if j["status"] == "completed"), None)
     if latest_completed:
         extraction_pages = get_extraction_results(latest_completed["id"])
 
-    # Reports linked to this document
     reports_result = (
         sb.table("reports")
         .select("*")
@@ -457,15 +453,42 @@ def get_document_detail(document_id: str) -> Optional[dict]:
         .execute()
     )
 
-    # Audit log for this document
     audit_result = (
         sb.table("audit_log")
         .select("*")
         .or_(f"resource_id.eq.{document_id},details->>document_id.eq.{document_id}")
-        .order("created_at", desc=True)
+        .order("timestamp", desc=True)
         .limit(50)
         .execute()
     )
+
+    pages_with_urls = get_document_pages(document_id)
+
+    pdf_paths = doc.get("pdf_storage_paths") or []
+    pdf_urls = []
+    for path in pdf_paths:
+        try:
+            res = sb.storage.from_("originals").create_signed_url(path, 3600)
+            url = res.get("signedURL") or res.get("signedUrl")
+            if url:
+                pdf_urls.append({"path": path, "name": path.split("/")[-1], "url": url})
+        except Exception:
+            pdf_urls.append({"path": path, "name": path.split("/")[-1], "url": None})
+
+    patient_data = doc.get("patients")
+    patient_id = doc.get("patient_id")
+    related_docs = []
+    if patient_id:
+        related_result = (
+            sb.table("documents")
+            .select("id, file_name, status, total_pages, created_at")
+            .eq("patient_id", patient_id)
+            .neq("id", document_id)
+            .order("created_at", desc=True)
+            .limit(20)
+            .execute()
+        )
+        related_docs = related_result.data or []
 
     return {
         "document": {
@@ -477,8 +500,11 @@ def get_document_detail(document_id: str) -> Optional[dict]:
             "storage_path": doc.get("storage_path"),
             "created_at": doc.get("created_at", ""),
             "updated_at": doc.get("updated_at", ""),
-            "patient": doc.get("patients"),
+            "patient": patient_data,
+            "patient_id": patient_id,
         },
+        "pdfs": pdf_urls,
+        "pages": pages_with_urls,
         "jobs": [
             {
                 "id": j["id"],
@@ -513,15 +539,16 @@ def get_document_detail(document_id: str) -> Optional[dict]:
                 "resource_type": a.get("resource_type"),
                 "user_id": a.get("user_id"),
                 "details": a.get("details"),
-                "created_at": a.get("created_at", ""),
+                "created_at": a.get("timestamp", ""),
             }
             for a in (audit_result.data or [])
         ],
+        "related_documents": related_docs,
     }
 
 
 def get_document_pages(document_id: str) -> list[dict]:
-    """Get all page records for a document with their storage paths."""
+    """Get all page records for a document with signed image URLs."""
     sb = get_supabase()
     result = (
         sb.table("document_pages")
@@ -530,4 +557,22 @@ def get_document_pages(document_id: str) -> list[dict]:
         .order("page_number")
         .execute()
     )
-    return result.data or []
+    pages = result.data or []
+    out = []
+    for p in pages:
+        image_url = None
+        path = p.get("annotated_image_path") or p.get("original_image_path")
+        if path:
+            bucket = "annotated" if p.get("annotated_image_path") else "pages"
+            try:
+                res = sb.storage.from_(bucket).create_signed_url(path, 3600)
+                image_url = res.get("signedURL") or res.get("signedUrl")
+            except Exception:
+                pass
+        out.append({
+            "page_number": p["page_number"],
+            "image_url": image_url,
+            "annotated_image_path": p.get("annotated_image_path"),
+            "original_image_path": p.get("original_image_path"),
+        })
+    return out

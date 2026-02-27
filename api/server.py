@@ -14,7 +14,6 @@ from pathlib import Path
 from typing import Optional, List
 from datetime import datetime
 
-import jwt
 from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -72,20 +71,19 @@ app.add_middleware(
 # =============================================================================
 
 _bearer = HTTPBearer(auto_error=False)
-_JWT_SECRET = os.getenv("SUPABASE_JWT_SECRET", "")
-_JWT_ALGORITHMS = ["HS256"]
 
 
 async def _get_optional_user(
     credentials: Optional[HTTPAuthorizationCredentials] = Depends(_bearer),
 ) -> Optional[str]:
     """Return the user_id from a valid JWT, or None when no token is present."""
-    if not credentials or not _JWT_SECRET:
+    if not credentials:
         return None
     try:
-        payload = jwt.decode(credentials.credentials, _JWT_SECRET, algorithms=_JWT_ALGORITHMS, audience="authenticated")
-        return payload.get("sub")
-    except (jwt.InvalidTokenError, jwt.ExpiredSignatureError):
+        sb = get_supabase()
+        res = sb.auth.get_user(credentials.credentials)
+        return res.user.id if res and res.user else None
+    except Exception:
         return None
 
 
@@ -95,18 +93,16 @@ async def _require_user(
     """Return the user_id from a valid JWT, or raise 401."""
     if not credentials:
         raise HTTPException(status_code=401, detail="Authentication required")
-    if not _JWT_SECRET:
-        logger.warning("SUPABASE_JWT_SECRET not set — skipping JWT verification")
-        return "unknown"
     try:
-        payload = jwt.decode(credentials.credentials, _JWT_SECRET, algorithms=_JWT_ALGORITHMS, audience="authenticated")
-        user_id = payload.get("sub")
-        if not user_id:
-            raise HTTPException(status_code=401, detail="Invalid token: missing subject")
-        return user_id
-    except jwt.ExpiredSignatureError:
-        raise HTTPException(status_code=401, detail="Token expired")
-    except jwt.InvalidTokenError:
+        sb = get_supabase()
+        res = sb.auth.get_user(credentials.credentials)
+        if not res or not res.user:
+            raise HTTPException(status_code=401, detail="Invalid token")
+        return res.user.id
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.warning("JWT verification failed: %s", e)
         raise HTTPException(status_code=401, detail="Invalid token")
 
 
@@ -116,6 +112,7 @@ async def _require_user(
 
 class AnalyzeResponse(BaseModel):
     job_id: str
+    document_id: str = ""
     status: str
     message: str
 
@@ -383,7 +380,7 @@ async def analyze_document(
         run_extraction, job_id, document_id, tmp_path, name, schema_path, start_page, end_page,
     )
 
-    return AnalyzeResponse(job_id=job_id, status="pending", message=f"Analysis started for {file.filename}")
+    return AnalyzeResponse(job_id=job_id, document_id=document_id, status="pending", message=f"Analysis started for {file.filename}")
 
 
 @app.post("/api/analyze-images", response_model=AnalyzeResponse)
@@ -482,7 +479,7 @@ async def analyze_images(
         pages_detail += f" ...and {len(page_info) - 3} more"
 
     return AnalyzeResponse(
-        job_id=job_id, status="pending",
+        job_id=job_id, document_id=document_id, status="pending",
         message=f"Analysis started for {len(files)} pages: {pages_detail}",
     )
 
@@ -491,9 +488,10 @@ async def analyze_images(
 async def save_annotated_pdfs(
     files: List[UploadFile] = File(...),
     job_id: Optional[str] = None,
+    document_id: Optional[str] = None,
     user_id: str = Depends(_require_user),
 ):
-    """Save complete annotated PDF documents to Supabase Storage."""
+    """Save complete annotated PDF documents to Supabase Storage and link to document record."""
     if not files:
         raise HTTPException(status_code=400, detail="No files provided")
 
@@ -501,26 +499,37 @@ async def save_annotated_pdfs(
         if not f.filename.lower().endswith(".pdf"):
             raise HTTPException(status_code=400, detail=f"Only PDF files allowed. Got: {f.filename}")
 
-    saved_files = []
+    saved_paths: list[str] = []
     batch_name = job_id or datetime.utcnow().strftime("%Y%m%d_%H%M%S")
 
     for file in files:
         content = await file.read()
         storage_path = f"{batch_name}/{file.filename}"
-        full_path = storage_manager.upload_file(
+        storage_manager.upload_file(
             storage_manager.BUCKET_ORIGINALS, storage_path, content, content_type="application/pdf",
         )
-        saved_files.append(full_path)
-        logger.info("Saved annotated PDF to Storage: %s", full_path)
+        saved_paths.append(storage_path)
+        logger.info("Saved annotated PDF to Storage: originals/%s", storage_path)
+
+    if not document_id and job_id:
+        job = job_manager.get_job(job_id)
+        if job:
+            document_id = job.get("document_id")
+
+    if document_id:
+        sb = get_supabase()
+        sb.table("documents").update({"pdf_storage_paths": saved_paths}).eq("id", document_id).execute()
+        logger.info("Linked %d PDFs to document %s", len(saved_paths), document_id[:8])
 
     job_manager.write_audit_log(
         action="document_uploaded",
         resource_type="document",
+        resource_id=document_id,
         user_id=user_id,
         details={"files": [f.filename for f in files], "batch": batch_name},
     )
 
-    return {"success": True, "savedFiles": saved_files}
+    return {"success": True, "savedFiles": saved_paths, "document_id": document_id}
 
 
 @app.get("/api/jobs/{job_id}", response_model=JobStatusResponse)
