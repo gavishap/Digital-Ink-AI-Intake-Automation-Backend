@@ -1,0 +1,200 @@
+{
+  "page_number": 18,
+  "page_title": "Trigeminal Nerve Neuropathic QST Testing",
+  "sections": [
+    {
+      "section_id": "p18_qst_section",
+      "section_title": "QST",
+      "instructions": null,
+      "fields": [],
+      "tables": [
+        {
+          "table_id": "p18_qst_table",
+          "table_title": "QST",
+          "columns": [
+            {
+              "column_id": "nerve_location",
+              "header": "Nerve Location",
+              "data_type": "string",
+              "width_hint": "medium"
+            },
+            {
+              "column_id": "vas_score",
+              "header": "VAS",
+              "data_type": "float",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "seconds",
+              "header": "Seconds",
+              "data_type": "int",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "sharp",
+              "header": "Sharp",
+              "data_type": "string",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "electrical",
+              "header": "Electrical",
+              "data_type": "string",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "burning",
+              "header": "Burning",
+              "data_type": "string",
+              "width_hint": "narrow"
+            }
+          ],
+          "row_type": "fixed",
+          "expected_rows": 8,
+          "row_labels": [
+            "Right Forearm",
+            "Right Temporalis",
+            "Right TMJ",
+            "Right Masseter",
+            "Left Temporalis",
+            "Left TMJ",
+            "Left Masseter",
+            "(Blank row)"
+          ],
+          "section_name": null,
+          "extraction_hints": "VAS scores are numeric values, other columns may contain checkmarks or descriptive text"
+        }
+      ],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p18_qst_cold_section",
+      "section_title": "QST Cold",
+      "instructions": null,
+      "fields": [],
+      "tables": [
+        {
+          "table_id": "p18_qst_cold_table",
+          "table_title": "QST Cold",
+          "columns": [
+            {
+              "column_id": "nerve_location",
+              "header": "Nerve Location",
+              "data_type": "string",
+              "width_hint": "medium"
+            },
+            {
+              "column_id": "vas_score",
+              "header": "VAS",
+              "data_type": "float",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "sharp",
+              "header": "Sharp",
+              "data_type": "string",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "electrical",
+              "header": "Electrical",
+              "data_type": "string",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "burning",
+              "header": "Burning",
+              "data_type": "string",
+              "width_hint": "narrow"
+            }
+          ],
+          "row_type": "fixed",
+          "expected_rows": 7,
+          "row_labels": [
+            "Right Temporalis",
+            "Right TMJ",
+            "Right Masseter",
+            "Left Temporalis",
+            "Left TMJ",
+            "Left Masseter",
+            "(Blank row)"
+          ],
+          "section_name": null,
+          "extraction_hints": "VAS scores are numeric values, other columns may contain checkmarks or descriptive text"
+        }
+      ],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p18_qst_bilateral_section",
+      "section_title": "QST After Bilateral SPGB, if necessary",
+      "instructions": null,
+      "fields": [],
+      "tables": [
+        {
+          "table_id": "p18_qst_bilateral_table",
+          "table_title": "QST After Bilateral SPGB, if necessary",
+          "columns": [
+            {
+              "column_id": "nerve_location",
+              "header": "Nerve Location",
+              "data_type": "string",
+              "width_hint": "medium"
+            },
+            {
+              "column_id": "vas_score",
+              "header": "VAS",
+              "data_type": "float",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "seconds",
+              "header": "Seconds",
+              "data_type": "int",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "sharp",
+              "header": "Sharp",
+              "data_type": "string",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "electrical",
+              "header": "Electrical",
+              "data_type": "string",
+              "width_hint": "narrow"
+            },
+            {
+              "column_id": "burning",
+              "header": "Burning",
+              "data_type": "string",
+              "width_hint": "narrow"
+            }
+          ],
+          "row_type": "fixed",
+          "expected_rows": 7,
+          "row_labels": [
+            "Right Temporalis",
+            "Right TMJ",
+            "Right Masseter",
+            "Left Temporalis",
+            "Left TMJ",
+            "Left Masseter",
+            "(Blank row)"
+          ],
+          "section_name": null,
+          "extraction_hints": "VAS scores are numeric values, other columns may contain checkmarks or descriptive text"
+        }
+      ],
+      "subsections": [],
+      "position_description": null
+    }
+  ],
+  "standalone_fields": [],
+  "standalone_tables": [],
+  "complexity_score": 8,
+  "notes": "This page contains specialized QST (Quantitative Sensory Testing) tables for trigeminal nerve assessment. All data entry is done within the structured tables. The tables measure various sensory responses (VAS scores, timing, and sensation types) across different anatomical locations."
+}

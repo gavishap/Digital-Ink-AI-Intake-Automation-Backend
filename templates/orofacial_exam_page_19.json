@@ -1,0 +1,400 @@
+{
+  "page_number": 19,
+  "page_title": "Diagnostic Photographs",
+  "sections": [
+    {
+      "section_id": "p19_lateral_border_tongue_scalloping",
+      "section_title": "Lateral Border of the Tongue Scalloping",
+      "instructions": null,
+      "fields": [],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_buccal_mucosal_ridging",
+      "section_title": "Buccal Mucosal Ridging",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p19_buccal_mucosal_ridging",
+          "field_label": "Buccal Mucosal Ridging",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Right",
+            "Left"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Buccal Mucosal Ridging",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_occlusal_wear",
+      "section_title": "Occlusal Wear",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p19_occlusal_wear",
+          "field_label": "Occlusal Wear",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Anterior",
+            "Generalized"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Occlusal Wear",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_bleeding_flossing",
+      "section_title": "Bleeding on Flossing",
+      "instructions": null,
+      "fields": [],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_tongue_blades_adhering",
+      "section_title": "Tongue Blades adhering to inside of cheeks",
+      "instructions": null,
+      "fields": [],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_erosion",
+      "section_title": "Erosion",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p19_erosion_class",
+          "field_label": "Erosion Class",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Class I",
+            "II",
+            "III",
+            "Occlusion"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Erosion",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_conditions_list",
+      "section_title": "Dental/Oral Conditions",
+      "instructions": null,
+      "fields": [],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_deviations",
+      "section_title": "Deviations",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p19_deviation_tongue_protrusion",
+          "field_label": "Deviation of Tongue on Protrusion",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Right",
+            "Left"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Deviations",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p19_deviation_mandible_opening",
+          "field_label": "Deviation of Mandible Upon Opening",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Right",
+            "Left"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Deviations",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p19_facial_palsy",
+          "field_label": "Facial Palsy",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Right",
+            "Left"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Deviations",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_dental_issues",
+      "section_title": "Dental Issues",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p19_missing_broken_teeth",
+          "field_label": "Missing/Broken Teeth #",
+          "field_type": "text_short",
+          "data_type": "string",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Dental Issues",
+          "position_description": null,
+          "extraction_hints": "Number field with long line for listing tooth numbers",
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_bite_conditions",
+      "section_title": "Bite Conditions",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p19_open_bite",
+          "field_label": "Open Bite",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Anterior",
+            "Right",
+            "Left"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Bite Conditions",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p19_cross_bite",
+          "field_label": "Cross Bite",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Anterior",
+            "Right",
+            "Left"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Bite Conditions",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        },
+        {
+          "field_id": "p19_collapsed_bite",
+          "field_label": "Collapsed Bite",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Unstable Bite",
+            "Off Bite"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Bite Conditions",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_facial_conditions",
+      "section_title": "Facial Conditions",
+      "instructions": null,
+      "fields": [],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_muscle_conditions",
+      "section_title": "Muscle Conditions",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p19_hypertrophy_masseter",
+          "field_label": "Hypertrophy of Masseter Muscle",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Right",
+            "Left",
+            "Bilateral"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Muscle Conditions",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_tongue_trust",
+      "section_title": "Tongue Trust",
+      "instructions": null,
+      "fields": [
+        {
+          "field_id": "p19_tongue_trust",
+          "field_label": "Tongue Trust",
+          "field_type": "circled_selection",
+          "data_type": "string",
+          "expected_format": null,
+          "options": [
+            "Anterior",
+            "Lateral",
+            "Right",
+            "Left"
+          ],
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": "Tongue Trust",
+          "position_description": null,
+          "extraction_hints": null,
+          "helper_text": null
+        }
+      ],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    },
+    {
+      "section_id": "p19_orthodontic_conditions",
+      "section_title": "Orthodontic and Oral Conditions",
+      "instructions": null,
+      "fields": [],
+      "tables": [],
+      "subsections": [],
+      "position_description": null
+    }
+  ],
+  "standalone_fields": [],
+  "standalone_tables": [],
+  "complexity_score": 4,
+  "notes": "This page appears to be a diagnostic photography checklist with various oral and facial conditions to be documented. Most sections contain lists of conditions that can be circled/selected. Some sections like 'Lateral Border of the Tongue Scalloping', 'Bleeding on Flossing', 'Tongue Blades adhering to inside of cheeks', and several others appear to be just labels without selectable options - these are treated as section headers only."
+}

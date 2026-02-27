@@ -1,0 +1,1875 @@
+{
+  "form_name": "consents_2026",
+  "form_id": "consents_2026",
+  "form_description": "Schema for consents_2026 form",
+  "total_pages": 3,
+  "pages": [
+    {
+      "page_number": 1,
+      "page_title": "AUTHORIZATION FOR RELEASE OF HEALTH CARE INFORMATION TO AGENT(S) UNDER HIPAA AND CALIFORNIA LAW",
+      "sections": [],
+      "standalone_fields": [
+        {
+          "field_id": "p1_patient_name",
+          "field_label": "I, _____________________________ at ______________________________, grant to",
+          "field_type": "text_short",
+          "data_type": "string",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": true,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": "top left of form, first blank line",
+          "extraction_hints": "First name field in the opening sentence",
+          "helper_text": null
+        },
+        {
+          "field_id": "p1_patient_location",
+          "field_label": "I, _____________________________ at ______________________________, grant to",
+          "field_type": "text_short",
+          "data_type": "string",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": true,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": "top right of form, second blank in opening sentence",
+          "extraction_hints": "Location/address field in the opening sentence",
+          "helper_text": null
+        },
+        {
+          "field_id": "p1_authorization_date",
+          "field_label": "Date: _______/________/2026",
+          "field_type": "date",
+          "data_type": "date",
+          "expected_format": "MM/DD/YYYY",
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": true,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": "bottom left of form",
+          "extraction_hints": "Date field with pre-printed 2026 year",
+          "helper_text": null
+        },
+        {
+          "field_id": "p1_principal_name_printed",
+          "field_label": "Principal name (Printed)",
+          "field_type": "text_short",
+          "data_type": "string",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": true,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": "bottom right of form",
+          "extraction_hints": "Printed name of the principal/patient",
+          "helper_text": null
+        },
+        {
+          "field_id": "p1_principal_signature",
+          "field_label": "Signature of Principal",
+          "field_type": "signature",
+          "data_type": "string",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": true,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": "bottom center of form",
+          "extraction_hints": "Signature line for the principal/patient",
+          "helper_text": null
+        },
+        {
+          "field_id": "p1_interpreter",
+          "field_label": "Interpreter",
+          "field_type": "text_short",
+          "data_type": "Optional[str]",
+          "expected_format": null,
+          "options": null,
+          "scale_min": null,
+          "scale_max": null,
+          "scale_labels": null,
+          "is_required": false,
+          "parent_field_id": null,
+          "conditional_logic": null,
+          "section_name": null,
+          "position_description": "bottom of form",
+          "extraction_hints": "Optional interpreter name field",
+          "helper_text": null
+        }
+      ],
+      "standalone_tables": [],
+      "complexity_score": 3,
+      "notes": "This is a standard HIPAA authorization form with minimal input fields. Most of the content is legal text that doesn't require user input. The form has a pre-printed year (2026) in the date field."
+    },
+    {
+      "page_number": 2,
+      "page_title": "E-MAIL CONSENT FORM",
+      "sections": [
+        {
+          "section_id": "patient_info",
+          "section_title": "Patient Information",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p2_patient_name",
+              "field_label": "Patient name:",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": true,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p2_practice_physician",
+              "field_label": "Practice Physician:",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": true,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": "top of page"
+        },
+        {
+          "section_id": "patient_acknowledgment",
+          "section_title": "PATIENT ACKNOWLEDGMENT AND AGREEMENT",
+          "instructions": "Patient acknowledgment of reading and understanding the consent form and agreement to the conditions and instructions outlined",
+          "fields": [],
+          "tables": [],
+          "subsections": [],
+          "position_description": "middle of page"
+        },
+        {
+          "section_id": "signatures",
+          "section_title": "Signatures",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p2_patient_signature",
+              "field_label": "Patient signature",
+              "field_type": "signature",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": true,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p2_patient_signature_date",
+              "field_label": "Date",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": "MM/DD/YYYY",
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": true,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p2_witness_signature",
+              "field_label": "Witness signature",
+              "field_type": "signature",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p2_witness_signature_date",
+              "field_label": "Date",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": "MM/DD/YYYY",
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": "bottom of page"
+        }
+      ],
+      "standalone_fields": [],
+      "standalone_tables": [],
+      "complexity_score": 4,
+      "notes": "This is an E-mail consent form for The Dental Trauma Center. The form contains detailed text about risks of using e-mail, conditions for use, and patient acknowledgment, but most content is static informational text rather than input fields. Only basic patient information and signature fields require input."
+    },
+    {
+      "page_number": 3,
+      "page_title": "ADA Dental Claim Form",
+      "sections": [
+        {
+          "section_id": "header_information",
+          "section_title": "HEADER INFORMATION",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_transaction_type",
+              "field_label": "Type of Transaction (Mark all applicable boxes)",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "Statement of Actual Services",
+                "Request for Predetermination/Preauthorization",
+                "EPSDT/Title XIX"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_predetermination_number",
+              "field_label": "Predetermination/Preauthorization Number",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "insurance_company_info",
+          "section_title": "INSURANCE COMPANY/DENTAL BENEFIT PLAN INFORMATION",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_company_info",
+              "field_label": "Company/Plan Name, Address, City, State, Zip Code",
+              "field_type": "text_long",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "other_coverage",
+          "section_title": "OTHER COVERAGE",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_other_dental_coverage",
+              "field_label": "Other Dental or Medical Coverage?",
+              "field_type": "yes_no",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "No (Skip 5-11)",
+                "Yes (Complete 5-11)"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_subscriber_name",
+              "field_label": "Name of Policyholder/Subscriber in #4 (Last, First, Middle Initial, Suffix)",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_other_dental_coverage",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_subscriber_dob",
+              "field_label": "Date of Birth (MM/DD/CCYY)",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_other_dental_coverage",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_subscriber_gender",
+              "field_label": "Gender",
+              "field_type": "radio_group",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "M",
+                "F"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_other_dental_coverage",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_subscriber_id",
+              "field_label": "Policyholder/Subscriber ID (SSN or ID#)",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_other_dental_coverage",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_plan_group_number",
+              "field_label": "Plan/Group Number",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_other_dental_coverage",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_patient_relationship",
+              "field_label": "Patient's Relationship to Person Named in #5",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "Self",
+                "Spouse",
+                "Dependent Child",
+                "Other"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_other_dental_coverage",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_other_insurance_info",
+              "field_label": "Other Insurance Company/Dental Benefit Plan Name, Address, City, State, Zip Code",
+              "field_type": "text_long",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_other_dental_coverage",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "policyholder_info",
+          "section_title": "POLICYHOLDER/SUBSCRIBER INFORMATION (For Insurance Company Named in #3)",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_policyholder_name",
+              "field_label": "Policyholder/Subscriber Name (Last, First, Middle Initial, Suffix), Address, City, State, Zip Code",
+              "field_type": "text_long",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_policyholder_dob",
+              "field_label": "Date of Birth (MM/DD/CCYY)",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_policyholder_gender",
+              "field_label": "Gender",
+              "field_type": "radio_group",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "M",
+                "F"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_policyholder_id",
+              "field_label": "Policyholder/Subscriber ID (SSN or ID#)",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_plan_group_number_main",
+              "field_label": "Plan/Group Number",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_employer_name",
+              "field_label": "Employer Name",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "patient_info",
+          "section_title": "PATIENT INFORMATION",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_relationship_to_policyholder",
+              "field_label": "Relationship to Policyholder/Subscriber in #12 Above",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "Self",
+                "Spouse",
+                "Dependent Child",
+                "Other"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_student_status",
+              "field_label": "Student Status",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "FTS",
+                "PTS"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_patient_name",
+              "field_label": "Name (Last, First, Middle Initial, Suffix), Address, City, State, Zip Code",
+              "field_type": "text_long",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_patient_dob",
+              "field_label": "Date of Birth (MM/DD/CCYY)",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_patient_gender",
+              "field_label": "Gender",
+              "field_type": "radio_group",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "M",
+                "F"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_patient_id",
+              "field_label": "Patient ID/Account # (Assigned by Dentist)",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "missing_teeth",
+          "section_title": "MISSING TEETH INFORMATION",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_missing_teeth_permanent",
+              "field_label": "Place an 'X' on each missing tooth - Permanent",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23",
+                "24",
+                "25",
+                "26",
+                "27",
+                "28",
+                "29",
+                "30",
+                "31",
+                "32"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_missing_teeth_primary",
+              "field_label": "Place an 'X' on each missing tooth - Primary",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "Q",
+                "R",
+                "S",
+                "T"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_missing_teeth_other",
+              "field_label": "Other Teeth",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_remarks",
+              "field_label": "Remarks",
+              "field_type": "text_long",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "authorizations",
+          "section_title": "AUTHORIZATIONS",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_patient_guardian_signature",
+              "field_label": "Patient/Guardian signature",
+              "field_type": "signature",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_patient_guardian_date",
+              "field_label": "Date",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_subscriber_signature",
+              "field_label": "Subscriber signature",
+              "field_type": "signature",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_subscriber_date",
+              "field_label": "Date",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "ancillary_claim",
+          "section_title": "ANCILLARY CLAIM/TREATMENT INFORMATION",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_place_of_treatment",
+              "field_label": "Place of Treatment",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "Provider's Office",
+                "Hospital",
+                "ECF",
+                "Other"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_number_of_enclosures",
+              "field_label": "Number of Enclosures (00 to 99) Radiographs, Oral Images, Models, etc.",
+              "field_type": "text_numeric",
+              "data_type": "int",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treatment_orthodontist",
+              "field_label": "Is Treatment for Orthodontics?",
+              "field_type": "yes_no",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "No (Skip 41-42)",
+                "Yes (Complete 41-42)"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_appliance_placed_date",
+              "field_label": "Date Appliance Placed (MM/DD/CCYY)",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_treatment_orthodontist",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_months_remaining",
+              "field_label": "Months of Treatment Remaining",
+              "field_type": "text_numeric",
+              "data_type": "int",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_treatment_orthodontist",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_replacement_prosthesis",
+              "field_label": "Replacement of Prosthesis?",
+              "field_type": "yes_no",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "No",
+                "Yes (Complete 44)"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_prior_placement_date",
+              "field_label": "Date Prior Placement (MM/DD/CCYY)",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p3_replacement_prosthesis",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treatment_resulting_from",
+              "field_label": "Treatment Resulting from",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "Occupational Illness/Injury",
+                "Auto accident",
+                "Other accident"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_accident_date",
+              "field_label": "Date of Accident (MM/DD/CCYY)",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_auto_accident_state",
+              "field_label": "Auto Accident State",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "billing_dentist",
+          "section_title": "BILLING DENTIST OR DENTAL ENTITY",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_billing_dentist_address",
+              "field_label": "Name, Address, City, State, Zip Code",
+              "field_type": "text_long",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_billing_npi",
+              "field_label": "NPI",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_billing_license",
+              "field_label": "License Number",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_billing_ssn_tin",
+              "field_label": "SSN or TIN",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_billing_phone",
+              "field_label": "Phone Number",
+              "field_type": "phone",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_billing_additional_id",
+              "field_label": "Additional Provider ID",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        },
+        {
+          "section_id": "treating_dentist",
+          "section_title": "TREATING DENTIST AND TREATMENT LOCATION INFORMATION",
+          "instructions": null,
+          "fields": [
+            {
+              "field_id": "p3_treating_dentist_signature",
+              "field_label": "Signed (Treating Dentist)",
+              "field_type": "signature",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treating_dentist_date",
+              "field_label": "Date",
+              "field_type": "date",
+              "data_type": "date",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treating_npi",
+              "field_label": "NPI",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treating_license",
+              "field_label": "License Number",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treating_address",
+              "field_label": "Address, City, State, Zip Code",
+              "field_type": "text_long",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treating_provider_specialty",
+              "field_label": "Provider Specialty Code",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treating_phone",
+              "field_label": "Phone Number",
+              "field_type": "phone",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_treating_additional_id",
+              "field_label": "Additional Provider ID",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": null,
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": null
+        }
+      ],
+      "standalone_fields": [],
+      "standalone_tables": [
+        {
+          "table_id": "p3_services_table",
+          "table_title": "RECORD OF SERVICES PROVIDED",
+          "columns": [
+            {
+              "column_id": "procedure_date",
+              "header": "Procedure Date (MM/DD/CCYY)",
+              "data_type": "date",
+              "width_hint": null
+            },
+            {
+              "column_id": "area_cavity",
+              "header": "Area of Oral Cavity",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "tooth_system",
+              "header": "Tooth System",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "tooth_numbers",
+              "header": "Tooth Number(s) or Letter(s)",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "tooth_surface",
+              "header": "Tooth Surface",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "procedure_code",
+              "header": "Procedure Code",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "description",
+              "header": "Description",
+              "data_type": "string",
+              "width_hint": null
+            },
+            {
+              "column_id": "fee",
+              "header": "Fee",
+              "data_type": "float",
+              "width_hint": null
+            }
+          ],
+          "row_type": "dynamic",
+          "expected_rows": 10,
+          "row_labels": null,
+          "section_name": null,
+          "extraction_hints": "Table has 10 numbered rows for service entries"
+        }
+      ],
+      "complexity_score": 8,
+      "notes": "This is a comprehensive ADA dental claim form with complex conditional logic. Many fields in sections 5-11 are conditional on the \"Other Coverage\" yes/no response. Orthodontic fields 41-42 are conditional on question 40. The form includes a large services table and missing teeth diagrams with numbered tooth positions."
+    }
+  ],
+  "field_index": {
+    "p1_patient_name": {
+      "page_number": 1,
+      "section_id": null,
+      "position_description": "top left of form, first blank line"
+    },
+    "p1_patient_location": {
+      "page_number": 1,
+      "section_id": null,
+      "position_description": "top right of form, second blank in opening sentence"
+    },
+    "p1_authorization_date": {
+      "page_number": 1,
+      "section_id": null,
+      "position_description": "bottom left of form"
+    },
+    "p1_principal_name_printed": {
+      "page_number": 1,
+      "section_id": null,
+      "position_description": "bottom right of form"
+    },
+    "p1_principal_signature": {
+      "page_number": 1,
+      "section_id": null,
+      "position_description": "bottom center of form"
+    },
+    "p1_interpreter": {
+      "page_number": 1,
+      "section_id": null,
+      "position_description": "bottom of form"
+    },
+    "p2_patient_name": {
+      "page_number": 2,
+      "section_id": "patient_info",
+      "position_description": null
+    },
+    "p2_practice_physician": {
+      "page_number": 2,
+      "section_id": "patient_info",
+      "position_description": null
+    },
+    "p2_patient_signature": {
+      "page_number": 2,
+      "section_id": "signatures",
+      "position_description": null
+    },
+    "p2_patient_signature_date": {
+      "page_number": 2,
+      "section_id": "signatures",
+      "position_description": null
+    },
+    "p2_witness_signature": {
+      "page_number": 2,
+      "section_id": "signatures",
+      "position_description": null
+    },
+    "p2_witness_signature_date": {
+      "page_number": 2,
+      "section_id": "signatures",
+      "position_description": null
+    },
+    "p3_transaction_type": {
+      "page_number": 3,
+      "section_id": "header_information",
+      "position_description": null
+    },
+    "p3_predetermination_number": {
+      "page_number": 3,
+      "section_id": "header_information",
+      "position_description": null
+    },
+    "p3_company_info": {
+      "page_number": 3,
+      "section_id": "insurance_company_info",
+      "position_description": null
+    },
+    "p3_other_dental_coverage": {
+      "page_number": 3,
+      "section_id": "other_coverage",
+      "position_description": null
+    },
+    "p3_subscriber_name": {
+      "page_number": 3,
+      "section_id": "other_coverage",
+      "position_description": null
+    },
+    "p3_subscriber_dob": {
+      "page_number": 3,
+      "section_id": "other_coverage",
+      "position_description": null
+    },
+    "p3_subscriber_gender": {
+      "page_number": 3,
+      "section_id": "other_coverage",
+      "position_description": null
+    },
+    "p3_subscriber_id": {
+      "page_number": 3,
+      "section_id": "other_coverage",
+      "position_description": null
+    },
+    "p3_plan_group_number": {
+      "page_number": 3,
+      "section_id": "other_coverage",
+      "position_description": null
+    },
+    "p3_patient_relationship": {
+      "page_number": 3,
+      "section_id": "other_coverage",
+      "position_description": null
+    },
+    "p3_other_insurance_info": {
+      "page_number": 3,
+      "section_id": "other_coverage",
+      "position_description": null
+    },
+    "p3_policyholder_name": {
+      "page_number": 3,
+      "section_id": "policyholder_info",
+      "position_description": null
+    },
+    "p3_policyholder_dob": {
+      "page_number": 3,
+      "section_id": "policyholder_info",
+      "position_description": null
+    },
+    "p3_policyholder_gender": {
+      "page_number": 3,
+      "section_id": "policyholder_info",
+      "position_description": null
+    },
+    "p3_policyholder_id": {
+      "page_number": 3,
+      "section_id": "policyholder_info",
+      "position_description": null
+    },
+    "p3_plan_group_number_main": {
+      "page_number": 3,
+      "section_id": "policyholder_info",
+      "position_description": null
+    },
+    "p3_employer_name": {
+      "page_number": 3,
+      "section_id": "policyholder_info",
+      "position_description": null
+    },
+    "p3_relationship_to_policyholder": {
+      "page_number": 3,
+      "section_id": "patient_info",
+      "position_description": null
+    },
+    "p3_student_status": {
+      "page_number": 3,
+      "section_id": "patient_info",
+      "position_description": null
+    },
+    "p3_patient_name": {
+      "page_number": 3,
+      "section_id": "patient_info",
+      "position_description": null
+    },
+    "p3_patient_dob": {
+      "page_number": 3,
+      "section_id": "patient_info",
+      "position_description": null
+    },
+    "p3_patient_gender": {
+      "page_number": 3,
+      "section_id": "patient_info",
+      "position_description": null
+    },
+    "p3_patient_id": {
+      "page_number": 3,
+      "section_id": "patient_info",
+      "position_description": null
+    },
+    "p3_missing_teeth_permanent": {
+      "page_number": 3,
+      "section_id": "missing_teeth",
+      "position_description": null
+    },
+    "p3_missing_teeth_primary": {
+      "page_number": 3,
+      "section_id": "missing_teeth",
+      "position_description": null
+    },
+    "p3_missing_teeth_other": {
+      "page_number": 3,
+      "section_id": "missing_teeth",
+      "position_description": null
+    },
+    "p3_remarks": {
+      "page_number": 3,
+      "section_id": "missing_teeth",
+      "position_description": null
+    },
+    "p3_patient_guardian_signature": {
+      "page_number": 3,
+      "section_id": "authorizations",
+      "position_description": null
+    },
+    "p3_patient_guardian_date": {
+      "page_number": 3,
+      "section_id": "authorizations",
+      "position_description": null
+    },
+    "p3_subscriber_signature": {
+      "page_number": 3,
+      "section_id": "authorizations",
+      "position_description": null
+    },
+    "p3_subscriber_date": {
+      "page_number": 3,
+      "section_id": "authorizations",
+      "position_description": null
+    },
+    "p3_place_of_treatment": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_number_of_enclosures": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_treatment_orthodontist": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_appliance_placed_date": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_months_remaining": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_replacement_prosthesis": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_prior_placement_date": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_treatment_resulting_from": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_accident_date": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_auto_accident_state": {
+      "page_number": 3,
+      "section_id": "ancillary_claim",
+      "position_description": null
+    },
+    "p3_billing_dentist_address": {
+      "page_number": 3,
+      "section_id": "billing_dentist",
+      "position_description": null
+    },
+    "p3_billing_npi": {
+      "page_number": 3,
+      "section_id": "billing_dentist",
+      "position_description": null
+    },
+    "p3_billing_license": {
+      "page_number": 3,
+      "section_id": "billing_dentist",
+      "position_description": null
+    },
+    "p3_billing_ssn_tin": {
+      "page_number": 3,
+      "section_id": "billing_dentist",
+      "position_description": null
+    },
+    "p3_billing_phone": {
+      "page_number": 3,
+      "section_id": "billing_dentist",
+      "position_description": null
+    },
+    "p3_billing_additional_id": {
+      "page_number": 3,
+      "section_id": "billing_dentist",
+      "position_description": null
+    },
+    "p3_treating_dentist_signature": {
+      "page_number": 3,
+      "section_id": "treating_dentist",
+      "position_description": null
+    },
+    "p3_treating_dentist_date": {
+      "page_number": 3,
+      "section_id": "treating_dentist",
+      "position_description": null
+    },
+    "p3_treating_npi": {
+      "page_number": 3,
+      "section_id": "treating_dentist",
+      "position_description": null
+    },
+    "p3_treating_license": {
+      "page_number": 3,
+      "section_id": "treating_dentist",
+      "position_description": null
+    },
+    "p3_treating_address": {
+      "page_number": 3,
+      "section_id": "treating_dentist",
+      "position_description": null
+    },
+    "p3_treating_provider_specialty": {
+      "page_number": 3,
+      "section_id": "treating_dentist",
+      "position_description": null
+    },
+    "p3_treating_phone": {
+      "page_number": 3,
+      "section_id": "treating_dentist",
+      "position_description": null
+    },
+    "p3_treating_additional_id": {
+      "page_number": 3,
+      "section_id": "treating_dentist",
+      "position_description": null
+    }
+  },
+  "cross_page_references": [],
+  "extraction_notes": null,
+  "blank_images": {
+    "page_1": "consents_2026_blank_page_1.png",
+    "page_2": "consents_2026_blank_page_2.png",
+    "page_3": "consents_2026_blank_page_3.png"
+  }
+}

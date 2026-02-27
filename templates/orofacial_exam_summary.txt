@@ -1,0 +1,203 @@
+Form Schema Summary: orofacial_exam
+==================================================
+Form ID: orofacial_exam
+Total Pages: 20
+Total Fields: 583
+Total Tables: 8
+
+Page 1: Patient Information Form
+  Fields: 42
+  Tables: 1
+  Sections: 5
+  Complexity: 6/10
+    - Form Header Information: 5 fields
+    - Patient Demographics: 11 fields
+    - Medical History Questions: 23 fields
+    - History of Allergies: 1 fields
+    - Current Medications: 2 fields
+
+Page 2: History of Medication Usage
+  Fields: 37
+  Tables: 0
+  Sections: 4
+  Complexity: 6/10
+    - History of Medication Usage: 3 fields
+    - Medications Before Work Injury: 11 fields
+    - Medications Currently Taking: 11 fields
+    - Medications After Work Injury: 12 fields
+
+Page 3: Orofacial Exam - Page 3
+  Fields: 33
+  Tables: 0
+  Sections: 5
+  Complexity: 7/10
+    - Mouth Symptoms: 6 fields
+    - Bad Breath Assessment: 18 fields
+    - Halitosis Meter Reading: 1 fields
+    - Taste Changes: 6 fields
+    - Signature: 2 fields
+
+Page 4: Orofacial Exam - Page 4
+  Fields: 27
+  Tables: 0
+  Sections: 5
+  Complexity: 6/10
+    - Hand Dominance: 1 fields
+    - Work Injury: 2 fields
+    - Daily Activities: 8 fields
+    - Smoking History: 8 fields
+    - Substance Use: 6 fields
+
+Page 5: Employment History
+  Fields: 33
+  Tables: 0
+  Sections: 2
+  Complexity: 7/10
+    - Header Information: 6 fields
+    - Employment History: 27 fields
+
+Page 6: History of Industrial Injury
+  Fields: 19
+  Tables: 1
+  Sections: 3
+  Complexity: 8/10
+    - Trauma History Review: 4 fields
+    - History of Industrial Injury: 3 fields
+    - Motor Vehicle Accident Details: 12 fields
+
+Page 7: Orofacial Exam - Page 7
+  Fields: 37
+  Tables: 0
+  Sections: 4
+  Complexity: 8/10
+    - Pain and Stress Related Questions: 15 fields
+    - Pre-Existing Conditions: 18 fields
+    - Attestation and Signature: 2 fields
+    - Treatments Received Due to the Industrial Injury: 2 fields
+
+Page 8: Orofacial Exam - Page 8
+  Fields: 14
+  Tables: 1
+  Sections: 2
+  Complexity: 6/10
+    - Tx Received: 9 fields
+    - Prior History: 4 fields
+
+Page 9: Dental History
+  Fields: 26
+  Tables: 0
+  Sections: 3
+  Complexity: 7/10
+    - Dental History: 3 fields
+    - Dental Treatments: 8 fields
+    - Dental Treatments Received Since Industrial Injuries: 15 fields
+
+Page 10: Present Symptoms
+  Fields: 59
+  Tables: 0
+  Sections: 4
+  Complexity: 8/10
+    - Present Symptoms: 24 fields
+    - Headaches: 8 fields
+    - Face Pain: 12 fields
+    - TMJ Noise and Pain: 15 fields
+
+Page 11: Orofacial Exam - Page 11
+  Fields: 24
+  Tables: 1
+  Sections: 3
+  Complexity: 8/10
+    - Jaw and Mouth Symptoms: 11 fields
+    - Oral Symptoms: 7 fields
+    - Additional Symptoms: 6 fields
+
+Page 12: Activities of Daily Living VAS
+  Fields: 29
+  Tables: 0
+  Sections: 4
+  Complexity: 7/10
+    - Activities of Daily Living VAS: 22 fields
+    - Communication / Talking: 1 fields
+    - Eating / Chewing: 4 fields
+    - Attestation and Signature: 2 fields
+
+Page 13: Activities of Daily Living
+  Fields: 13
+  Tables: 0
+  Sections: 5
+  Complexity: 6/10
+    - Self-Care Hygiene: 2 fields
+    - Communication: 4 fields
+    - Motor Function: 5 fields
+    - Bruxism: 1 fields
+    - Sexual Function: 1 fields
+
+Page 14: Clinical Examination
+  Fields: 43
+  Tables: 1
+  Sections: 1
+  Complexity: 8/10
+    - Clinical Examination: 43 fields
+
+Page 15: Orofacial Exam - Page 15
+  Fields: 30
+  Tables: 0
+  Sections: 4
+  Complexity: 8/10
+    - Occlusion Assessment: 9 fields
+    - Periodontal Assessment: 3 fields
+    - Patient Conditions: 2 fields
+    - Dental Findings: 16 fields
+
+Page 16: Diagnostic Tests
+  Fields: 52
+  Tables: 0
+  Sections: 2
+  Complexity: 8/10
+    - Diagnostic Tests: 2 fields
+    - Salivary Diagnostic Testing: 0 fields
+
+Page 17: Oral Cancer Screening Form
+  Fields: 38
+  Tables: 0
+  Sections: 3
+  Complexity: 6/10
+    - Oral Anatomy Diagram: 19 fields
+    - Clinical Impressions: 2 fields
+    - Diagnosis: 16 fields
+
+Page 18: Trigeminal Nerve Neuropathic QST Testing
+  Fields: 0
+  Tables: 3
+  Sections: 3
+  Complexity: 8/10
+    - QST: 0 fields
+    - QST Cold: 0 fields
+    - QST After Bilateral SPGB, if necessary: 0 fields
+
+Page 19: Diagnostic Photographs
+  Fields: 12
+  Tables: 0
+  Sections: 14
+  Complexity: 4/10
+    - Lateral Border of the Tongue Scalloping: 0 fields
+    - Buccal Mucosal Ridging: 1 fields
+    - Occlusal Wear: 1 fields
+    - Bleeding on Flossing: 0 fields
+    - Tongue Blades adhering to inside of cheeks: 0 fields
+    - Erosion: 1 fields
+    - Dental/Oral Conditions: 0 fields
+    - Deviations: 3 fields
+    - Dental Issues: 1 fields
+    - Bite Conditions: 3 fields
+    - Facial Conditions: 0 fields
+    - Muscle Conditions: 1 fields
+    - Tongue Trust: 1 fields
+    - Orthodontic and Oral Conditions: 0 fields
+
+Page 20: Treatment Plan
+  Fields: 15
+  Tables: 0
+  Sections: 1
+  Complexity: 7/10
+    - Treatment Plan: 15 fields
