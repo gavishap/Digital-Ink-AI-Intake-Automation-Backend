@@ -193,7 +193,13 @@ def _save_results_to_db(job_id: str, document_id: str, result, start_time: datet
     )
     job_manager.update_document(document_id, status="analyzed")
 
-    job_manager.extract_patient_from_results(page_dicts, document_id=document_id)
+    sb = get_supabase()
+    doc_row = sb.table("documents").select("patient_id").eq("id", document_id).execute()
+    has_patient = doc_row.data and doc_row.data[0].get("patient_id")
+    if not has_patient:
+        job_manager.extract_patient_from_results(page_dicts, document_id=document_id)
+    else:
+        logger.info("Skipping patient creation for document %s — inherited patient_id", document_id[:8])
 
     job_manager.write_audit_log(
         action="extraction_completed",
@@ -390,6 +396,7 @@ async def analyze_images(
     name: Optional[str] = None,
     schema_path: Optional[str] = None,
     page_metadata: Optional[str] = None,
+    parent_document_id: Optional[str] = None,
     user_id: str = Depends(_require_user),
 ):
     """Upload and analyze multiple page images as a batch."""
@@ -412,13 +419,26 @@ async def analyze_images(
     if not name:
         name = f"batch_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"
 
-    logger.info("POST /api/analyze-images — %d files, name=%s", len(files), name)
+    logger.info("POST /api/analyze-images — %d files, name=%s, parent=%s", len(files), name, parent_document_id)
+
+    inherited_patient_id = None
+    if parent_document_id:
+        try:
+            sb = get_supabase()
+            parent = sb.table("documents").select("patient_id").eq("id", parent_document_id).execute()
+            if parent.data and parent.data[0].get("patient_id"):
+                inherited_patient_id = parent.data[0]["patient_id"]
+                logger.info("Inherited patient_id %s from parent document %s", inherited_patient_id[:8], parent_document_id[:8])
+        except Exception as e:
+            logger.warning("Failed to look up parent document %s: %s", parent_document_id, e)
 
     document_id = job_manager.create_document(
         file_name=f"{len(files)} page images",
         file_type="image_batch",
         storage_path=f"annotated/{name}/",
         total_pages=len(files),
+        parent_document_id=parent_document_id,
+        patient_id=inherited_patient_id,
     )
 
     job_id = job_manager.create_job(document_id=document_id, total_pages=len(files))

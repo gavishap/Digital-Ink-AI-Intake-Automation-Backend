@@ -101,6 +101,8 @@ def create_document(
     file_size_bytes: Optional[int] = None,
     document_type: Optional[str] = None,
     uploaded_by: Optional[str] = None,
+    parent_document_id: Optional[str] = None,
+    patient_id: Optional[str] = None,
 ) -> str:
     sb = get_supabase()
     row = {
@@ -117,10 +119,14 @@ def create_document(
         row["document_type"] = document_type
     if uploaded_by:
         row["uploaded_by"] = uploaded_by
+    if parent_document_id:
+        row["parent_document_id"] = parent_document_id
+    if patient_id:
+        row["patient_id"] = patient_id
 
     result = sb.table("documents").insert(row).execute()
     doc_id = result.data[0]["id"]
-    logger.info("Created document %s: %s (%s, %s bytes)", doc_id[:8], file_name, file_type, file_size_bytes)
+    logger.info("Created document %s: %s (%s, parent=%s)", doc_id[:8], file_name, file_type, parent_document_id and parent_document_id[:8])
     return doc_id
 
 
@@ -564,8 +570,13 @@ def get_document_pages(document_id: str) -> list[dict]:
         path = p.get("annotated_image_path") or p.get("original_image_path")
         if path:
             bucket = "annotated" if p.get("annotated_image_path") else "pages"
+            clean_path = path
+            for prefix in ("annotated/", "pages/", "originals/"):
+                if clean_path.startswith(prefix):
+                    clean_path = clean_path[len(prefix):]
+                    break
             try:
-                res = sb.storage.from_(bucket).create_signed_url(path, 3600)
+                res = sb.storage.from_(bucket).create_signed_url(clean_path, 3600)
                 image_url = res.get("signedURL") or res.get("signedUrl")
             except Exception:
                 pass
