@@ -1,0 +1,261 @@
+{
+  "model": "Qwen3-VL-8B",
+  "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "prompt": "standard",
+  "dpi": 150,
+  "parsed_response": {
+    "header": {
+      "name": "Aubrie Vasquez",
+      "date": "1/18/2025",
+      "birth_date": "8/16/94",
+      "sex": "FEMALE"
+    },
+    "yes_no_questions": [
+      {
+        "number": 1,
+        "topic": "Do you have any heart problems?",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 2,
+        "topic": "Do you have any metal joint replacements? (NOT DENTAL FILLINGS)",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 3,
+        "topic": "Do you have High Blood Pressure?",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 4,
+        "topic": "Do you have Diabetes?",
+        "answer": "NO",
+        "notes": "pre"
+      },
+      {
+        "number": 5,
+        "topic": "Do you feel that stomach acids come up into your mouth or throat?",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 6,
+        "topic": "Do you have any Kidney problems?",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 7,
+        "topic": "Do you have a Thyroid problem?",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 8,
+        "topic": "Do you have or have you had any of the following: HIV Hepatitis TB VD",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 9,
+        "topic": "Are you taking blood thinners? Which one:",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 10,
+        "topic": "Do you have any breathing problems?",
+        "answer": "NO",
+        "notes": "Asthma Shortness of Breath"
+      },
+      {
+        "number": 11,
+        "topic": "Do you have any numbness or pins / needles feeling anywhere in your body?",
+        "answer": "NO",
+        "notes": "Where: Left 2 fingers > shoulders, forehead"
+      },
+      {
+        "number": 12,
+        "topic": "Do you have any Liver problems?",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 13,
+        "topic": "Do you have any Urinary problems?",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 14,
+        "topic": "Awakens at night to urinate: ___ times per night",
+        "answer": "NO",
+        "notes": "3"
+      },
+      {
+        "number": 15,
+        "topic": "Have you ever had a Sleep Study Test? When: ___ Apnea Results? YES NO ?",
+        "answer": "NO",
+        "notes": "~2018"
+      },
+      {
+        "number": 16,
+        "topic": "Have you ever been given a CPAP mask to use at night to help you breathe?",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 17,
+        "topic": "Do you awaken in the morning with a headache in your temple/forehead areas?",
+        "answer": "NO",
+        "notes": ""
+      }
+    ],
+    "allergies": "Caphor",
+    "dx_post_injury_marks": [
+      "Gastric Acid",
+      "Kidney Problems",
+      "Thyroid Problems"
+    ],
+    "other_observations": [
+      "Nurse: Nancy",
+      "INTP: NO",
+      "Home Tel: ( )",
+      "Cell: (818) 855-4851",
+      "Address: P.O. Box 241 Pearblossom, CA 93553",
+      "Medications For: Diabetes Sleep High Blood Pressure Pain Anti-Inflammatory Cholesterol (see attached sheet)",
+      "Lansoprazole",
+      "Diclofenac Gel",
+      "98.75 kg",
+      "163.5 cm",
+      "Pne"
+    ]
+  },
+  "scores": {
+    "yn_correct": 11,
+    "yn_total": 17,
+    "yes_hit": 0,
+    "yes_total": 6,
+    "no_hit": 11,
+    "no_total": 11,
+    "hdr_hit": 3,
+    "hdr_total": 4,
+    "allergy_ok": true,
+    "dx_hit": 1,
+    "dx_total": 2,
+    "followup_hit": 5,
+    "followup_total": 5,
+    "per_q": {
+      "1": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "2": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "3": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "4": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "pre"
+      },
+      "5": {
+        "expected": "YES",
+        "got": "NO",
+        "ok": false,
+        "notes": ""
+      },
+      "6": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "7": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "8": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "9": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "10": {
+        "expected": "YES",
+        "got": "NO",
+        "ok": false,
+        "notes": "Asthma Shortness of Breath"
+      },
+      "11": {
+        "expected": "YES",
+        "got": "NO",
+        "ok": false,
+        "notes": "Where: Left 2 fingers > shoulders, forehead"
+      },
+      "12": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "13": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "14": {
+        "expected": "YES",
+        "got": "NO",
+        "ok": false,
+        "notes": "3"
+      },
+      "15": {
+        "expected": "YES",
+        "got": "NO",
+        "ok": false,
+        "notes": "~2018"
+      },
+      "16": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "17": {
+        "expected": "YES",
+        "got": "NO",
+        "ok": false,
+        "notes": ""
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 2076,
+    "output_tokens": 959
+  },
+  "elapsed_s": 9.069758176803589
+}

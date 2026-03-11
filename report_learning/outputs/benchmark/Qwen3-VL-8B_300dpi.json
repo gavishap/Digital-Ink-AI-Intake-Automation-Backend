@@ -1,0 +1,275 @@
+{
+  "model": "Qwen3-VL-8B 300dpi",
+  "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "prompt": "enhanced",
+  "dpi": 300,
+  "parsed_response": {
+    "header": {
+      "name": "Aubrie Vasquez",
+      "date": "11/18/2025",
+      "birth_date": "8/16/94",
+      "sex": "FEMALE"
+    },
+    "yes_no_questions": [
+      {
+        "number": 1,
+        "topic": "Heart problems",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 2,
+        "topic": "Metal joint replacements",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 3,
+        "topic": "High Blood Pressure",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 4,
+        "topic": "Diabetes",
+        "observation": "NO is circled, but 'pre' is handwritten next to it",
+        "answer": "NO",
+        "notes": "pre written next to NO"
+      },
+      {
+        "number": 5,
+        "topic": "Stomach acids in mouth/throat",
+        "observation": "YES is circled",
+        "answer": "YES",
+        "notes": ""
+      },
+      {
+        "number": 6,
+        "topic": "Kidney problems",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 7,
+        "topic": "Thyroid problem",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 8,
+        "topic": "HIV, Hepatitis, TB, VD",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 9,
+        "topic": "Blood thinners",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 10,
+        "topic": "Breathing problems",
+        "observation": "YES is circled, 'Asthma' is circled under it",
+        "answer": "YES",
+        "notes": "Asthma circled"
+      },
+      {
+        "number": 11,
+        "topic": "Numbness or pins/needles",
+        "observation": "YES is circled, 'Where: Left 2 finger -> Shoulder, Forehead' is handwritten",
+        "answer": "YES",
+        "notes": "Where: Left 2 finger -> Shoulder, Forehead"
+      },
+      {
+        "number": 12,
+        "topic": "Liver problems",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 13,
+        "topic": "Urinary problems",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 14,
+        "topic": "Awakens at night to urinate",
+        "observation": "YES is circled, '3' is handwritten",
+        "answer": "YES",
+        "notes": "3 times per night"
+      },
+      {
+        "number": 15,
+        "topic": "Sleep Study Test",
+        "observation": "YES is circled, 'When: ~2018' is handwritten",
+        "answer": "YES",
+        "notes": "When: ~2018"
+      },
+      {
+        "number": 16,
+        "topic": "CPAP mask",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 17,
+        "topic": "Awaken with headache",
+        "observation": "YES is circled",
+        "answer": "YES",
+        "notes": ""
+      }
+    ],
+    "allergies": "Caphor",
+    "dx_post_injury_marks": [
+      "Gastric Acid",
+      "Thyroid Problems"
+    ],
+    "other_observations": [
+      "Nurse: Nancy",
+      "INTP: No",
+      "Home Tel: ( )",
+      "Cell: (818) 855-4851",
+      "Address: P.O. Box 241, Pearblossom, CA 93553",
+      "Medications: Lanzoprazole, Diclofenac Gel",
+      "Height: 98.95 kg",
+      "Weight: 163.5 cm",
+      "Apnea Results? YES NO ?"
+    ]
+  },
+  "scores": {
+    "yn_correct": 17,
+    "yn_total": 17,
+    "yes_hit": 6,
+    "yes_total": 6,
+    "no_hit": 11,
+    "no_total": 11,
+    "hdr_hit": 3,
+    "hdr_total": 4,
+    "allergy_ok": true,
+    "dx_hit": 1,
+    "dx_total": 2,
+    "followup_hit": 4,
+    "followup_total": 5,
+    "per_q": {
+      "1": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "2": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "3": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "4": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "pre written next to NO"
+      },
+      "5": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "YES is circled"
+      },
+      "6": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "7": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "8": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "9": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "10": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "Asthma circled"
+      },
+      "11": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "Where: Left 2 finger -> Shoulder, Forehead"
+      },
+      "12": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "13": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "14": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "3 times per night"
+      },
+      "15": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "When: ~2018"
+      },
+      "16": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "17": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "YES is circled"
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 3537,
+    "output_tokens": 1067
+  },
+  "elapsed_s": 9.944133043289185
+}

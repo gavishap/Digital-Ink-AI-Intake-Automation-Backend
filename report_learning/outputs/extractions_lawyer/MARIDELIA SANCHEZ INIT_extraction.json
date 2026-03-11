@@ -1,0 +1,122 @@
+{
+  "form_id": "maridelia_sanchez_init",
+  "form_name": "MARIDELIA SANCHEZ INIT",
+  "extraction_timestamp": "2026-03-08T11:20:09.519652",
+  "resolved_references": [],
+  "overall_confidence": 0.85625,
+  "total_items_needing_review": 39,
+  "all_review_reasons": [
+    "The date '11/20/2025' is ambiguous as it is a future date, which may indicate an error or misinterpretation. The form context suggests it should be a past or current date.",
+    "The value '5429 Dogwood St. San Bernard, no CA 92404' appears to be an address rather than a phone number, which is inconsistent with the field label 'Home Telephone'.",
+    "Both 'Attorney's Name' and 'Attorney's Phone #' fields are empty, which may be intentional for this form type, but should be reviewed to ensure completeness for legal compliance.",
+    "The patient has numbness (YES), but the location 'B-Fingers' is written, which is not a standard medical term. This may be a misinterpretation or incomplete entry.",
+    "The patient has liver problems (YES), but is taking 'Advil' (ibuprofen), which is a nonsteroidal anti-inflammatory drug (NSAID) that can potentially exacerbate liver conditions. This may be a clinical concern.",
+    "The fields 'QME Time Started', 'QME Time Ended', 'INTP', and 'CERT #' are empty and appear to be illegible or not filled out, which may be intentional for this form type.",
+    "The medication name 'Adri' is ambiguous and may require confirmation with the patient or pharmacy.",
+    "The frequency '4x/week' is not standard for most medications; it may be a typo or require clarification.",
+    "Dosage '400 mg' must be confirmed with the prescribing physician or pharmacy to ensure safety and efficacy.",
+    "The annotation combines multiple elements; the full prescription details must be verified for accuracy.",
+    "Page 4 extraction failed",
+    "The date '1/20/202 S' is ambiguous and appears to be an incomplete or typographical entry. It may be intended to be '1/20/2026', but this requires human verification.",
+    "The annotation 'Opinate rech.' is ambiguous and unclear. It is unclear whether this is a patient's opinion, a recommendation, or a note from the clinician. This requires human review to clarify its meaning and relevance.",
+    "The annotation 'VercLue + Offices' is ambiguous and unclear. It is unclear whether this refers to a specific location, department, or a combination of both. This requires human review to clarify its meaning and relevance.",
+    "Handwritten annotations near 'Past Medical History' and 'History of Non-Industrial Injuries' are illegible and cannot be interpreted. This prevents accurate extraction of any additional information.",
+    "A wavy line is present under 'History of Prior Industrial Injuries: None'. The purpose of this mark is ambiguous — it may indicate confirmation, emphasis, or a correction. Its clinical meaning is unclear without context.",
+    "The extracted value '? ?' is ambiguous and may indicate illegible handwriting or an intentional blank. Human review is required to determine if the field is truly blank or if the value is misread.",
+    "The extracted value '1-2 year' contradicts the form's instruction 'Every 6 months', suggesting a potential error or misunderstanding. This inconsistency requires human review.",
+    "Page 12 extraction failed",
+    "Page 13 extraction failed",
+    "The handwritten value '34' for SCM Pain VAS is illegible and likely a transcription error, as VAS scores must be between 0 and 10.",
+    "The values '3 mm' for Right and Left Lateral range of motion are ambiguous in clinical context. While numerically valid, such low values may indicate pathology and require clinical correlation.",
+    "The values '3 mm' for Right and Left Lateral range of motion are contradictory to the expected normal range (typically 30-50 mm). This suggests a possible error in measurement or recording.",
+    "Page 17 extraction failed",
+    "Page 19 extraction failed",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment note at bottom of page.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "appt Thursday 11/20/25 @ 9:30am Redlands",
+          "normalized_text": "A handwritten note indicating an appointment scheduled for Thursday, November 20, 2026, at 9:30 AM in Redlands.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating an appointment scheduled for Thursday, November 20, 2026, at 9:30 AM in Redlands.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "sched 8/11",
+          "normalized_text": "A handwritten note indicating that something is scheduled for August 11.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating that something is scheduled for August 11.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

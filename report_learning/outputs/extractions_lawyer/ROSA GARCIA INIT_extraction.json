@@ -1,0 +1,315 @@
+{
+  "form_id": "rosa_garcia_init",
+  "form_name": "ROSA GARCIA INIT",
+  "extraction_timestamp": "2026-03-08T15:26:16.457575",
+  "resolved_references": [],
+  "overall_confidence": 0.922222222222222,
+  "total_items_needing_review": 18,
+  "all_review_reasons": [
+    "Page 2 extraction failed",
+    "The 'Date of Injury' field contains '3/12-19-9-12-24', which is ambiguous. It could represent a range from March 12, 1999, to December 24, 1999, or March 12, 1999, to December 24, 2024. The context suggests the latter, but the format is unclear and requires human review to confirm the correct interpretation.",
+    "Page 9 extraction failed",
+    "Page 14 extraction failed",
+    "The handwritten annotations 'UNL' and 'UNL DFV' are ambiguous. 'UNL' could mean 'Unremarkable' or 'No Lesion', and 'DFV' lacks a clear definition without context. This ambiguity affects interpretation of the oral cavity examination findings.",
+    "The red 'X' marks next to ICD-10 codes (G51.0, G50.0, F45.8, M79.1) indicate rejection, but the form does not specify the reason for rejection (e.g., 'not applicable', 'not present', 'contradicted by other findings'). This ambiguity reduces clinical clarity.",
+    "Page 23 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Red handwritten date and time in bottom right corner",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "11/3/25 @ 11:30",
+          "normalized_text": "Handwritten date and time indicating when the document was signed or reviewed.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "Handwritten date and time indicating when the document was signed or reviewed.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Haw",
+          "normalized_text": "Handwritten signature, likely indicating the name of the person who signed or reviewed the document.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "Handwritten signature, likely indicating the name of the person who signed or reviewed the document.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.97,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 2,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.0,
+      "items_needing_review": 1,
+      "review_reasons": [
+        "Page 2 extraction failed"
+      ]
+    },
+    {
+      "page_number": 3,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.0,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 4,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten medication names and dosages in 'before' section.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten medication names and dosages in 'presently' section.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_3",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten medication names and dosages in 'after' section.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_4",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten note 'See 2 Sheets' next to 'presently' section.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 4,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Bupropion 450 mg /day D.Laxetine 40 mg",
+          "normalized_text": "The patient was taking Bupropion at 450 mg per day and D.Laxetine at 40 mg before the work injury.",
+          "relates_to_field_ids": [
+            "before_stress"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "The patient was taking Bupropion at 450 mg per day and D.Laxetine at 40 mg before the work injury.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 4,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "O + Tylenol 500 mg 2/week",
+          "normalized_text": "The patient is currently taking a combination of O (likely OxyContin or another opioid) and Tylenol (acetaminophen) at 500 mg, twice per week.",
+          "relates_to_field_ids": [
+            "presently_pain"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "The patient is currently taking a combination of O (likely OxyContin or another opioid) and Tylenol (acetaminophen) at 500 mg, twice per week.",
+          "ocr_confidence": 0.88,
+          "interpretation_confidence": 0.88,
+          "needs_review": true,
+          "review_reason": "Ambiguous 'O' - could be OxyContin, Oxycodone, or another opioid. Requires clarification for clinical safety."
+        },
+        {
+          "annotation_id": "hw_3",
+          "page_number": 4,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Synthroid 150 mcg",
+          "normalized_text": "The patient was taking Synthroid at 150 mcg before the work injury and is still taking it presently.",
+          "relates_to_field_ids": [
+            "before_thyroid",
+            "presently_thyroid"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "The patient was taking Synthroid at 150 mcg before the work injury and is still taking it presently.",
+          "ocr_confidence": 0.92,
+          "interpretation_confidence": 0.92,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_4",
+          "page_number": 4,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "See 2 sheets",
+          "normalized_text": "The patient's current medication list is detailed on two additional sheets, which should be referenced for complete information.",
+          "relates_to_field_ids": [
+            "other_presently",
+            "other_before"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "cross_reference",
+          "semantic_meaning": "The patient's current medication list is detailed on two additional sheets, which should be referenced for complete information.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.92,
+      "items_needing_review": 1,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 23,
+    "lawyer_page_count": 4
+  }
+}

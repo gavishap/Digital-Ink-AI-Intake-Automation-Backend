@@ -1,0 +1,81 @@
+{
+  "form_id": "aurora_higuera_init",
+  "form_name": "AURORA HIGUERA INIT",
+  "extraction_timestamp": "2026-03-08T05:01:59.227245",
+  "resolved_references": [],
+  "overall_confidence": 0.9142105263157895,
+  "total_items_needing_review": 26,
+  "all_review_reasons": [
+    "The handwritten response for question 11 ('B Hands & Finger > R, L Foot') is slightly ambiguous due to cursive script, potentially leading to misinterpretation of the affected areas.",
+    "The circled medications 'Tylenol' and 'Omeprazole' are ambiguous as 'Tylenol' is a brand name for acetaminophen, and 'Omeprazole' is a specific drug. The annotation 'History of Allergies: Tadine' may refer to Tylenol, but this is not explicitly confirmed.",
+    "The patient reports 'YES' to having apnea results (q16), but the medications listed (Propanolol, Celebrex, AcidGone, Trazadone) do not include any specific apnea treatment. This may indicate a discrepancy or incomplete information.",
+    "The patient reports 'NO' to having ever had a Sleep Study Test (q15), but the annotation for q16 indicates 'YES' for apnea results. This is a potential contradiction as apnea results typically come from a sleep study.",
+    "The patient reports awakening 1-2 times per night to urinate (q14) and no headache in the morning (q17). While these are not directly contradictory, the combination may suggest a need for further evaluation of nocturia and its potential causes.",
+    "The date '12-3-25' is ambiguous. It could be interpreted as December 3, 2025, or December 3, 2026. This ambiguity requires clarification for accurate record-keeping.",
+    "The dosage for Propanolol is recorded as '50mg?' with a question mark, indicating uncertainty or a pending confirmation of the dose.",
+    "The extracted value 'Ibuprofen OTC 2x Day for since 2021' contains ambiguous phrasing. 'for since 2021' is unclear and could be misinterpreted as 'for 2021' or 'since 2021'. This requires human review to clarify the intended meaning and duration.",
+    "Page 14 extraction failed",
+    "Page 15 extraction failed",
+    "Page 17 extraction failed",
+    "Handwritten annotations 'WPC' and 'DFV' are ambiguous. These are not standard abbreviations in oral cancer screening forms. Their meaning requires context to determine clinical relevance.",
+    "Page 23 extraction failed",
+    "Page 24 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten date and time at bottom left.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 2,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 24,
+    "lawyer_page_count": 2
+  }
+}

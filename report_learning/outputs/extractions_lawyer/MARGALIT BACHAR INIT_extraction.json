@@ -1,0 +1,111 @@
+{
+  "form_id": "margalit_bachar_init",
+  "form_name": "MARGALIT BACHAR INIT",
+  "extraction_timestamp": "2026-03-08T11:04:59.540846",
+  "resolved_references": [],
+  "overall_confidence": 0.9,
+  "total_items_needing_review": 36,
+  "all_review_reasons": [
+    "The handwritten date '7/107 Reseda' is ambiguous. '7/107' is not a valid date format (month 7 has only 31 days). It is likely a typographical error or misinterpretation of '7/18/25' or '7/10/25'.",
+    "The extracted value 'Tcpro 10y/day for ~5-7 yrs' contains the ambiguous medication name 'Tcpro', which may refer to Tylenol or another drug. This requires human verification to confirm the correct medication name and dosage.",
+    "The extracted value 'Oreproide' is likely a misspelling or shorthand for 'Omeprazole', a common proton pump inhibitor. This requires human verification to confirm the correct medication name.",
+    "The extracted value 'Ibuprofen 800mg 3x/week ~5 years' is partially ambiguous. The dosage '800mg' is standard, but the frequency '3x/week' is low for chronic pain management. This requires human verification to confirm appropriateness and accuracy.",
+    "The extracted name 'Marga lit Bachor' appears to be a misspelling or shorthand for 'Margaret Bachor'. The handwriting is legible but ambiguous, requiring human verification to confirm the correct spelling.",
+    "The date of injury is recorded as 'CT 01/01/2010-02/28/2023'. The 'CT' prefix is ambiguous and may indicate a specific context or error. The date range spans over 13 years, which is unusual for a single injury.",
+    "The annotation 'Stress d Look' is ambiguous. It could be a patient's note indicating stress or a clinician's instruction to 'look' at the injury or report. The meaning is unclear without additional context.",
+    "Multiple annotations (hw_3 to hw_100) reference 'handwritten notes in margin about bruxism' but do not specify the actual content or context of the notes. This makes their clinical relevance ambiguous and requires human review to determine if they contain actionable information.",
+    "Contradictory annotations exist for multiple fields. For example, 'Locking' is annotated as 'Yes' but also has a 'No' annotation. Similarly, 'Bite feels off' has both 'Yes' and 'No' annotations. This inconsistency may indicate errors in data capture or patient reporting.",
+    "Page 13 extraction failed",
+    "Page 19 extraction failed",
+    "The date '11/29/202' is partially incomplete, missing the final digit(s) of the year. While the month and day are valid, the year is ambiguous and could be 2020, 2021, 2022, etc. This requires human review to confirm the correct year.",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten date and time at bottom right.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "7/18/25 @ 9am",
+          "normalized_text": "A handwritten date and time indicating the document was reviewed or annotated on July 18, 2026, at 9:00 AM.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "A handwritten date and time indicating the document was reviewed or annotated on July 18, 2026, at 9:00 AM.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "7/107 Reseda",
+          "normalized_text": "A handwritten date and location, likely indicating the document was reviewed or annotated on July 107, 2026, in Reseda. The date '7/107' is likely a typographical error or misinterpretation of '7/18/25' or '7/10/25'.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "A handwritten date and location, likely indicating the document was reviewed or annotated on July 107, 2026, in Reseda. The date '7/107' is likely a typographical error or misinterpretation of '7/18/25' or '7/10/25'.",
+          "ocr_confidence": 0.7,
+          "interpretation_confidence": 0.7,
+          "needs_review": true,
+          "review_reason": "Date '7/107' is likely a typographical error or misinterpretation of '7/18/25' or '7/10/25'."
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.7,
+      "items_needing_review": 1,
+      "review_reasons": [
+        "The handwritten date '7/107 Reseda' is ambiguous. '7/107' is not a valid date format (month 7 has only 31 days). It is likely a typographical error or misinterpretation of '7/18/25' or '7/10/25'."
+      ]
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

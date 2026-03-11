@@ -1,0 +1,291 @@
+{
+  "model": "Qwen3-VL-8B (enh)",
+  "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "prompt": "enhanced",
+  "dpi": 150,
+  "parsed_response": {
+    "header": {
+      "name": "Aubrie Vasquez",
+      "date": "1/18/2025",
+      "birth_date": "8/16/94",
+      "sex": "FEMALE"
+    },
+    "yes_no_questions": [
+      {
+        "number": 1,
+        "topic": "Heart problems",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 2,
+        "topic": "Metal joint replacements",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 3,
+        "topic": "High Blood Pressure",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 4,
+        "topic": "Diabetes",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 5,
+        "topic": "Stomach acids in mouth/throat",
+        "observation": "YES is circled",
+        "answer": "YES",
+        "notes": ""
+      },
+      {
+        "number": 6,
+        "topic": "Kidney problems",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 7,
+        "topic": "Thyroid problem",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 8,
+        "topic": "HIV, Hepatitis, TB, VD",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 9,
+        "topic": "Blood thinners",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 10,
+        "topic": "Breathing problems",
+        "observation": "YES is circled, with 'Asthma' written",
+        "answer": "YES",
+        "notes": "Asthma written in handwriting"
+      },
+      {
+        "number": 11,
+        "topic": "Numbness or pins/needles",
+        "observation": "NO is circled, with 'Left 2 fingers > shoulders, forehead' written",
+        "answer": "NO",
+        "notes": "Handwritten note: 'Left 2 fingers > shoulders, forehead'"
+      },
+      {
+        "number": 12,
+        "topic": "Liver problems",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 13,
+        "topic": "Urinary problems",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 14,
+        "topic": "Awakens at night to urinate",
+        "observation": "YES is circled, with '3' written",
+        "answer": "YES",
+        "notes": "Number '3' written in handwriting"
+      },
+      {
+        "number": 15,
+        "topic": "Sleep Study Test",
+        "observation": "NO is circled, with '~2018' and 'Apnea Results? YES NO ?' written",
+        "answer": "NO",
+        "notes": "Handwritten: '~2018', 'Apnea Results? YES NO ?'"
+      },
+      {
+        "number": 16,
+        "topic": "CPAP mask use",
+        "observation": "NO is circled",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 17,
+        "topic": "Awaken with headache in temple/forehead",
+        "observation": "YES is circled",
+        "answer": "YES",
+        "notes": ""
+      }
+    ],
+    "allergies": "Caphor",
+    "dx_post_injury_marks": [
+      "Gastric Acid",
+      "Kidney Problems",
+      "Thyroid Problems"
+    ],
+    "other_observations": [
+      "Nurse: Nancy",
+      "INTP: NO",
+      "Home Tel: ( )",
+      "Cell: (818) 855-4851",
+      "Address: P.O. Box 241 Pearblossom, CA 93553",
+      "Medications: Lanzoprazole, Diclofenac Gel",
+      "Blood Pressure: 98.75/163.5 mmHg (handwritten)",
+      "Handwritten note under question 11: 'Left 2 fingers > shoulders, forehead'",
+      "Handwritten note under question 15: '~2018', 'Apnea Results? YES NO ?'",
+      "Handwritten note under question 14: '3'",
+      "Handwritten note under question 10: 'Asthma'",
+      "Handwritten note under question 5: 'YES' circled",
+      "Handwritten note under question 17: 'YES' circled",
+      "Handwritten note under question 1: 'NO' circled",
+      "Handwritten note under question 2: 'NO' circled",
+      "Handwritten note under question 3: 'NO' circled",
+      "Handwritten note under question 4: 'NO' circled",
+      "Handwritten note under question 6: 'NO' circled",
+      "Handwritten note under question 7: 'NO' circled",
+      "Handwritten note under question 8: 'NO' circled",
+      "Handwritten note under question 9: 'NO' circled",
+      "Handwritten note under question 12: 'NO' circled",
+      "Handwritten note under question 13: 'NO' circled",
+      "Handwritten note under question 16: 'NO' circled"
+    ]
+  },
+  "scores": {
+    "yn_correct": 15,
+    "yn_total": 17,
+    "yes_hit": 4,
+    "yes_total": 6,
+    "no_hit": 11,
+    "no_total": 11,
+    "hdr_hit": 3,
+    "hdr_total": 4,
+    "allergy_ok": true,
+    "dx_hit": 1,
+    "dx_total": 2,
+    "followup_hit": 4,
+    "followup_total": 5,
+    "per_q": {
+      "1": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "2": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "3": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "4": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "5": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "YES is circled"
+      },
+      "6": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "7": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "8": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "9": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "10": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "Asthma written in handwriting"
+      },
+      "11": {
+        "expected": "YES",
+        "got": "NO",
+        "ok": false,
+        "notes": "Handwritten note: 'Left 2 fingers > shoulders, forehead'"
+      },
+      "12": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "13": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "14": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "Number '3' written in handwriting"
+      },
+      "15": {
+        "expected": "YES",
+        "got": "NO",
+        "ok": false,
+        "notes": "Handwritten: '~2018', 'Apnea Results? YES NO ?'"
+      },
+      "16": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "NO is circled"
+      },
+      "17": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "YES is circled"
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 2214,
+    "output_tokens": 1357
+  },
+  "elapsed_s": 22.56023645401001
+}

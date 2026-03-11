@@ -1,0 +1,127 @@
+{
+  "form_id": "miguel_duran_saldivar_init",
+  "form_name": "MIGUEL DURAN SALDIVAR INIT",
+  "extraction_timestamp": "2026-03-08T12:46:54.022952",
+  "resolved_references": [],
+  "overall_confidence": 0.9277777777777777,
+  "total_items_needing_review": 15,
+  "all_review_reasons": [
+    "The date '12/2/202' is incomplete. The year is truncated, making it ambiguous whether it's 2020, 2022, or another year in the 2020s. This requires human review to confirm the correct year.",
+    "The date '12 2 /202' is ambiguous. The year '202' is incomplete and could be interpreted as 2025 or 2027, which are outside the expected range of 2020-2026. This requires human review to confirm the correct year.",
+    "The patient marked 'NO' for bad breath after the injury, but the Halitosis Meter Reading is '4' (Strong Odor). This is a contradiction, as a strong odor would typically be associated with bad breath. This requires human review to resolve the inconsistency.",
+    "The date '12/2/2025' has low confidence (0.85) and may be misread. Alternative interpretations include 2025 and 2027, which are outside the expected range of 2020-2026. This requires human review to confirm the correct year.",
+    "Page 9 extraction failed",
+    "The 'Name of Dentist' field contains illegible handwriting ('? ?'), making it impossible to extract a valid name. This may impact continuity of care or referral accuracy.",
+    "Page 12 extraction failed",
+    "The patient circled 'NO' for 'Hard Foods', 'Chewy Foods', and 'Soft Foods', indicating they can eat these without pain. This contradicts the patient's own statements in the 'Eating / Chewing' section, which state they 'cannot eat hard or chewy foods' and 'must eat only soft foods'.",
+    "Page 16 extraction failed",
+    "Page 20 extraction failed",
+    "Page 23 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment details at bottom of form.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 2,
+      "field_values": {
+        "defense_attorney": {
+          "value": "Amanda Laszacs",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "firm": {
+          "value": "Law Offices of Schlossberg & Umholtz",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "address": {
+          "value": "3050 Saturn Street Suite 100, Brea, CA 92821",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "contact_phone": {
+          "value": "310-568-8460",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "contact_fax": {
+          "value": "714-526-7420",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "email": {
+          "value": "Alaszacs@Schlossberglaw.Com",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        }
+      },
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.99,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 23,
+    "lawyer_page_count": 2
+  }
+}

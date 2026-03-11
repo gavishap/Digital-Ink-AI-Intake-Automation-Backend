@@ -1,0 +1,127 @@
+{
+  "form_id": "rosa_m._rosales_init",
+  "form_name": "ROSA M. ROSALES INIT",
+  "extraction_timestamp": "2026-03-08T14:39:33.418016",
+  "resolved_references": [],
+  "overall_confidence": 0.9254999999999999,
+  "total_items_needing_review": 17,
+  "all_review_reasons": [
+    "The annotation indicates the patient is taking Metformin for a thyroid problem, which is not a standard or appropriate treatment for thyroid disorders. Metformin is primarily used for type 2 diabetes.",
+    "The handwritten notes in the 'Other' fields for 'before the work injury' and 'after the work injury' sections indicate 'other medications' were taken, but no specific medications are listed. This creates a gap in the clinical record.",
+    "The year in the date field is ambiguous ('202'), potentially indicating 2025, 2026, or 2027. This requires human review to determine the correct year.",
+    "The halitosis meter reading is '0' (No Odor), which contradicts the patient's self-reported VAS scores indicating significant interference and intensity (e.g., 8-16 on a 0-10 scale). This discrepancy requires human review to determine if the meter was malfunctioning, misread, or if the patient's subjective experience is more accurate.",
+    "The date '11/25/202' is ambiguous. The year '202' is likely a typo for '2026', but cannot be confirmed without human review.",
+    "The date '8-5-23' is ambiguous without context; it could be 8/5/2023 or 8/5/2020. Human review is needed to confirm the correct year.",
+    "Page 8 extraction failed",
+    "The phrase 'Left Ledecker before from uterine fibroid' in the 'Past Surgeries' field is ambiguous. It is unclear whether 'Ledecker' refers to a specific surgical procedure, a miswriting, or a medical term. The context does not clarify its meaning.",
+    "The notation '4x Back' in the 'History of Non-Industrial Injuries' field is vague. It is unclear whether this refers to four separate incidents, four occurrences of the same injury, or a different interpretation (e.g., '4x' as in 'four times').",
+    "The term 'Atronglyc' in the 'Past Medical History' field appears to be a misspelling of a medical term (possibly 'Atherosclerosis' or similar). The handwriting is legible enough to identify the likely intended term, but the exact term requires verification.",
+    "The extracted value 'Cyan = Dkjt' is ambiguous and appears to be a scribble or misinterpretation of handwriting, making it unclear if it represents a real name or a correction.",
+    "Page 17 extraction failed",
+    "The date '11/25/25' is handwritten at the bottom right. The year '25' is ambiguous and may be a typo for '2025', as the top right corner shows '5/2025'."
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten date and time at bottom right.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten location 'Redlands' at bottom right.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "12/18/25 @ 2:30 PM",
+          "normalized_text": "Handwritten date and time indicating a scheduled or recorded event on December 18, 2025, at 2:30 PM.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "Handwritten date and time indicating a scheduled or recorded event on December 18, 2025, at 2:30 PM.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Redlands",
+          "normalized_text": "Handwritten location indicating the place associated with the event or note, specifically 'Redlands'.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "Handwritten location indicating the place associated with the event or note, specifically 'Redlands'.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.97,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

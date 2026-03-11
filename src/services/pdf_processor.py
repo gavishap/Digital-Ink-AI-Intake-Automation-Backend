@@ -20,7 +20,7 @@ class PDFProcessor:
     
     def __init__(
         self,
-        dpi: int = 150,
+        dpi: int = 250,
         image_format: str = "PNG",
         output_dir: Optional[Path] = None,
     ):

@@ -46,3 +46,16 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Training data (large files, not needed in repo)
+report_learning/training_data/source_forms/
+report_learning/training_data/completed_reports/
+report_learning/training_data/reports/
+
+# Large extraction outputs (training artifacts)
+report_learning/outputs/extractions/
+report_learning/outputs/extractions_v2/
+report_learning/outputs/extractions_trimmed/
+report_learning/outputs/correlations/
+report_learning/outputs/scanned/
+report_learning/outputs/generated_reports/

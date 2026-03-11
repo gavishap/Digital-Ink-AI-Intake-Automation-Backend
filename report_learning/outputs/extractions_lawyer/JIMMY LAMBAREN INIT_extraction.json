@@ -1,0 +1,126 @@
+{
+  "form_id": "jimmy_lambaren_init",
+  "form_name": "JIMMY LAMBAREN INIT",
+  "extraction_timestamp": "2026-03-08T08:02:57.439094",
+  "resolved_references": [],
+  "overall_confidence": 0.917391304347826,
+  "total_items_needing_review": 31,
+  "all_review_reasons": [
+    "Margin note 'Pert n di Buel and Fusin in Futs' is illegible and potentially contains misspellings or unclear medical terminology. Requires human review to interpret clinical relevance.",
+    "Margin note 'Back' is ambiguous. While it may refer to back pain, the context is unclear without further clarification. Requires human review to confirm clinical relevance.",
+    "The notation 'Never 2/day' under the 'Pain' field is ambiguous. It is unclear whether 'Never' indicates no medication is taken, or if '2/day' is a separate note or error.",
+    "The symbol '$' under 'High Blood Pressure' is not standard medical notation. It may indicate cost concern, but its clinical meaning is unclear.",
+    "The handwritten entry 'Chuleti' under 'Other' is not a standard medication name. It may be a brand name or a misspelling, requiring verification.",
+    "The date '11/08/2026' was extracted, but the handwritten '5' in '2025' is circled, suggesting the intended year is 2025. This requires human review to confirm the correct year.",
+    "The patient reports 'NO' bad breath both before and after the injury, but the Halitosis Meter Reading is '4' (Moderate Odor). This is a contradiction that needs human review to resolve.",
+    "The extracted value 'Dniz / Dnsluth' is ambiguous and may be a shorthand or misspelling. It requires clarification from the patient or clinician.",
+    "The extracted value '8-12-15' is ambiguous. It may indicate a range of hours or an irregular schedule, which requires human review to confirm.",
+    "Page 13 extraction failed",
+    "Page 21 extraction failed",
+    "Page 26 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten date and time with location note at bottom right.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Red handwritten 'AA' with arrow pointing to table.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "11/18/25 @ 9am Reseda",
+          "normalized_text": "A handwritten note indicating a date and time (November 18, 2025, at 9am) and a location (Reseda). The date appears to be a future date, possibly indicating a scheduled event or a note made for future reference.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating a date and time (November 18, 2025, at 9am) and a location (Reseda). The date appears to be a future date, possibly indicating a scheduled event or a note made for future reference.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "AA",
+          "normalized_text": "A red handwritten 'AA' with an arrow pointing to the table of participants, likely indicating a specific item or area of interest for review or attention.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "A red handwritten 'AA' with an arrow pointing to the table of participants, likely indicating a specific item or area of interest for review or attention.",
+          "ocr_confidence": 0.9,
+          "interpretation_confidence": 0.9,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 26,
+    "lawyer_page_count": 1
+  }
+}

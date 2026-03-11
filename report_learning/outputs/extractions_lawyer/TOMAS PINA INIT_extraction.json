@@ -1,0 +1,435 @@
+{
+  "form_id": "tomas_pina_init",
+  "form_name": "TOMAS PINA INIT",
+  "extraction_timestamp": "2026-03-08T15:40:26.753878",
+  "resolved_references": [],
+  "overall_confidence": 0.9119999999999999,
+  "total_items_needing_review": 12,
+  "all_review_reasons": [
+    "The extracted date '12/1/2026' appears to be a clerical error, as the annotations indicate the year should be 2025. The date is outside the expected range (2020-2026) and requires human review to confirm the correct value.",
+    "The value '1 X month' for smoking increase is ambiguous and inconsistent with the previously recorded '1 pack cigarettes/day'. This may indicate a clerical error or misinterpretation.",
+    "The extracted date '12/1/2025' is illegible in the original document. The handwriting is ambiguous and could be misinterpreted.",
+    "The extracted date 'CT 11-4-2021 to 11-4-2027' is illegible in the original document. The handwriting is ambiguous and could be misinterpreted.",
+    "The handwritten annotation 'Hortic Wab Cunit : Muy Bullish. Decint due to Sepel Oritik. Wuld be nul for y. =) sleepless, cuffy, stus, depressin. Tru Psych ??' is highly illegible in parts, making full interpretation difficult and potentially inaccurate.",
+    "Page 13 extraction failed",
+    "The annotation '4' for 'Abfractions' lacks context. The grading scale (e.g., 0-4, 1-5) is not specified, making the clinical interpretation ambiguous.",
+    "The annotation 'Class I II III Occlusion' for 'Erosion' is unclear. The term 'Class I II III Occlusion' is not a standard dental classification, and its meaning is context-dependent.",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 10,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten note 'cleaning 11/20' in top right corner.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten name 'Teresa Brooks' under 'Insurance Carrier'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_3",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'ad' before 'Teresa Brooks' under 'Insurance Carrier'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_4",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'Lio. Bradford & Bartel, LLP' under 'Defense Attorney'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_5",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'Att'y Angelo Butler' under 'Defense Attorney'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_6",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'KPT: Tuesday 12/1/25 at 7:30am Hawthorne' at bottom.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_7",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'Sched 10/1' at bottom right.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_8",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'ad' before 'Teresa Brooks' under 'Insurance Carrier'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_9",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'ad' before 'Teresa Brooks' under 'Insurance Carrier'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_10",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'ad' before 'Teresa Brooks' under 'Insurance Carrier'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "cleaning 11/20",
+          "normalized_text": "A handwritten note indicating a cleaning task scheduled or completed on November 20, 2026.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating a cleaning task scheduled or completed on November 20, 2026.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Teresa Brooks",
+          "normalized_text": "The name of the insurance carrier's contact person, Teresa Brooks.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The name of the insurance carrier's contact person, Teresa Brooks.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_3",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ad",
+          "normalized_text": "The abbreviation 'ad' likely stands for 'ad hoc' or 'ad interim', indicating a temporary or special designation for Teresa Brooks as the contact person.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The abbreviation 'ad' likely stands for 'ad hoc' or 'ad interim', indicating a temporary or special designation for Teresa Brooks as the contact person.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_4",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Lio. Bradford & Bartel, LLP",
+          "normalized_text": "The name of the law firm representing the defense attorney.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The name of the law firm representing the defense attorney.",
+          "ocr_confidence": 0.97,
+          "interpretation_confidence": 0.97,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_5",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Att'y Angelo Butler",
+          "normalized_text": "The name of the defense attorney assigned to the case.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The name of the defense attorney assigned to the case.",
+          "ocr_confidence": 0.96,
+          "interpretation_confidence": 0.96,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_6",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "KPT: Tuesday 12/1/25 at 7:30am Hawthorne",
+          "normalized_text": "A note indicating a scheduled court appearance (KPT) on Tuesday, December 1, 2026, at 7:30 AM in Hawthorne.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A note indicating a scheduled court appearance (KPT) on Tuesday, December 1, 2026, at 7:30 AM in Hawthorne.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_7",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Sched 10/1",
+          "normalized_text": "A note indicating a scheduled event or meeting on October 1, 2026.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A note indicating a scheduled event or meeting on October 1, 2026.",
+          "ocr_confidence": 0.9,
+          "interpretation_confidence": 0.9,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_8",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ad",
+          "normalized_text": "The abbreviation 'ad' likely stands for 'ad hoc' or 'ad interim', indicating a temporary or special designation for Teresa Brooks as the contact person.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The abbreviation 'ad' likely stands for 'ad hoc' or 'ad interim', indicating a temporary or special designation for Teresa Brooks as the contact person.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_9",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ad",
+          "normalized_text": "The abbreviation 'ad' likely stands for 'ad hoc' or 'ad interim', indicating a temporary or special designation for Teresa Brooks as the contact person.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The abbreviation 'ad' likely stands for 'ad hoc' or 'ad interim', indicating a temporary or special designation for Teresa Brooks as the contact person.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_10",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ad",
+          "normalized_text": "The abbreviation 'ad' likely stands for 'ad hoc' or 'ad interim', indicating a temporary or special designation for Teresa Brooks as the contact person.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The abbreviation 'ad' likely stands for 'ad hoc' or 'ad interim', indicating a temporary or special designation for Teresa Brooks as the contact person.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

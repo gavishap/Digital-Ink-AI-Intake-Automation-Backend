@@ -1,0 +1,119 @@
+{
+  "form_id": "fabian_castro_laynez_init",
+  "form_name": "FABIAN CASTRO LAYNEZ INIT",
+  "extraction_timestamp": "2026-03-08T06:02:02.387046",
+  "resolved_references": [],
+  "overall_confidence": 0.9555555555555555,
+  "total_items_needing_review": 9,
+  "all_review_reasons": [
+    "Page 2 extraction failed",
+    "Handwritten text 'Vati 1 day 3 much' is ambiguous. '3 much' may be intended as '3 months' or '3 months ago'.",
+    "Handwritten text 'Syrup 1 day 4 month' is ambiguous. '4 month' may be intended as '4 months' or '4 months ago'.",
+    "Page 8 extraction failed",
+    "The term 'Binning' is a handwritten note that is not standard medical terminology. Its clinical meaning in this context is unclear and requires verification.",
+    "Page 21 extraction failed",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment note at bottom left.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "annot_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Appt : Wed 8/1/25 @ 1pm Reseda",
+          "normalized_text": "Handwritten note indicating an appointment scheduled for Wednesday, August 1, 2025, at 1:00 PM in Reseda.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating an appointment scheduled for Wednesday, August 1, 2025, at 1:00 PM in Reseda.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "annot_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "sched 5/30",
+          "normalized_text": "Handwritten note indicating a scheduled date of May 30, 2026.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating a scheduled date of May 30, 2026.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 2,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.0,
+      "items_needing_review": 1,
+      "review_reasons": [
+        "Page 2 extraction failed"
+      ]
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 2
+  }
+}

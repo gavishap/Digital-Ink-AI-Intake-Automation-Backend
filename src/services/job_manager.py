@@ -282,6 +282,141 @@ def extract_patient_summary(pages: list[dict]) -> dict:
 # Report persistence
 # =============================================================================
 
+# =============================================================================
+# Patient CRUD
+# =============================================================================
+
+def create_patient(
+    first_name: str,
+    last_name: str,
+    date_of_birth: Optional[str] = None,
+    phone_primary: Optional[str] = None,
+) -> str:
+    sb = get_supabase()
+    row: dict = {"first_name": first_name, "last_name": last_name}
+    if date_of_birth:
+        row["date_of_birth"] = date_of_birth
+    if phone_primary:
+        row["phone_primary"] = phone_primary
+
+    result = sb.table("patients").insert(row).execute()
+    patient_id = result.data[0]["id"]
+    logger.info("Created patient %s: %s %s", patient_id[:8], first_name, last_name)
+    return patient_id
+
+
+def list_patients(
+    search: Optional[str] = None,
+    limit: int = 50,
+    offset: int = 0,
+) -> dict:
+    sb = get_supabase()
+    query = (
+        sb.table("patients")
+        .select("*, documents(id)", count="exact")
+        .order("created_at", desc=True)
+        .range(offset, offset + limit - 1)
+    )
+
+    result = query.execute()
+    patients = result.data or []
+    total = result.count if result.count is not None else len(patients)
+
+    if search:
+        search_lower = search.lower()
+        patients = [
+            p for p in patients
+            if search_lower in f"{p.get('first_name', '')} {p.get('last_name', '')}".lower()
+            or search_lower in (p.get('phone_primary') or '').lower()
+        ]
+
+    formatted = []
+    for p in patients:
+        docs = p.pop("documents", []) or []
+        formatted.append({
+            **p,
+            "document_count": len(docs),
+        })
+
+    return {"patients": formatted, "total": total}
+
+
+def get_patient_detail(patient_id: str) -> Optional[dict]:
+    sb = get_supabase()
+
+    patient_result = sb.table("patients").select("*").eq("id", patient_id).execute()
+    if not patient_result.data:
+        return None
+    patient = patient_result.data[0]
+
+    docs_result = (
+        sb.table("documents")
+        .select("*, extraction_jobs(id, status, completed_at, percentage)")
+        .eq("patient_id", patient_id)
+        .order("created_at", desc=True)
+        .execute()
+    )
+
+    reports_result = (
+        sb.table("reports")
+        .select("*")
+        .eq("patient_id", patient_id)
+        .order("created_at", desc=True)
+        .execute()
+    )
+
+    report_urls = []
+    for r in (reports_result.data or []):
+        url = None
+        if r.get("storage_path"):
+            try:
+                from . import storage_manager
+                url = storage_manager.get_signed_url(
+                    storage_manager.BUCKET_REPORTS, r["storage_path"], expires_in=3600,
+                )
+            except Exception:
+                pass
+        report_urls.append({
+            "id": r["id"],
+            "report_type": r.get("report_type"),
+            "status": r.get("status"),
+            "storage_path": r.get("storage_path"),
+            "created_at": r.get("created_at", ""),
+            "metadata": r.get("metadata"),
+            "download_url": url,
+            "source_document_ids": r.get("source_document_ids"),
+        })
+
+    documents = []
+    for d in (docs_result.data or []):
+        jobs = d.pop("extraction_jobs", []) or []
+        latest_job = jobs[0] if jobs else None
+        documents.append({
+            "id": d["id"],
+            "file_name": d.get("file_name", ""),
+            "file_type": d.get("file_type", ""),
+            "status": d.get("status", "uploaded"),
+            "total_pages": d.get("total_pages"),
+            "created_at": d.get("created_at", ""),
+            "latest_job": {
+                "id": latest_job["id"],
+                "status": latest_job["status"],
+                "completed_at": latest_job.get("completed_at"),
+                "percentage": latest_job.get("percentage"),
+            } if latest_job else None,
+        })
+
+    return {
+        "patient": patient,
+        "documents": documents,
+        "reports": report_urls,
+    }
+
+
+# =============================================================================
+# Report persistence
+# =============================================================================
+
 def save_report(
     document_id: Optional[str],
     job_id: Optional[str],

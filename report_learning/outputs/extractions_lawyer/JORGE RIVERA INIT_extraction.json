@@ -1,0 +1,105 @@
+{
+  "form_id": "jorge_rivera_init",
+  "form_name": "JORGE RIVERA INIT",
+  "extraction_timestamp": "2026-03-08T09:07:40.427792",
+  "resolved_references": [],
+  "overall_confidence": 0.9315,
+  "total_items_needing_review": 11,
+  "all_review_reasons": [
+    "The extracted date '11/20/2026' is ambiguous. The annotation indicates the original handwritten text was '11/20/2025', suggesting a potential error in normalization. The year 2026 is outside the expected range (2020-2026) and may be a transcription error.",
+    "The date '11/20/2025' is illegible due to the handwriting being unclear and potentially misinterpreted. The year 2025 is in the future, which may indicate an error or a future appointment.",
+    "Annotation hw_3 ('the Court because of low he grinds his teeth') is ambiguous. It is unclear whether 'the Court' refers to a legal entity, a court of law, or a misinterpretation of 'court' (as in 'court of the teeth'). The phrase 'because of low' is incomplete and lacks context. This note may indicate a psychosocial or legal context influencing bruxism, but its exact meaning is unclear.",
+    "The handwritten annotation 'Bypass Surgery 5 years ago in 2021, left 90 lbs.' includes a weight loss figure ('left 90 lbs.') which is not a standard medical field and may be misinterpreted. The phrase 'left 90 lbs.' is ambiguous and could be a typo or misinterpretation of 'lost 90 lbs.' or 'left 90 lbs. weight'.",
+    "The annotation 'Clover teeth' is not a standard medical term. It may be a misinterpretation or a specific patient descriptor. Requires verification to ensure correct clinical interpretation.",
+    "Page 13 extraction failed",
+    "The annotation 'DFV' is repeated 100 times across the document, with identical interpretations and confidence scores. This is likely a data extraction error or a redundant annotation that does not reflect actual clinical data. The repetition is not clinically meaningful and should be flagged for review.",
+    "The handwritten 'DFV' annotations are illegible in some contexts due to overlapping or unclear handwriting. The repetition of identical annotations across multiple locations may obscure the actual clinical meaning.",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment note at bottom of page.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "appt: Thursday 11/20/25 at 11:30am Redlands",
+          "normalized_text": "A handwritten note indicating a scheduled appointment on Thursday, November 20, 2025, at 11:30 AM in Redlands.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating a scheduled appointment on Thursday, November 20, 2025, at 11:30 AM in Redlands.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "(canceled 8/11/25)",
+          "normalized_text": "A handwritten note indicating that an appointment was canceled on August 11, 2025.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating that an appointment was canceled on August 11, 2025.",
+          "ocr_confidence": 0.92,
+          "interpretation_confidence": 0.92,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.97,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

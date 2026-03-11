@@ -1,0 +1,98 @@
+{
+  "form_id": "aubrie_vasquez_init",
+  "form_name": "AUBRIE VASQUEZ INIT",
+  "extraction_timestamp": "2026-03-08T04:02:40.209499",
+  "resolved_references": [],
+  "overall_confidence": 0.9375,
+  "total_items_needing_review": 14,
+  "all_review_reasons": [
+    "The extracted date '01/18/2026' is ambiguous. The handwritten annotation suggests '01/18/2025', which may be an error. The year 2026 is outside the expected range of 2020-2026, but the annotation indicates a potential correction.",
+    "The extracted value 'Pne' for Blood Pressure is illegible and does not correspond to any standard blood pressure notation. It appears to be a scribble or an error.",
+    "The annotation 'Amf' is an ambiguous abbreviation. It could refer to 'Amphetamine', 'Amoxicillin', or another medication, which affects interpretation of the patient's symptoms and medication regimen.",
+    "The term 'anti-clqmnts' is likely a misspelling or abbreviation for 'anti-clotting agents' or 'anti-inflammatory agents'. The context is unclear without further information.",
+    "The phrase 'Normally takes Leppro?' is ambiguous. 'Leppro' is likely a misspelling of 'Leppro' (a brand name for a medication) or 'Leppro' (a brand name for a medication). The context is unclear without further information.",
+    "Page 12 extraction failed",
+    "The field 'First locked' is blank, which may be intentional, but the context of 'Can self-manipulate Jaw to unlock?' being 'Yes' suggests a potential inconsistency or missing information. The patient may have been able to unlock the jaw, but the specific context or timing of this event is not recorded.",
+    "The extracted value for 'Speech Dysfunction' is 'Indistinct Articulation, Hoarseness, Cotton Mouth'. While these are plausible symptoms, the phrasing is vague and could be misinterpreted. The handwritten note 'Cannot Talk for Long Periods of Time Due to Pain' is also present, which may be more specific and should be considered for inclusion or prioritization.",
+    "The value '60 Minutes' for 'Can Speak Max. Time' is extracted, but the handwritten note 'Cannot Talk for Long Periods of Time Due to Pain' suggests a more significant limitation. The extracted value may not fully capture the patient's functional limitation.",
+    "The handwritten note '2015-HVA Penny@free/gun UL teeth were fractured have been treated @ free/gun pain after healing' contains ambiguous phrasing ('free/gun') and may require clarification for accurate medical record keeping.",
+    "The annotation '??' is ambiguous and could indicate uncertainty, incompleteness, or a missing response. Its clinical meaning is unclear without further context.",
+    "Page 17 extraction failed",
+    "Page 23 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten date and time in bottom right corner",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten name 'Reseda' below date and time",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 2,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 23,
+    "lawyer_page_count": 2
+  }
+}

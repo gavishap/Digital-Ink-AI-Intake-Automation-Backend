@@ -1,0 +1,48 @@
+{
+  "form_id": "juan_coreas_torres_init",
+  "form_name": "JUAN COREAS TORRES INIT",
+  "extraction_timestamp": "2026-03-08T09:17:02.441795",
+  "resolved_references": [],
+  "overall_confidence": 0.9461111111111111,
+  "total_items_needing_review": 18,
+  "all_review_reasons": [
+    "Handwritten text in annotations hw_1 and hw_3 is somewhat illegible, making accurate medical interpretation challenging.",
+    "The handwritten value '8-10 munt cly' for bruxism onset is ambiguous. It may be intended to mean '8-10 minutes', but the handwriting is unclear and requires human review to confirm.",
+    "The value '???' for 'Treatments Received 6' is ambiguous. It indicates missing data but does not specify what was intended. Requires human review to determine if this is an error or intentional omission.",
+    "The value '???' for 'Psychological Therapy' evaluator is ambiguous. It indicates missing data but does not specify what was intended. Requires human review to determine if this is an error or intentional omission.",
+    "The value '???' for 'Chiropractic Manipulations' evaluator is ambiguous. It indicates missing data but does not specify what was intended. Requires human review to determine if this is an error or intentional omission.",
+    "The value '???' for 'Neurologist' evaluator is ambiguous. It indicates missing data but does not specify what was intended. Requires human review to determine if this is an error or intentional omission.",
+    "The field 'Still uses a nightguard?' has conflicting annotations: 'Y' (yes) and 'N' (no). This is a direct contradiction in the data.",
+    "Page 11 extraction failed",
+    "The annotation 'Hx of Bulb Palsy ~ 1/2 years ago m (L) side' contains ambiguous phrasing. The abbreviation 'm (L) side' is unclear and may refer to 'midline (left) side' or 'month (left) side', requiring clarification.",
+    "Page 16 extraction failed",
+    "The annotation 'G DFV' is ambiguous. 'DFV' could be a department code, facility identifier, or a typographical error. The meaning is unclear without additional context.",
+    "The diagnosis 'Suggestions of an Unspecified Rheumatological/Systemic Condition' (R19.6) is vague and lacks specificity. It is unclear what specific condition is being suggested, which may impact clinical decision-making.",
+    "Page 21 extraction failed",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

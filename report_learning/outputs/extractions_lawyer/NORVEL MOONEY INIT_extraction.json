@@ -1,0 +1,88 @@
+{
+  "form_id": "norvel_mooney_init",
+  "form_name": "NORVEL MOONEY INIT",
+  "extraction_timestamp": "2026-03-08T12:41:16.987407",
+  "resolved_references": [],
+  "overall_confidence": 0.9049999999999999,
+  "total_items_needing_review": 25,
+  "all_review_reasons": [
+    "The fields 'TIME STARTED', 'TIME ENDED', 'INTP', and 'CERT #' are blank, which may indicate illegible handwriting or intentional omission. These fields are critical for audit and record-keeping.",
+    "The date '11/18/2025' is in the future. While not inherently invalid, it may be an error or a placeholder. The context suggests this is a form for a patient, so a future date is unusual and requires verification.",
+    "The patient has 'Apnea Results? YES' (p1_apnea_results) but has 'NO' to 'Have you ever been given a CPAP mask to use at night to help you breathe?' (p1_has_cpap_mask). This is contradictory because a CPAP mask is typically used for apnea, and a 'YES' to apnea results should be accompanied by a 'YES' to CPAP mask use.",
+    "The handwritten value 'Naproxen 2/day 26 m' for 'presently_pain' is ambiguous. '26 m' could mean 26 months or 26 minutes, which significantly alters clinical interpretation.",
+    "The date '11/18/2025' is handwritten and appears to be a future date, which may indicate a placeholder or error in data entry. The confidence score is 0.85, which is below the threshold for high confidence.",
+    "Handwritten text in fields 'Employed at', 'Job Title', and 'What did patient do at the job?' is illegible and requires correction. 'Employed at' likely should be 'LA2 Public California', 'Job Title' likely should be 'Truck Driver' or 'Truck Owner', and 'What did patient do at the job?' requires clarification of job duties.",
+    "The extracted value 'Strongly the Accident' is ambiguous. It is unclear if this refers to a specific incident or is a misinterpretation of the form. The phrase does not align with standard form options and requires clarification.",
+    "The 'Evaluated by' field for Neurologist is incomplete. Only the label 'Evaluated by' is present, with no name filled in. This may indicate the evaluation was not completed or the provider's name was not recorded.",
+    "Page 12 extraction failed",
+    "Page 13 extraction failed",
+    "The annotation 'G DFV' is ambiguous. 'G' could stand for 'General' or 'Gross', and 'DFV' could be a clinic code or a descriptor for 'Dental, Facial, and Visceral'. The clinical meaning is unclear without context.",
+    "Page 19 extraction failed",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten date and time note at bottom right.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "11/18/25 @ 12pm Reseda",
+          "normalized_text": "A handwritten note indicating a date and time (November 18, 2025, at 12pm) and a location (Reseda).",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating a date and time (November 18, 2025, at 12pm) and a location (Reseda).",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Optional, List
 from datetime import datetime
 
-from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks, Depends, Request
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, BackgroundTasks, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
@@ -193,14 +193,6 @@ def _save_results_to_db(job_id: str, document_id: str, result, start_time: datet
     )
     job_manager.update_document(document_id, status="analyzed")
 
-    sb = get_supabase()
-    doc_row = sb.table("documents").select("patient_id").eq("id", document_id).execute()
-    has_patient = doc_row.data and doc_row.data[0].get("patient_id")
-    if not has_patient:
-        job_manager.extract_patient_from_results(page_dicts, document_id=document_id)
-    else:
-        logger.info("Skipping patient creation for document %s — inherited patient_id", document_id[:8])
-
     job_manager.write_audit_log(
         action="extraction_completed",
         resource_type="extraction_job",
@@ -342,10 +334,10 @@ async def health_check():
 async def analyze_document(
     background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
-    name: Optional[str] = None,
-    schema_path: Optional[str] = None,
-    start_page: Optional[int] = None,
-    end_page: Optional[int] = None,
+    name: Optional[str] = Form(None),
+    schema_path: Optional[str] = Form(None),
+    start_page: Optional[int] = Form(None),
+    end_page: Optional[int] = Form(None),
     user_id: str = Depends(_require_user),
 ):
     """Upload and analyze a single document (PDF or image)."""
@@ -393,15 +385,21 @@ async def analyze_document(
 async def analyze_images(
     background_tasks: BackgroundTasks,
     files: List[UploadFile] = File(...),
-    name: Optional[str] = None,
-    schema_path: Optional[str] = None,
-    page_metadata: Optional[str] = None,
-    parent_document_id: Optional[str] = None,
+    name: Optional[str] = Form(None),
+    schema_path: Optional[str] = Form(None),
+    page_metadata: Optional[str] = Form(None),
+    parent_document_id: Optional[str] = Form(None),
+    patient_id: Optional[str] = Form(None),
     user_id: str = Depends(_require_user),
 ):
     """Upload and analyze multiple page images as a batch."""
     if not files:
         raise HTTPException(status_code=400, detail="No files provided")
+
+    logger.info("analyze_images received: patient_id=%s, parent_document_id=%s, name=%s", patient_id, parent_document_id, name)
+
+    if not patient_id:
+        raise HTTPException(status_code=400, detail="patient_id is required")
 
     allowed_extensions = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
     for f in files:
@@ -419,18 +417,7 @@ async def analyze_images(
     if not name:
         name = f"batch_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"
 
-    logger.info("POST /api/analyze-images — %d files, name=%s, parent=%s", len(files), name, parent_document_id)
-
-    inherited_patient_id = None
-    if parent_document_id:
-        try:
-            sb = get_supabase()
-            parent = sb.table("documents").select("patient_id").eq("id", parent_document_id).execute()
-            if parent.data and parent.data[0].get("patient_id"):
-                inherited_patient_id = parent.data[0]["patient_id"]
-                logger.info("Inherited patient_id %s from parent document %s", inherited_patient_id[:8], parent_document_id[:8])
-        except Exception as e:
-            logger.warning("Failed to look up parent document %s: %s", parent_document_id, e)
+    logger.info("POST /api/analyze-images — %d files, name=%s, patient=%s", len(files), name, patient_id[:8])
 
     document_id = job_manager.create_document(
         file_name=f"{len(files)} page images",
@@ -438,7 +425,7 @@ async def analyze_images(
         storage_path=f"annotated/{name}/",
         total_pages=len(files),
         parent_document_id=parent_document_id,
-        patient_id=inherited_patient_id,
+        patient_id=patient_id,
     )
 
     job_id = job_manager.create_job(document_id=document_id, total_pages=len(files))
@@ -507,8 +494,8 @@ async def analyze_images(
 @app.post("/api/save-annotated-pdfs")
 async def save_annotated_pdfs(
     files: List[UploadFile] = File(...),
-    job_id: Optional[str] = None,
-    document_id: Optional[str] = None,
+    job_id: Optional[str] = Form(None),
+    document_id: Optional[str] = Form(None),
     user_id: str = Depends(_require_user),
 ):
     """Save complete annotated PDF documents to Supabase Storage and link to document record."""
@@ -708,6 +695,56 @@ async def list_extractions(user_id: str = Depends(_require_user)):
 
 
 # =============================================================================
+# Patient Management
+# =============================================================================
+
+class CreatePatientRequest(BaseModel):
+    first_name: str
+    last_name: str
+    date_of_birth: Optional[str] = None
+    phone_primary: Optional[str] = None
+
+
+@app.post("/api/patients")
+async def create_patient(body: CreatePatientRequest, user_id: str = Depends(_require_user)):
+    """Create a new patient record."""
+    patient_id = job_manager.create_patient(
+        first_name=body.first_name,
+        last_name=body.last_name,
+        date_of_birth=body.date_of_birth,
+        phone_primary=body.phone_primary,
+    )
+    job_manager.write_audit_log(
+        action="patient_created",
+        resource_type="patient",
+        resource_id=patient_id,
+        user_id=user_id,
+        details={"first_name": body.first_name, "last_name": body.last_name},
+    )
+    return {"patient_id": patient_id}
+
+
+@app.get("/api/patients")
+async def list_patients(
+    search: Optional[str] = None,
+    limit: int = 50,
+    offset: int = 0,
+    user_id: str = Depends(_require_user),
+):
+    """List patients with document counts."""
+    return job_manager.list_patients(search=search, limit=limit, offset=offset)
+
+
+@app.get("/api/patients/{patient_id}")
+async def get_patient_detail(patient_id: str, user_id: str = Depends(_require_user)):
+    """Get full patient detail with documents and reports."""
+    detail = job_manager.get_patient_detail(patient_id)
+    if not detail:
+        raise HTTPException(status_code=404, detail="Patient not found")
+    return detail
+
+
+# =============================================================================
 # Document Management
 # =============================================================================
 
@@ -832,9 +869,9 @@ async def reanalyze_document(
 @app.post("/api/reports")
 async def save_report(
     file: UploadFile = File(...),
-    job_id: Optional[str] = None,
-    document_id: Optional[str] = None,
-    report_type: str = "extraction_findings",
+    job_id: Optional[str] = Form(None),
+    document_id: Optional[str] = Form(None),
+    report_type: str = Form("extraction_findings"),
     user_id: str = Depends(_require_user),
 ):
     """Upload a generated DOCX report to Supabase Storage and create a reports record."""
@@ -883,6 +920,145 @@ async def save_report(
     )
 
     return {"report_id": report_id, "storage_path": storage_path}
+
+
+@app.get("/api/reports/{report_id}/download")
+async def get_report_download_url(report_id: str, user_id: str = Depends(_require_user)):
+    """Generate a signed download URL for a report."""
+    sb = get_supabase()
+    result = sb.table("reports").select("storage_path").eq("id", report_id).execute()
+    if not result.data:
+        raise HTTPException(status_code=404, detail="Report not found")
+
+    storage_path = result.data[0].get("storage_path")
+    if not storage_path:
+        raise HTTPException(status_code=404, detail="Report file not available")
+
+    try:
+        url = storage_manager.get_signed_url(storage_manager.BUCKET_REPORTS, storage_path, expires_in=3600)
+        return {"report_id": report_id, "download_url": url}
+    except Exception as e:
+        logger.error("Failed to create signed URL for report %s: %s", report_id, e)
+        raise HTTPException(status_code=500, detail="Failed to generate download URL")
+
+
+# =============================================================================
+# Clinical Report Generation
+# =============================================================================
+
+class ClinicalReportRequest(BaseModel):
+    job_id: Optional[str] = None
+    document_id: Optional[str] = None
+    report_type: str = "clinical_report"
+
+
+@app.post("/api/generate-clinical-report")
+async def generate_clinical_report_endpoint(
+    req: ClinicalReportRequest,
+    background_tasks: BackgroundTasks,
+    user_id: str = Depends(_require_user),
+):
+    """Generate a clinical narrative DOCX from extraction results using learned rules."""
+    from src.generators.clinical_report_generator import generate_clinical_report
+
+    job_id = req.job_id
+    document_id = req.document_id
+
+    if not job_id and not document_id:
+        raise HTTPException(status_code=400, detail="Either job_id or document_id is required")
+
+    if not job_id and document_id:
+        sb = get_supabase()
+        jobs = (
+            sb.table("extraction_jobs")
+            .select("id")
+            .eq("document_id", document_id)
+            .eq("status", "completed")
+            .order("created_at", desc=True)
+            .limit(1)
+            .execute()
+        )
+        if not jobs.data:
+            raise HTTPException(status_code=404, detail="No completed extraction found for this document")
+        job_id = jobs.data[0]["id"]
+
+    job = job_manager.get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Extraction job not found")
+    if job["status"] != "completed":
+        raise HTTPException(status_code=400, detail=f"Extraction not completed — status: {job['status']}")
+
+    pages = job_manager.get_extraction_results(job_id)
+    if not pages:
+        raise HTTPException(status_code=404, detail="No extraction results found")
+
+    patient_info = job_manager.extract_patient_summary(pages)
+    extraction_data = {
+        "patient_name": patient_info.get("patient_name"),
+        "patient_dob": patient_info.get("patient_dob"),
+        "form_date": patient_info.get("form_date"),
+        "pages": [
+            {
+                "page_number": p["page_number"],
+                "field_values": p.get("field_values", {}),
+                "annotation_groups": p.get("annotation_groups", []),
+                "free_form_annotations": p.get("free_form_annotations", []),
+            }
+            for p in pages
+        ],
+    }
+
+    logger.info("Generating clinical report for job %s (%s)", job_id, patient_info.get("patient_name"))
+
+    try:
+        docx_bytes = generate_clinical_report(extraction_data)
+    except Exception as e:
+        logger.error("Clinical report generation failed: %s", e, exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Report generation failed: {e}")
+
+    if not document_id:
+        document_id = job.get("document_id")
+
+    patient_name = (patient_info.get("patient_name") or "patient").replace(" ", "_")
+    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    filename = f"clinical_report_{patient_name}_{timestamp}.docx"
+    storage_path = f"reports/{timestamp}/{filename}"
+
+    try:
+        storage_manager.upload_file(
+            storage_manager.BUCKET_REPORTS, storage_path, docx_bytes,
+            content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        )
+    except Exception as e:
+        logger.error("Failed to upload clinical report: %s", e)
+        raise HTTPException(status_code=500, detail="Failed to upload report")
+
+    patient_id = None
+    if document_id:
+        sb = get_supabase()
+        doc = sb.table("documents").select("patient_id").eq("id", document_id).execute()
+        if doc.data and doc.data[0].get("patient_id"):
+            patient_id = doc.data[0]["patient_id"]
+
+    report_id = job_manager.save_report(
+        document_id=document_id,
+        job_id=job_id,
+        storage_path=storage_path,
+        report_type=req.report_type,
+        patient_id=patient_id,
+        metadata={"original_filename": filename, "size_bytes": len(docx_bytes), "generator": "clinical_rules_v1"},
+    )
+
+    job_manager.write_audit_log(
+        action="clinical_report_generated",
+        resource_type="report",
+        resource_id=report_id,
+        user_id=user_id,
+        details={"job_id": job_id, "document_id": document_id, "storage_path": storage_path},
+    )
+
+    logger.info("Clinical report saved — report_id=%s, path=%s", report_id, storage_path)
+    return {"report_id": report_id, "storage_path": storage_path, "filename": filename}
 
 
 # =============================================================================

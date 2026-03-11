@@ -1,0 +1,88 @@
+{
+  "form_id": "raquel_hernandez_aguilar_init",
+  "form_name": "RAQUEL HERNANDEZ AGUILAR INIT",
+  "extraction_timestamp": "2026-03-08T13:56:43.387881",
+  "resolved_references": [],
+  "overall_confidence": 0.9315789473684211,
+  "total_items_needing_review": 18,
+  "all_review_reasons": [
+    "The email address 'wnit+ite ca 9060u' is highly illegible and appears to be a scribble. It is unclear if this is meant to be 'Wrightville, CA 90600' or another address. The format is invalid for an email.",
+    "The date '11/26/202' is incomplete. The year is only partially written, making it ambiguous whether it is 2020, 2022, 2023, 2024, 2025, or 2026. This could lead to misinterpretation of the form's completion date.",
+    "The fields for 'Attorney's Name' and 'Attorney's Phone #' are completely blank. These fields are likely required for legal documentation purposes.",
+    "The patient answered 'YES' to having been given a CPAP mask (p16_apnea_results) and 'YES' to awakening with a headache in the temple/forehead areas (p17_headache). While not mutually exclusive, this combination is clinically significant and may warrant further investigation. The headache could be related to sleep apnea or CPAP use.",
+    "The handwritten text 'Adri' is ambiguous and not a standard pharmaceutical name. It may be a brand name or abbreviation, requiring verification to determine the actual medication.",
+    "The annotation for 'Adri' under 'before_other' lacks context regarding the condition it was taken for, making its clinical relevance unclear.",
+    "Page 4 extraction failed",
+    "The 'Date of Injury' is extracted as '2/19/2025', but the handwritten annotation 'hw_3' shows '1/19/2025'. The 'Date Stopped working' is extracted as '1/7/2025', but the handwritten annotation 'hw_12' shows '1/25/2025'. The handwritten dates should be prioritized as they are the source of the annotations.",
+    "Annotations hw_7 and hw_8 both relate to the field 'nightguard_still_use' but provide conflicting values ('Y' and 'N'). This creates a logical contradiction in the data.",
+    "The annotation 'After Work Injury' is circled, suggesting emphasis, but its exact clinical relevance requires contextual verification with other forms. The annotation is not clearly linked to a specific field in the extracted data, making its interpretation ambiguous.",
+    "The date '11/26/2026' appears to be a typo, as the handwritten date is likely '11/26/2025' based on alternative readings. This requires human review to confirm the correct date.",
+    "Page 17 extraction failed",
+    "Page 19 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Red handwritten date and time at bottom right.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "11/26/25 @ 11am Anaheim.",
+          "normalized_text": "A handwritten note indicating a scheduled event or deadline on November 26, 2025, at 11:00 AM in Anaheim, California.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating a scheduled event or deadline on November 26, 2025, at 11:00 AM in Anaheim, California.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.98,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

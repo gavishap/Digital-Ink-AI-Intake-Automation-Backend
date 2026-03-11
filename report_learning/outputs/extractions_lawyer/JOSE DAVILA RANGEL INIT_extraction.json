@@ -1,0 +1,219 @@
+{
+  "form_id": "jose_davila_rangel_init",
+  "form_name": "JOSE DAVILA RANGEL INIT",
+  "extraction_timestamp": "2026-03-08T09:35:55.449197",
+  "resolved_references": [],
+  "overall_confidence": 0.9126315789473685,
+  "total_items_needing_review": 29,
+  "all_review_reasons": [
+    "The extracted value '92071' for patient_email is illegible and does not conform to a standard email format. It appears to be a zip code.",
+    "The value 'baby Asprin' is ambiguous. 'Baby' may refer to a child or infant, which is clinically significant as aspirin is contraindicated in children due to Reye's syndrome risk.",
+    "The field 'has_apnea_results' is marked 'YES', but 'has_sleep_study' is marked 'NO'. This is contradictory because apnea results would typically be part of a sleep study test.",
+    "The value 'NO' for 'awakens_with_headache' is ambiguous without context. The annotation '7.h.Lan' may be a patient identifier, but its relevance to this field is unclear.",
+    "The extracted value 'Penicillin, Sulfur, Erythromycin, Seasonal Allergies' contains 'Sulfur', which is not a standard allergy term. It may be a misinterpretation of 'Sulfur' as 'Sulfur' or 'Sulfate' or 'Sulfonamide'.",
+    "The handwritten text 't.am.lain' is ambiguous and may represent a misspelling or shorthand for a medication (e.g., 'tamoxifen'). The exact medication and dosage are unclear.",
+    "The handwritten text 'Dyopden 500 my 1-2x/week' is ambiguous. 'Dyopden' may be a misspelling of 'Diphenhydramine', and 500 mg is a high dose for this medication. The frequency '1-2x/week' is unusual.",
+    "The handwritten text 'Mleldonin 1+2x/week' is ambiguous. 'Mleldonin' may be a misspelling of 'Melatonin', but the dose is unspecified. The frequency '1+2x/week' is unclear.",
+    "The handwritten text 't.am.lasin 6. Proprit' is ambiguous. 't.am.lasin' may be a misspelling of 'tamoxifen', and 'Proprit' may be a misspelling of 'Propranolol'. The combination is unusual and the dose is unclear.",
+    "Page 4 extraction failed",
+    "The date of injury '3/7/21 - 3-4-25' is written in a way that the '21' and '25' are ambiguous, potentially leading to misinterpretation of the year. The range spans over four years, which is unusual for an injury case.",
+    "The date '11/19/2025' is in the future, which may indicate a future date for potential return to work or ongoing disability. This requires verification to ensure it is not a typographical error.",
+    "The current work status is listed as both 'Disabled' and 'Not Working/Retired'. This is contradictory as 'Disabled' implies a work limitation, while 'Not Working/Retired' implies no current employment.",
+    "The date 'March 2025' is written but not in a standard date format. It is missing the day and year, making it ambiguous.",
+    "Page 12 extraction failed",
+    "Circle around 'Left' next to 'Right' for Facial Palsy creates a contradiction with the printed text. The circle indicates the condition is on the left side, but the text states 'Right'.",
+    "Circle around 'Left' next to 'Right' for Osteoarthritis creates a contradiction with the printed text. The circle indicates the condition is on the left side, but the text states 'Right'.",
+    "Circle around 'Right' next to 'Left' for Osteoarthritis creates a contradiction with the printed text. The circle indicates the condition is on the right side, but the text states 'Left'.",
+    "Handwritten 'WIL' is ambiguous. It could be a provider identifier, a form-specific notation, or an error. Its clinical relevance is unclear.",
+    "Handwritten 'DFV' is ambiguous. It could be a provider identifier, a departmental code (e.g., Dental, Facial, or Vascular), or an error. Its clinical relevance is unclear.",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten note at bottom left corner.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten text next to 'Nationwide Des Moines'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "mark_1",
+          "element_type": "checkmark",
+          "bbox": {
+            "x": 10,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Checkmark next to 'Insurance Carrier'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "mark_2",
+          "element_type": "checkmark",
+          "bbox": {
+            "x": 10,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Checkmark next to 'Defense Attorney'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Appt wed 11/19/25 at 10 am Anaheim",
+          "normalized_text": "Handwritten note indicating an appointment scheduled for Wednesday, November 19, 2025, at 10:00 AM in Anaheim.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating an appointment scheduled for Wednesday, November 19, 2025, at 10:00 AM in Anaheim.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Nationwide Des Moines (Nationwide Casualty Co.)",
+          "normalized_text": "Handwritten clarification that 'Nationwide Des Moines' refers to 'Nationwide Casualty Co.', likely indicating the correct legal entity name for the insurance carrier.",
+          "relates_to_field_ids": [
+            "Insurance Carrier"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "Handwritten clarification that 'Nationwide Des Moines' refers to 'Nationwide Casualty Co.', likely indicating the correct legal entity name for the insurance carrier.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "mark_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "✓",
+          "normalized_text": "Checkmark next to 'Insurance Carrier' indicating that this section is selected or confirmed as the active/valid carrier.",
+          "relates_to_field_ids": [
+            "Insurance Carrier"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "Checkmark next to 'Insurance Carrier' indicating that this section is selected or confirmed as the active/valid carrier.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "mark_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "✓",
+          "normalized_text": "Checkmark next to 'Defense Attorney' indicating that this section is selected or confirmed as the active/valid defense attorney.",
+          "relates_to_field_ids": [
+            "Defense Attorney"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "Checkmark next to 'Defense Attorney' indicating that this section is selected or confirmed as the active/valid defense attorney.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

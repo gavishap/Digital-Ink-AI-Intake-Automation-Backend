@@ -1,0 +1,85 @@
+{
+  "form_id": "martha_picazo_de_mayorga_init",
+  "form_name": "MARTHA PICAZO DE MAYORGA INIT",
+  "extraction_timestamp": "2026-03-08T12:04:59.255628",
+  "resolved_references": [],
+  "overall_confidence": 0.9342105263157895,
+  "total_items_needing_review": 21,
+  "all_review_reasons": [
+    "The 'Date of Injury' field contains '5/20-22, 4-1-22-7-2-25', which is ambiguous. It appears to be a range or multiple dates, but the format is unclear and could represent a period of injury or multiple incidents. This requires human review to clarify the intended meaning.",
+    "The 'Date Stopped working' field is extracted as 'April 29, 2026'. While the date format is standard, the year 2026 is in the future relative to the current date (as of 2023). This may be an error or a future projection, requiring human review to verify its accuracy.",
+    "The annotation 'de fell pm in R>l shoulders while loading c blanket/nerd nta' contains ambiguous phrasing ('R>l shoulders') and unclear context ('nerd nta'), which could misrepresent the injury mechanism.",
+    "The handwritten text 'hyl dloctoral' is ambiguous and may be a misspelling or shorthand for a medication like 'hydralazine'. This requires clarification to ensure accurate medical record keeping.",
+    "Page 10 extraction failed",
+    "Page 13 extraction failed",
+    "Page 19 extraction failed",
+    "The date '11/26/25' is ambiguous as it could refer to 2025 or 2026. The year '25' lacks context to determine the correct century.",
+    "The term 'DFV' is not defined in the context of the form. It could be a specific diagnostic code or treatment, but its meaning is unclear without further context.",
+    "The handwritten text 'Conorilla mayorga' appears next to 'ORTHOPEDIC ORTHOTIC', but its exact clinical relevance is unclear. It may be a patient identifier or a note, but its purpose is ambiguous."
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten date and time at bottom right.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "11/24/25 @ 10am Anaheim.",
+          "normalized_text": "A handwritten note indicating a date and time (November 24, 2025, at 10am) and location (Anaheim).",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "A handwritten note indicating a date and time (November 24, 2025, at 10am) and location (Anaheim).",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

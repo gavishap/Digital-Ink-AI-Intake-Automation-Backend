@@ -24,18 +24,32 @@ def upload_file(
     content_type: str = "application/octet-stream",
 ) -> str:
     sb = get_supabase()
+    file_options = {"content-type": content_type}
     try:
         sb.storage.from_(bucket).upload(
             path=storage_path,
             file=file_data,
-            file_options={"content-type": content_type},
+            file_options=file_options,
         )
-        full_path = f"{bucket}/{storage_path}"
-        logger.info("Storage upload OK: %s (%d bytes, %s)", full_path, len(file_data), content_type)
-        return full_path
-    except Exception as e:
-        logger.error("Storage upload FAILED: %s/%s — %s", bucket, storage_path, e)
-        raise
+    except Exception as first_err:
+        if "Duplicate" in str(first_err) or "already exists" in str(first_err):
+            logger.info("File exists, updating: %s/%s", bucket, storage_path)
+            try:
+                sb.storage.from_(bucket).update(
+                    path=storage_path,
+                    file=file_data,
+                    file_options=file_options,
+                )
+            except Exception as update_err:
+                logger.error("Storage update also FAILED: %s/%s — %s", bucket, storage_path, update_err)
+                raise
+        else:
+            logger.error("Storage upload FAILED: %s/%s — %s", bucket, storage_path, first_err)
+            raise
+
+    full_path = f"{bucket}/{storage_path}"
+    logger.info("Storage upload OK: %s (%d bytes, %s)", full_path, len(file_data), content_type)
+    return full_path
 
 
 def upload_from_path(

@@ -1,0 +1,255 @@
+{
+  "model": "Kimi K2.5 (FW)",
+  "model_id": "accounts/fireworks/models/kimi-k2p5",
+  "prompt": "standard",
+  "dpi": 150,
+  "parsed_response": {
+    "header": {
+      "name": "Aubrie Vasquez",
+      "date": "1/18/2025",
+      "birth_date": "8/16/94",
+      "sex": "FEMALE"
+    },
+    "yes_no_questions": [
+      {
+        "number": 1,
+        "topic": "heart problems",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 2,
+        "topic": "metal joint replacements",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 3,
+        "topic": "high blood pressure",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 4,
+        "topic": "diabetes",
+        "answer": "NO",
+        "notes": "Pre written next to question"
+      },
+      {
+        "number": 5,
+        "topic": "stomach acids come up into mouth or throat",
+        "answer": "YES",
+        "notes": ""
+      },
+      {
+        "number": 6,
+        "topic": "kidney problems",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 7,
+        "topic": "thyroid problem",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 8,
+        "topic": "HIV Hepatitis TB VD",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 9,
+        "topic": "taking blood thinners",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 10,
+        "topic": "breathing problems",
+        "answer": "YES",
+        "notes": "Asthma circled, Shortness of Breath"
+      },
+      {
+        "number": 11,
+        "topic": "numbness or pins/needles feeling",
+        "answer": "YES",
+        "notes": "Last 2 finger -> Shoulder, Forehead"
+      },
+      {
+        "number": 12,
+        "topic": "liver problems",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 13,
+        "topic": "urinary problems",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 14,
+        "topic": "awakens at night to urinate",
+        "answer": "YES",
+        "notes": "3 times per night"
+      },
+      {
+        "number": 15,
+        "topic": "sleep study test",
+        "answer": "YES",
+        "notes": "~2018, Apnea Results ?"
+      },
+      {
+        "number": 16,
+        "topic": "CPAP mask",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 17,
+        "topic": "awaken with headache in temple/forehead",
+        "answer": "YES",
+        "notes": ""
+      }
+    ],
+    "allergies": "Caphor",
+    "dx_post_injury_marks": [
+      "Diabetes",
+      "Gastric Acid"
+    ],
+    "other_observations": [
+      "Nurse: Nancy",
+      "INTP: NO",
+      "Cell: (818) 855-4851",
+      "Address: P.O. Box 241 Pearblossom, CA 93553",
+      "Medications circled: Lansoprazole, Diclofenac Gel",
+      "Height/weight: 98.85 kg, 163.5 cm, Pre"
+    ]
+  },
+  "scores": {
+    "yn_correct": 17,
+    "yn_total": 17,
+    "yes_hit": 6,
+    "yes_total": 6,
+    "no_hit": 11,
+    "no_total": 11,
+    "hdr_hit": 3,
+    "hdr_total": 4,
+    "allergy_ok": true,
+    "dx_hit": 2,
+    "dx_total": 2,
+    "followup_hit": 4,
+    "followup_total": 5,
+    "per_q": {
+      "1": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "2": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "3": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "4": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "Pre written next to question"
+      },
+      "5": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": ""
+      },
+      "6": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "7": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "8": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "9": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "10": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "Asthma circled, Shortness of Breath"
+      },
+      "11": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "Last 2 finger -> Shoulder, Forehead"
+      },
+      "12": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "13": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "14": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "3 times per night"
+      },
+      "15": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "~2018, Apnea Results ?"
+      },
+      "16": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "17": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": ""
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 2670,
+    "output_tokens": 653
+  },
+  "elapsed_s": 5.831989526748657
+}

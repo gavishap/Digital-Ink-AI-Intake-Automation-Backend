@@ -1,0 +1,125 @@
+{
+  "form_id": "lemeka_washington_init",
+  "form_name": "LEMEKA WASHINGTON INIT",
+  "extraction_timestamp": "2026-03-08T09:46:20.158231",
+  "resolved_references": [],
+  "overall_confidence": 0.9104761904761905,
+  "total_items_needing_review": 26,
+  "all_review_reasons": [
+    "The date '11/26/2026' appears to be in the future relative to the date of injury '09/08/2023'. This may indicate a data entry error or misinterpretation. The year 2026 is outside the expected range (2020-2026) for this context, but the context does not specify if this is a future date or a typo. The annotation 'hw_5' notes the year is ambiguous (2023 vs 2026).",
+    "The date '10-2023' is ambiguous as it lacks a month. It is unclear whether this refers to October 2023 or another month. The annotation 'hw_5' indicates this needs human review due to ambiguity.",
+    "The job requirements field contains a long list of activities. The annotation 'hw_3' indicates this section requires human review due to multiple fields and potential inaccuracies. The extracted value may not fully capture the handwritten content or may contain misinterpretations.",
+    "The job requirements field includes 'reaching above shoulder level' and 'reaching below shoulder level', which are contradictory in terms of physical demand. The annotation 'hw_6' indicates this section requires human review due to multiple fields and potential inaccuracies.",
+    "Multiple handwritten annotations (hw_2, hw_3, hw_4) are highly illegible, making accurate interpretation difficult. Key terms like 'ves vdky dan a vrap ct work ble de dpped + fell Guard lady', 'oprl 2024', 'wsi flaring up', 'COIO', and 'notxed' are unclear and require human review to confirm meaning.",
+    "The term 'COIO' in hw_4 is ambiguous. It is unclear whether this is a typo for 'COI' (likely 'COI' meaning 'Cognitive Impairment' or 'Cognitive Impairment' is not a standard term in this context) or another medical term. The term 'notxed' is also ambiguous and likely a misspelling of 'noted'.",
+    "The extracted value '?' for 'Name of Dentist' is ambiguous. It may indicate missing data or uncertainty, which requires verification with the patient.",
+    "The date 'My 2024' is ambiguous. 'My' may refer to 'May' or another month, requiring human review to confirm the correct date format.",
+    "Page 16 extraction failed",
+    "The handwritten annotation 'DFV' lacks clear clinical context. It is not a standard medical abbreviation in oral medicine, making its meaning ambiguous without further clarification.",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten insurance carrier details and case number.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten date and time with location.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Handwritten insurance carrier details and case number.",
+          "normalized_text": "This annotation refers to handwritten information in the bottom-center of the form, which includes insurance carrier details and a case number. It is likely supplementary information added by an adjuster or staff member to supplement the printed form fields.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "This annotation refers to handwritten information in the bottom-center of the form, which includes insurance carrier details and a case number. It is likely supplementary information added by an adjuster or staff member to supplement the printed form fields.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": true,
+          "review_reason": "Handwritten content may contain errors or ambiguities that require verification against official records."
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Handwritten date and time with location.",
+          "normalized_text": "This annotation refers to handwritten information in the bottom-right of the form, which includes a date, time, and location. It likely indicates when and where the form was last updated or signed.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "This annotation refers to handwritten information in the bottom-right of the form, which includes a date, time, and location. It likely indicates when and where the form was last updated or signed.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": true,
+          "review_reason": "Handwritten date may be ambiguous or incorrect; needs verification against official records."
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 2,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 23,
+    "lawyer_page_count": 1
+  }
+}

@@ -1,0 +1,686 @@
+{
+  "patterns": [
+    {
+      "section_id": "job_description",
+      "section_heading": "JOB DESCRIPTION",
+      "purpose": "Documents the patient's occupational demands and physical job requirements to establish baseline functional capacity and identify potential workplace factors contributing to their condition.",
+      "writing_pattern": "Follows a strict two-paragraph structure. First paragraph states job title, employer, and work schedule using \"states he/she worked as [job title] for [employer]\" followed by hours/days worked. Second paragraph systematically lists physical job demands using \"states his/her job entailed\" followed by a standardized inventory of physical activities and weight limits, presented as a comprehensive comma-separated list.",
+      "data_points_used": [
+        {
+          "data_point": "job title",
+          "how_used": "stated directly after 'worked as'",
+          "required": true
+        },
+        {
+          "data_point": "employer name",
+          "how_used": "stated directly after 'for'",
+          "required": true
+        },
+        {
+          "data_point": "hours per day worked",
+          "how_used": "stated as specific number followed by 'hours per day'",
+          "required": true
+        },
+        {
+          "data_point": "days per week worked",
+          "how_used": "stated as specific number/range followed by 'days per week'",
+          "required": true
+        },
+        {
+          "data_point": "physical job activities",
+          "how_used": "listed systematically in comma-separated format after 'job entailed prolonged'",
+          "required": true
+        },
+        {
+          "data_point": "maximum lifting weight",
+          "how_used": "stated as 'lifting up to a maximum of [X] lbs'",
+          "required": true
+        },
+        {
+          "data_point": "maximum carrying weight",
+          "how_used": "stated as 'carrying up to a maximum of [X] lbs'",
+          "required": true
+        },
+        {
+          "data_point": "workstation ergonomics",
+          "how_used": "described in additional sentences when applicable",
+          "required": false
+        },
+        {
+          "data_point": "computer equipment use",
+          "how_used": "described in detail including monitor position and mouse hand preference",
+          "required": false
+        }
+      ],
+      "static_phrases": [
+        "states he worked as",
+        "states she worked as",
+        "He worked",
+        "She worked",
+        "hours per day",
+        "days per week",
+        "states his job entailed prolonged",
+        "states her job entailed prolonged",
+        "lifting up to a maximum of",
+        "carrying up to a maximum of"
+      ],
+      "variation_notes": "Primary variations include specific job titles, employer names, work schedules (hours/days), physical demands present/absent (like driving), weight limits (25-70 lbs), and presence of additional ergonomic details for office workers. The core physical activities list remains largely standardized across patients.",
+      "example_count": 5
+    },
+    {
+      "section_id": "history_of_industrial_injury",
+      "section_heading": "HISTORY OF INDUSTRIAL INJURY",
+      "purpose": "This section documents the patient's work-related injuries, establishing the causal link between occupational activities and current pain complaints, while specifically connecting orthopedic injuries to orofacial pain through stress-related clenching and bracing behaviors.",
+      "writing_pattern": "The section follows a structured 4-6 paragraph format: (1) Opening statement with injury dates and work context, (2) Description of mechanism/activities causing injury with specific body parts affected, (3) Pain severity ratings using VAS scale, (4) Mandatory paragraph linking orthopedic pain to emotional stress and facial muscle tension, (5) Optional paragraphs for hand dominance/oral hygiene impact, weight gain, and medications. Each paragraph uses formal medical language with consistent sentence structures.",
+      "data_points_used": [
+        {
+          "data_point": "injury date(s)",
+          "how_used": "stated in opening sentence with specific dates and CT (continuous trauma) periods",
+          "required": true
+        },
+        {
+          "data_point": "injury mechanism",
+          "how_used": "described as either acute incident (slip/fall/trip) or repetitive work activities with detailed list",
+          "required": true
+        },
+        {
+          "data_point": "affected body parts",
+          "how_used": "listed comprehensively in anatomical order",
+          "required": true
+        },
+        {
+          "data_point": "pain severity ratings",
+          "how_used": "quantified using VAS scale (0-10) for each affected body part",
+          "required": true
+        },
+        {
+          "data_point": "work activities performed",
+          "how_used": "detailed list of physical activities (lifting weights, carrying, reaching, etc.)",
+          "required": true
+        },
+        {
+          "data_point": "emotional stress response",
+          "how_used": "standardized description of stress leading to teeth clenching and facial muscle bracing",
+          "required": true
+        },
+        {
+          "data_point": "facial pain development",
+          "how_used": "described as consequence of clenching/bracing behaviors",
+          "required": true
+        },
+        {
+          "data_point": "hand dominance",
+          "how_used": "stated as 'right hand dominant' when upper extremity injuries present",
+          "required": false
+        },
+        {
+          "data_point": "oral hygiene impact",
+          "how_used": "standardized phrase about compromised ability to brush and floss",
+          "required": false
+        },
+        {
+          "data_point": "weight gain",
+          "how_used": "stated as approximate pounds gained since injury",
+          "required": false
+        },
+        {
+          "data_point": "industrial medications",
+          "how_used": "listed with dosages and frequency, specified as 'on an industrial basis'",
+          "required": false
+        },
+        {
+          "data_point": "non-industrial medications",
+          "how_used": "mentioned separately without industrial designation",
+          "required": false
+        }
+      ],
+      "static_phrases": [
+        "states that on [date], he/she was involved in an industrial injury in the course of performing his/her usual and customary job duties",
+        "reports that as a result of performing repetitive work activities such as",
+        "rates the severity of pain in [body part] as [number] out of 10, all on a VAS",
+        "finds that in response to his/her industrial related orthopedic pain, he/she developed emotional stressors",
+        "finds he/she is clenching his/her teeth and bracing his/her facial musculature in response to his/her orthopedic pain, and also in response to the resultant emotional stressors experienced",
+        "This has caused him/her to develop [facial pain/headaches/facial and jaw pain]",
+        "is right hand dominant",
+        "reports these orthopedic injuries are compromising and impairing his/her ability to perform proper and adequate oral hygiene procedures of brushing and flossing of his/her teeth and gums",
+        "is taking the medication of [medication], on an industrial basis"
+      ],
+      "variation_notes": "The main variations are: (1) Single acute injury vs. repetitive trauma with CT periods, (2) Specific mechanism (fall/trip) vs. general repetitive activities, (3) Number and location of affected body parts, (4) Specific pain ratings for each area, (5) Maximum lifting/carrying weights, (6) Presence/absence of hand dominance discussion, (7) Weight gain reporting, (8) Types and frequencies of medications. The emotional stress-to-facial pain connection remains virtually identical across all cases.",
+      "example_count": 5
+    },
+    {
+      "section_id": "diagnostic_bite_force_testing",
+      "section_heading": "DIAGNOSTIC BITE FORCE TESTING",
+      "purpose": "To objectively measure and document the patient's maximum bite force using gnathodynamometer testing, correlate findings with patient complaints about eating difficulties, and demonstrate bilateral muscle weakness patterns that support the diagnosis of orofacial pain conditions.",
+      "writing_pattern": "Follows a rigid 4-paragraph structure: (1) Standardized educational paragraph about muscles of mastication, gnathodynamometer testing, and trigeminal nerve anatomy/function; (2) Patient-specific results comparing their maximum bite force to normal values (400 Newtons) and linking to eating complaints; (3) Bilateral comparison showing asymmetric bite force measurements; (4) Scientific citation followed by transition to next diagnostic test. Each paragraph uses formal medical language with extensive repetition of key terms like \"objectively\" and \"muscles of mastication.\"",
+      "data_points_used": [
+        {
+          "data_point": "patient name and gender/title",
+          "how_used": "inserted into template sentences (Mr./Ms. [Last Name])",
+          "required": true
+        },
+        {
+          "data_point": "patient complaint about eating hard/chewy foods",
+          "how_used": "referenced as confirmation of objective findings",
+          "required": true
+        },
+        {
+          "data_point": "maximum bite force measurement (total)",
+          "how_used": "stated in Newtons as primary finding",
+          "required": true
+        },
+        {
+          "data_point": "right side bite force measurement",
+          "how_used": "specific Newton value for bilateral comparison",
+          "required": true
+        },
+        {
+          "data_point": "left side bite force measurement",
+          "how_used": "specific Newton value for bilateral comparison",
+          "required": true
+        }
+      ],
+      "static_phrases": [
+        "The muscles of mastication were tested for their functional capacity measuring the maximum bite force and strength of these facial muscles.",
+        "The measurements were objectively determined with the use of a gnathodynamometer.",
+        "The muscles of mastication are innervated by the fifth cranial nerve, the Trigeminal Nerve.",
+        "The motor function of the Trigeminal Nerve controls the bite force of the muscles of mastication.",
+        "when the normal amount of Newton forces to eat hard and chewy foods should exceed 400 Newtons. (400 Newtons = 90 Pounds Force)",
+        "The objective measurements also confirm that",
+        "has a weaker force of his bite on one side",
+        "\"Gnathodynamometer--a reliable device for assessing jaw bite force.\" Shushma, G., Kantly, R. Journal of Evolution of Medical and Dental Sciences, vol. 5, no. 102, 22 Dec. 2016, pp. 7488+"
+      ],
+      "variation_notes": "The only variations are: (1) Patient names/gender titles, (2) The three specific bite force measurements in Newtons (total, right side, left side), and (3) Minor pronoun inconsistencies (some patients get \"his bite\" regardless of gender). All other content is identical across patients, including the scientific citation and transition to temperature gradient studies.",
+      "example_count": 5
+    },
+    {
+      "section_id": "diagnostic_autonomic_nervous_system_testing",
+      "section_heading": "DIAGNOSTIC AUTONOMIC NERVOUS SYSTEM TESTING",
+      "purpose": "This section documents the results of two specific diagnostic tests: autonomic nervous system testing using pulse oximetry during Mueller Maneuver, and α-amylase enzyme analysis via spectrophotometry to measure stress-related biomarkers.",
+      "writing_pattern": "The section follows a rigid two-part structure: First paragraph reports autonomic testing results in a single sentence with standardized phrasing. Second paragraph (under α-AMYLASE subheading) follows identical format - test description, methodology, measured result, and normal reference range. Each test result is presented with technical precision using consistent sentence templates.",
+      "data_points_used": [
+        {
+          "data_point": "autonomic nervous system test results",
+          "how_used": "either stated as 'results within normal limits' or specific heart rate changes",
+          "required": true
+        },
+        {
+          "data_point": "baseline heart rate during Mueller Maneuver",
+          "how_used": "stated as specific beats per minute when abnormal results found",
+          "required": false
+        },
+        {
+          "data_point": "heart rate change during Mueller Maneuver",
+          "how_used": "stated as specific beats per minute change when abnormal results found",
+          "required": false
+        },
+        {
+          "data_point": "α-amylase enzyme concentration",
+          "how_used": "stated as precise numerical value in KIU/Liter",
+          "required": true
+        },
+        {
+          "data_point": "normal α-amylase reference range",
+          "how_used": "consistently stated as 'less than 45 KIU/Liter'",
+          "required": true
+        }
+      ],
+      "static_phrases": [
+        "Diagnostic Autonomic Nervous System Testing, consisting of Pulse Oximetry during the patient's performance of the Mueller Maneuver, revealed",
+        "DIAGNOSTIC α-AMYLASE ENZYME ANALYSIS",
+        "Diagnostic α-Amylase Analysis, consisting of laboratory spectrophotometric analysis of the amount of α-amylase enzyme present, was performed, and an α-amylase enzyme concentration of",
+        "KIU / Liter was objectively measured",
+        "The spectrophotometric testing is calibrated where normal concentrations of α-amylase enzyme should be less than 45 KIU / Liter"
+      ],
+      "variation_notes": "The main variation is in autonomic testing results - most patients show 'results within normal limits' but one patient (Benton) shows specific abnormal heart rate changes with precise before/after measurements. The α-amylase values vary numerically (106-168 KIU/Liter) but all follow identical reporting format. All measured values exceed the normal threshold, suggesting this test consistently identifies stress/dysfunction in this patient population.",
+      "example_count": 5
+    },
+    {
+      "section_id": "diagnostic_salivary_flow_and_buffering_tests",
+      "section_heading": "DIAGNOSTIC SALIVARY FLOW AND BUFFERING TESTS",
+      "purpose": "Documents objective clinical findings related to salivary dysfunction, providing standardized test results that support diagnosis of xerostomia (dry mouth) with visual observations and the ADA-recommended tongue blade adhesion test.",
+      "writing_pattern": "Follows a rigid 4-part structure: (1) Header \"Diagnostic salivary flow and buffering tests revealed:\" (2) Bulleted visual observations of mouth/lip dryness and saliva characteristics (3) Lengthy paragraph describing the ADA standard test, personalizing it with patient's name and results (4) Verbatim ADA journal quote as authoritative support. The section is highly formulaic with minimal variation in sentence structure or phrasing.",
+      "data_points_used": [
+        {
+          "data_point": "patient name and gender",
+          "how_used": "inserted into standardized sentence about tongue depressor test results",
+          "required": true
+        },
+        {
+          "data_point": "visual mouth examination findings",
+          "how_used": "listed as bulleted observations (dry mouth, dry lips, cracked lips)",
+          "required": true
+        },
+        {
+          "data_point": "saliva quality assessment",
+          "how_used": "described with specific adjectives (viscous, cloudy, ropey)",
+          "required": true
+        },
+        {
+          "data_point": "tongue blade adhesion test results",
+          "how_used": "stated as positive finding woven into explanatory paragraph",
+          "required": true
+        }
+      ],
+      "static_phrases": [
+        "Diagnostic salivary flow and buffering tests revealed:",
+        "Observable dry mouth, dry lips",
+        "The standard of care objective test advocated by the American Dental Association to prove whether definite qualitative changes of the saliva are present or not was performed (and the results photographed)",
+        "A tongue depressor adheres to the inside of [Patient's] cheeks, which conclusively document with certainty that [Patient] does indeed have qualitative changes in her/his saliva, which has resulted in the increased surface tension of the salivary liquid",
+        "In addition to conducting visual inspection, the dentist can use a tongue blade to assess tissue dryness..."
+      ],
+      "variation_notes": "Main variations are: (1) presence/absence of \"cracked lips\" finding (2) saliva descriptors - some patients have just \"viscous\" while others have \"cloudy, ropey, and viscous\" (3) minor differences in ADA journal citation month (July vs August 2003). Patient names are personalized but the sentence structure remains identical.",
+      "example_count": 5
+    },
+    {
+      "section_id": "diagnostic_photographs",
+      "section_heading": "DIAGNOSTIC PHOTOGRAPHS",
+      "purpose": "Documents visual evidence of oral and orofacial physical findings through photographs, creating an objective record of pathological conditions, medication side effects, and tissue health status.",
+      "writing_pattern": "Highly structured repetitive pattern using identical sentence starters. Each finding begins with \"The photographs document\" or \"Diagnostic photographs document\" followed by specific clinical observations. Sentences are listed sequentially without connecting prose. Patient name and appropriate pronoun (Mr./Ms.) integrated into final sentence about biofilm deposits.",
+      "data_points_used": [
+        {
+          "data_point": "tongue scalloping presence",
+          "how_used": "stated in identical phrase across all examples",
+          "required": true
+        },
+        {
+          "data_point": "cheek bite mark lines",
+          "how_used": "documented when present in standardized phrase",
+          "required": false
+        },
+        {
+          "data_point": "tooth wear patterns",
+          "how_used": "specified as general 'surfaces' or 'anterior teeth' wear",
+          "required": true
+        },
+        {
+          "data_point": "xerostomia/anticholinergic effects",
+          "how_used": "described with identical detailed explanation about tongue depressor test",
+          "required": true
+        },
+        {
+          "data_point": "gum tissue condition",
+          "how_used": "described as either 'swollen' or 'receding' gum tissues",
+          "required": true
+        },
+        {
+          "data_point": "bacterial biofilm presence",
+          "how_used": "documented with standard phrase about objectively-disclosed deposits",
+          "required": true
+        },
+        {
+          "data_point": "patient name and gender",
+          "how_used": "integrated into final sentence with appropriate title (Mr./Ms.)",
+          "required": true
+        }
+      ],
+      "static_phrases": [
+        "Diagnostic photographs document scalloping on the lateral borders of the tongue",
+        "The photographs document",
+        "The photographs document the Xerostomia / Anti-Cholinergic side effect where, due to qualitative changes of the saliva, a tongue depressor sticks to the inside of the cheek - even when not held by hand",
+        "objectively-disclosed bacterial biofilm deposits",
+        "teeth and around his/her gum tissues"
+      ],
+      "variation_notes": "Main variations include: presence/absence of cheek bite marks, specificity of tooth wear location (general 'surfaces' vs 'anterior teeth'), and gum tissue condition (swollen vs receding). One patient (Canseco Gutierrez) has no specific gum tissue descriptor mentioned. These variations likely reflect individual patient presentation and severity of bruxism/clenching behaviors.",
+      "example_count": 5
+    },
+    {
+      "section_id": "discussion",
+      "section_heading": "DISCUSSION",
+      "purpose": "This section provides detailed clinical reasoning linking industrial injuries to orofacial conditions. It establishes medical causation by connecting examination findings to industrial exposure, stress, and medications, using extensive scientific literature citations to support each causal relationship with \"reasonable medical probability.\"",
+      "writing_pattern": "The section follows a highly structured, repetitive pattern with multiple diagnostic blocks. Each condition is addressed in a standard sequence: 1) Objective findings statement, 2) Acknowledgment of potential pre-existing conditions, 3) Industrial causation argument with \"reasonable medical probability\" language, 4) Extensive literature citations (identical quotes repeated across patients), 5) Patient-specific factors (medications, injuries), 6) Concluding causation statement. The writing is heavily citation-dependent with verbatim scientific quotes and standardized legal language throughout.",
+      "data_points_used": [
+        {
+          "data_point": "Physical examination findings of bruxism",
+          "how_used": "Detailed objective findings listed (tongue scalloping, cheek bite marks, tooth wear, muscle palpation)",
+          "required": true
+        },
+        {
+          "data_point": "Industrial injury/exposure history",
+          "how_used": "Referenced as causative factor throughout causal arguments",
+          "required": true
+        },
+        {
+          "data_point": "Current medications",
+          "how_used": "Listed specifically with FDA data citations for bruxism side effects",
+          "required": true
+        },
+        {
+          "data_point": "Patient's orthopedic pain complaints",
+          "how_used": "Connected to stress and bruxism aggravation in causal chain",
+          "required": true
+        },
+        {
+          "data_point": "Facial muscle examination findings",
+          "how_used": "Described as tender with palpable taut bands, linked to myalgia diagnosis",
+          "required": true
+        },
+        {
+          "data_point": "TMJ examination findings",
+          "how_used": "Crepitus sounds described and linked to joint degeneration diagnosis",
+          "required": false
+        },
+        {
+          "data_point": "sEMG test results",
+          "how_used": "Cited as showing elevated muscular activity and dysfunction",
+          "required": true
+        },
+        {
+          "data_point": "Ultrasonic Doppler Analysis results",
+          "how_used": "Used to confirm TMJ crepitus findings when TMJ involvement present",
+          "required": false
+        },
+        {
+          "data_point": "Periodontal examination findings",
+          "how_used": "Specific findings (swelling, recession) described as inflammation evidence",
+          "required": true
+        },
+        {
+          "data_point": "Upper extremity injury details",
+          "how_used": "Listed specifically to explain compromised oral hygiene ability",
+          "required": false
+        },
+        {
+          "data_point": "Saliva examination findings",
+          "how_used": "Tongue depressor test described as evidence of qualitative changes",
+          "required": true
+        },
+        {
+          "data_point": "Patient's stress reports",
+          "how_used": "Quoted directly in causal arguments linking pain to increased stress",
+          "required": true
+        },
+        {
+          "data_point": "Halitosis complaints",
+          "how_used": "Patient complaint stated directly when present",
+          "required": false
+        },
+        {
+          "data_point": "Patient's self-reported clenching behaviors",
+          "how_used": "Quoted as patient reporting clenching in response to pain/stress",
+          "required": false
+        },
+        {
+          "data_point": "Pre-existing risk factors",
+          "how_used": "Acknowledged in 'even if' statements (smoking, gastric reflux, dental neglect)",
+          "required": false
+        },
+        {
+          "data_point": "QST test results",
+          "how_used": "Detailed description of neuropathic pain findings (Patient 4 only)",
+          "required": false
+        }
+      ],
+      "static_phrases": [
+        "Upon examination, I found [Patient] presents with objective clinical findings of bruxism",
+        "may not have been aware that [he/she] had prior episodes of bruxism",
+        "However, it is with reasonable medical probability that the industrial exposure",
+        "would have aggravated any preexisting bruxism by at least 1%",
+        "The scientific literature has documented",
+        "Phase IV clinical studies of the FDA data have documented",
+        "Therefore, it is with reasonable medical probability",
+        "Even if [Patient] had prior inflammation of the gums",
+        "there are numerous industrial related factors that, with reasonable medical probability, would be contributing to, aggravating, accelerating and/or lighting up",
+        "Evaluation of [Patient]'s saliva reveals objective evidence of qualitative changes",
+        "Halitosis is a perceived oral malodor whose intensity is beyond a socially acceptable level"
+      ],
+      "variation_notes": "Primary variations include: specific medications taken (drives different FDA citations), presence/absence of TMJ conditions (osteoarthrosis vs osteoarthritis vs capsulitis), specific upper extremity injuries mentioned, different periodontal findings (swelling vs recession), and presence/absence of halitosis complaints. Patient 4 uniquely includes advanced trigeminal neuropathic pain discussion and QST testing.",
+      "example_count": 5
+    },
+    {
+      "section_id": "differential_diagnosis",
+      "section_heading": "DIFFERENTIAL DIAGNOSIS",
+      "purpose": "To establish the methodological foundation for the doctor's causation opinion by confirming that a proper differential diagnosis process was followed, and to clarify that treatment recommendations are not divided or apportioned between causes.",
+      "writing_pattern": "This section follows a rigid two-paragraph structure with no variation. The first paragraph is a single complex sentence establishing the methodological standard for differential diagnosis, followed by a brief statement confirming this standard was met for the specific patient. The second paragraph is a standalone declarative sentence serving as a disclaimer about treatment apportionment.",
+      "data_points_used": [
+        {
+          "data_point": "patient name with title (Mr./Ms.)",
+          "how_used": "inserted into formulaic statement 'I have considered this for [Title] [Last Name]'",
+          "required": true
+        }
+      ],
+      "static_phrases": [
+        "An examining doctor's opinion for causation must be based on a reliable differential diagnosis formed after taking a history, physical examination, diagnostic tests and, if available, a review of prior medical records.",
+        "I have considered this for",
+        "The reader must remember: Treatment is not apportioned!"
+      ],
+      "variation_notes": "The only variation is the patient's name and appropriate title (Mr./Ms.) inserted into the otherwise identical template. The content is completely standardized across all patients regardless of their specific conditions or circumstances.",
+      "example_count": 5
+    },
+    {
+      "section_id": "temporal_connection_between_industrial_exposure_and",
+      "section_heading": "TEMPORAL CONNECTION BETWEEN INDUSTRIAL EXPOSURE AND THE SUBSEQUENT INJURIES IN MY AREA OF EXPERTISE",
+      "purpose": "This section establishes the medical-legal connection between the patient's industrial exposure/injury and their current dental problems, providing reasonable medical probability that the dental issues are causally related to or aggravated by the workplace incident.",
+      "writing_pattern": "The section follows a rigid three-paragraph structure: (1) Reference to previous discussion and statement of causal connection with \"reasonable medical probability,\" (2) Acknowledgment of potential pre-existing conditions while asserting industrial aggravation of at least 1%, and (3) Preemptive response to latency arguments with explanation of individual variation. Each paragraph uses identical sentence structures across all patients.",
+      "data_points_used": [
+        {
+          "data_point": "patient name",
+          "how_used": "inserted into standardized sentence templates with appropriate title (Mr./Ms.)",
+          "required": true
+        },
+        {
+          "data_point": "patient gender",
+          "how_used": "determines pronoun usage (his/her) and title (Mr./Ms.)",
+          "required": true
+        },
+        {
+          "data_point": "industrial exposure/injury",
+          "how_used": "referenced generically as 'industrial exposure' without specific details",
+          "required": true
+        },
+        {
+          "data_point": "orthopedic pain",
+          "how_used": "mentioned as resultant from industrial exposure",
+          "required": true
+        },
+        {
+          "data_point": "dental problems",
+          "how_used": "referenced generically without specifying exact conditions",
+          "required": true
+        },
+        {
+          "data_point": "medications",
+          "how_used": "mentioned generically as 'medication/medications taken on industrial related basis'",
+          "required": true
+        }
+      ],
+      "static_phrases": [
+        "In my discussion section above, I discussed how, with reasonable medical probability, the industrial exposure and its resultant orthopedic pain and emotional stressors have developed consequential and derivative injuries for",
+        "in the area of Dentistry",
+        "As explained above, even if the medical records reveal",
+        "had these dental problems prior to the industrial exposure, it is with reasonable medical probability that",
+        "dental problems were contributed to and aggravated on an industrial basis by at least 1% in response to",
+        "industrial pain, any resultant stress, and the side effect of medication taken on an industrial related basis",
+        "While I understand that one of the arguments a person may bring up is latency of when these dental problems started to occur",
+        "one has to understand that latency is individual and depends on the intensity of exposure and predilection of the individual"
+      ],
+      "variation_notes": "The only variations are patient names, gender-appropriate pronouns and titles (Mr./Ms.), and minor punctuation differences (comma placement around names). The content is otherwise completely standardized, suggesting this is a legal/medical template used for all industrial injury cases regardless of specific patient circumstances.",
+      "example_count": 5
+    },
+    {
+      "section_id": "conclusion",
+      "section_heading": "CONCLUSION",
+      "purpose": "To provide a formal medical-legal conclusion establishing industrial causation of the patient's dental/orofacial pain conditions by demonstrating adherence to accepted methodology and offering a professional opinion with reasonable medical probability.",
+      "writing_pattern": "Highly structured two-paragraph format. First paragraph follows a rigid three-point methodology framework with numbered elements. Second paragraph provides the formal medical opinion using standardized legal language. Both paragraphs use identical sentence structures across all patients with only specific patient details varying.",
+      "data_points_used": [
+        {
+          "data_point": "patient name and title (Mr./Ms.)",
+          "how_used": "inserted into standardized template phrases",
+          "required": true
+        },
+        {
+          "data_point": "medications taken on industrial basis",
+          "how_used": "listed specifically by name in the temporal relationship clause",
+          "required": true
+        },
+        {
+          "data_point": "industrial exposure and trauma history",
+          "how_used": "referenced as established causal factors in temporal relationship",
+          "required": true
+        },
+        {
+          "data_point": "emotional stressors",
+          "how_used": "mentioned as resultant consequence in causal chain",
+          "required": true
+        },
+        {
+          "data_point": "presenting complaints and clinical symptoms",
+          "how_used": "referenced as outcomes in final medical opinion",
+          "required": true
+        },
+        {
+          "data_point": "patient-provided history",
+          "how_used": "cited as one of the data sources supporting the conclusion",
+          "required": true
+        },
+        {
+          "data_point": "objective examination findings",
+          "how_used": "referenced as supporting evidence in final opinion",
+          "required": true
+        }
+      ],
+      "static_phrases": [
+        "Based on the methodology used by dental physicians in the field of Dentistry, I have:",
+        "1) Shown data to support generic causation;",
+        "2) Ruled out other well-accepted risk factors in the patient; and",
+        "3) Shown a clear temporal relationship between the industrial exposure and trauma, resultant emotional stressors,",
+        "Based on the available data, the history provided to me by",
+        "my objective findings, the scientific literature, and my expertise in the field, it is my opinion that, with reasonable medical probability,",
+        "'s presenting complaints and clinical symptoms in my area of expertise were caused or aggravated on an industrial basis."
+      ],
+      "variation_notes": "The only substantive variation occurs in the medication list within the temporal relationship clause, where specific medications taken by each patient are named (e.g., 'Ibuprofen and Lexapro' vs 'Naproxen, Ibuprofen, Wellbutrin, and Omeprazole'). Patient names and gender titles also vary but follow the same insertion pattern.",
+      "example_count": 5
+    },
+    {
+      "section_id": "credibility",
+      "section_heading": "CREDIBILITY",
+      "purpose": "To formally assess and document the patient's credibility, establishing that their subjective complaints are genuine and match objective findings, thereby supporting the legitimacy of their industrial injury claims.",
+      "writing_pattern": "Highly standardized paragraph with 7 sequential sentences following identical structure: (1) observation statement, (2) doctor-patient relationship establishment, (3) character assessment, (4) belief in patient's effort, (5) subjective/objective correlation, (6) medical record consistency (in most cases), (7) formal credibility conclusion with injury confirmation. Each sentence uses nearly identical phrasing with only patient name/pronoun substitutions.",
+      "data_points_used": [
+        {
+          "data_point": "patient name and title (Mr./Ms.)",
+          "how_used": "substituted throughout template sentences",
+          "required": true
+        },
+        {
+          "data_point": "patient gender (for pronoun selection)",
+          "how_used": "determines him/her pronouns in template",
+          "required": true
+        },
+        {
+          "data_point": "subjective patient complaints",
+          "how_used": "referenced as matching objective findings",
+          "required": true
+        },
+        {
+          "data_point": "objective examination findings",
+          "how_used": "referenced as matching subjective complaints",
+          "required": true
+        },
+        {
+          "data_point": "industrial injury history",
+          "how_used": "referenced as consistent in medical records",
+          "required": true
+        },
+        {
+          "data_point": "medical records review",
+          "how_used": "cited for consistency verification",
+          "required": false
+        },
+        {
+          "data_point": "patient symptoms/difficulties",
+          "how_used": "referenced as experienced due to industrial injuries",
+          "required": true
+        }
+      ],
+      "static_phrases": [
+        "I observed [Patient Name] during the course of this evaluation.",
+        "A comfortable doctor-patient relationship was established which enabled [Patient Name] to candidly confide the difficulties",
+        "I found [Patient Name] to be a candid and sincere individual.",
+        "I believe [Patient Name] has done [his/her] best to provide an accurate account of [his/her] conditions.",
+        "[Patient Name]'s subjective complaints matched [the/my] objective findings in my evaluation of [him/her].",
+        "In summation, I find no basis for questioning [Patient Name]'s credibility.",
+        "It is evident [he/she] [has] suffered dental related injuries as a result of [his/her] industrial injuries."
+      ],
+      "variation_notes": "Minimal variation - only patient names/titles and corresponding pronouns change. One minor variation: some examples say \"my objective findings\" while others say \"the objective findings.\" One example (Anderson) lacks the medical records consistency sentence, suggesting this may be added when medical records are available for review.",
+      "example_count": 5
+    },
+    {
+      "section_id": "treatment_plan",
+      "section_heading": "TREATMENT PLAN",
+      "purpose": "This section serves multiple purposes: (1) establishes legal/medical justification for treatment by citing guidelines and Labor Code requirements, (2) provides a comprehensive treatment plan with specific interventions tailored to each patient's conditions, (3) sets disability status and work restrictions, and (4) makes administrative requests to claims adjusters for documentation and payment authorization.",
+      "writing_pattern": "The section follows a highly structured template with minimal variation. It begins with extensive legal justification (guidelines research, Labor Code citations, and professional literature quotes), followed by patient-specific treatment recommendations organized by category (appliances, dental treatments, referrals, etc.), then administrative sections covering treatment duration, disability status, work restrictions, and concludes with standardized requests to claims adjusters. The writing is formal, legalistic, and heavily documentation-focused.",
+      "data_points_used": [
+        {
+          "data_point": "Patient name and gender",
+          "how_used": "Inserted into standardized treatment plan header and throughout restrictions",
+          "required": true
+        },
+        {
+          "data_point": "Bruxism/teeth grinding behavior",
+          "how_used": "Determines need for orthotic appliances and drives appliance descriptions",
+          "required": true
+        },
+        {
+          "data_point": "Inflammation of gums diagnosis",
+          "how_used": "Justifies periodontal treatments and medical monitoring requirements",
+          "required": true
+        },
+        {
+          "data_point": "Facial muscle pain/myalgia",
+          "how_used": "Drives work restrictions and appliance justifications",
+          "required": true
+        },
+        {
+          "data_point": "Headache complaints",
+          "how_used": "Used to establish disability status in some cases",
+          "required": false
+        },
+        {
+          "data_point": "Emotional stressors",
+          "how_used": "Justifies psychological examination referral",
+          "required": true
+        },
+        {
+          "data_point": "Sleep-related symptoms",
+          "how_used": "Determines need for nocturnal appliance and pulmonologist referral",
+          "required": false
+        },
+        {
+          "data_point": "Pre-existing conditions (diabetes, thyroid)",
+          "how_used": "Incorporated into medical monitoring requirements when present",
+          "required": false
+        },
+        {
+          "data_point": "TMJ symptoms",
+          "how_used": "Supports appliance therapy recommendations",
+          "required": true
+        },
+        {
+          "data_point": "Neuropathic pain components",
+          "how_used": "May trigger additional neurologist referral when present",
+          "required": false
+        }
+      ],
+      "static_phrases": [
+        "Please Note: I researched the ACOEM guidelines, the MTUS guidelines, and the ODG guidelines",
+        "Section 4604.5(d) of the Labor Code states",
+        "The dental specialty of Orofacial Pain has been established by the American Dental Association",
+        "Treatment Plan for [Patient Name]",
+        "The primary purpose of the Orofacial Pain Occlusal Orthotic Device is to relieve facial muscle, ligament, and nerve impingement",
+        "This appliance is fabricated and customized in our in-house dental laboratory",
+        "Bacteria and inflammatory processes from inflammation of the gums readily enter the bloodstream",
+        "Therefore, [Patient] will require monitoring throughout [his/her] lifetime with treatment as necessary on an industrial basis",
+        "Duration of Treatment Frequency of Treatment: 3 months, 1 time per month",
+        "Estimated date of completion of treatment: April 15, 2026",
+        "[Patient] is Temporarily Partially Disabled",
+        "The condition is not Permanent and Stationary",
+        "Since [Patient] suffers from Myalgia of the facial musculature, activities should be prophylactically restricted",
+        "PLEASE NOTE: Labor Code 5402 (b)(c), requires the employer to authorize all appropriate medical care up to $10,000",
+        "I request that the claims adjuster please provide copies of all medical records"
+      ],
+      "variation_notes": "Primary variations include: (1) some patients require both daytime and nighttime appliances while others need only daytime, (2) specific pre-existing conditions mentioned vary (diabetes, thyroid, sleep studies), (3) some patients get additional referrals (fMRI, neurologist, trigger point injections), and (4) disability reasons may vary slightly (headaches vs general condition). The legal justification section may have minor additions for patients requiring nocturnal appliances.",
+      "example_count": 5
+    }
+  ]
+}

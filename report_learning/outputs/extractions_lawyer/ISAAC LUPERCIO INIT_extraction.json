@@ -1,0 +1,227 @@
+{
+  "form_id": "isaac_lupercio_init",
+  "form_name": "ISAAC LUPERCIO INIT",
+  "extraction_timestamp": "2026-03-08T08:03:53.962461",
+  "resolved_references": [],
+  "overall_confidence": 0.9147058823529413,
+  "total_items_needing_review": 26,
+  "all_review_reasons": [
+    "Page 3 extraction failed",
+    "The extracted value 'Ibuprofen 1-2/Day Tylenol 2500mg/Day Tramadol 3x/week' is ambiguous. The dosage '2500mg/Day' for Tylenol is unusually high and may be a misinterpretation of handwriting. The frequency '3x/week' for Tramadol is also unclear if it's intended as '3x/week' or '3x/day'.",
+    "The patient is instructed to call the office to provide medication names, yet the 'presently_pain' field contains a detailed list of medications. This creates a potential disconnect: if the patient is already providing this information, why is a call requested? This may indicate a procedural error or a need for clarification.",
+    "Page 5 extraction failed",
+    "Page 8 extraction failed",
+    "The field 'Bruxism type: Clenching or Grinding' has no extracted value, but the annotation suggests 'Clenching' was written. This is ambiguous as the extracted data is missing while annotations provide conflicting information.",
+    "The field 'Bruxism type: Bracing Facial Musculature' has no extracted value, but the annotation suggests 'Clenching' was written. This is ambiguous as the extracted data is missing while annotations provide conflicting information.",
+    "The field 'Still uses a nightguard?' has an extracted value 'Y' (Yes), but the annotation 'hw_7' indicates 'N' (No). This is a direct contradiction.",
+    "The field 'Developed stressors in response to industrial orthopedic injuries' has conflicting annotations: 'Yes' (hw_22) and 'No' (hw_24). Similarly, 'Orthopedic pain causing clenching/bracing of facial muscles' has conflicting annotations: 'Yes' (hw_23) and 'No' (hw_25). This is a direct contradiction.",
+    "The field 'When was the last time you had Full Mouth X-Ray taken?' contains illegible handwriting ('? ?'), indicating missing information. This is clinically relevant as it may impact treatment planning.",
+    "The field 'Sleep Study Response' is marked 'Yes', but a circled 'X' next to 'No' indicates the patient did not have a sleep study. This is a direct contradiction.",
+    "The field 'Bruxism Headache Cause' is marked 'Yes', but a circled 'X' next to 'No' indicates the patient does not believe bruxism caused their headaches. This is a direct contradiction.",
+    "The field 'Bruxism Face Pain Cause' is marked 'Yes', but a circled 'X' next to 'No' indicates the patient does not believe bruxism caused their facial pain. This is a direct contradiction.",
+    "The field 'Sleep Study Response' is marked 'Yes', but multiple circled 'X's next to 'No' indicate the patient did not have a sleep study. This is a direct contradiction.",
+    "Page 14 extraction failed",
+    "Handwritten annotations 'WUL' and 'DFV' are ambiguous abbreviations without clear medical context. 'WUL' could mean Wound, Ulcer, Lesion, but is not standard. 'DFV' is unclear (Dental Fissure, Veneer, etc.).",
+    "Page 20 extraction failed",
+    "Page 23 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment note in bottom right corner.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "appt Thursday 11/20/25 at 10:30 am",
+          "normalized_text": "A handwritten note indicating an appointment scheduled for Thursday, November 20, 2025, at 10:30 am.",
+          "relates_to_field_ids": [
+            "Appointment"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating an appointment scheduled for Thursday, November 20, 2025, at 10:30 am.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 2,
+      "field_values": {
+        "header_date": {
+          "value": "February 3, 2025",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "header_page": {
+          "value": "Page 2 of 2",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "employer_address_line1": {
+          "value": "RSVC Company",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "employer_address_line2": {
+          "value": "3051 Myers St Suite B",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "employer_address_line3": {
+          "value": "Riverside, CA 92503-5525",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_report_date": {
+          "value": "1/23/2025",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "signature_name": {
+          "value": "Vanessa Swystun Aguilar",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "signature_title": {
+          "value": "File Handler",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        }
+      },
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Signature below 'Sincerely' section",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Typed name 'Vanessa Swystun Aguilar' with title",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": false,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.98,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 3,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.0,
+      "items_needing_review": 1,
+      "review_reasons": [
+        "Page 3 extraction failed"
+      ]
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 23,
+    "lawyer_page_count": 3
+  }
+}

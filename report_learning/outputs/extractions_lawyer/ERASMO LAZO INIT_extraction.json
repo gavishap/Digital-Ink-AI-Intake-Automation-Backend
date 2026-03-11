@@ -1,0 +1,84 @@
+{
+  "form_id": "erasmo_lazo_init",
+  "form_name": "ERASMO LAZO INIT",
+  "extraction_timestamp": "2026-03-08T06:14:59.156739",
+  "resolved_references": [],
+  "overall_confidence": 0.9427777777777777,
+  "total_items_needing_review": 17,
+  "all_review_reasons": [
+    "Multiple annotations ('itdiny on skin', 'and us fun', 'it us fun', 'the itdiny', 'heart day') are illegible or appear to be shorthand/miswritten, making clinical interpretation difficult.",
+    "The medication name 'picat' is ambiguous and not a standard pharmaceutical term, requiring verification of the correct drug name.",
+    "The text '3-4 times/day' and '1-2 times/week' for Pain medication is partially obscured and may be incomplete, leading to ambiguity in dosage frequency.",
+    "Page 6 extraction failed",
+    "Page 13 extraction failed",
+    "Page 15 extraction failed",
+    "Page 18 extraction failed",
+    "The date '11.25.28' is handwritten and ambiguous. It may be intended as 11/25/2028, but this is outside the expected range of 2020-2026. The context suggests it should be 2025 or 2026. This requires human review to confirm the correct date.",
+    "The doctor's signature is handwritten and illegible. It appears to be 'J. M. H. / 2026', but the handwriting is unclear and may not be authentic. This requires human review to verify the signature."
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten note at bottom left corner.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "appt: Tuesday 11/25/25 at 1:30pm Redlands",
+          "normalized_text": "A handwritten note indicating a scheduled appointment on Tuesday, November 25, 2025, at 1:30 PM in Redlands.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating a scheduled appointment on Tuesday, November 25, 2025, at 1:30 PM in Redlands.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.98,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

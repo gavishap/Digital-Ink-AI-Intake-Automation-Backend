@@ -1,0 +1,205 @@
+{
+  "form_id": "hung_thai_truong_init",
+  "form_name": "HUNG THAI TRUONG INIT",
+  "extraction_timestamp": "2026-03-08T07:00:31.753123",
+  "resolved_references": [],
+  "overall_confidence": 0.9304761904761905,
+  "total_items_needing_review": 17,
+  "all_review_reasons": [
+    "Handwriting for 'tuns 1/day ~2 malks' is illegible or miswritten, making it unclear whether the medication is 'Tums' and whether 'malks' refers to 'months' or 'malks'.",
+    "The date '11/19/2025' has a low confidence score (0.85) and may be misread as 2026. This requires human review to confirm the correct year.",
+    "The 'Date of Injury' field shows '11/16/25' but also includes 'CT: 1/1/18', which may indicate a certified time or correction. The meaning of 'CT' is ambiguous and requires clarification.",
+    "The 'Current Work Status' is marked as 'Disabled', but 'Still working at the same company' is marked as 'Not Working Retired'. This is contradictory as 'Disabled' typically implies inability to work, while 'Not Working Retired' implies a different status.",
+    "The 'Date Stopped working' field is filled with 'Dec 2024', but there is no corresponding 'Date of Injury' or 'Date of Employment' to validate this date. The context is missing.",
+    "The date '1-1-18 → 1-16-25' is ambiguous. '1-1-18' could be interpreted as 1/1/2018 or 1/1/2018, and '1-16-25' as 1/16/2025 or 1/16/2026. The format lacks clarity regarding the century and year.",
+    "Handwritten notes in the bottom right corner are illegible or unclear. The content cannot be accurately interpreted from the provided image.",
+    "Contradiction between handwritten annotations and extracted checkbox data for treatments received. Annotations (hw_3) indicate the patient received Physical Therapy, Chiropractic Manipulations, and Acupuncture, but the extracted data shows 'X' (checked) for all these treatments, which contradicts the annotations. This is a logical inconsistency that requires human review.",
+    "The handwritten value '??' for 'Name of Dentist' is illegible and ambiguous. It is unclear whether this represents a missing value, a placeholder, or an attempt to write a name that was not completed.",
+    "The annotation 'hw_4' indicates 'No' for 'Patient had Sleep Study', which contradicts 'hw_3' ('Yes') and 'hw_7' ('Patient diagnosed with a Sleep Disorder'). Both cannot be true simultaneously.",
+    "Handwritten note under 'Speech Dysfunction' section is not legible or transcribed. The content cannot be verified without human review.",
+    "Page 17 extraction failed",
+    "Handwritten annotations 'LNL' and 'DFV' are ambiguous without clinical context. These may be abbreviations or codes requiring interpretation.",
+    "Page 20 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment note at bottom of form.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "APPT: wednesday 11/19/25 at 2pm Anaheim",
+          "normalized_text": "Handwritten note indicating an appointment scheduled for Wednesday, November 19, 2025, at 2 PM in Anaheim.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "Handwritten note indicating an appointment scheduled for Wednesday, November 19, 2025, at 2 PM in Anaheim.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Sched 8/19",
+          "normalized_text": "Handwritten note indicating a scheduling reference or reminder for August 19, likely a past or future date.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "Handwritten note indicating a scheduling reference or reminder for August 19, likely a past or future date.",
+          "ocr_confidence": 0.9,
+          "interpretation_confidence": 0.9,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 2,
+      "field_values": {
+        "EMPLOYER": {
+          "value": "Hawaiian Gardens Casino A California Corp, 11871, E. Carson Street, Hawaiian Gardens, CA 90716",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "JOB_DESCRIPTION": {
+          "value": "Card Dealer",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "HIRING_DATE": {
+          "value": "2016",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "EMPLOYED": {
+          "value": "No/Terminated",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "PLACE_OF_INJURY": {
+          "value": "SAME AS ABOVE",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "INSURANCE": {
+          "value": "(TD) (PD) (PDA) (EDD)",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "PTP_ADD": {
+          "value": "Dr. Hungchiao Lisa Wu, DC, QME, 215, N. State College Blvd., Ste B, Naheim, CA 92806",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "OPTIMAL_TEL": {
+          "value": "(714)340-7890",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Email": {
+          "value": "wuchirocare@gmail.com",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "EMAIL": {
+          "value": "admin@wuchirocare.com",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        }
+      },
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.97,
+      "items_needing_review": 1,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 23,
+    "lawyer_page_count": 2
+  }
+}

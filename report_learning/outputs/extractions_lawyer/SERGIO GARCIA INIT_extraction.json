@@ -1,0 +1,218 @@
+{
+  "form_id": "sergio_garcia_init",
+  "form_name": "SERGIO GARCIA INIT",
+  "extraction_timestamp": "2026-03-08T16:05:27.184457",
+  "resolved_references": [],
+  "overall_confidence": 0.9233333333333333,
+  "total_items_needing_review": 21,
+  "all_review_reasons": [
+    "The annotation 'B hands' is ambiguous. It could mean 'both hands' or 'left hand'. This requires clarification for accurate clinical interpretation.",
+    "The date '11/25/2025' is recorded, but the normalized text suggests 2026. This discrepancy needs verification to ensure accuracy.",
+    "Page 7 extraction failed",
+    "The date extracted is '11/25/2025', but the annotation confidence flag indicates a discrepancy with a normalized value of '11/25/2026'. The raw text is consistent with 2025, but the normalization process may have introduced an error. This requires human review to confirm the correct year.",
+    "The 'Date of Injury' field contains a range '7/27/18 - 7/28/23', which is ambiguous and potentially illegible. The format suggests a date range, but it's unclear if this is a single injury or a period of treatment. The range spans over 5 years, which is unusual for a single injury.",
+    "The 'Date' field is extracted as '11/25/2026', which is in the future. This is ambiguous as it may be a future date for a scheduled event or a data entry error. The context does not provide enough information to determine its validity.",
+    "The 'Current Work Status' is 'Not Working/Retired', but the 'Presently working at different company' field is filled with 'Ruan Transportation as Truck Driver'. This is a contradiction as the patient is stated to be working while also being retired.",
+    "The 'Date Stopped working' field is blank. This is a required field for a complete employment history and should be filled in.",
+    "Page 11 extraction failed",
+    "The annotation 'Fall' is linked to 'PastSurgeries' but its connection to 'Appendicitis' is ambiguous without further context. The handwriting suggests a causal or temporal link, but it is not explicitly stated.",
+    "The field 'History of Non-Industrial Injuries' is marked 'None' (circle_1, circle_2, circle_3), but annotation circle_4 indicates an MVA (Motor Vehicle Accident) was experienced. This is a direct contradiction.",
+    "Handwritten text 'malk' is likely a misspelling of 'months'. Handwritten text 'Pind' may be a misspelling of 'Pinky'. The text 'Redlads or Hava Dvd.' is likely an address or location, not a phone number.",
+    "Page 16 extraction failed",
+    "Page 18 extraction failed",
+    "Page 19 extraction failed",
+    "The handwritten values for salivary flow indicate 'Less than 0.1mL' for unstimulated and 'Less than 0.5mL' for stimulated flow. However, checkmarks are present next to 'Greater than 0.1mL' and 'Greater than 0.5mL', creating a direct contradiction. This inconsistency requires human review to resolve.",
+    "Page 25 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment schedule in bottom margin.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "APPT: Tuesday 11/25/25 @ 2:30pm Redlands",
+          "normalized_text": "A handwritten note indicating an appointment scheduled for Tuesday, November 25, 2025, at 2:30 PM in Redlands.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "A handwritten note indicating an appointment scheduled for Tuesday, November 25, 2025, at 2:30 PM in Redlands.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "10:30 am Redlands",
+          "normalized_text": "A handwritten note indicating a 10:30 AM appointment in Redlands, likely associated with the appointment on Tuesday, November 25, 2025.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "A handwritten note indicating a 10:30 AM appointment in Redlands, likely associated with the appointment on Tuesday, November 25, 2025.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_3",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "APPT: Thurs. 10/10/25 @ 10:30am",
+          "normalized_text": "A handwritten note indicating an appointment scheduled for Thursday, October 10, 2025, at 10:30 AM.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "A handwritten note indicating an appointment scheduled for Thursday, October 10, 2025, at 10:30 AM.",
+          "ocr_confidence": 0.92,
+          "interpretation_confidence": 0.92,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_4",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "1 7/22",
+          "normalized_text": "A handwritten note that appears to indicate a date (July 22) with a preceding number '1', possibly indicating a sequence or a specific identifier for the appointment or event.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "A handwritten note that appears to indicate a date (July 22) with a preceding number '1', possibly indicating a sequence or a specific identifier for the appointment or event.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": true,
+          "review_reason": "Ambiguous meaning of '1 7/22' without context; could be a date, a sequence number, or a note about a specific event."
+        },
+        {
+          "annotation_id": "hw_5",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "sched 8/13",
+          "normalized_text": "A handwritten note indicating a scheduled event or appointment on August 13.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "A handwritten note indicating a scheduled event or appointment on August 13.",
+          "ocr_confidence": 0.9,
+          "interpretation_confidence": 0.9,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.92,
+      "items_needing_review": 1,
+      "review_reasons": []
+    },
+    {
+      "page_number": 2,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.0,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 3,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    },
+    {
+      "page_number": 4,
+      "field_values": {},
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 25,
+    "lawyer_page_count": 4
+  }
+}

@@ -1,0 +1,806 @@
+[
+  {
+    "model": "Qwen3-VL-8B",
+    "status": "ok",
+    "scores": {
+      "yn_correct": 11,
+      "yn_total": 17,
+      "yes_hit": 0,
+      "yes_total": 6,
+      "no_hit": 11,
+      "no_total": 11,
+      "hdr_hit": 3,
+      "hdr_total": 4,
+      "allergy_ok": true,
+      "dx_hit": 1,
+      "dx_total": 2,
+      "followup_hit": 5,
+      "followup_total": 5,
+      "per_q": {
+        "1": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "2": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "3": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "4": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "pre"
+        },
+        "5": {
+          "expected": "YES",
+          "got": "NO",
+          "ok": false,
+          "notes": ""
+        },
+        "6": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "7": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "8": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "9": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "10": {
+          "expected": "YES",
+          "got": "NO",
+          "ok": false,
+          "notes": "Asthma Shortness of Breath"
+        },
+        "11": {
+          "expected": "YES",
+          "got": "NO",
+          "ok": false,
+          "notes": "Where: Left 2 fingers > shoulders, forehead"
+        },
+        "12": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "13": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "14": {
+          "expected": "YES",
+          "got": "NO",
+          "ok": false,
+          "notes": "3"
+        },
+        "15": {
+          "expected": "YES",
+          "got": "NO",
+          "ok": false,
+          "notes": "~2018"
+        },
+        "16": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "17": {
+          "expected": "YES",
+          "got": "NO",
+          "ok": false,
+          "notes": ""
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2076,
+      "output_tokens": 959
+    },
+    "elapsed": 9.069758176803589,
+    "price_in": 0.08,
+    "price_out": 0.5
+  },
+  {
+    "model": "Qwen3-VL-8B (enh)",
+    "status": "ok",
+    "scores": {
+      "yn_correct": 15,
+      "yn_total": 17,
+      "yes_hit": 4,
+      "yes_total": 6,
+      "no_hit": 11,
+      "no_total": 11,
+      "hdr_hit": 3,
+      "hdr_total": 4,
+      "allergy_ok": true,
+      "dx_hit": 1,
+      "dx_total": 2,
+      "followup_hit": 4,
+      "followup_total": 5,
+      "per_q": {
+        "1": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "2": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "3": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "4": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "5": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "YES is circled"
+        },
+        "6": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "7": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "8": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "9": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "10": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Asthma written in handwriting"
+        },
+        "11": {
+          "expected": "YES",
+          "got": "NO",
+          "ok": false,
+          "notes": "Handwritten note: 'Left 2 fingers > shoulders, forehead'"
+        },
+        "12": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "13": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "14": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Number '3' written in handwriting"
+        },
+        "15": {
+          "expected": "YES",
+          "got": "NO",
+          "ok": false,
+          "notes": "Handwritten: '~2018', 'Apnea Results? YES NO ?'"
+        },
+        "16": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "17": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "YES is circled"
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2214,
+      "output_tokens": 1357
+    },
+    "elapsed": 22.56023645401001,
+    "price_in": 0.08,
+    "price_out": 0.5
+  },
+  {
+    "model": "Qwen3-VL-8B 300dpi",
+    "status": "ok",
+    "scores": {
+      "yn_correct": 17,
+      "yn_total": 17,
+      "yes_hit": 6,
+      "yes_total": 6,
+      "no_hit": 11,
+      "no_total": 11,
+      "hdr_hit": 3,
+      "hdr_total": 4,
+      "allergy_ok": true,
+      "dx_hit": 1,
+      "dx_total": 2,
+      "followup_hit": 4,
+      "followup_total": 5,
+      "per_q": {
+        "1": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "2": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "3": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "4": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "pre written next to NO"
+        },
+        "5": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "YES is circled"
+        },
+        "6": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "7": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "8": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "9": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "10": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Asthma circled"
+        },
+        "11": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Where: Left 2 finger -> Shoulder, Forehead"
+        },
+        "12": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "13": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "14": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "3 times per night"
+        },
+        "15": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "When: ~2018"
+        },
+        "16": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "NO is circled"
+        },
+        "17": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "YES is circled"
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3537,
+      "output_tokens": 1067
+    },
+    "elapsed": 9.944133043289185,
+    "price_in": 0.08,
+    "price_out": 0.5
+  },
+  {
+    "model": "Qwen3-VL-32B",
+    "status": "error",
+    "error": "Error code: 400 - {'id': 'oaJm8k2-3pDw3Z-9d9663e4cebd69aa', 'error': {'message': 'Unable to access non-serverless model ",
+    "elapsed": 0
+  },
+  {
+    "model": "Qwen3-VL-235B",
+    "status": "error",
+    "error": "Error code: 400 - {'id': 'oaJm9Qm-2kFHot-9d9663f33d59e9e4', 'error': {'message': 'Unable to access non-serverless model ",
+    "elapsed": 0
+  },
+  {
+    "model": "Qwen2.5-VL-72B",
+    "status": "error",
+    "error": "Error code: 400 - {'id': 'oaJmA37-2kFHot-9d96640038768626', 'error': {'message': 'Unable to access non-serverless model ",
+    "elapsed": 0
+  },
+  {
+    "model": "Llama4 Maverick",
+    "status": "ok",
+    "scores": {
+      "yn_correct": 17,
+      "yn_total": 17,
+      "yes_hit": 6,
+      "yes_total": 6,
+      "no_hit": 11,
+      "no_total": 11,
+      "hdr_hit": 4,
+      "hdr_total": 4,
+      "allergy_ok": true,
+      "dx_hit": 1,
+      "dx_total": 2,
+      "followup_hit": 4,
+      "followup_total": 5,
+      "per_q": {
+        "1": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "2": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "3": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "4": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "Pre"
+        },
+        "5": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": ""
+        },
+        "6": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "7": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "8": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "9": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "10": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Asthma"
+        },
+        "11": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Last 2 fingers -> Shoulders, Forehead"
+        },
+        "12": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "13": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "14": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": ""
+        },
+        "15": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "~2018 Apnea Results? YES NO ?"
+        },
+        "16": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "17": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": ""
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2727,
+      "output_tokens": 621
+    },
+    "elapsed": 6.640056371688843,
+    "price_in": 0.27,
+    "price_out": 0.85
+  },
+  {
+    "model": "Kimi K2.5 (TG)",
+    "status": "error",
+    "error": "JSON parse",
+    "elapsed": 122.86042904853821
+  },
+  {
+    "model": "Kimi K2.5 (FW)",
+    "status": "ok",
+    "scores": {
+      "yn_correct": 17,
+      "yn_total": 17,
+      "yes_hit": 6,
+      "yes_total": 6,
+      "no_hit": 11,
+      "no_total": 11,
+      "hdr_hit": 3,
+      "hdr_total": 4,
+      "allergy_ok": true,
+      "dx_hit": 2,
+      "dx_total": 2,
+      "followup_hit": 4,
+      "followup_total": 5,
+      "per_q": {
+        "1": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "2": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "3": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "4": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": "Pre written next to question"
+        },
+        "5": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": ""
+        },
+        "6": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "7": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "8": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "9": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "10": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Asthma circled, Shortness of Breath"
+        },
+        "11": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Last 2 finger -> Shoulder, Forehead"
+        },
+        "12": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "13": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "14": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "3 times per night"
+        },
+        "15": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "~2018, Apnea Results ?"
+        },
+        "16": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "17": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": ""
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2670,
+      "output_tokens": 653
+    },
+    "elapsed": 5.831989526748657,
+    "price_in": 0.5,
+    "price_out": 2.8
+  },
+  {
+    "model": "Claude Sonnet 4",
+    "status": "ok",
+    "scores": {
+      "yn_correct": 17,
+      "yn_total": 17,
+      "yes_hit": 6,
+      "yes_total": 6,
+      "no_hit": 11,
+      "no_total": 11,
+      "hdr_hit": 2,
+      "hdr_total": 4,
+      "allergy_ok": false,
+      "dx_hit": 2,
+      "dx_total": 2,
+      "followup_hit": 3,
+      "followup_total": 5,
+      "per_q": {
+        "1": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "2": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "3": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "4": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "5": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": ""
+        },
+        "6": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "7": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "8": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "9": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "10": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "Asthma, Shortness of Breath"
+        },
+        "11": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "6 last 2 finger \u2192 Shoulder, Forehead"
+        },
+        "12": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "13": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "14": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "3 times per night"
+        },
+        "15": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": "When: 2018, Apnea Results? YES NO ?"
+        },
+        "16": {
+          "expected": "NO",
+          "got": "NO",
+          "ok": true,
+          "notes": ""
+        },
+        "17": {
+          "expected": "YES",
+          "got": "YES",
+          "ok": true,
+          "notes": ""
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1828,
+      "output_tokens": 703
+    },
+    "elapsed": 11.928931713104248,
+    "price_in": 3.0,
+    "price_out": 15.0
+  }
+]

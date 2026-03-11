@@ -10,3 +10,15 @@ input/
 .git/
 .gitignore
 *.log
+
+# Training data and large outputs (not needed at runtime)
+report_learning/training_data/
+report_learning/outputs/benchmark/
+report_learning/outputs/extractions_lawyer/
+report_learning/outputs/extractions/
+report_learning/outputs/extractions_v2/
+report_learning/outputs/extractions_trimmed/
+report_learning/outputs/correlations/
+report_learning/outputs/scanned/
+report_learning/outputs/generated_reports/
+_run_*.py

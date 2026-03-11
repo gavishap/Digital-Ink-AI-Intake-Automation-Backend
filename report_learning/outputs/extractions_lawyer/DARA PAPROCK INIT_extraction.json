@@ -1,0 +1,87 @@
+{
+  "form_id": "dara_paprock_init",
+  "form_name": "DARA PAPROCK INIT",
+  "extraction_timestamp": "2026-03-08T05:33:30.378507",
+  "resolved_references": [],
+  "overall_confidence": 0.9429411764705883,
+  "total_items_needing_review": 22,
+  "all_review_reasons": [
+    "The extracted value for 'Current Medications' includes ambiguous handwritten notes 'Notex', 'Flexire', 'Balcyc Clorver'. These are not standard medication names and require human verification to determine their meaning or if they are typos.",
+    "The date '11/24/2025' is flagged for human review due to potential ambiguity. The year 2025 is outside the expected range of 2020-2026, and the date format may be misinterpreted (e.g., 11/24/2025 could be November 24, 2025, or December 24, 2025, depending on regional conventions).",
+    "The extracted value '~40 Years out of' is ambiguous. It is unclear if the patient quit smoking 40 years ago or if this refers to a different context. The phrasing 'out of' is incomplete or unclear.",
+    "The handwritten text 'De was tihy Coo of an unpredictable + Violab pechid when the patient assaulted her + hit her in the face multiple times + it was kicked to the floor she broke her leg & arm blocked the blows. she lost conciousness' is partially illegible. Words like 'tihy Coo' and 'Violab pechid' are unclear and may contain transcription errors (e.g., 'tihy Coo' likely means 'thirsty' or 'drunk', 'Violab pechid' likely means 'Violent/physical attack').",
+    "Page 9 extraction failed",
+    "Handwritten note 'hotl-' in top right corner is ambiguous. It could be a shorthand for 'hot' or another term. Its medical relevance is unclear.",
+    "Handwritten note 'Bit on fractured by dog when 6 years old, full recovery' has ambiguous phrasing. 'Bit on fractured' is unclear. The phrase 'full recovery' may be subjective and needs verification.",
+    "The date '11/24/2025' has a confidence score of 0.85, which is below the threshold for high confidence. The original value was '11/24/2026', suggesting potential error in normalization. This requires human review to confirm the correct year.",
+    "Page 15 extraction failed",
+    "Page 17 extraction failed",
+    "Page 18 extraction failed",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment note at bottom of form.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Appt: Monday 11/24/25 at 10am Resed sched 8/25",
+          "normalized_text": "A handwritten note indicating an appointment scheduled for Monday, November 24, 2025, at 10:00 AM, with a reference to a previously scheduled date of August 25.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A handwritten note indicating an appointment scheduled for Monday, November 24, 2025, at 10:00 AM, with a reference to a previously scheduled date of August 25.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.9,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

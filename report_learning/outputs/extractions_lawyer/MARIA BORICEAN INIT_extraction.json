@@ -1,0 +1,439 @@
+{
+  "form_id": "maria_boricean_init",
+  "form_name": "MARIA BORICEAN INIT",
+  "extraction_timestamp": "2026-03-08T10:57:12.647795",
+  "resolved_references": [],
+  "overall_confidence": 0.9278947368421052,
+  "total_items_needing_review": 19,
+  "all_review_reasons": [
+    "The extracted date '11-6-2026' has a low confidence score (0.75) and may be ambiguous (could be 2025 or 2026).",
+    "The extracted date 'June/July 2022' has a moderate confidence score (0.8) and may be ambiguous (could be 2022 or 2026).",
+    "Page 7 extraction failed",
+    "The value 'cpnl 6th 2026' for 'Nightguard Year Made' is illegible and ambiguous. 'cpnl' may be a typo or abbreviation, and '6th' is unclear if it refers to June or the 6th of a month. The handwriting is not clear enough to confirm the intended value.",
+    "The extracted value '06/01/2026' for 'Surgery Date' is ambiguous. The format is assumed to be MM/DD/YYYY, but the context does not confirm this. The date is in the future (2026), which may be an error or a planned procedure.",
+    "The extracted value 'Physical Therapy Chiropractic Manipulations Acupuncture Injections: Steroid Spinal Trigger Point' for 'Treatments Received' is ambiguous. The format is not standardized, and 'Injections: Steroid' may be incomplete or misinterpreted. The handwriting is not clear enough to confirm the exact treatments.",
+    "The extracted values 'Evaluated by' for both 'Psychological Therapy: Evaluated by' and 'Neurologist: Evaluated by' are ambiguous. The field is likely intended to capture a name or identifier, but the value is incomplete or missing.",
+    "Multiple handwritten annotations (hw_1 to hw_10) are ambiguous and lack context. The content is not clear enough to determine their exact meaning or relevance to the form fields. This may lead to misinterpretation of patient-reported information.",
+    "The extracted value '168 Kg' for 'Present Weight' is ambiguous. The unit 'Kg' (kilograms) is inconsistent with the handwritten 'lbs' (pounds) next to the value. This could indicate a unit error or misinterpretation. The value is likely intended to be in pounds, as 'lbs' is the standard unit for weight in this context.",
+    "Page 13 extraction failed",
+    "The 'Class' field shows 'I II III' with 'R' and 'L' circled, but it is unclear if this indicates a specific malocclusion class or merely the side of the mouth being assessed. The annotation suggests incomplete information requiring clarification.",
+    "Page 17 extraction failed",
+    "Handwritten annotations 'DFV' and 'UNL' are ambiguous. These are not standard medical abbreviations in oral medicine and require clinical context to interpret their meaning."
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment date and time details.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten address and phone number for defense attorney.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_3",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten name and date for adjuster.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_4",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten case number with circled '51'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_5",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'S1' inside a circle next to case number.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_6",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'adj. Deborah Price' with date.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_7",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'ME OUT' under adjuster name.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_8",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'Box 716 Portland' under adjuster info.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_9",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'ME OUT' under adjuster name.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_10",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'Box 716 Portland' under adjuster info.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Appt: Wed 11/19/25 @ 12pm Anaheim",
+          "normalized_text": "Handwritten note indicating an appointment scheduled for Wednesday, November 19, 2026, at 12pm in Anaheim.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating an appointment scheduled for Wednesday, November 19, 2026, at 12pm in Anaheim.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "333 S. Amity Dr #900 Orange CA 92866",
+          "normalized_text": "Handwritten address for the defense attorney's office.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten address for the defense attorney's office.",
+          "ocr_confidence": 0.9,
+          "interpretation_confidence": 0.9,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_3",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "adj-Deborah Price ME OUT 11/16/2020",
+          "normalized_text": "Handwritten note identifying the insurance adjuster as Deborah Price, with 'ME OUT' indicating she is no longer involved, dated 11/16/2020.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note identifying the insurance adjuster as Deborah Price, with 'ME OUT' indicating she is no longer involved, dated 11/16/2020.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_4",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ADJ16477483 (51)",
+          "normalized_text": "Handwritten case number with a circled '51' indicating a specific case identifier or classification.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten case number with a circled '51' indicating a specific case identifier or classification.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_5",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "S1",
+          "normalized_text": "Handwritten 'S1' inside a circle next to the case number, likely indicating a specific case type or classification code.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten 'S1' inside a circle next to the case number, likely indicating a specific case type or classification code.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_6",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "adj-Deborah Price ME OUT 11/16/2020",
+          "normalized_text": "Handwritten note identifying the insurance adjuster as Deborah Price, with 'ME OUT' indicating she is no longer involved, dated 11/16/2020.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note identifying the insurance adjuster as Deborah Price, with 'ME OUT' indicating she is no longer involved, dated 11/16/2020.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_7",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ME OUT",
+          "normalized_text": "Handwritten note indicating the adjuster is no longer involved in the case.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating the adjuster is no longer involved in the case.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_8",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Box 716 Portland",
+          "normalized_text": "Handwritten note indicating the adjuster's office location as Box 716, Portland.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating the adjuster's office location as Box 716, Portland.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_9",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ME OUT",
+          "normalized_text": "Handwritten note indicating the adjuster is no longer involved in the case.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating the adjuster is no longer involved in the case.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_10",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Box 716 Portland",
+          "normalized_text": "Handwritten note indicating the adjuster's office location as Box 716, Portland.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating the adjuster's office location as Box 716, Portland.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

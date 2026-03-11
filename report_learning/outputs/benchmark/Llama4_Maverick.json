@@ -1,0 +1,251 @@
+{
+  "model": "Llama4 Maverick",
+  "model_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+  "prompt": "standard",
+  "dpi": 150,
+  "parsed_response": {
+    "header": {
+      "name": "Aubrie Vasquez",
+      "date": "11/18/2025",
+      "birth_date": "8/16/1994",
+      "sex": "FEMALE"
+    },
+    "yes_no_questions": [
+      {
+        "number": 1,
+        "topic": "heart problems",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 2,
+        "topic": "metal joint replacements",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 3,
+        "topic": "High Blood Pressure",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 4,
+        "topic": "Diabetes",
+        "answer": "NO",
+        "notes": "Pre"
+      },
+      {
+        "number": 5,
+        "topic": "stomach acids come up into your mouth or throat",
+        "answer": "YES",
+        "notes": ""
+      },
+      {
+        "number": 6,
+        "topic": "Kidney problems",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 7,
+        "topic": "Thyroid problem",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 8,
+        "topic": "HIV Hepatitis TB VD",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 9,
+        "topic": "taking blood thinners",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 10,
+        "topic": "breathing problems",
+        "answer": "YES",
+        "notes": "Asthma"
+      },
+      {
+        "number": 11,
+        "topic": "numbness or pins/needles feeling",
+        "answer": "YES",
+        "notes": "Last 2 fingers -> Shoulders, Forehead"
+      },
+      {
+        "number": 12,
+        "topic": "Liver problems",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 13,
+        "topic": "Urinary problems",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 14,
+        "topic": "Awakens at night to urinate",
+        "answer": "YES",
+        "notes": ""
+      },
+      {
+        "number": 15,
+        "topic": "Sleep Study Test",
+        "answer": "YES",
+        "notes": "~2018 Apnea Results? YES NO ?"
+      },
+      {
+        "number": 16,
+        "topic": "CPAP mask use at night",
+        "answer": "NO",
+        "notes": ""
+      },
+      {
+        "number": 17,
+        "topic": "morning headache in temple/forehead",
+        "answer": "YES",
+        "notes": ""
+      }
+    ],
+    "allergies": "caphor",
+    "dx_post_injury_marks": [
+      "Diabetes"
+    ],
+    "other_observations": [
+      "Height: 98.5 in, Weight: 163.5 cm",
+      "Lanzoprazole circled in medication list",
+      "Diclofenac Gel handwritten below medication list"
+    ]
+  },
+  "scores": {
+    "yn_correct": 17,
+    "yn_total": 17,
+    "yes_hit": 6,
+    "yes_total": 6,
+    "no_hit": 11,
+    "no_total": 11,
+    "hdr_hit": 4,
+    "hdr_total": 4,
+    "allergy_ok": true,
+    "dx_hit": 1,
+    "dx_total": 2,
+    "followup_hit": 4,
+    "followup_total": 5,
+    "per_q": {
+      "1": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "2": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "3": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "4": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": "Pre"
+      },
+      "5": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": ""
+      },
+      "6": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "7": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "8": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "9": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "10": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "Asthma"
+      },
+      "11": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "Last 2 fingers -> Shoulders, Forehead"
+      },
+      "12": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "13": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "14": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": ""
+      },
+      "15": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": "~2018 Apnea Results? YES NO ?"
+      },
+      "16": {
+        "expected": "NO",
+        "got": "NO",
+        "ok": true,
+        "notes": ""
+      },
+      "17": {
+        "expected": "YES",
+        "got": "YES",
+        "ok": true,
+        "notes": ""
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 2727,
+    "output_tokens": 621
+  },
+  "elapsed_s": 6.640056371688843
+}

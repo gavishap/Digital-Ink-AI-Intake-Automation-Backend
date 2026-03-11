@@ -1,0 +1,1307 @@
+{
+  "report_name": "Clinical Dental Report - Workers' Compensation",
+  "report_description": null,
+  "total_estimated_pages": 29,
+  "sections": [
+    {
+      "section_id": "and_request_for_authorization",
+      "title": "Authorization Request Header",
+      "ordering": 1,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "formatted_fill",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_date",
+        "claim_number",
+        "date_of_injury",
+        "p1_patient_name"
+      ],
+      "template": "DATE: \t\t{p1_date:January 11, 2026}\nCLAIM: \t\t{claim_number}\nWCAB:\t\t{venue}\nCase #:\t\t{case_number}\nDate of Injury: \t{date_of_injury}\nDate of current exam: {exam_date}\nInterpreter:\t{interpreter}\nPatient\nLast Name: \t\t{patient_last_name}\nFirst Name: \t\t{patient_first_name}\nSex: \t\t\t{patient_sex}\nDate of Birth: \t{patient_dob}\nOccupation: \t\t{occupation}\nAddress: \t\t{patient_address}\nCity: \t\t\t{patient_city}\nState: \t\t\t{patient_state}\nZip: \t\t\t{patient_zip}\nPhone No.: \t\t{patient_phone}",
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "job_description",
+      "title": "Job Description",
+      "ordering": 2,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p5_job_title",
+        "p5_employed_at",
+        "p5_worked_hours_per_day",
+        "p5_worked_days_per_week",
+        "p5_job_requirements_initial",
+        "p5_lifting_maximum_lbs",
+        "p5_carrying_maximum_lbs"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate a clinical narrative describing the patient's job. Use proper title format (Mr./Ms./Mrs.). Start with job title and employer, then work schedule. Include physical job requirements if available. Use past tense 'worked as' format. Be concise and professional.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p5_job_title": "Site Inspector",
+            "p5_employed_at": "Smith Emery Company",
+            "p5_worked_hours_per_day": "8",
+            "p5_worked_days_per_week": "5",
+            "p5_lifting_maximum_lbs": "40"
+          },
+          "output_text": "Mr. Anderson states he worked as a Site Inspector for Smith Emery Company. He worked 8 hours per day, 5 days per week.\nMr. Anderson states his job entailed prolonged driving, walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 40 lbs, and carrying up to"
+        },
+        {
+          "input_fields": {
+            "patient_name": "Bachar, Margalit",
+            "p5_job_title": "On-Site Property Manager",
+            "p5_employed_at": "Euro Cabinet Design & Woodworking",
+            "p5_worked_hours_per_day": "24",
+            "p5_worked_days_per_week": "7"
+          },
+          "output_text": "Ms. Bachar states she worked as an On-Site Property Manager for Euro Cabinet Design & Woodworking. She worked 24 hours per day, 7 days per week.\nMs. Bachar states her job entailed prolonged walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 25 lbs, and"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "current_work_status",
+      "title": "Current Work Status",
+      "ordering": 3,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p5_current_work_status",
+        "p5_date_stopped_working",
+        "p5_presently_working_at_different_company"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate a single sentence describing current work status. Use proper title format (Mr./Ms./Mrs.). For 'Disabled/Not Working', include stop date if available. For 'Working for another employer', mention this. For 'Still working same employer', state this clearly.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p5_current_work_status": "Disabled/Not Working",
+            "p5_date_stopped_working": "November 5, 2021"
+          },
+          "output_text": "Mr. Anderson states that he has not returned to work since November 5, 2021."
+        },
+        {
+          "input_fields": {
+            "patient_name": "Canseco Gutierrez, Amador",
+            "p5_current_work_status": "Working for another employer",
+            "p5_presently_working_at_different_company": "driver"
+          },
+          "output_text": "Mr. Canseco Gutierrez states that he is working for another employer as a driver."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "history_of_industrial_injury",
+      "title": "History of Industrial Injury",
+      "ordering": 4,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p5_date_of_injury",
+        "p7_orthopedic_pain_clenching",
+        "p6_injury_description_1",
+        "p7_developed_stressors_injury"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate clinical narrative about industrial injury. Start with injury date and circumstances. Use specific dates or cumulative trauma periods. Include how orthopedic pain developed into clenching/bruxism. Mention repetitive work activities for CT cases. Use proper clinical terminology.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p5_date_of_injury": "November 5, 2021",
+            "p6_injury_description_1": "slipped and fell, landing in a splits position; his left leg struck a pile of rebar"
+          },
+          "output_text": "Mr. Anderson states that on November 5, 2021, he was involved in an industrial injury in the course of performing his usual and customary job duties.\nMr. Anderson reports that he slipped and fell, landing in a splits position; his left leg struck a pile of rebar. He complains of residual pain in his left elbow, lower back, left leg, left knee and in his left ankle."
+        },
+        {
+          "input_fields": {
+            "patient_name": "Bachar, Margalit",
+            "p5_date_of_injury": "CT 1/1/10 to 2/28/23"
+          },
+          "output_text": "Ms. Bachar states that from CT 1/1/10 to 2/28/23, she was involved in industrial injuries in the course of performing her usual and customary job duties.\nMs. Bachar reports that as a result of performing repetitive work activities such as prolonged walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "treatment_received_for_the_industrial_injury",
+      "title": "Treatment Received for Industrial Injury",
+      "ordering": 5,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p7_treatments_received",
+        "p7_surgery_body_parts"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate narrative listing treatments received for industrial injury. Include physical therapy, chiropractic, acupuncture, surgery as applicable. Use proper clinical format. If no treatment, state 'has received no treatment'.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p7_surgery_body_parts": "left ankle surgery in 2024",
+            "p7_treatments_received": "physical therapy"
+          },
+          "output_text": "Mr. Anderson underwent left ankle surgery in 2024.\nMr. Anderson has received treatments of physical therapy."
+        },
+        {
+          "input_fields": {
+            "patient_name": "Canseco Gutierrez, Amador",
+            "p7_treatments_received": "None"
+          },
+          "output_text": "Mr. Canseco Gutierrez has received no treatment."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "p7_treatments_received",
+          "operator": "exists",
+          "value": null,
+          "combine": "or"
+        },
+        {
+          "field_id": "p7_surgery_body_parts",
+          "operator": "exists",
+          "value": null,
+          "combine": "or"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "past_medical_history",
+      "title": "Past Medical History",
+      "ordering": 6,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_stomach_acids",
+        "p1_high_blood_pressure",
+        "p1_diabetes",
+        "p1_thyroid_problem",
+        "p1_breathing_problems",
+        "p8_past_medical_history"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate clinical narrative of past medical history. Always include stomach acids (gastric reflux) as primary condition. Add other conditions like diabetes, thyroid problems, high blood pressure as applicable. Use clinical terminology and proper sentence structure.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p1_stomach_acids": "Yes"
+          },
+          "output_text": "Mr. Anderson reports having stomach acids coming up into his mouth.\nHe is allergic to Cortisone and Sulfa."
+        },
+        {
+          "input_fields": {
+            "patient_name": "Benton, Patricia",
+            "p1_stomach_acids": "Yes",
+            "p1_diabetes": "Yes",
+            "p1_thyroid_problem": "Yes"
+          },
+          "output_text": "Ms. Benton reports having diabetes and thyroid problems, as well as stomach acids coming up into her mouth.\nShe has undergone sleep study testing."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "prior_surgeries",
+      "title": "Prior Surgeries",
+      "ordering": 7,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p8_past_surgeries"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate clinical narrative of prior surgeries. If specific surgeries listed, include timeframes. If 'None' or empty, state 'cannot recall prior surgeries' or 'denies prior surgeries'. Use past tense and clinical format.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p8_past_surgeries": "right inguinal hernia repair about 30 years ago"
+          },
+          "output_text": "Mr. Anderson underwent a right inguinal hernia repair about 30 years ago."
+        },
+        {
+          "input_fields": {
+            "patient_name": "Benton, Patricia",
+            "p8_past_surgeries": "right knee surgery, cesarean section, rhinoplasty, hysterectomy"
+          },
+          "output_text": "Ms. Benton underwent a right knee surgery, a cesarean section, a rhinoplasty, and a hysterectomy."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "prior_injuries",
+      "title": "Prior Injuries",
+      "ordering": 8,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p8_history_prior_industrial_injuries",
+        "p8_history_non_industrial_injuries"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate clinical narrative of prior injury history. Include both industrial and non-industrial injuries. If 'None', state 'cannot recall prior injuries'. Include recovery status when mentioned. Add disclaimer for injuries outside dental expertise.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p8_history_prior_industrial_injuries": "None"
+          },
+          "output_text": "Mr. Anderson cannot recall sustaining any prior injuries."
+        },
+        {
+          "input_fields": {
+            "patient_name": "Boricean, Maria",
+            "p8_history_non_industrial_injuries": "motor vehicle accident about 35 years ago, injured neck and back, made full recovery"
+          },
+          "output_text": "Ms. Boricean was involved in a motor vehicle accident about 35 years ago and injured her neck and back areas. She had since made a full recovery."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "subsequent_injuries",
+      "title": "Subsequent Injuries",
+      "ordering": 9,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p8_any_injuries_after_industrial_date"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate clinical narrative about injuries after industrial date. If 'None', state 'has not been involved in any injuries subsequent to the industrial injury'. If injuries present, describe with timeframe.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p8_any_injuries_after_industrial_date": "None"
+          },
+          "output_text": "Mr. Anderson states he has not been involved in any injuries subsequent to the industrial injury."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "p8_any_injuries_after_industrial_date",
+          "operator": "exists",
+          "value": null,
+          "combine": "and"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "social_history",
+      "title": "Social History",
+      "ordering": 10,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p4_do_you_smoke",
+        "p4_have_you_ever_smoked",
+        "p4_years_smoker",
+        "p4_when_stop_smoking_years",
+        "p4_cigarettes_per_day"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate smoking history narrative. If both smoking fields are 'NO', state 'does not smoke and has never been a smoker'. If current smoker, include cigarettes per day and duration. If former smoker, include quit timeframe and previous smoking history.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p4_do_you_smoke": "No",
+            "p4_have_you_ever_smoked": "No"
+          },
+          "output_text": "Mr. Anderson does not smoke and has never been a smoker."
+        },
+        {
+          "input_fields": {
+            "patient_name": "Bachar, Margalit",
+            "p4_do_you_smoke": "Yes",
+            "p4_cigarettes_per_day": "1-2",
+            "p4_years_smoker": "30"
+          },
+          "output_text": "Ms. Bachar has smoked approximately 1-2 cigarettes per day for the past 30 years."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "past_dental_history",
+      "title": "Past Dental History",
+      "ordering": 11,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p9_last_teeth_cleaned",
+        "p9_last_dentist_visit",
+        "p9_last_xray",
+        "p9_dentist_1_name"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate dental history narrative. Include last dentist visit timeframe, dentist name if available, and services received (cleaning, x-rays). End with standard request for prior dental records for comprehensive apportionment assessment.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p9_last_dentist_visit": "1 month",
+            "p9_dentist_1_name": "Mary Chester",
+            "p9_last_teeth_cleaned": "3-4 years"
+          },
+          "output_text": "Mr. Anderson states he was last seen by a dentist approximately 1 month prior to this examination.\nHis private dentist is Mary Chester.\nHe states that he had x-rays taken at his last dental visit, and his teeth cleaned about 3-4 years prior to this examination.\nI welcome the provision of Mr. Anderson's prior dental x-rays and records for the purpose of providing a comprehensive assessment of apportionment once he reaches Permanent and Stationary status."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "subjective_complaints",
+      "title": "Subjective Complaints",
+      "ordering": 12,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p10_headache_vas",
+        "p7_orthopedic_pain_clenching",
+        "p10_headache_locations",
+        "p10_headache_frequency",
+        "p10_right_face_pain_frequency",
+        "p10_left_face_pain_frequency"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate detailed subjective complaint narrative. Include headache patterns (location, frequency, severity, VAS scores), facial pain patterns, and dental/bruxism complaints in response to orthopedic pain. Use structured format with clear headings for Headaches, Facial Pain, and Dental sections.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p10_headache_locations": "bilateral temple and forehead",
+            "p10_headache_frequency": "occasional slight",
+            "p10_headache_vas": "4-5"
+          },
+          "output_text": "Headaches\nOccasional slight headaches in the bilateral temple and forehead areas\nHeadache pain described as sharp and dull\nHeadaches occurring about 1% of the time\nHeadache pain intensity of 4-5 on a Visual Analog Scale of 0 to 10\nDental\nClenching and grinding his teeth and bracing his facial musculature in response to the industrial related orthopedic pain and resultant emotional stressors"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "oral_malodor_complaint",
+      "title": "Oral Malodor Complaint",
+      "ordering": 13,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p3_bad_breath_after",
+        "p3_breath_intensity_after",
+        "p3_bad_breath_percentage_after",
+        "p3_interfere_others_after",
+        "p3_embarrassment_after"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate bad breath complaint narrative since industrial injuries. Include intensity VAS, percentage of time present, embarrassment level, and social interference. Use clinical format with VAS scoring.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Benton, Patricia",
+            "p3_bad_breath_after": "Yes",
+            "p3_breath_intensity_after": "6",
+            "p3_bad_breath_percentage_after": "60%",
+            "p3_embarrassment_after": "10"
+          },
+          "output_text": "Ms. Benton states that since the industrial injuries she has experienced bad breath.\nMs. Benton rates the intensity of her bad breath as a 6 on a VAS.\nMs. Benton states that her bad breath is present 60% of the time.\nMs. Benton rates the amount of her bad breath causing her to be embarrassed as a 10 on a VAS."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "p3_bad_breath_after",
+          "operator": "equals",
+          "value": "Yes",
+          "combine": "and"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "epworth_scale",
+      "title": "Epworth Sleepiness Scale",
+      "ordering": 14,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "formatted_fill",
+      "static_content": null,
+      "source_field_ids": [
+        "epworth_sleepiness_scale_total_score"
+      ],
+      "template": "Mr./Ms. {patient_name} states he/she has a tendency to doze while:\n{epworth_activities}\nThe results of this test show a total score of {epworth_sleepiness_scale_total_score}, which suggests the presence of daytime drowsiness.",
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "epworth_sleepiness_scale_total_score",
+          "operator": "exists",
+          "value": null,
+          "combine": "and"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "activities_of_daily_living_adl",
+      "title": "Activities of Daily Living (ADL)",
+      "ordering": 15,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "table",
+      "static_content": null,
+      "source_field_ids": [
+        "p13_brushing_teeth_severity",
+        "p13_flossing_teeth_severity",
+        "p13_speak_extended_period_severity",
+        "p13_mastication_severity",
+        "p13_swallowing_severity",
+        "p13_bruxism_severity"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [
+        {
+          "header": "ACTIVITY",
+          "source_field_id": null,
+          "width_percent": 30.0,
+          "formatting": null
+        },
+        {
+          "header": "EXAMPLE",
+          "source_field_id": null,
+          "width_percent": 35.0,
+          "formatting": null
+        },
+        {
+          "header": "DIFFICULTY",
+          "source_field_id": "difficulty_level",
+          "width_percent": 35.0,
+          "formatting": null
+        }
+      ],
+      "table_row_source_field": "adl_activities",
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "clinical_examination_of_the_temporomandibular_joint",
+      "title": "Clinical Examination of the Temporomandibular Joint",
+      "ordering": 16,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p14_joint_noises_crepitus",
+        "p14_joint_noises_translational",
+        "p14_joint_noises_lateral",
+        "p14_right_lateral_pole_vas",
+        "p14_left_lateral_pole_vas"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate TMJ examination findings narrative. Start with 'Physical examination revealed the following:'. Describe crepitus, clicking, and joint noises during specific movements (translational, lateral). Include palpation pain findings for lateral condyles if VAS > 0.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "p14_joint_noises_crepitus": "Yes",
+            "p14_joint_noises_translational": "Yes",
+            "p14_joint_noises_lateral": "Yes"
+          },
+          "output_text": "Physical examination revealed the following:\nCrepitus noises palpated and auscultated in the right Temporomandibular Joint upon translational and lateral movements of the mandible"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "p14_joint_noises_crepitus",
+          "operator": "exists",
+          "value": null,
+          "combine": "or"
+        },
+        {
+          "field_id": "p14_right_lateral_pole_vas",
+          "operator": "greater_than",
+          "value": "0",
+          "combine": "or"
+        },
+        {
+          "field_id": "p14_left_lateral_pole_vas",
+          "operator": "greater_than",
+          "value": "0",
+          "combine": "or"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "clinical_examination_of_the_muscular_system",
+      "title": "Clinical Examination of the Muscular System",
+      "ordering": 17,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p14_temporalis_right_y_n",
+        "p14_temporalis_right_vas",
+        "p14_temporalis_left_y_n",
+        "p14_temporalis_left_vas",
+        "p14_masseter_right_y_n",
+        "p14_masseter_right_vas",
+        "p14_masseter_left_y_n",
+        "p14_masseter_left_vas"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate muscle examination narrative describing taut bands and trigger points in temporalis and masseter muscles. Include statement about pain reproduction when palpating taut bands. Use clinical terminology for bilateral findings.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "Anderson, Ronald",
+            "p14_masseter_right_y_n": "Yes",
+            "p14_masseter_left_y_n": "Yes"
+          },
+          "output_text": "Subjective pain was elicited and objective palpable taut bands were found upon palpation of the:\nRight masseter muscle\nLeft masseter muscle\nMr. Anderson informed us that when we objectively palpated the taut band in his masseter muscles on the right and left sides, this reproduced his facial pain complaint."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "p14_temporalis_right_y_n",
+          "operator": "equals",
+          "value": "Yes",
+          "combine": "or"
+        },
+        {
+          "field_id": "p14_temporalis_left_y_n",
+          "operator": "equals",
+          "value": "Yes",
+          "combine": "or"
+        },
+        {
+          "field_id": "p14_masseter_right_y_n",
+          "operator": "equals",
+          "value": "Yes",
+          "combine": "or"
+        },
+        {
+          "field_id": "p14_masseter_left_y_n",
+          "operator": "equals",
+          "value": "Yes",
+          "combine": "or"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "mandibular_range_of_motion",
+      "title": "Mandibular Range of Motion",
+      "ordering": 18,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "formatted_fill",
+      "static_content": null,
+      "source_field_ids": [
+        "p14_maximum_interincisal_opening_mm",
+        "p14_right_lateral_mm",
+        "p14_left_lateral_mm",
+        "p14_protrusion_mm",
+        "p14_max_opening_vas"
+      ],
+      "template": "Please Note: According to the State of California Disability Standards, the minimal normal range of motion of opening of the mouth is an interincisal opening of 38.1 mm.\nUpon examination, {patient_title} {patient_last_name} was objectively found to exhibit:\nMaximum interincisal opening of {p14_maximum_interincisal_opening_mm} mm {pain_qualifier}\nMaximum right lateral excursion of {p14_right_lateral_mm} mm {pain_qualifier}\nMaximum left lateral excursion of {p14_left_lateral_mm} mm {pain_qualifier}\nMaximum protrusion of {p14_protrusion_mm} mm {pain_qualifier}",
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "intraoral_examination",
+      "title": "Intraoral Examination",
+      "ordering": 19,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "formatted_fill",
+      "static_content": null,
+      "source_field_ids": [
+        "p15_class_selection",
+        "p15_overbite_mm",
+        "p15_overjet_mm",
+        "p15_midline_deviation",
+        "p15_missing_teeth",
+        "p15_inflamed_gingiva"
+      ],
+      "template": "Upon examination, I determined {patient_title} {patient_last_name} exhibits:\nAt maximum intercuspation:\tClass {p15_class_selection} occlusion\nOverbite:    {p15_overbite_mm} mm\nOverjet:      {p15_overjet_mm} mm\n{midline_text}\nMissing Teeth {p15_missing_teeth}\n{additional_findings}\nObjectively-disclosed bacterial biofilm deposits on {his_her} teeth and around {his_her} gum tissues",
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "objective_clinical_findings_confirming_bruxism_clenching",
+      "title": "Objective Clinical Findings Confirming Bruxism/Clenching",
+      "ordering": 20,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p15_scalloping",
+        "p15_buccal_mucosal_ridging",
+        "p15_occlusal_wear",
+        "p19_occlusal_wear"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate bruxism findings narrative. Include tongue scalloping (bilateral), buccal mucosal ridging of cheeks, and occlusal wear patterns. Use clinical terminology and describe severity/location of findings.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "p15_scalloping": "bilateral",
+            "p15_buccal_mucosal_ridging": "Yes",
+            "p15_occlusal_wear": "surfaces"
+          },
+          "output_text": "Teeth indentations/Scalloping of the right and left lateral borders of the tongue\nBite mark line/Buccal mucosal ridging of the inner right and left cheeks\nWear on the surfaces of the teeth"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "ultrasonic_doppler_auscultation_analysis",
+      "title": "Ultrasonic Doppler Auscultation Analysis",
+      "ordering": 21,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p16_damage_translation_r",
+        "p16_damage_translation_l",
+        "p16_damage_lateral_r",
+        "p16_damage_lateral_l",
+        "p16_no_clicking_was_auscultated"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate ultrasonic findings narrative. Start with 'The recorded objective data verified and confirmed:'. Describe crepitus sounds in specific TMJ locations during translational and lateral movements. Include confirmation or denial of internal derangements.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "p16_damage_translation_r": "Yes",
+            "p16_damage_lateral_r": "Yes"
+          },
+          "output_text": "The recorded objective data verified and confirmed:\nCrepitus sounds were ultrasonically auscultated in the right Temporomandibular Joint upon translational and lateral movements of the mandible"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "p16_damage_translation_r",
+          "operator": "exists",
+          "value": null,
+          "combine": "or"
+        },
+        {
+          "field_id": "p16_damage_translation_l",
+          "operator": "exists",
+          "value": null,
+          "combine": "or"
+        },
+        {
+          "field_id": "p16_damage_lateral_r",
+          "operator": "exists",
+          "value": null,
+          "combine": "or"
+        },
+        {
+          "field_id": "p16_damage_lateral_l",
+          "operator": "exists",
+          "value": null,
+          "combine": "or"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "surface_electromyography",
+      "title": "Surface Electromyography (sEMG)",
+      "ordering": 22,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p16_elevated_muscular_activity",
+        "p16_incoordination_aberrant_function"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate sEMG findings narrative. State that studies were performed on masseter, anterior temporalis, sternocleidomastoid, and trapezius muscles. Confirm elevated muscular activity and incoordination/aberrant function of facial musculature.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "p16_elevated_muscular_activity": "Yes",
+            "p16_incoordination_aberrant_function": "Yes"
+          },
+          "output_text": "sEMG studies were performed on the masseter, anterior temporalis, sternocleidomastoid, and trapezius muscles and confirmed:\nElevated muscular activity; with incoordination and aberrant function of the facial musculature was confirmed"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "p16_elevated_muscular_activity",
+          "operator": "equals",
+          "value": "Yes",
+          "combine": "or"
+        },
+        {
+          "field_id": "p16_incoordination_aberrant_function",
+          "operator": "equals",
+          "value": "Yes",
+          "combine": "or"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "diagnostic_bite_force_testing",
+      "title": "Diagnostic Bite Force Testing",
+      "ordering": 23,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p16_right_newtons",
+        "p16_left_newtons"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate bite force testing narrative explaining the procedure using gnathodynamometer, comparing actual measurements to normal values (400+ Newtons), and describing functional implications of reduced bite force in relation to trigeminal nerve function.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "p16_right_newtons": "180",
+            "p16_left_newtons": "175"
+          },
+          "output_text": "The muscles of mastication were tested for their functional capacity measuring the maximum bite force and strength of these facial muscles. The measurements were objectively determined with the use of a gnathodynamometer. These measurements objectively determine the maximum bite force of the muscles of mastication used in chewing, comparing one side to the other. The muscles of mastication are innervated by the trigeminal nerve."
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "diagnostic_autonomic_nervous_system_testing",
+      "title": "Diagnostic Autonomic Nervous System Testing",
+      "ordering": 24,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p16_before_pulse",
+        "p16_after_pulse",
+        "p16_amylase_test",
+        "p16_before_o2",
+        "p16_after_o2"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate autonomic testing narrative describing pulse oximetry during Mueller Maneuver. Include heart rate changes and whether results are within normal limits. Add alpha-amylase enzyme analysis section with KIU/L measurements.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "p16_before_pulse": "88",
+            "p16_after_pulse": "83",
+            "p16_amylase_test": "114"
+          },
+          "output_text": "Diagnostic Autonomic Nervous System Testing, consisting of Pulse Oximetry during the patient's performance of the Mueller Maneuver, revealed results within normal limits.\nDIAGNOSTIC α-AMYLASE ENZYME ANALYSIS\nDiagnostic α-Amylase Analysis, consisting of laboratory spectrophotometric analysis of the amount of α-amylase enzyme present, was performed, and an α-amylase enzyme concentration of 114 KIU"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "diagnostic_salivary_flow_and_buffering_tests",
+      "title": "Diagnostic Salivary Flow and Buffering Tests",
+      "ordering": 25,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p16_adherence_tongue_depressor",
+        "p16_tissue_analysis_lips",
+        "p16_tissue_analysis_tongue",
+        "p16_quality_of_saliva"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate salivary testing narrative describing observable dry mouth, lip condition, saliva quality (viscous, cloudy, ropey), and tongue depressor adherence test results. Reference ADA standard of care test.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "p16_tissue_analysis_lips": "dry, cracked",
+            "p16_quality_of_saliva": "viscous",
+            "p16_adherence_tongue_depressor": "adheres"
+          },
+          "output_text": "Diagnostic salivary flow and buffering tests revealed:\nObservable dry mouth, dry lips, cracked lips\nViscous saliva\nThe standard of care objective test advocated by the American Dental Association to prove whether definite qualitative changes of the saliva are present or not was performed (and the results photographed). A tongue depressor adheres to the inside of the patient's cheeks, which conclusively"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "diagnostic_direct_fluorescence_visulization_dfv",
+      "title": "Diagnostic Direct Fluorescence Visualization (DFV)",
+      "ordering": 26,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "static_text",
+      "static_content": "Stress, as well as the side effect of medications, causes xerostomia which manifests as qualitative changes of the saliva. Saliva in its proper form is anti-mutagenic which means it helps decrease the onset of oral cancer. When saliva has been quantitatively changed due to the side effect of medications and/or due to the anti-cholinergic side effect of stress, it has been scientifically documented",
+      "source_field_ids": [],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "p17_dfv_signature",
+          "operator": "exists",
+          "value": null,
+          "combine": "and"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    },
+    {
+      "section_id": "diagnosis_of_industrial_related_conditions",
+      "title": "Diagnosis of Industrial Related Conditions",
+      "ordering": 27,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "formatted_fill",
+      "static_content": null,
+      "source_field_ids": [
+        "p17_f45_8",
+        "p17_m79_1",
+        "p17_g50_0",
+        "p17_m26_69_osteoarthritis",
+        "p17_k05_6",
+        "p17_g51_0_halitosis",
+        "p17_m65_80"
+      ],
+      "template": "After a review of {patient_title} {patient_last_name}'s history and clinical examination, the diagnoses are:\n{diagnosis_list}",
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": null
+    }
+  ],
+  "global_formatting": {
+    "font_name": "Arial",
+    "font_size": 11.0,
+    "bold": false,
+    "italic": false,
+    "underline": false,
+    "alignment": null,
+    "color": null,
+    "all_caps": false
+  },
+  "field_id_glossary": {
+    "p1_date": "Report/examination date",
+    "claim_number": "Workers' compensation claim number",
+    "date_of_injury": "Date of industrial injury",
+    "p1_patient_name": "Patient full name",
+    "venue": "WCAB venue code",
+    "wcab_number": "Workers' Compensation Appeals Board number",
+    "case_number": "Case/ADJ number",
+    "p5_job_title": "Patient's job title",
+    "p5_employed_at": "Employer name",
+    "p5_worked_hours_per_day": "Hours worked per day",
+    "p5_worked_days_per_week": "Days worked per week",
+    "p5_job_requirements_initial": "Job physical requirements description",
+    "p5_lifting_maximum_lbs": "Maximum lifting weight in pounds",
+    "p5_carrying_maximum_lbs": "Maximum carrying weight in pounds",
+    "p5_current_work_status": "Current employment status",
+    "p5_date_stopped_working": "Date patient stopped working",
+    "p5_presently_working_at_different_company": "Whether working for different employer",
+    "p5_date_of_injury": "Industrial injury date",
+    "p7_orthopedic_pain_clenching": "Description of orthopedic pain leading to clenching",
+    "p6_injury_description_1": "Description of injury mechanism",
+    "p7_developed_stressors_injury": "How injury developed stressors",
+    "p7_treatments_received": "Treatments received for injury",
+    "p7_surgery_body_parts": "Body parts that had surgery",
+    "p1_stomach_acids": "Gastric reflux/stomach acid complaints",
+    "p1_high_blood_pressure": "High blood pressure history",
+    "p1_diabetes": "Diabetes history",
+    "p1_thyroid_problem": "Thyroid problem history",
+    "p1_breathing_problems": "Breathing problems history",
+    "p8_past_medical_history": "General past medical history",
+    "p8_past_surgeries": "Previous surgical history",
+    "p8_history_prior_industrial_injuries": "Prior industrial injury history",
+    "p8_history_non_industrial_injuries": "Prior non-industrial injury history",
+    "p8_any_injuries_after_industrial_date": "Injuries after industrial date",
+    "p4_do_you_smoke": "Current smoking status",
+    "p4_have_you_ever_smoked": "Ever smoked history",
+    "p4_years_smoker": "Years as smoker",
+    "p4_when_stop_smoking_years": "Years since quit smoking",
+    "p4_cigarettes_per_day": "Cigarettes per day",
+    "p9_last_teeth_cleaned": "Last dental cleaning timeframe",
+    "p9_last_dentist_visit": "Last dentist visit timeframe",
+    "p9_last_xray": "Last dental x-ray timeframe",
+    "p9_dentist_1_name": "Dentist name",
+    "p10_headache_vas": "Headache VAS score",
+    "p10_headache_locations": "Headache locations",
+    "p10_headache_frequency": "Headache frequency",
+    "p10_right_face_pain_frequency": "Right facial pain frequency",
+    "p10_left_face_pain_frequency": "Left facial pain frequency",
+    "p3_bad_breath_after": "Bad breath after injury",
+    "p3_breath_intensity_after": "Bad breath intensity VAS",
+    "p3_bad_breath_percentage_after": "Bad breath percentage of time",
+    "p3_interfere_others_after": "Bad breath interference with others VAS",
+    "p3_embarrassment_after": "Bad breath embarrassment VAS",
+    "epworth_sleepiness_scale_total_score": "Epworth sleepiness scale total score",
+    "p13_brushing_teeth_severity": "Brushing teeth difficulty severity",
+    "p13_flossing_teeth_severity": "Flossing teeth difficulty severity",
+    "p13_speak_extended_period_severity": "Extended speaking difficulty severity",
+    "p13_mastication_severity": "Chewing difficulty severity",
+    "p13_swallowing_severity": "Swallowing difficulty severity",
+    "p13_bruxism_severity": "Bruxism difficulty severity",
+    "p14_joint_noises_crepitus": "TMJ crepitus presence",
+    "p14_joint_noises_translational": "TMJ translational movement noises",
+    "p14_joint_noises_lateral": "TMJ lateral movement noises",
+    "p14_right_lateral_pole_vas": "Right TMJ lateral pole pain VAS",
+    "p14_left_lateral_pole_vas": "Left TMJ lateral pole pain VAS",
+    "p14_temporalis_right_y_n": "Right temporalis muscle taut bands",
+    "p14_temporalis_right_vas": "Right temporalis muscle pain VAS",
+    "p14_temporalis_left_y_n": "Left temporalis muscle taut bands",
+    "p14_temporalis_left_vas": "Left temporalis muscle pain VAS",
+    "p14_masseter_right_y_n": "Right masseter muscle taut bands",
+    "p14_masseter_right_vas": "Right masseter muscle pain VAS",
+    "p14_masseter_left_y_n": "Left masseter muscle taut bands",
+    "p14_masseter_left_vas": "Left masseter muscle pain VAS",
+    "p14_maximum_interincisal_opening_mm": "Maximum mouth opening in millimeters",
+    "p14_right_lateral_mm": "Right lateral jaw movement in millimeters",
+    "p14_left_lateral_mm": "Left lateral jaw movement in millimeters",
+    "p14_protrusion_mm": "Jaw protrusion in millimeters",
+    "p14_max_opening_vas": "Pain VAS during maximum opening",
+    "p15_class_selection": "Occlusion classification (I, II, III)",
+    "p15_overbite_mm": "Overbite measurement in millimeters",
+    "p15_overjet_mm": "Overjet measurement in millimeters",
+    "p15_midline_deviation": "Dental midline deviation",
+    "p15_missing_teeth": "Missing teeth numbers",
+    "p15_missing_third_molars": "Missing third molars",
+    "p15_inflamed_gingiva": "Inflamed gum tissues",
+    "p15_scalloping": "Tongue scalloping severity",
+    "p15_buccal_mucosal_ridging": "Buccal mucosal ridging presence",
+    "p15_occlusal_wear": "Occlusal wear on teeth",
+    "p19_occlusal_wear": "Additional occlusal wear findings",
+    "p16_damage_translation_r": "Right TMJ translational damage",
+    "p16_damage_translation_l": "Left TMJ translational damage",
+    "p16_damage_lateral_r": "Right TMJ lateral damage",
+    "p16_damage_lateral_l": "Left TMJ lateral damage",
+    "p16_no_clicking_was_auscultated": "No clicking auscultated",
+    "p16_elevated_muscular_activity": "Elevated muscular activity on sEMG",
+    "p16_incoordination_aberrant_function": "Incoordination/aberrant function on sEMG",
+    "p16_right_newtons": "Right side bite force in Newtons",
+    "p16_left_newtons": "Left side bite force in Newtons",
+    "p16_before_pulse": "Heart rate before Mueller Maneuver",
+    "p16_after_pulse": "Heart rate after Mueller Maneuver",
+    "p16_amylase_test": "Amylase enzyme test result",
+    "p16_before_o2": "Oxygen saturation before Mueller Maneuver",
+    "p16_after_o2": "Oxygen saturation after Mueller Maneuver",
+    "p16_adherence_tongue_depressor": "Tongue depressor adherence test",
+    "p16_tissue_analysis_lips": "Lip tissue analysis findings",
+    "p16_tissue_analysis_tongue": "Tongue tissue analysis findings",
+    "p16_quality_of_saliva": "Saliva quality assessment",
+    "p17_dfv_signature": "Direct Fluorescence Visualization signature",
+    "p17_clinical_impression_1": "DFV clinical impression primary",
+    "p17_clinical_impression_2": "DFV clinical impression secondary",
+    "p17_f45_8": "F45.8 Bruxism diagnosis",
+    "p17_m79_1": "M79.1 Myalgia diagnosis",
+    "p17_g50_0": "G50.0 Trigeminal nerve pain diagnosis",
+    "p17_m26_69_osteoarthritis": "M26.69 TMJ osteoarthritis diagnosis",
+    "p17_k05_6": "K05.6 Gum inflammation diagnosis",
+    "p17_g51_0_halitosis": "R19.6 Halitosis diagnosis",
+    "p17_m65_80": "M65.80 TMJ capsulitis diagnosis"
+  },
+  "generation_notes": "These rules generate comprehensive clinical dental reports for workers' compensation cases. The report follows a standardized structure with both required universal sections and conditional sections based on clinical findings. Key features include:\n\n1. Formatted header with claim information\n2. Narrative sections using clinical tone and proper medical terminology  \n3. Conditional sections that appear only when relevant findings are present\n4. ADL table with difficulty severity levels\n5. Comprehensive diagnostic testing results\n6. ICD-10 diagnosis codes with clinical descriptions\n\nThe rules handle missing data gracefully and maintain consistent clinical language throughout. Special attention is given to bruxism/clenching as the primary industrial-related dental condition, with supporting diagnostic findings from various tests and examinations.",
+  "version": "1.0"
+}

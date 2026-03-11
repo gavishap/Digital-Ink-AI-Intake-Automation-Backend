@@ -1,0 +1,94 @@
+{
+  "form_id": "amber_witt_init",
+  "form_name": "AMBER WITT INIT",
+  "extraction_timestamp": "2026-03-08T03:43:37.869042",
+  "resolved_references": [],
+  "overall_confidence": 0.8991304347826087,
+  "total_items_needing_review": 23,
+  "all_review_reasons": [
+    "The handwritten note '1/7/26 @ 12:30pm Haw.' contains the abbreviation 'Haw.' which is ambiguous. It is unclear whether this refers to a person, location, or other context relevant to the case.",
+    "The date '1/7/2026' is ambiguous. The handwriting could be interpreted as '7/7/2026', which is a different date. This requires human review to confirm the correct date.",
+    "The date 'OCT. 9-2, 2025' is ambiguous and likely a typographical error. It appears to be intended as 'OCT. 2, 2025', but the format '9-2' is inconsistent and unclear.",
+    "Page 10 extraction failed",
+    "The annotation 'D7N' is ambiguous. It could mean 'Day 7 Night' or another time designation, which affects interpretation of bruxism timing.",
+    "The handwritten text 'Dell aclery' is unclear. It may refer to a location, facility, or other detail, but its meaning is not evident from context.",
+    "The handwritten text 'Brach' next to 'Injections' is ambiguous. It may refer to 'Brachial' injections, but this is not certain without further context.",
+    "The form indicates 'Other' and 'Never' were selected for the last dental visit and X-ray, respectively, but no specific time or date is provided. This creates a missing data issue that affects clinical decision-making.",
+    "The selection of 'Other' is ambiguous without further clarification. The patient may have intended to specify a time frame (e.g., '2 years ago'), but this is not documented.",
+    "The handwritten note 'incomplete records' and 'See Records' is disconnected from the specific fields it relates to. It is unclear whether these annotations refer to the X-ray history or the overall dental history, creating an unclear connection.",
+    "The handwritten date 'August 2025' appears to be in the future, which may indicate a typographical error or a placeholder. The handwriting is legible, but the date is outside the expected range (2020-2026) and may require verification.",
+    "The patient has circled 'No' for both 'Patient diagnosed with a Sleep Disorder' and 'Patient does not know results'. This is ambiguous because if the patient was not diagnosed, they would likely know the results. The contradiction requires clarification.",
+    "The patient has circled 'Yes' for both questions, indicating they believe bruxism caused their headaches and face pain. However, the patient has also circled 'No' for both questions in the annotations, which is contradictory. This inconsistency requires clarification.",
+    "The patient has circled 'Yes' for 'Patient had Sleep Study', but 'No' for both 'Patient diagnosed with a Sleep Disorder' and 'Patient does not know results'. This is contradictory because if the patient had a sleep study, they would likely be diagnosed with a sleep disorder and know the results.",
+    "The patient has circled 'No' for 'Patient cannot tolerate CPAP', but the annotations indicate that the patient has circled 'Yes' for 'Patient given CPAP'. This is ambiguous because if the patient was given CPAP, they may or may not be able to tolerate it. The contradiction requires clarification.",
+    "Page 16 extraction failed",
+    "The handwritten text 'Oimbu wit' under 'ORTHOPEDIC ORTHOTIC' is ambiguous and not a standard medical term. It may be a placeholder or error, requiring human review to determine its true meaning and clinical relevance."
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten note at bottom center of page.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "1/7/26 @ 12:30pm Haw.",
+          "normalized_text": "A handwritten note indicating a scheduled event or appointment on January 7, 2026, at 12:30 PM, with 'Haw.' likely being an abbreviation or shorthand for the person's name or a location (e.g., 'Hawthorne' or 'Hawkins').",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "A handwritten note indicating a scheduled event or appointment on January 7, 2026, at 12:30 PM, with 'Haw.' likely being an abbreviation or shorthand for the person's name or a location (e.g., 'Hawthorne' or 'Hawkins').",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": true,
+          "review_reason": "The abbreviation 'Haw.' is ambiguous and requires clarification to determine if it refers to a person, location, or other context relevant to the case."
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.92,
+      "items_needing_review": 1,
+      "review_reasons": [
+        "The handwritten note '1/7/26 @ 12:30pm Haw.' contains the abbreviation 'Haw.' which is ambiguous. It is unclear whether this refers to a person, location, or other context relevant to the case."
+      ]
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 25,
+    "lawyer_page_count": 1
+  }
+}

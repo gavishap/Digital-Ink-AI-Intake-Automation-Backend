@@ -1,0 +1,738 @@
+{
+  "form_id": "manuel_jimenez_rodriguez_init",
+  "form_name": "MANUEL JIMENEZ RODRIGUEZ INIT",
+  "extraction_timestamp": "2026-03-08T10:05:14.123606",
+  "resolved_references": [],
+  "overall_confidence": 0.9115,
+  "total_items_needing_review": 21,
+  "all_review_reasons": [
+    "The date '11/20/2025' is written in red ink, but the normalized text suggests a possible error of '2026'. The annotation indicates this may be incorrect normalization, requiring human review to confirm the correct year.",
+    "The fields for Attorney's Name and Attorney's Phone # are completely blank in the extracted data, despite being present on the form. This may indicate they were not filled out or were not captured.",
+    "The fields for 'Are you taking blood thinners? Which one:' and 'Do you have any numbness or pins / needles feeling anywhere in your body? Where:' are empty in the extracted data, despite being present on the form. The handwriting may be illegible or the form may not have been completed.",
+    "The extracted date '11/20/2026' is flagged as illegible because the handwritten date appears to be '11/20/2025'. The year '2026' is incorrect and should be corrected to '2025'.",
+    "The date of injury is recorded as a range from June 28, 2016, to February 10, 2025. This is unusually long and may indicate a clerical error or a misinterpretation of the form's purpose.",
+    "The date the patient stopped working is recorded as February 2025, which is in the future. This may indicate a planned return to work or a clerical error.",
+    "The patient's current work status is listed as 'Disabled' and 'Not Working/Retired', but there is also a handwritten note stating 'Presently working at different company'. This creates a contradiction.",
+    "The value 'years' for 'Weeks after' is ambiguous and likely a misinterpretation of 'weeks'. This requires human review to confirm the correct unit.",
+    "The annotations indicate missing evaluation details for psychological therapy and neurologist. The extracted values are present, but the 'Evaluated by' fields are blank, which is critical for treatment planning.",
+    "The annotations indicate missing evaluation details for physical therapy and other treatments. The extracted values are present, but the 'Evaluated by' fields are blank, which is critical for treatment planning.",
+    "The annotation 'recall accident Carot recd if injury any if injury full recovered' is ambiguous. 'Carot recd' could refer to carotid artery or carotid recanalization, requiring clarification.",
+    "The extracted value '72' is ambiguous. It could represent a phone number, an identifier, or an incomplete entry. The context is unclear, and the handwriting is not legible enough to confirm its meaning.",
+    "Page 12 extraction failed",
+    "Page 13 extraction failed"
+  ],
+  "patient_name": "Matt Mora",
+  "patient_dob": "6/20/1957",
+  "form_date": "6/28/2016",
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {
+        "Case": {
+          "value": "Manuel Jimenez Rodriguez vs Royal Custom Designs LLC",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Preferred Language": {
+          "value": "Spanish",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Applicant Address": {
+          "value": "Manuel Jimenez Rodriguez, 13290 Sunfield Dr, Moreno Valley, CA 92553",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Applicant Phone": {
+          "value": "951-208-3806",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Applicant Email": {
+          "value": "3rodriguez.meno@gmail.com",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Applicant Date of Birth": {
+          "value": "6/20/1957",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Applicant SSN": {
+          "value": "338-58-1908",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "All Date of Injury(ies)": {
+          "value": "CT: 06/28/2016 - 02/10/2025",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "All Case Numbers": {
+          "value": "ADJ20604452",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "All Claim Numbers": {
+          "value": "1000116044",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Employer": {
+          "value": "Royal Custom Designs LLC, 13951 Monte Vista Ave, Chino, CA 91710",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Carrier/TPA": {
+          "value": "CopperPoint Compensation Insurance Company, Post Office Box 36070, Phoenix, AZ 85067",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Carrier/TPA Phone": {
+          "value": "(f) (818) 575-8575",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Defense Attorney": {
+          "value": "Editte Alsen, Esq., 5870 Melrose Ave Ste 3-926, Los Angeles, CA 90038",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Defense Attorney Email": {
+          "value": "law@editte.com",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Handling Attorney Full Name": {
+          "value": "Matt Mora",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Handling Case Manager Full Name": {
+          "value": "Brandon Williams",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Date of Injury": {
+          "value": "6/28/2016",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Specific or Cumulative": {
+          "value": "Continuous-2/10/2025",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Claim #": {
+          "value": "1000116044",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Case #": {
+          "value": "ADJ20604452",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Injuries": {
+          "value": "420 Back - incl back muscles, spine and cord\n450 Shoulders - scapula and clavicle\n340 Fingers\n800 Body system - not specific\n700 Multiple parts more than 5 major parts\ncervical spine, lumbar spine, thoracic spine,\nshoulders, arms, elbows, wrists, hands, fingers,\nknees, legs, ankles, feet, internal, acid reflux,\npsych, anxiety, difficulty in sleeping, dental,\nbruxism, neuro, headache & migraines.",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Adjuster": {
+          "value": "Erika Niederer",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        }
+      },
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "Case",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Case: Manuel Jimenez Rodriguez vs Royal Custom Designs LLC",
+          "normalized_text": "This is the legal case identifier, indicating the parties involved in the claim: the applicant (plaintiff) and the employer (defendant).",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "grouping_label",
+          "semantic_meaning": "This is the legal case identifier, indicating the parties involved in the claim: the applicant (plaintiff) and the employer (defendant).",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Preferred Language",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Preferred Language: Spanish",
+          "normalized_text": "The applicant's preferred language for communication and documentation is Spanish.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The applicant's preferred language for communication and documentation is Spanish.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Applicant Address",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Applicant Address: Manuel Jimenez Rodriguez, 13290 Sunfield Dr, Moreno Valley, CA 92553",
+          "normalized_text": "This is the physical address of the applicant, Manuel Jimenez Rodriguez, located in Moreno Valley, CA.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "This is the physical address of the applicant, Manuel Jimenez Rodriguez, located in Moreno Valley, CA.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Applicant Phone",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Applicant Phone: 951-208-3806",
+          "normalized_text": "This is the primary phone number for the applicant, Manuel Jimenez Rodriguez.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "This is the primary phone number for the applicant, Manuel Jimenez Rodriguez.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Applicant Email",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Applicant Email: 3rodriguez.meno@gmail.com",
+          "normalized_text": "This is the primary email address for the applicant, Manuel Jimenez Rodriguez.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "This is the primary email address for the applicant, Manuel Jimenez Rodriguez.",
+          "ocr_confidence": 0.97,
+          "interpretation_confidence": 0.97,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Applicant Date of Birth",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Applicant Date of Birth: 6/20/1957",
+          "normalized_text": "The applicant, Manuel Jimenez Rodriguez, was born on June 20, 1957.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The applicant, Manuel Jimenez Rodriguez, was born on June 20, 1957.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Applicant SSN",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Applicant SSN: : 338-58-1908",
+          "normalized_text": "The applicant's Social Security Number is 338-58-1908.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The applicant's Social Security Number is 338-58-1908.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "All Date of Injury(ies)",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "All Date of Injury(ies): CT: 06/28/2016 - 02/10/2025",
+          "normalized_text": "The claim covers a continuous period of injury from June 28, 2016, to February 10, 2025, indicating a cumulative injury.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The claim covers a continuous period of injury from June 28, 2016, to February 10, 2025, indicating a cumulative injury.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "All Case Numbers",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "All Case Numbers: ADJ20604452",
+          "normalized_text": "The case number assigned to this claim is ADJ20604452.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The case number assigned to this claim is ADJ20604452.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "All Claim Numbers",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "All Claim Numbers: 1000116044",
+          "normalized_text": "The claim number assigned to this claim is 1000116044.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The claim number assigned to this claim is 1000116044.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Employer",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Employer: Royal Custom Designs LLC, 13951 Monte Vista Ave, , Chino, CA 91710",
+          "normalized_text": "The employer of the applicant is Royal Custom Designs LLC, located at 13951 Monte Vista Ave, Chino, CA 91710.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The employer of the applicant is Royal Custom Designs LLC, located at 13951 Monte Vista Ave, Chino, CA 91710.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Carrier/TPA",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Carrier/TPA: CopperPoint Compensation Insurance Company, Post Office Box 36070, Phoenix, AZ 85067",
+          "normalized_text": "The insurance carrier responsible for this claim is CopperPoint Compensation Insurance Company, located in Phoenix, AZ.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The insurance carrier responsible for this claim is CopperPoint Compensation Insurance Company, located in Phoenix, AZ.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Carrier/TPA Phone",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "(p) (818) 575-8500 Main",
+          "normalized_text": "The primary phone number for the Carrier/TPA is (818) 575-8500, labeled as 'Main'.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The primary phone number for the Carrier/TPA is (818) 575-8500, labeled as 'Main'.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Carrier/TPA Phone",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "(f) (818) 575-8575",
+          "normalized_text": "The fax number for the Carrier/TPA is (818) 575-8575.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The fax number for the Carrier/TPA is (818) 575-8575.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Defense Attorney",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Defense Attorney: Editte Alsen, Esq., 5870 Melrose Ave Ste 3-926,, Los Angeles, CA 90038",
+          "normalized_text": "The defense attorney representing the employer is Editte Alsen, Esq., located at 5870 Melrose Ave Ste 3-926, Los Angeles, CA 90038.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The defense attorney representing the employer is Editte Alsen, Esq., located at 5870 Melrose Ave Ste 3-926, Los Angeles, CA 90038.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Defense Attorney Email",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "(e) law@editte.com",
+          "normalized_text": "The email address for the defense attorney, Editte Alsen, Esq., is law@editte.com.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The email address for the defense attorney, Editte Alsen, Esq., is law@editte.com.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Handling Attorney Full Name",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Handling Attorney Full Name: Matt Mora",
+          "normalized_text": "The handling attorney for this case is Matt Mora.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The handling attorney for this case is Matt Mora.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Handling Case Manager Full Name",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Handling Case Manager Full Name: Brandon Williams",
+          "normalized_text": "The handling case manager for this case is Brandon Williams.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The handling case manager for this case is Brandon Williams.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Date of Injury",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "6/28/2016",
+          "normalized_text": "The date of the initial injury is June 28, 2016.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The date of the initial injury is June 28, 2016.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Specific or Cumulative",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Continuous-2/10/2025",
+          "normalized_text": "The injury is classified as 'Continuous' and extends to February 10, 2025, indicating a cumulative injury claim.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The injury is classified as 'Continuous' and extends to February 10, 2025, indicating a cumulative injury claim.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Claim #",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "1000116044",
+          "normalized_text": "The claim number for this case is 1000116044.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The claim number for this case is 1000116044.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Case #",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ADJ20604452",
+          "normalized_text": "The case number for this claim is ADJ20604452.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The case number for this claim is ADJ20604452.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Injuries",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "420 Back - incl back muscles, spine and cord\n450 Shoulders - scapula and clavicle\n340 Fingers\n800 Body system - not specific\n700 Multiple parts more than 5 major parts\ncervical spine, lumbar spine, thoracic spine,\nshoulders, arms, elbows, wrists, hands, fingers,\nknees, legs, ankles, feet, internal, acid reflux,\npsych, anxiety, difficulty in sleeping, dental,\nbruxism, neuro, headache & migraines.",
+          "normalized_text": "This section lists the specific injuries claimed, including back, shoulders, fingers, body system, and multiple parts, along with associated symptoms such as acid reflux, anxiety, and migraines.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "This section lists the specific injuries claimed, including back, shoulders, fingers, body system, and multiple parts, along with associated symptoms such as acid reflux, anxiety, and migraines.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "Adjuster",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Adjuster: Erika Niederer",
+          "normalized_text": "The adjuster assigned to handle this claim is Erika Niederer.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The adjuster assigned to handle this claim is Erika Niederer.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.99,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

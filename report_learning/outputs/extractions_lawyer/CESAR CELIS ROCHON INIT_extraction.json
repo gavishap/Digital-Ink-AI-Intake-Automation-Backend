@@ -1,0 +1,287 @@
+{
+  "form_id": "cesar_celis_rochon_init",
+  "form_name": "CESAR CELIS ROCHON INIT",
+  "extraction_timestamp": "2026-03-08T05:04:00.692833",
+  "resolved_references": [],
+  "overall_confidence": 0.9272222222222223,
+  "total_items_needing_review": 20,
+  "all_review_reasons": [
+    "Handwritten note 'APPT: Mon. 2/1/26 @ 9am Resed (Thed 11/20' contains ambiguous phrasing. 'Resed' is unclear and '(Thed 11/20)' may be a typographical error or shorthand for 'Thurs 11/20'.",
+    "The extracted value 'mach Sbair temp Hc at Az Air Cnditng & Htng 1-2 j.01/10+' is highly illegible and ambiguous. The handwriting is unclear, making it difficult to determine the exact job duties.",
+    "The extracted value '1-2 j.b. / day, 10+ hrs' is ambiguous. It is unclear whether 'j.b.' refers to 'jobs' or another term, and the context of '10+ hrs' is not fully clear without additional information.",
+    "The extracted value '11/24/2025' is ambiguous. The date appears to be in the future, which may be an error. It should be verified against the context of the document.",
+    "The extracted value 'CT 11/10/2022 - 11/10/2023' is ambiguous. The 'CT' prefix is unclear and may indicate a specific type of injury or condition. The date range is also unusual as it spans exactly one year.",
+    "The extracted value 'Air max' is ambiguous. The company name is unclear and may be a typo or abbreviation. It should be verified against the source document.",
+    "The margin note 'AV Unblast /bar' is ambiguous. The meaning of this note is unclear and may be a code or abbreviation. It should be verified with a human reviewer.",
+    "The value '2022 when' is ambiguous and lacks a specific date. It may refer to a year or a time period, requiring clarification.",
+    "The reason for stopping nightguard use is noted as 'Does not fit' and 'Broken'. These are subjective and potentially contradictory reasons that require clinical verification.",
+    "The note 'Evaluated by' is ambiguous and does not specify the evaluation performed or the provider's role. This requires clarification.",
+    "The circled 'None' under 'Any Injuries After the Date of Industrial Injury' contradicts the 'X' mark next to 'MVA' in the same section, suggesting an injury occurred after the industrial date.",
+    "The extracted value '72' for 'Name of Dentist:' is illegible and does not represent a valid name. It appears to be a placeholder or error.",
+    "Page 13 extraction failed",
+    "Handwritten note 'Grin facial 8x9 he used to eat berries and place known under upper lip' is informal, subjective, and not part of the standard clinical schema. It may contain non-standard or irrelevant information.",
+    "Page 18 extraction failed",
+    "Page 21 extraction failed",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": "Cesar Alexander Celis Pochon",
+  "patient_dob": "01/19/1980",
+  "form_date": "CT 11/10/2022-11/10/2023",
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {
+        "internal_file_number": {
+          "value": "3082",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "venue": {
+          "value": "VNO",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_name": {
+          "value": "Cesar Alexander Celis Pochon",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_address": {
+          "value": "8020 Langdon Ave., Unit 117\nVan Nuys, CA 91406",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_phone_number": {
+          "value": "818-210-6408",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_date_of_birth": {
+          "value": "01/19/1980",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_language": {
+          "value": "Spanish",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_date_of_injury": {
+          "value": "CT 11/10/2022-11/10/2023",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_wcab_number": {
+          "value": "ADJ18679113",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_injured_body_parts": {
+          "value": "Head, Neck, Bilateral Hands, Back, Shoulder, Knee, Stress, TMJ, Legs, Feet, Gastritis, Acid Reflux, Sleep Disorder",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_claim_number": {
+          "value": "WC608-G83211",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "insurance_adjuster": {
+          "value": "Alec Lukins",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "insurance_address": {
+          "value": "Liberty Mutual Insurance Company\nP.O. Box 779008\nRocklin, CA 95677",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "employer_name": {
+          "value": "AZ Air Conditioning and Heating Inc",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "employer_address": {
+          "value": "7640 Tobias Ave.\nVan Nuys, CA 91405",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "employer_phone_number": {
+          "value": "(800) 296-5088",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "defense_attorney_name": {
+          "value": "Robert J. Linden, Esq.",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "defense_attorney_firm": {
+          "value": "Law Offices of Kirk, Myers, Motooka & Flores",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "defense_attorney_address": {
+          "value": "P.O. Box 7218\nLondon, KY 40741",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "defense_attorney_phone_number": {
+          "value": "(818) 887-5353",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "applicant_attorney_firm_name": {
+          "value": "Accident Defenders APC",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "applicant_attorney_address": {
+          "value": "P.O. Box 1200\nPortsmouth NH 03802",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "applicant_attorney_phone_number": {
+          "value": "(323) 591-2829",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "applicant_attorney_fax_number": {
+          "value": "(323) 831-6828",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        }
+      },
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten appointment note at bottom left.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "APPT: Mon. 2/1/26 @ 9am Resed (Thed 11/20",
+          "normalized_text": "Handwritten note indicating an appointment scheduled for Monday, February 1, 2026, at 9am, with a possible reference to 'Resed' and a parenthetical note '(Thed 11/20)' which may be a typographical error or shorthand for 'Thurs 11/20'.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "Handwritten note indicating an appointment scheduled for Monday, February 1, 2026, at 9am, with a possible reference to 'Resed' and a parenthetical note '(Thed 11/20)' which may be a typographical error or shorthand for 'Thurs 11/20'.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": true,
+          "review_reason": "Ambiguous phrasing and potential typographical error in 'Resed' and '(Thed 11/20)' require clarification."
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.92,
+      "items_needing_review": 1,
+      "review_reasons": [
+        "Handwritten note 'APPT: Mon. 2/1/26 @ 9am Resed (Thed 11/20' contains ambiguous phrasing. 'Resed' is unclear and '(Thed 11/20)' may be a typographical error or shorthand for 'Thurs 11/20'."
+      ]
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}

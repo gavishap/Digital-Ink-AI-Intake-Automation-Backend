@@ -1,0 +1,353 @@
+{
+  "form_id": "ronald_anderson_init",
+  "form_name": "RONALD ANDERSON INIT",
+  "extraction_timestamp": "2026-03-08T13:52:04.526388",
+  "resolved_references": [],
+  "overall_confidence": 0.9209999999999999,
+  "total_items_needing_review": 19,
+  "all_review_reasons": [
+    "Handwritten note '11/26/25 @ 1pm Anaheim.' is ambiguous. The year '25' could refer to 2025 or 2026, which is outside the expected range of 2020-2026. This requires human review to determine the correct date.",
+    "The date '11/26/2026' is ambiguous as it conflicts with the year 2020/2025 in the annotation. The form's context suggests 2026 is likely incorrect, but the handwriting is unclear.",
+    "The birth date '08/03/1955' is extracted, but the annotation suggests an alternative reading '08/03/1955' which is more likely correct. The original value '08/03/2026' is incorrect.",
+    "The allergy 'Sulfq' is extracted, but the annotation suggests it is likely shorthand for 'Sulfonamide'. This requires clarification to ensure clinical accuracy.",
+    "Date '11/26/2025' is handwritten with low confidence (0.85), and an alternative reading '11/26/2026' is present. This creates ambiguity in the correct date.",
+    "The fields 'When did you stop smoking?', 'How much do you smoke?', and 'How many years were you a smoker?' are blank, despite the patient indicating they are a smoker (or former smoker).",
+    "The dates '11/5/2026' for Date of Injury and 'Date Stopped working' are inconsistent with the 'Date' field which is '11/26/2026'. The 'Date Stopped working' field also appears to be a miswriting of 2021, which is inconsistent with the 'Date of Injury' field. This creates ambiguity in the timeline of events.",
+    "Page 9 extraction failed",
+    "Handwritten annotations 'LWL' and 'LWL DFV' are ambiguous. 'LWL' could refer to 'Left Lower Lip' or 'Left Lower Jaw', and 'DFV' is an unclear abbreviation (possibly 'Dental Fissure Varnish' or similar). Context is needed to determine precise anatomical reference.",
+    "The annotation 'Right' is written next to 'M26.69 Osteoarthritis', which is already marked with an 'X' (rejected). This creates a logical contradiction: if the diagnosis is rejected, specifying a side is inconsistent with the rejection.",
+    "Page 20 extraction failed",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": "Ronald Anderson",
+  "patient_dob": null,
+  "form_date": "11/05/2021",
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {
+        "internal_file_number": {
+          "value": "29449",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "venue": {
+          "value": "POM",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "hearing_representative": {
+          "value": "Alvis Pelaez",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.96,
+          "has_correction": false,
+          "original_value": null
+        },
+        "assistant": {
+          "value": "Miguel Estrella",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "applicant_attorney_firm": {
+          "value": "Humphrey & Associates",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "applicant_attorney_address": {
+          "value": "5245 E. Santa Ana, Canyon Rd, Suite 120",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.96,
+          "has_correction": false,
+          "original_value": null
+        },
+        "applicant_attorney_city_state_zip": {
+          "value": "Anaheim, CA 92807",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "applicant_attorney_phone_number": {
+          "value": "714-464-2500",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_name": {
+          "value": "Ronald Anderson",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_address": {
+          "value": "4234 Meadow Street",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_city_state_zip": {
+          "value": "La Verne, CA 91750",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.96,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_phone_number": {
+          "value": "626-786-3146",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_social_security_number": {
+          "value": "08/03/1955",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injured_worker_language": {
+          "value": "ENGLISH",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_date_of_injury": {
+          "value": "11/05/2021",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_wcab_number": {
+          "value": "ADJ17023256",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_injured_body_parts": {
+          "value": "Leg, ankle, knee, psych, stress, anxiety, depression, internal, sleep disorder, heart, IBS, dental, dry mouth, teeth.",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.96,
+          "has_correction": false,
+          "original_value": null
+        },
+        "injury_claim_number": {
+          "value": "2080391856",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "insurance_carrier_adjuster": {
+          "value": "Anna Flores",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "insurance_carrier_address": {
+          "value": "Zurich North America",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.96,
+          "has_correction": false,
+          "original_value": null
+        },
+        "insurance_carrier_city_state_zip": {
+          "value": "PO BOX 968005 Schaumburg, IL 60196",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "insurance_carrier_phone_number": {
+          "value": "818-227-1780",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "insurance_carrier_fax": {
+          "value": null,
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.95,
+          "has_correction": false,
+          "original_value": null
+        },
+        "insurance_carrier_email": {
+          "value": "anna.flores@zurichna.com",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        }
+      },
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Red handwritten note at bottom right corner.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "11/26/25 @ 1pm Anaheim.",
+          "normalized_text": "A red handwritten note at the bottom right corner indicating a date (likely intended as 11/26/2025 or 11/26/2026) and time (1pm) in Anaheim.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A red handwritten note at the bottom right corner indicating a date (likely intended as 11/26/2025 or 11/26/2026) and time (1pm) in Anaheim.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": true,
+          "review_reason": "The date '11/26/25' is ambiguous and likely a typographical error or misinterpretation; it may be intended as 11/26/2025 or 11/26/2026. The context of a medical/legal form requires precise dating."
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.92,
+      "items_needing_review": 1,
+      "review_reasons": [
+        "Handwritten note '11/26/25 @ 1pm Anaheim.' is ambiguous. The year '25' could refer to 2025 or 2026, which is outside the expected range of 2020-2026. This requires human review to determine the correct date."
+      ]
+    },
+    {
+      "page_number": 2,
+      "field_values": {
+        "Employer_Name": {
+          "value": "Smith Emery Company",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Employer_Address": {
+          "value": "781 E Washington Blvd\nLos Angeles, CA 90021",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Employer_Phone": {
+          "value": null,
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.0,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Defense_Attorney_Name": {
+          "value": "James Myers",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Defense_Attorney_Firm": {
+          "value": "Stockwell Harris Los Angeles",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.98,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Defense_Attorney_Address": {
+          "value": "3580 Wilshire Blvd Fl 19. Los Angeles, CA 90010",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.97,
+          "has_correction": false,
+          "original_value": null
+        },
+        "Defense_Attorney_Phone": {
+          "value": "(323) 935-6669",
+          "is_checked": null,
+          "circled_options": [],
+          "confidence": 0.99,
+          "has_correction": false,
+          "original_value": null
+        }
+      },
+      "visual_elements": [],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 1,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 23,
+    "lawyer_page_count": 2
+  }
+}

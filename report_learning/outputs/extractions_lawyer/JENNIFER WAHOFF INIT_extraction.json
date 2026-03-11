@@ -1,0 +1,410 @@
+{
+  "form_id": "jennifer_wahoff_init",
+  "form_name": "JENNIFER WAHOFF INIT",
+  "extraction_timestamp": "2026-03-08T07:55:12.527156",
+  "resolved_references": [],
+  "overall_confidence": 0.9123809523809524,
+  "total_items_needing_review": 51,
+  "all_review_reasons": [
+    "The handwritten note 'See Attached' is ambiguous as it references an external document not visible in the current context. The content and relevance of the attached document cannot be verified.",
+    "The patient's signature is partially illegible and appears to be 'X W W a h f', which may not be a standard signature format. This could lead to ambiguity in verifying patient identity.",
+    "The handwritten description 'weed' is ambiguous and lacks specificity. It should be clarified whether the patient uses marijuana, hashish, or other substances.",
+    "The patient selected 'No' for amphetamine use, but the annotation indicates a 'Yes' selection. This is a contradiction that needs clarification.",
+    "The handwritten note 'I love book' is illegible and appears to be a scribble or irrelevant text, potentially indicating a data entry error or non-clinical comment.",
+    "The VAS scores of '100 10' for both 'Low Back' and 'L ankle' are ambiguous. A VAS score of 100 is not standard (maximum is typically 10), suggesting a possible misinterpretation or error in recording.",
+    "The field 'Neurologist: Evaluated by' contains '??', indicating missing or unclear information. This is critical for comprehensive care and requires human verification.",
+    "Handwritten note 'David Seratini at Prior Work 2005-2019 Hard to - shatly' contains ambiguous phrasing 'Hard to - shatly' which requires clarification to determine clinical relevance.",
+    "The extracted values for Weight_Loss (30) and Weight_Loss_Kg (171.0) are contradictory. 30 lbs is approximately 13.6 kg, not 171.0 kg. This inconsistency requires human review to determine the correct value.",
+    "Page 22 extraction failed",
+    "Page 23 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 10,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten name 'HELENE HANADA' in top right corner.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_2",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'adjudicator azzarito' under 'Insurance Carrier'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_3",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten '11/19/25 @ 2:30pmHaw' at bottom center.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_4",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'Lydia B Newcomb Brea' under 'Defense Attorney'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_5",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten '2282' next to 'PO BOX 2282' under 'Defense Attorney'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_6",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 80,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'LISA INOUYE' under 'Defense Attorney'.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_7",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'ADJ' next to 'Insurance Carrier' label.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_8",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 45,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten 'Zinsmeyer, Sarah' under 'Adjuster' field.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        },
+        {
+          "element_id": "hw_9",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 45,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten '11/19/25 @ 2:30pmHaw' at bottom center.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "HELENE HANADA",
+          "normalized_text": "The form was run or processed by an individual named Helene Hanada.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "cross_reference",
+          "semantic_meaning": "The form was run or processed by an individual named Helene Hanada.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ady carol azzarito",
+          "normalized_text": "The handwritten name 'Ady Carol Azzarito' appears under the 'Insurance Carrier' section, likely indicating the name of the adjuster or a representative.",
+          "relates_to_field_ids": [
+            "Insurance Carrier"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The handwritten name 'Ady Carol Azzarito' appears under the 'Insurance Carrier' section, likely indicating the name of the adjuster or a representative.",
+          "ocr_confidence": 0.85,
+          "interpretation_confidence": 0.85,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_3",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "11/19/25 @ 2:30pmHaw",
+          "normalized_text": "This is a timestamp indicating when the document was reviewed or updated, likely by a person named 'Haw' at 2:30 PM on November 19, 2025.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "This is a timestamp indicating when the document was reviewed or updated, likely by a person named 'Haw' at 2:30 PM on November 19, 2025.",
+          "ocr_confidence": 0.92,
+          "interpretation_confidence": 0.92,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_4",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "LYDIA B NEWCOMB BREA",
+          "normalized_text": "The handwritten name 'Lydia B Newcomb Brea' appears under the 'Defense Attorney' section, indicating the name of the defense attorney.",
+          "relates_to_field_ids": [
+            "Defense Attorney"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The handwritten name 'Lydia B Newcomb Brea' appears under the 'Defense Attorney' section, indicating the name of the defense attorney.",
+          "ocr_confidence": 0.98,
+          "interpretation_confidence": 0.98,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_5",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "2282",
+          "normalized_text": "The handwritten number '2282' appears next to 'PO BOX 2282', likely confirming or emphasizing the postal code or box number.",
+          "relates_to_field_ids": [
+            "Defense Attorney"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "The handwritten number '2282' appears next to 'PO BOX 2282', likely confirming or emphasizing the postal code or box number.",
+          "ocr_confidence": 0.97,
+          "interpretation_confidence": 0.97,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_6",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "LISA INOUYE",
+          "normalized_text": "The handwritten name 'Lisa Inouye' appears under the 'Defense Attorney' section, indicating the name of the defense attorney.",
+          "relates_to_field_ids": [
+            "Defense Attorney"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The handwritten name 'Lisa Inouye' appears under the 'Defense Attorney' section, indicating the name of the defense attorney.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_7",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "ADJ",
+          "normalized_text": "The handwritten abbreviation 'ADJ' appears next to the 'Insurance Carrier' label, likely indicating 'Adjuster' or 'Adjustment'.",
+          "relates_to_field_ids": [
+            "Insurance Carrier"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "clarification",
+          "semantic_meaning": "The handwritten abbreviation 'ADJ' appears next to the 'Insurance Carrier' label, likely indicating 'Adjuster' or 'Adjustment'.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_8",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "Zinsmeyer, Sarah",
+          "normalized_text": "The handwritten name 'Zinsmeyer, Sarah' appears under the 'Adjuster' field, indicating the name of the adjuster for the insurance carrier.",
+          "relates_to_field_ids": [
+            "Adjuster"
+          ],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "The handwritten name 'Zinsmeyer, Sarah' appears under the 'Adjuster' field, indicating the name of the adjuster for the insurance carrier.",
+          "ocr_confidence": 0.99,
+          "interpretation_confidence": 0.99,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_9",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "11/19/25 @ 2:30pmHaw",
+          "normalized_text": "This is a timestamp indicating when the document was reviewed or updated, likely by a person named 'Haw' at 2:30 PM on November 19, 2025.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "This is a timestamp indicating when the document was reviewed or updated, likely by a person named 'Haw' at 2:30 PM on November 19, 2025.",
+          "ocr_confidence": 0.92,
+          "interpretation_confidence": 0.92,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 23,
+    "lawyer_page_count": 1
+  }
+}

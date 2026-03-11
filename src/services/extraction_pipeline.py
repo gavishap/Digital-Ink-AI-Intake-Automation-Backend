@@ -175,7 +175,7 @@ class Stage1_VisualElements(BaseModel):
         is_handwritten: bool = Field(default=True)
         mark_type: Optional[str] = Field(default=None)
         
-    elements: list[DetectedElement] = Field(description="Key elements only - max 50", max_length=50)
+    elements: list[DetectedElement] = Field(description="Key visual elements detected", max_length=100)
     total_handwritten: int
     total_marks: int
     has_groupings: bool = Field(default=False)
@@ -191,7 +191,7 @@ class Stage2_TextExtraction(BaseModel):
         raw_text: str = Field(description="Exact transcription of handwriting")
         normalized_text: Optional[str] = Field(default=None, description="Cleaned/standardized version")
         text_type: str = Field(description="'name', 'date', 'number', 'medication', 'note', 'address', 'phone', 'other'")
-        confidence: float = Field(ge=0.0, le=1.0)
+        confidence: Optional[float] = Field(default=0.0, ge=0.0, le=1.0)
         is_legible: bool
         alternative_readings: list[str] = Field(default_factory=list, description="If ambiguous, other possible readings")
         
@@ -210,7 +210,7 @@ class Stage3_SpatialRelationships(BaseModel):
         points_to_element: Optional[str] = Field(default=None, description="If arrow, what it points to")
         annotation_text: Optional[str] = Field(default=None, description="Any text associated with this grouping")
         inferred_meaning: str = Field(description="What this connection seems to mean")
-        confidence: float = Field(ge=0.0, le=1.0)
+        confidence: Optional[float] = Field(default=0.0, ge=0.0, le=1.0)
         
     connections: list[Connection]
     has_complex_groupings: bool
@@ -223,11 +223,11 @@ class Stage4_FieldValues(BaseModel):
     class FieldValue(BaseModel):
         field_id: str
         field_label: str
-        extracted_value: Optional[str]
+        extracted_value: Optional[str] = None
         value_type: str = Field(description="'text', 'date', 'number', 'yes_no', 'checkbox', 'circled', 'multiple_choice'")
         is_checked: Optional[bool] = Field(default=None, description="For checkboxes/yes-no")
-        circled_options: list[str] = Field(default_factory=list, description="For circled selections")
-        confidence: float = Field(ge=0.0, le=1.0)
+        circled_options: Optional[list[str]] = Field(default_factory=list, description="For circled selections")
+        confidence: Optional[float] = Field(default=0.0, ge=0.0, le=1.0)
         has_correction: bool = Field(default=False, description="Was something crossed out and changed")
         original_value: Optional[str] = Field(default=None, description="If corrected, the original value")
         
@@ -246,7 +246,7 @@ class Stage5_SemanticAnalysis(BaseModel):
         relates_to_fields: list[str] = Field(default_factory=list)
         relates_to_elements: list[str] = Field(default_factory=list)
         clinical_relevance: Optional[str] = Field(default=None, description="Medical significance if any")
-        confidence: float = Field(ge=0.0, le=1.0)
+        confidence: Optional[float] = Field(default=0.0, ge=0.0, le=1.0)
         needs_human_review: bool
         review_reason: Optional[str] = Field(default=None)
         
@@ -282,7 +282,7 @@ class Stage6_Validation(BaseModel):
         
     validation_issues: list[ValidationIssue]
     cross_validations: list[CrossValidation]
-    overall_confidence: float = Field(ge=0.0, le=1.0)
+    overall_confidence: Optional[float] = Field(default=0.0, ge=0.0, le=1.0)
     extraction_quality: str = Field(description="'high', 'medium', 'low'")
     total_items_for_review: int
     summary: str
@@ -513,27 +513,39 @@ class ExtractionPipeline:
     """
     Multi-stage extraction pipeline for filled medical forms.
     
-    Primary: Qwen2.5-VL-32B via Fireworks AI (vision + structured JSON)
-    Fallback: Claude Sonnet 4 via Anthropic API
+    Priority: Together AI (Llama 4 Maverick) > Fireworks AI > Claude
     """
     
+    TOGETHER_MODEL = "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8"
+    TOGETHER_BASE_URL = "https://api.together.xyz/v1"
     FIREWORKS_MODEL = "accounts/fireworks/models/qwen2p5-vl-32b-instruct"
-    CLAUDE_MODEL = "claude-sonnet-4-20250514"
     FIREWORKS_BASE_URL = "https://api.fireworks.ai/inference/v1"
+    CLAUDE_MODEL = "claude-sonnet-4-20250514"
     
     def __init__(
         self,
         api_key: Optional[str] = None,
         model: Optional[str] = None,
-        max_tokens: int = 16000,
+        max_tokens: int = 32000,
     ):
         import os
         self.max_tokens = max_tokens
         self._used_fallback = False
         
+        together_key = os.getenv("TOGETHER_API_KEY")
         fireworks_key = os.getenv("FIREWORKS_API_KEY")
         
-        if fireworks_key:
+        if together_key:
+            self.qwen_client = instructor.from_openai(
+                OpenAI(
+                    api_key=together_key,
+                    base_url=self.TOGETHER_BASE_URL,
+                    timeout=300.0,
+                ),
+                mode=instructor.Mode.JSON,
+            )
+            self.qwen_model = model or self.TOGETHER_MODEL
+        elif fireworks_key:
             self.qwen_client = instructor.from_openai(
                 OpenAI(
                     api_key=fireworks_key,
@@ -559,12 +571,13 @@ class ExtractionPipeline:
         
         if not self.qwen_client and not self.claude_client:
             raise ValueError(
-                "No LLM configured. Set FIREWORKS_API_KEY or ANTHROPIC_API_KEY."
+                "No LLM configured. Set TOGETHER_API_KEY, FIREWORKS_API_KEY, or ANTHROPIC_API_KEY."
             )
         
         providers = []
         if self.qwen_client:
-            providers.append("Qwen2.5-VL via Fireworks (primary)")
+            provider_name = "Together AI" if together_key else "Fireworks"
+            providers.append(f"Qwen VL via {provider_name} (primary)")
         if self.claude_client:
             providers.append(f"Claude ({'fallback' if self.qwen_client else 'primary'})")
         console.print(f"[bold]LLM providers: {', '.join(providers)}[/bold]")
@@ -633,7 +646,7 @@ class ExtractionPipeline:
         blank_image_data: Optional[str] = None,
         blank_media_type: Optional[str] = None,
     ) -> BaseModel:
-        """Call Qwen2.5-VL via Fireworks AI OpenAI-compatible endpoint."""
+        """Call Qwen VL via OpenAI-compatible endpoint (Together AI or Fireworks)."""
         content = []
         if blank_image_data:
             content.append({
@@ -649,9 +662,10 @@ class ExtractionPipeline:
         return self.qwen_client.chat.completions.create(
             model=self.qwen_model,
             max_tokens=self.max_tokens,
-            temperature=0.1,
+            temperature=0.0,
             messages=[{"role": "user", "content": content}],
             response_model=response_model,
+            max_retries=2,
         )
     
     def _call_claude(
@@ -692,32 +706,35 @@ class ExtractionPipeline:
         stage_name: str,
         blank_image_data: Optional[str] = None,
         blank_media_type: Optional[str] = None,
+        force_provider: Optional[str] = None,
     ) -> BaseModel:
-        """Call primary LLM (Qwen), fall back to Claude on failure."""
-        console.print(f"  [dim]Running {stage_name}...[/dim]")
+        """Call primary vision LLM. No automatic fallback to Claude.
+        
+        Args:
+            force_provider: If "claude", bypass primary and use Claude directly.
+        """
+        provider_label = f" [{force_provider}]" if force_provider else ""
+        console.print(f"  [dim]Running {stage_name}{provider_label}...[/dim]")
         
         call_args = (prompt, image_data, media_type, response_model, blank_image_data, blank_media_type)
         
+        if force_provider == "claude":
+            if not self.claude_client:
+                raise RuntimeError("Claude requested but ANTHROPIC_API_KEY not set")
+            result = self._call_claude(*call_args)
+            console.print(f"  [green]{stage_name} complete (Claude)[/green]")
+            return result
+        
         if self.qwen_client:
-            try:
-                result = self._call_qwen(*call_args)
-                console.print(f"  [green]{stage_name} complete (Qwen)[/green]")
-                return result
-            except Exception as e:
-                console.print(f"  [yellow]{stage_name} failed on Qwen: {e}[/yellow]")
-                if not self.claude_client:
-                    raise
-                console.print(f"  [yellow]Falling back to Claude...[/yellow]")
+            result = self._call_qwen(*call_args)
+            console.print(f"  [green]{stage_name} complete[/green]")
+            return result
         
         if self.claude_client:
-            try:
-                result = self._call_claude(*call_args)
-                self._used_fallback = True
-                console.print(f"  [green]{stage_name} complete (Claude fallback)[/green]")
-                return result
-            except Exception as e:
-                console.print(f"  [red]{stage_name} failed: {e}[/red]")
-                raise
+            result = self._call_claude(*call_args)
+            self._used_fallback = True
+            console.print(f"  [green]{stage_name} complete (Claude)[/green]")
+            return result
         
         raise RuntimeError("No LLM client available")
     
@@ -764,6 +781,8 @@ class ExtractionPipeline:
         page_number: int,
         page_schema: Optional[PageSchema] = None,
         blank_image_path: Optional[Path] = None,
+        extraction_mode: str = "differential",
+        force_provider: Optional[str] = None,
     ) -> PageExtractionResult:
         """
         Extract all data from a single page using the multi-stage pipeline.
@@ -773,18 +792,21 @@ class ExtractionPipeline:
             page_number: Page number
             page_schema: Optional schema for known fields
             blank_image_path: Optional path to blank template image for comparison
+            extraction_mode: "differential" (handwritten only, uses blank template)
+                           or "full_page" (all text including printed, for lawyer pages)
             
         Returns:
             Complete PageExtractionResult
         """
-        console.print(f"\n[bold cyan]Processing Page {page_number}[/bold cyan]")
+        mode_label = "full-page OCR" if extraction_mode == "full_page" else "differential"
+        console.print(f"\n[bold cyan]Processing Page {page_number} ({mode_label})[/bold cyan]")
         
         # Load filled form image
         image_data, media_type = self._load_image(image_path)
         
-        # Load blank template if provided
+        # In full_page mode, skip blank template (we want ALL text)
         blank_data, blank_type = None, None
-        if blank_image_path and blank_image_path.exists():
+        if extraction_mode != "full_page" and blank_image_path and blank_image_path.exists():
             blank_data, blank_type = self._load_image(blank_image_path)
             console.print(f"  [dim]Using blank template for comparison[/dim]")
         
@@ -795,9 +817,12 @@ class ExtractionPipeline:
         date_fields = extract_date_fields(page_schema)
         field_roles = self._get_field_roles(page_schema)
         
-        # Dual-image instruction
-        dual_image_instruction = ""
-        if blank_data:
+        # Dual-image / full-page instruction
+        if extraction_mode == "full_page":
+            dual_image_instruction = """Extract ALL visible text on this page — both PRINTED labels/form fields AND handwritten entries.
+This is an administrative or legal page where printed text IS important data.
+Capture every field label and its value, whether printed or handwritten."""
+        elif blank_data:
             dual_image_instruction = """IMAGE 1 (first image): BLANK template form - shows what the form looks like unfilled
 IMAGE 2 (second image): FILLED form - contains handwritten content to extract
 
@@ -822,6 +847,7 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
             "Stage 1: Visual Element Detection",
             blank_image_data=blank_data,
             blank_media_type=blank_type,
+            force_provider=force_provider,
         )
         
         # Stage 2: Text Extraction (with date parsing rules)
@@ -839,6 +865,7 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
             "Stage 2: Text Extraction (OCR)",
             blank_image_data=blank_data,
             blank_media_type=blank_type,
+            force_provider=force_provider,
         )
         
         # Stage 3: Spatial Relationships (Conservative)
@@ -853,6 +880,7 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
             "Stage 3: Spatial Relationship Analysis",
             blank_image_data=blank_data,
             blank_media_type=blank_type,
+            force_provider=force_provider,
         )
         
         # Stage 4: Field Value Mapping (Schema-strict)
@@ -874,6 +902,7 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
             "Stage 4: Field Value Extraction",
             blank_image_data=blank_data,
             blank_media_type=blank_type,
+            force_provider=force_provider,
         )
         
         # Stage 5: Semantic Analysis (Form-context aware)
@@ -894,6 +923,7 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
             "Stage 5: Semantic Analysis",
             blank_image_data=blank_data,
             blank_media_type=blank_type,
+            force_provider=force_provider,
         )
         
         # Stage 6: Validation (Schema-aware)
@@ -916,6 +946,7 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
             "Stage 6: Validation",
             blank_image_data=blank_data,
             blank_media_type=blank_type,
+            force_provider=force_provider,
         )
         
         # Build final result
@@ -1070,6 +1101,7 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
         max_workers: int = 4,
         progress_callback: Optional[Callable[[int, int, float], None]] = None,
         blank_image_paths: Optional[list[Path]] = None,
+        extraction_mode: str = "differential",
     ) -> FormExtractionResult:
         """
         Extract data from an entire multi-page form with parallel processing.
@@ -1114,12 +1146,12 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
             nonlocal completed_count
             idx, image_path, page_schema, blank_path = args
             
-            # Extract the page (idx is 0-based, page_number is 1-based)
             result = self.extract_page(
                 image_path, 
                 idx + 1, 
                 page_schema,
-                blank_image_path=blank_path
+                blank_image_path=blank_path,
+                extraction_mode=extraction_mode,
             )
             
             # Update progress thread-safely
@@ -1144,17 +1176,28 @@ TASK: Identify ONLY what is DIFFERENT between the blank and filled form.
             
             for future in as_completed(futures):
                 try:
-                    idx, result = future.result()
+                    idx, result = future.result(timeout=600)
                     pages[idx] = result
                 except Exception as e:
                     console.print(f"[red]Error processing page: {e}[/red]")
-                    raise
+                    console.print(f"[yellow]Skipping page, continuing...[/yellow]")
+        
+        # Fill in None pages with empty results
+        for i, p in enumerate(pages):
+            if p is None:
+                pages[i] = PageExtractionResult(
+                    page_number=i + 1,
+                    overall_confidence=0.0,
+                    items_needing_review=1,
+                    review_reasons=[f"Page {i + 1} extraction failed"],
+                )
         
         # Resolve cross-page references
         resolved_references = self._resolve_cross_references(pages)
         
         # Calculate overall metrics
-        total_confidence = sum(p.overall_confidence for p in pages) / len(pages) if pages else 0
+        successful = [p for p in pages if p.overall_confidence > 0]
+        total_confidence = sum(p.overall_confidence for p in successful) / len(successful) if successful else 0
         total_review = sum(p.items_needing_review for p in pages)
         all_reasons = []
         for p in pages:

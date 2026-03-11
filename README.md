@@ -1,317 +1,238 @@
-# Medical Form Template Extraction System
+# Medical Form Extraction & Clinical Report Generation
 
-A Python CLI tool that:
-1. **Phase 1 (scan):** Scans blank PDF forms → Generates Pydantic schemas
-2. **Phase 2 (extract):** Extracts data from filled forms using a multi-stage LLM pipeline
+Python backend for AI-powered medical form extraction and clinical report generation.
 
-## 🎯 Key Features
+## What This Does
 
-- **Claude Sonnet 4** by default (cost-efficient), Opus available for complex forms
-- **Multi-stage extraction pipeline** (6 stages per page)
-- **Handles complex annotations:** brackets, lines, arrows, margin notes
-- **Spatial relationship detection:** understands groupings and connections
-- **Semantic interpretation:** clinical meaning of annotations
-- **Validation & review flagging:** identifies items needing human review
-- **Cost optimizations:** image compression, smart prompts, efficient defaults
+1. **Extract** — Scans filled medical forms using a 6-stage AI vision pipeline
+2. **Generate** — Produces clinical narrative DOCX reports using learned rules + LLM
+3. **Serve** — FastAPI backend for the web application
 
-## 🚀 Quick Start
+---
 
-### 1. Install Dependencies
+## Quick Start
+
+### Prerequisites
+- Python 3.10+
+- Poppler (for PDF processing): `brew install poppler` / `apt install poppler-utils`
+- API keys (Together AI, Fireworks AI, or Anthropic)
+
+### Setup
 
 ```bash
 cd form-extractor
 pip install -r requirements.txt
-```
 
-**System requirement:** Install poppler for PDF processing:
-- **macOS:** `brew install poppler`
-- **Ubuntu:** `sudo apt-get install poppler-utils`
-- **Windows:** Download from [poppler-windows](https://github.com/oschwartz10612/poppler-windows)
+# Create .env with your API keys
+cat > .env << 'EOF'
+TOGETHER_API_KEY=your_together_key
+FIREWORKS_API_KEY=your_fireworks_key
+ANTHROPIC_API_KEY=your_anthropic_key
+SUPABASE_URL=your_supabase_url
+SUPABASE_SERVICE_ROLE_KEY=your_service_key
+SUPABASE_ANON_KEY=your_anon_key
+SUPABASE_JWT_SECRET=your_jwt_secret
+EOF
 
-### 2. Set API Key
-
-```bash
-# Create .env file with your Anthropic API key
-echo "ANTHROPIC_API_KEY=your_key_here" > .env
-```
-
-### 3. Verify Setup
-
-```bash
-python main.py check
+# Start the API server
+python -m uvicorn api.server:app --host 0.0.0.0 --port 8000
 ```
 
 ---
 
-## 📋 Commands
+## Architecture
 
-### `scan` - Analyze Blank Forms (Phase 1)
+### AI Providers (Priority Order)
 
-Generates schemas from blank forms for field mapping.
+| Provider | Model | Used For |
+|----------|-------|----------|
+| Together AI | Llama 4 Maverick 17B | Vision extraction (primary), narrative generation (primary) |
+| Fireworks AI | DeepSeek V3 | Narrative generation (fallback) |
+| Anthropic | Claude Sonnet 4 | Extraction fallback, correlation/training |
+
+### Extraction Pipeline (6 Stages)
+
+Each page of a filled form goes through:
+
+| Stage | Purpose |
+|-------|---------|
+| 1. Visual Detection | Find handwriting, circles, marks |
+| 2. OCR/Transcription | Extract text with confidence scores |
+| 3. Spatial Analysis | Detect groupings, brackets, arrows |
+| 4. Field Mapping | Match values to form structure |
+| 5. Semantic Analysis | Interpret clinical meaning |
+| 6. Validation | Flag items needing review |
+
+**Dual-Image Mode:** Compares blank template vs filled form for differential analysis.
+
+### Clinical Report Generation
+
+The clinical report generator uses a ruleset learned from 31 training reports:
+
+1. Loads `report_learning/outputs/rules/report_rules.json` (25+ sections, 131 field IDs)
+2. For each section, determines the content type:
+   - **`formatted_fill`** — Template with `{field_id}` placeholders substituted from extraction
+   - **`narrative`** — LLM generates clinical text using generation prompt + few-shot examples
+   - **`static_text`** — Verbatim content inserted
+   - **`list`** / **`table`** / **`conditional_block`** — Structured content
+3. A `FIELD_NAME_MAP` (100+ entries) bridges production extraction field names to rule IDs
+4. Assembles everything into a DOCX with Arial font, Heading 2 sections, justified text
+
+---
+
+## API Endpoints
+
+| Endpoint | Method | Auth | Description |
+|----------|--------|------|-------------|
+| `/api/health` | GET | No | Health check |
+| `/api/analyze` | POST | Yes | Upload single PDF/image for analysis |
+| `/api/analyze-images` | POST | Yes | Upload batch of page images |
+| `/api/save-annotated-pdfs` | POST | Yes | Save annotated PDFs to Storage |
+| `/api/jobs/{job_id}` | GET | No | Job status polling |
+| `/api/results/{job_id}` | GET | No | Full extraction results |
+| `/api/results/{job_id}/summary` | GET | No | Results summary |
+| `/api/generate-clinical-report` | POST | Yes | Generate clinical narrative DOCX |
+| `/api/reports` | POST | Yes | Upload/persist a report |
+| `/api/reports/{id}/download` | GET | Yes | Signed download URL |
+| `/api/documents` | GET | Yes | List documents |
+| `/api/documents/{id}` | GET | Yes | Document detail |
+| `/api/documents/{id}/reanalyze` | POST | Yes | Re-analyze existing document |
+
+### Generate Clinical Report
 
 ```bash
-# Scan a blank PDF
-python main.py scan ./input/blank_form.pdf --name "exam_form" --output ./templates/
+curl -X POST http://localhost:8000/api/generate-clinical-report \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"job_id": "your-job-id"}'
 
-# Preview without saving
-python main.py scan ./input/blank_form.pdf --name "test" --preview
+# Response: { "report_id": "...", "storage_path": "...", "filename": "..." }
 ```
 
-**Output:**
-- `exam_form_schema.json` - Complete form structure
-- `exam_form_page_N.json` - Per-page schemas
-- `exam_form_models.py` - Pydantic models for extraction
-- `exam_form_summary.txt` - Human-readable summary
-- `exam_form_blank_page_N.png` - 🆕 Blank page images for dual-image extraction
-
 ---
 
-### `extract` - Extract from Filled Forms (Phase 2) 
-
-**NEW:** Multi-stage extraction with full annotation support.
-
-```bash
-# Basic extraction (no schema)
-python main.py extract ./filled_form.pdf --name "patient_smith"
-
-# With schema for better field mapping
-python main.py extract ./filled_form.pdf --name "patient_smith" --schema ./templates/exam_form_schema.json
-
-# From folder of scanned images
-python main.py extract ./scanned_pages/ --name "patient_doe" --output ./extractions/
-```
-
-**Output:**
-- `patient_smith_extraction.json` - Complete extraction with all data
-- `patient_smith_page_N.json` - Per-page results
-- `patient_smith_summary.txt` - Human-readable summary with review items
-
----
-
-## 🔬 Multi-Stage Extraction Pipeline (v2 - Schema-Guided)
-
-The `extract` command runs 6 stages per page with **dual-image comparison**:
-
-| Stage | Purpose | What It Detects | v2 Improvements |
-|-------|---------|-----------------|-----------------|
-| **1. Visual Detection** | Find all elements | Handwriting, circles, marks | Schema-constrained options |
-| **2. OCR/Transcription** | Extract text | Handwritten text with confidence | Year context, digit disambiguation |
-| **3. Spatial Analysis** | Detect connections | Brackets, arrows | Conservative - only explicit marks |
-| **4. Field Mapping** | Map to known fields | Match values to form fields | Full schema JSON injection |
-| **5. Semantic Analysis** | Interpret meaning | Clinical meaning of annotations | Form context aware |
-| **6. Validation** | Quality check | Flag ambiguous items | Schema-aware validation |
-
-### 🆕 Dual-Image Extraction
-
-When blank templates are available (generated during `scan`), the pipeline sends **two images** to each stage:
-- **Image 1**: Blank template (what the form looks like empty)
-- **Image 2**: Filled form (what the patient filled out)
-
-This enables **differential analysis** - only actual handwriting and marks are detected, eliminating hallucinations of printed text.
-
-### What It Handles
-
-✅ **Standard fields:** Text, dates, yes/no, checkboxes, circled options  
-✅ **Brackets & groupings:** `{ medications }` with notes like "stopped taking"  
-✅ **Lines & arrows:** Connecting elements with annotations  
-✅ **Margin notes:** Free-form text anywhere on page  
-✅ **Corrections:** Crossed-out values with new values  
-✅ **Cross-references:** "See attached sheet" links  
-✅ **Circled selections:** Items circled from printed lists  
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 form-extractor/
-├── input/                  # Put blank/filled PDFs here
-├── templates/              # Generated schemas + blank images go here
-│   ├── *_schema.json       # Form schemas
-│   └── *_blank_page_N.png  # 🆕 Blank templates for comparison
-├── extractions/            # Extraction results go here
-├── main.py                 # CLI entry point
+├── api/
+│   └── server.py                          # FastAPI backend (all endpoints)
+│
+├── src/
+│   ├── models/
+│   │   ├── annotations.py                 # VisualMark, SpatialConnection, AnnotationGroup
+│   │   ├── extraction.py                  # FormExtractionResult, PageExtractionResult
+│   │   ├── field_types.py                 # Enums (FieldType, MarkType)
+│   │   ├── fields.py                      # FormFieldSchema, TableSchema
+│   │   ├── form.py                        # FormSchema
+│   │   ├── pages.py                       # PageSchema
+│   │   └── sections.py                    # SectionSchema
+│   ├── services/
+│   │   ├── extraction_pipeline.py         # 6-stage AI pipeline (Together AI + Claude)
+│   │   ├── pdf_processor.py              # PDF → images (pdf2image/poppler)
+│   │   ├── analyzer.py                    # Blank form structure analysis
+│   │   ├── supabase_client.py            # Supabase client singleton
+│   │   ├── job_manager.py                # DB CRUD for jobs, documents, results, reports
+│   │   └── storage_manager.py            # Supabase Storage upload/download (upsert)
+│   └── generators/
+│       ├── clinical_report_generator.py   # Rules + LLM → clinical DOCX
+│       ├── schema_generator.py            # JSON schema output
+│       └── pydantic_generator.py          # Pydantic model generation
+│
+├── report_learning/                       # Training module (ran offline)
+│   ├── cli.py                             # Click CLI for training pipeline
+│   ├── scanner/                           # Phase 1: DOCX report parsing
+│   │   ├── docx_parser.py                # Mechanical DOCX structure extraction
+│   │   ├── llm_content_analyzer.py       # LLM element classification
+│   │   └── models.py                     # ScannedReport, ReportSection, ReportElement
+│   ├── correlator/                        # Phase 2-3: Field mapping + patterns
+│   │   ├── condenser.py                  # Extraction JSON condensation
+│   │   ├── field_mapper.py               # Per-pair LLM correlation (Claude)
+│   │   ├── pattern_analyzer.py           # Cross-report pattern discovery
+│   │   └── models.py                     # PairCorrelation, CrossReportPatterns
+│   ├── rules/                             # Phase 4-5: Rule generation + validation
+│   │   ├── rule_generator.py             # Section rule synthesis
+│   │   ├── rule_validator.py             # Validation + refinement
+│   │   └── models.py                     # SectionRule, ReportRules
+│   ├── training_data/
+│   │   ├── completed_reports/            # 31 DOCX clinical reports (input)
+│   │   └── source_forms/                 # 31 signed patient PDFs (input)
+│   └── outputs/
+│       ├── rules/
+│       │   └── report_rules.json         # *** Master ruleset ***
+│       ├── scanned/                      # 31 parsed report JSONs
+│       ├── correlations/                 # 31 field mapping JSONs
+│       ├── extractions_v2/               # 31 extraction JSONs
+│       └── generated_reports/            # Test-generated clinical reports
+│
+├── templates/                             # Generated form schemas + blank images
+├── Dockerfile                             # Python 3.11-slim + poppler-utils
 ├── requirements.txt
-└── src/
-    ├── models/
-    │   ├── field_types.py      # Enums
-    │   ├── fields.py           # FormFieldSchema, TableSchema
-    │   ├── sections.py         # SectionSchema
-    │   ├── pages.py            # PageSchema
-    │   ├── form.py             # FormSchema
-    │   ├── extraction.py       # SourceEvidence, ExtractedFieldValue
-    │   └── annotations.py      # 🆕 Visual marks, spatial connections, groups
-    ├── services/
-    │   ├── analyzer.py         # Blank form analyzer
-    │   ├── pdf_processor.py    # PDF → images
-    │   └── extraction_pipeline.py  # 🆕 Multi-stage extraction
-    └── generators/
-        ├── schema_generator.py
-        └── pydantic_generator.py
+└── main.py                                # CLI entry point (scan, extract, info, check)
 ```
 
 ---
 
-## 📊 Extraction Output Format
+## Report Learning Pipeline (How Rules Were Built)
 
-```json
-{
-  "form_id": "patient_smith",
-  "patient_name": "Martha Aguilar",
-  "patient_dob": "9/21/70",
-  "form_date": "10/23/25",
-  "overall_confidence": 0.87,
-  "total_items_needing_review": 3,
-  "pages": [
-    {
-      "page_number": 1,
-      "field_values": {
-        "p1_name": {"value": "Martha Aguilar", "confidence": 0.95},
-        "p1_heart_problems": {"is_checked": false, "circled_options": ["NO"]}
-      },
-      "annotation_groups": [
-        {
-          "group_id": "med_group_1",
-          "member_elements": ["Tramadol", "Ibuprofen", "Hydrocodone"],
-          "annotation_text": "Stopped taking but began after injury",
-          "interpretation": "These medications were stopped but resumed after the work injury"
-        }
-      ],
-      "free_form_annotations": [
-        {
-          "raw_text": "See Sheet",
-          "relates_to_fields": ["medications_list"],
-          "semantic_meaning": "Medication list continues on attached sheet"
-        }
-      ],
-      "cross_page_references": [
-        {
-          "reference_text": "See Sheet",
-          "target_page": 2,
-          "is_resolved": true
-        }
-      ]
-    }
-  ]
-}
-```
+The report learning engine was trained on 31 completed clinical reports:
+
+| Phase | Command | LLM | Output |
+|-------|---------|-----|--------|
+| 1. Report Scanning | `cli.py scan` | python-docx + Claude | `outputs/scanned/` |
+| 2. Form Extraction | `cli.py extract` | Together AI (Llama 4 Maverick) | `outputs/extractions_v2/exam/` |
+| 3. Condensation | `cli.py condense` | Rule-based | `outputs/extractions_v2/condensed/` |
+| 4. Correlation | `cli.py correlate` | Claude Sonnet 4 | `outputs/correlations/` |
+| 5. Pattern Analysis | (part of correlate) | Claude Sonnet 4 | `outputs/rules/cross_report_patterns.json` |
+| 6. Rule Generation | `cli.py generate-rules` | Claude Sonnet 4 | `outputs/rules/report_rules.json` |
+| 7. Validation | `cli.py validate` | Claude Sonnet 4 | `outputs/rules/validation_scores.json` |
+
+To re-train with new reports, add DOCX + PDF pairs to `training_data/` and re-run the pipeline.
 
 ---
 
-## 💰 Cost Optimization
-
-The system is optimized for cost efficiency:
-
-| Optimization | Impact | Default Setting |
-|-------------|--------|-----------------|
-| **Claude Sonnet 4** | 5x cheaper than Opus | Default model |
-| **Image compression** | ~60% smaller payloads | JPEG quality 85 |
-| **Lower DPI** | ~50% fewer input tokens | 150 DPI (sufficient for forms) |
-| **Max dimension** | Optimal for Claude vision | 1568px |
-| **Reduced max_tokens** | Less output overhead | 4096 |
-| **Concise prompts** | Fewer input tokens | Optimized |
-
-### Model Cost Comparison (per 1M tokens)
-
-| Model | Input | Output | Use When |
-|-------|-------|--------|----------|
-| claude-sonnet-4-20250514 | $3 | $15 | **Default** - Most forms |
-| claude-opus-4-5-20251101 | $15 | $75 | Very dense/complex forms |
-
-### Use Opus for Complex Forms
+## CLI Commands
 
 ```bash
-# When forms have very dense text or complex layouts:
-python main.py scan ./complex_form.pdf --name "test" --model claude-opus-4-5-20251101
+# System check
+python main.py check
+
+# Scan blank form → generate schema
+python main.py scan ./input/blank_form.pdf --name "exam" --output ./templates/
+
+# Extract from filled form
+python main.py extract ./input/filled_form.pdf --name "patient_name"
+
+# Extract with schema for better field mapping
+python main.py extract ./input/filled.pdf --name "smith" --schema ./templates/exam_schema.json
+
+# Report learning pipeline
+python -m report_learning.cli scan
+python -m report_learning.cli extract
+python -m report_learning.cli condense
+python -m report_learning.cli correlate
+python -m report_learning.cli generate-rules
+python -m report_learning.cli validate
 ```
 
 ---
 
-## 🔧 Configuration
+## Dependencies
 
-Environment variables (in `.env`):
+Key packages (`requirements.txt`):
 
-```bash
-ANTHROPIC_API_KEY=your_key_here
-```
-
-CLI options:
-
-```bash
-python main.py scan --help
-
-Options:
-  -n, --name       Name for this form (required)
-  -o, --output     Output directory [default: ./templates]
-  --preview        Preview without saving
-  --model          Claude model [default: claude-sonnet-4-20250514]
-  --dpi            DPI for PDF conversion [default: 150]
-  --max-tokens     Max response tokens [default: 4096]
-```
-
-```bash
-python main.py extract --help
-
-Options:
-  -n, --name     Name for extraction output (required)
-  -s, --schema   Path to form schema JSON (optional)
-  -o, --output   Output directory [default: ./extractions]
-  --model        Claude model [default: claude-sonnet-4-20250514]
-```
+| Package | Purpose |
+|---------|---------|
+| instructor | Structured LLM outputs with Pydantic |
+| anthropic | Claude API client |
+| openai | Together AI / Fireworks AI client (OpenAI-compatible) |
+| python-docx | DOCX parsing and generation |
+| pydantic | Data validation |
+| pdf2image | PDF to image conversion |
+| Pillow | Image processing |
+| fastapi + uvicorn | API framework |
+| supabase | Supabase client for DB + Storage |
 
 ---
 
-## 🎯 Workflow Example
-
-```bash
-# 1. First, scan the blank form to generate schema
-python main.py scan "./input/blank_exam_form.pdf" --name "dental_exam" --output ./templates/
-
-# 2. Then extract data from filled forms using the schema
-python main.py extract "./input/filled_smith.pdf" --name "smith_john" --schema ./templates/dental_exam_schema.json
-
-# 3. Review the extraction
-cat ./extractions/smith_john_summary.txt
-```
-
----
-
-## 📝 Handling Complex Annotations
-
-### Brackets Grouping Medications
-
-When patients draw brackets like:
-```
-  Tramadol    |
-  Ibuprofen   } "Stopped taking but began after injury"
-  Hydrocodone |
-```
-
-The pipeline:
-1. Detects the bracket as a spatial connector
-2. Identifies which items it groups
-3. Extracts the annotation text
-4. Interprets the clinical meaning
-5. Links it all in a structured `AnnotationGroup`
-
-### Cross-Page References
-
-When a field says "See attached sheet":
-1. Detected as a `CrossPageReference`
-2. Target page identified
-3. Content from target page linked
-4. Resolution status tracked
-
-### Corrections
-
-When something is crossed out:
-1. Original value captured
-2. New value extracted
-3. `has_correction: true` flagged
-4. Both values preserved for audit
-
----
-
-## 📄 License
-
-Internal use only - Digital Ink Project
+*Last Updated: 2026-03-10*

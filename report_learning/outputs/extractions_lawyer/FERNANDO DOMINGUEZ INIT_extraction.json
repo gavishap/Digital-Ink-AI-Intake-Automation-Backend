@@ -1,0 +1,107 @@
+{
+  "form_id": "fernando_dominguez_init",
+  "form_name": "FERNANDO DOMINGUEZ INIT",
+  "extraction_timestamp": "2026-03-08T06:16:55.682507",
+  "resolved_references": [],
+  "overall_confidence": 0.9131578947368422,
+  "total_items_needing_review": 16,
+  "all_review_reasons": [
+    "The date '11/25/2025' is flagged as ambiguous because it is a future date (2025), which may be an error or placeholder. The confidence score for this field is 0.85, indicating moderate certainty.",
+    "The red handwriting in the 'Stressors at Work' section is ambiguous. It's unclear whether the annotations are meant to highlight specific items or indicate a general concern. This could lead to misinterpretation of the patient's priorities or the severity of stressors.",
+    "The red handwriting in the 'Pre-Existing Conditions' section indicates multiple conditions with moderate severity (VAS 6). While this is clinically relevant, the consistency of the severity across multiple conditions needs to be evaluated in context of the patient's overall health. The annotation does not specify if this is a systemic issue or if the conditions are independent.",
+    "The annotation '(I need to see Dental Records)' is ambiguous. It is unclear whether this is a note from the patient, a provider, or a system-generated message. The intent and context are not fully clear.",
+    "Page 13 extraction failed",
+    "Handwritten note near 'Patient Has:' section is illegible or ambiguous without further context.",
+    "The handwritten number '4' appears next to multiple clinical terms (Abfractions, Buccal Mucosal Ridging, Occlusal Wear, Biofilm on Teeth, Biofilm on Gums). The meaning of '4' is ambiguous without context (e.g., severity scale, classification level).",
+    "The term 'Open Bite' is circled, indicating it is a significant finding. However, the circled text does not specify whether it is a diagnosis, observation, or a treatment plan. The purpose of circling is ambiguous.",
+    "The handwritten note 'pt. in active Ortho tx' is in cursive and may be illegible without context. The interpretation 'Patient is currently undergoing active orthodontic treatment' is plausible but not definitively verifiable from the handwriting alone.",
+    "Page 21 extraction failed",
+    "Page 22 extraction failed"
+  ],
+  "patient_name": null,
+  "patient_dob": null,
+  "form_date": null,
+  "pages": [
+    {
+      "page_number": 1,
+      "field_values": {},
+      "visual_elements": [
+        {
+          "element_id": "hw_1",
+          "element_type": "handwriting",
+          "bbox": {
+            "x": 10,
+            "y": 80,
+            "width": 20,
+            "height": 10
+          },
+          "content": "Handwritten note at bottom left corner.",
+          "confidence": 0.9,
+          "mark_type": null,
+          "mark_type_raw": null,
+          "mark_description": null,
+          "mark_inferred_meaning": null,
+          "is_handwritten": true,
+          "associated_field_id": null
+        }
+      ],
+      "spatial_connections": [],
+      "annotation_groups": [],
+      "unknown_marks": [],
+      "free_form_annotations": [
+        {
+          "annotation_id": "hw_1",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "APPT Tuesday 11/25/25 at 12:30pm H Court",
+          "normalized_text": "An appointment scheduled for Tuesday, November 25, 2025, at 12:30 PM in H Court.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "instruction",
+          "semantic_meaning": "An appointment scheduled for Tuesday, November 25, 2025, at 12:30 PM in H Court.",
+          "ocr_confidence": 0.95,
+          "interpretation_confidence": 0.95,
+          "needs_review": false,
+          "review_reason": null
+        },
+        {
+          "annotation_id": "hw_2",
+          "page_number": 1,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 20
+          },
+          "position_description": "inline",
+          "raw_text": "8/19",
+          "normalized_text": "A date, likely indicating August 19, 2024, possibly referring to a previous date of note or action.",
+          "relates_to_field_ids": [],
+          "relates_to_section": null,
+          "annotation_purpose": "additional_info",
+          "semantic_meaning": "A date, likely indicating August 19, 2024, possibly referring to a previous date of note or action.",
+          "ocr_confidence": 0.9,
+          "interpretation_confidence": 0.9,
+          "needs_review": false,
+          "review_reason": null
+        }
+      ],
+      "circled_selections": [],
+      "cross_page_references": [],
+      "overall_confidence": 0.95,
+      "items_needing_review": 0,
+      "review_reasons": []
+    }
+  ],
+  "_trim_info": {
+    "source": "lawyer_cover",
+    "original_total_pages": 22,
+    "lawyer_page_count": 1
+  }
+}
