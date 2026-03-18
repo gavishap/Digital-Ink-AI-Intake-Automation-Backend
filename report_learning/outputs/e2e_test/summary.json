@@ -1,0 +1,79 @@
+{
+  "test_date": "2026-03-16T19:58:51.294285",
+  "patients": [
+    {
+      "name": "Ronald Anderson",
+      "fields_resolved": "104/133",
+      "sections_generated": 42,
+      "sections_in_ground_truth": 39,
+      "elapsed_seconds": 107.4,
+      "section_coverage": "18/20",
+      "data_accuracy_pct": 65,
+      "clinical_tone": "appropriate",
+      "hallucination_count": 8,
+      "missing_data_count": 12,
+      "overall_score": 68,
+      "top_issues": [
+        "hallucinated_injury_details",
+        "missing_specific_pain_ratings",
+        "incomplete_diagnostic_values",
+        "missing_patient_allergies",
+        "fabricated_diagnostic_measurements"
+      ]
+    },
+    {
+      "name": "Patricia Benton",
+      "fields_resolved": "108/133",
+      "sections_generated": 39,
+      "sections_in_ground_truth": 40,
+      "elapsed_seconds": 100.4,
+      "section_coverage": "18/22",
+      "data_accuracy_pct": 70,
+      "clinical_tone": "mostly appropriate",
+      "hallucination_count": 8,
+      "missing_data_count": 12,
+      "overall_score": 65,
+      "top_issues": [
+        "wrong_injury_dates",
+        "incorrect_lateral_excursion",
+        "pronoun_errors",
+        "missing_diagnosis_codes",
+        "employer_name_error",
+        "incomplete_missing_teeth_list"
+      ]
+    },
+    {
+      "name": "Jenea Carraway",
+      "fields_resolved": "78/133",
+      "sections_generated": 39,
+      "sections_in_ground_truth": 39,
+      "elapsed_seconds": 152.2,
+      "section_coverage": "18/22",
+      "data_accuracy_pct": 60,
+      "clinical_tone": "appropriate",
+      "hallucination_count": 5,
+      "missing_data_count": 12,
+      "overall_score": 45,
+      "top_issues": [
+        "Critical DOB error (40-year discrepancy)",
+        "Massively inflated missing teeth count",
+        "Blank/missing diagnostic measurements throughout",
+        "Complete absence of medical record review section",
+        "Missing detailed neurological findings and referrals"
+      ]
+    }
+  ],
+  "aggregate_score": 59.3,
+  "top_issues": [
+    "hallucinated_injury_details",
+    "missing_specific_pain_ratings",
+    "incomplete_diagnostic_values",
+    "missing_patient_allergies",
+    "fabricated_diagnostic_measurements",
+    "wrong_injury_dates",
+    "incorrect_lateral_excursion",
+    "pronoun_errors",
+    "missing_diagnosis_codes",
+    "employer_name_error"
+  ]
+}

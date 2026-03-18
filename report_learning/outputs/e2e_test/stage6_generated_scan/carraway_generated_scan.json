@@ -1,0 +1,1311 @@
+{
+  "report_id": "carraway_report",
+  "filename": "carraway_report.docx",
+  "total_sections": 39,
+  "total_elements": 114,
+  "sections": [
+    {
+      "id": "initial_report_in_the_field_of",
+      "heading": "Initial Report in the Field of Dentistry",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "initial_report_in_the_field_of",
+      "heading": "INITIAL REPORT IN THE FIELD OF DENTISTRY",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "authorization_request_header",
+      "heading": "Authorization Request Header",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0003",
+          "type": "paragraph",
+          "text": "DATE: \t\t12/23/2025",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0004",
+          "type": "paragraph",
+          "text": "CLAIM:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0005",
+          "type": "paragraph",
+          "text": "WCAB:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0006",
+          "type": "paragraph",
+          "text": "Case #:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0007",
+          "type": "paragraph",
+          "text": "Date of Injury: \t11/20/2024",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0008",
+          "type": "paragraph",
+          "text": "Date of current exam: 12/23/2025",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0009",
+          "type": "paragraph",
+          "text": "Interpreter:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0010",
+          "type": "paragraph",
+          "text": "Patient",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0011",
+          "type": "paragraph",
+          "text": "Last Name: \t\tCarraway",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0012",
+          "type": "paragraph",
+          "text": "First Name: \t\tJeneen",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0013",
+          "type": "paragraph",
+          "text": "Sex: \t\t\tFEMALE",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0014",
+          "type": "paragraph",
+          "text": "Date of Birth: \t03/11/1934",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0015",
+          "type": "paragraph",
+          "text": "Occupation: \t\tAssistant nurse manager",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0016",
+          "type": "paragraph",
+          "text": "Address: \t\tP.O Box 12343 Long Beach, CA 90807",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0017",
+          "type": "paragraph",
+          "text": "City:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0018",
+          "type": "paragraph",
+          "text": "State: \t\t\tCA",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0019",
+          "type": "paragraph",
+          "text": "Zip: \t\t\t90807",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0020",
+          "type": "paragraph",
+          "text": "Phone No.: \t\t(562) 787-9010",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "job_description",
+      "heading": "Job Description",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0022",
+          "type": "paragraph",
+          "text": "Ms. Carraway states she worked as an Assistant nurse manager for Providence Health. She worked 12 hours per day, 4-5 days per week.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0023",
+          "type": "paragraph",
+          "text": "Ms. Carraway states her job entailed prolonged standing, walking, twisting, bending forward, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 50 lbs, carrying up to a maximum of 50 lbs.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "current_work_status",
+      "heading": "Current Work Status",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0025",
+          "type": "paragraph",
+          "text": "Ms. Carraway is disabled and has not returned to work since August 27, 2025.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "history_of_industrial_injury",
+      "heading": "History of Industrial Injury",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0027",
+          "type": "paragraph",
+          "text": "Ms. Jeneen Carraway states that on November 20, 2024, she was involved in an industrial injury in the course of performing her usual and customary job duties.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0028",
+          "type": "paragraph",
+          "text": "Ms. Carraway reports that as a result of performing repetitive work activities such as repeated job that is very stressful over time, she has experienced pain in multiple body regions.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0029",
+          "type": "paragraph",
+          "text": "She rates the severity of pain in her neck as 6 out of 10, in her upper back as 7 out of 10, in her lower back as 8 out of 10, all on a VAS.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0030",
+          "type": "paragraph",
+          "text": "Ms. Carraway finds that in response to her industrial related orthopedic pain, she developed emotional stressors. She finds she is clenching her teeth and bracing her facial musculature in response to her orthopedic pain, and also in response to the resultant emotional stressors experienced. This has caused her to develop facial and jaw pain.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "treatment_received_for_industrial_injury",
+      "heading": "Treatment Received for Industrial Injury",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0032",
+          "type": "paragraph",
+          "text": "Ms. Carraway states she has received the following treatments due to the industrial injury: surgery on her Neck.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "past_medical_history",
+      "heading": "Past Medical History",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0034",
+          "type": "paragraph",
+          "text": "Ms. Carraway states her past medical history includes: high blood pressure, diabetes, stomach/acid reflux, kidney problems, thyroid problems, and breathing problems. She was diagnosed with a pituitary tumor around 2019. Her current medications include Carvedilol, with a dosage history of 356->256->279.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "prior_surgeries",
+      "heading": "Prior Surgeries",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0036",
+          "type": "paragraph",
+          "text": "Ms. Carraway underwent a gastric sleeve surgery in 2019.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "prior_injuries",
+      "heading": "Prior Injuries",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0038",
+          "type": "paragraph",
+          "text": "Ms. Carraway states she has had prior industrial injuries to her left arm in approximately 2012, from which she made a recovery. Ms. Carraway states she was involved in a non-industrial injury in December 2016, injuring her left knee. The non-industrial injuries described are not within the scope of this evaluation.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "subsequent_injuries",
+      "heading": "Subsequent Injuries",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0040",
+          "type": "paragraph",
+          "text": "Ms. Carraway denies any injuries after the date of industrial injury.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "social_history",
+      "heading": "Social History",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0042",
+          "type": "paragraph",
+          "text": "Ms. Carraway states she does not currently smoke, but has a history of smoking approximately 4 cigarettes per day for 2.5 years, quitting 26 years ago. She denies use of recreational drugs. No other relevant social history details are available regarding alcohol consumption or hand dominance.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "past_dental_history",
+      "heading": "Past Dental History",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "subjective_complaints",
+      "heading": "Subjective Complaints",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0045",
+          "type": "paragraph",
+          "text": "Subjective Complaints",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "headaches",
+      "heading": "HEADACHES",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0047",
+          "type": "paragraph",
+          "text": "Ms. Carraway reports headaches located in the bilateral temple and forehead areas. She describes the frequency as occasional slight. She rates the severity as 4-5 out of 10 on a Visual Analog Scale (VAS).",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "facial_pain",
+      "heading": "FACIAL PAIN",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0049",
+          "type": "paragraph",
+          "text": "No facial pain complaints were reported.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "dental",
+      "heading": "DENTAL",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0051",
+          "type": "paragraph",
+          "text": "Ms. Carraway reports clenching and grinding her teeth. She also reports bracing her facial musculature.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "oral_malodor_complaint",
+      "heading": "Oral Malodor Complaint",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0053",
+          "type": "paragraph",
+          "text": "Ms. Carraway states she has bad breath after the injury.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "activities_of_daily_living_adl",
+      "heading": "Activities of Daily Living (ADL)",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0055",
+          "type": "table",
+          "text": "ACTIVITY | EXAMPLE | DIFFICULTY",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": [
+            [
+              "ACTIVITY",
+              "EXAMPLE",
+              "DIFFICULTY"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mandibular_range_of_motion",
+      "heading": "Mandibular Range of Motion",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0057",
+          "type": "paragraph",
+          "text": "Please Note: According to the State of California Disability Standards, the minimal normal range of motion of opening of the mouth is an interincisal opening of 38.1 mm.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0058",
+          "type": "paragraph",
+          "text": "Upon examination, Ms. Carraway was objectively found to exhibit:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0059",
+          "type": "paragraph",
+          "text": "Maximum interincisal opening of  mm painless",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0060",
+          "type": "paragraph",
+          "text": "Maximum right lateral excursion of  mm painless",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0061",
+          "type": "paragraph",
+          "text": "Maximum left lateral excursion of  mm painless",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0062",
+          "type": "paragraph",
+          "text": "Maximum protrusion of  mm painless",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "intraoral_examination",
+      "heading": "Intraoral Examination",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0064",
+          "type": "paragraph",
+          "text": "Upon examination, I determined Ms. Carraway exhibits:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0065",
+          "type": "paragraph",
+          "text": "At maximum intercuspation:\tClass  occlusion",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0066",
+          "type": "paragraph",
+          "text": "Overbite:     mm",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0067",
+          "type": "paragraph",
+          "text": "Overjet:       mm",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0068",
+          "type": "paragraph",
+          "text": "deviated to the 0 mm",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0069",
+          "type": "paragraph",
+          "text": "Missing Teeth # 2 3 4 5 6 7 8 9 10 11 12 13 14 15 18 19 20 21 22 23 24 25 26 27 28 29 30 31",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0070",
+          "type": "paragraph",
+          "text": "Objectively-disclosed bacterial biofilm deposits on her teeth and around her gum tissues",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "objective_clinical_findings_confirming_bruxismclenching",
+      "heading": "Objective Clinical Findings Confirming Bruxism/Clenching",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0072",
+          "type": "paragraph",
+          "text": "Objective Clinical Findings Confirming Bruxism/Clenching and Bracing of the Facial Musculature for Ms. Jeneen Carraway",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0073",
+          "type": "paragraph",
+          "text": "1. Teeth indentations/scalloping objectively noted on the left lateral border of the tongue.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0074",
+          "type": "paragraph",
+          "text": "2. Bite mark line (linea alba) objectively documented on the left buccal mucosa with minimal severity.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0075",
+          "type": "paragraph",
+          "text": "3. Occlusal wear objectively noted on the right, left, and anterior tooth surfaces, with slight severity.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0076",
+          "type": "paragraph",
+          "text": "4. Occlusal wear objectively documented on the left tooth surfaces.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0077",
+          "type": "paragraph",
+          "text": "7. Muscle tenderness/hypertrophy findings were not documented in the available data.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0078",
+          "type": "paragraph",
+          "text": "Ms. Carraway presented with the above-listed findings during her evaluation.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_testing",
+      "heading": "Diagnostic Testing",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "diagnostic_testing",
+      "heading": "DIAGNOSTIC TESTING",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "ultrasonic_doppler_auscultation_analysis",
+      "heading": "Ultrasonic Doppler Auscultation Analysis",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0082",
+          "type": "paragraph",
+          "text": "Ultrasonic Doppler auscultation of the temporomandibular joints was performed to assess joint sounds and internal derangement.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0083",
+          "type": "paragraph",
+          "text": "Upon examination of the right TMJ, no clicking was detected during translation. During lateral movement, crepitus was noted.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0084",
+          "type": "paragraph",
+          "text": "Upon examination of the left TMJ, no clicking or other abnormal sounds were detected during translation or lateral movement.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0085",
+          "type": "paragraph",
+          "text": "The findings are consistent with osteoarthritic changes.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "surface_electromyography_semg",
+      "heading": "Surface Electromyography (sEMG)",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0087",
+          "type": "paragraph",
+          "text": "Surface electromyography (sEMG) was performed bilaterally on the muscles of mastication.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0088",
+          "type": "paragraph",
+          "text": "Ms. Carraway's right temporalis muscle showed 2.5 microvolts at rest, 120.1 microvolts during maximum voluntary contraction, and 140.2 microvolts at peak activity. Her left temporalis muscle showed 3.1 microvolts at rest, 115.6 microvolts during maximum voluntary contraction, and 130.5 microvolts at peak activity.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0089",
+          "type": "paragraph",
+          "text": "The right masseter muscle showed 2.8 microvolts at rest, 100.8 microvolts during maximum voluntary contraction, and 125.9 microvolts at peak activity. Her left masseter muscle showed 3.4 microvolts at rest, 95.2 microvolts during maximum voluntary contraction, and 120.1 microvolts at peak activity.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0090",
+          "type": "paragraph",
+          "text": "Bilateral comparison revealed asymmetry between the right and left temporalis muscles at rest, with the left side being 24% higher. Similarly, the left masseter muscle showed a 21% higher reading at rest compared to the right.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0091",
+          "type": "paragraph",
+          "text": "The elevated resting values for the left temporalis and masseter muscles suggest hypertonicity or bruxism. The presence of asymmetry and elevated resting values is consistent with incoordination and aberrant function.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_bite_force_testing",
+      "heading": "Diagnostic Bite Force Testing",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0093",
+          "type": "paragraph",
+          "text": "The muscles of mastication were tested for their functional capacity measuring the maximum bite force and strength of these facial muscles. The measurements were objectively determined with the use of a gnathodynamometer. The muscles of mastication are innervated by the fifth cranial nerve, the Trigeminal Nerve. The motor function of the Trigeminal Nerve controls the bite force of the muscles of mastication.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0094",
+          "type": "paragraph",
+          "text": "Ms. Jeneen Carraway's maximum bite force was objectively measured at a total of 279 Newtons. This is significantly lower than the expected normal value when the normal amount of Newton forces to eat hard and chewy foods should exceed 400 Newtons. (400 Newtons = 90 Pounds Force). Ms. Carraway has complained of difficulty eating hard and chewy foods, which is consistent with the reduced bite force measured.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0095",
+          "type": "paragraph",
+          "text": "The bite force on the right side was measured at 126 Newtons, and on the left side at 153 Newtons. The objective measurements also confirm that Ms. Carraway has a weaker force of her bite on one side compared to the other, with a difference of 27 Newtons between the right and left sides.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0096",
+          "type": "paragraph",
+          "text": "\"Gnathodynamometer--a reliable device for assessing jaw bite force.\" Shushma, G., Kantly, R. Journal of Evolution of Medical and Dental Sciences, vol. 5, no. 102, 22 Dec. 2016, pp. 7488+. The findings from the diagnostic bite force testing will be correlated with the results of the temperature gradient studies to further assess Ms. Carraway's orofacial pain condition.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_autonomic_nervous_system_testing",
+      "heading": "Diagnostic Autonomic Nervous System Testing",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0098",
+          "type": "paragraph",
+          "text": "Diagnostic Autonomic Nervous System Testing, consisting of Pulse Oximetry during the patient's performance of the Mueller Maneuver, revealed a heart rate change from 99 to 74 BPM.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0099",
+          "type": "paragraph",
+          "text": "DIAGNOSTIC \u03b1-AMYLASE ENZYME ANALYSIS",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0100",
+          "type": "paragraph",
+          "text": "Diagnostic \u03b1-Amylase Analysis, consisting of laboratory spectrophotometric analysis of the amount of \u03b1-amylase enzyme present, was performed, and an \u03b1-amylase enzyme concentration of 106 KIU / Liter was objectively measured. The spectrophotometric testing is calibrated where normal concentrations of \u03b1-amylase enzyme should be less than 45 KIU / Liter.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_salivary_flow_and_buffering_tests",
+      "heading": "Diagnostic Salivary Flow and Buffering Tests",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0102",
+          "type": "paragraph",
+          "text": "Diagnostic salivary flow and buffering tests revealed:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0103",
+          "type": "paragraph",
+          "text": "\u2022 Observable dry mouth, dry lips, cracked lips",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0104",
+          "type": "paragraph",
+          "text": "\u2022 Viscous saliva",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0105",
+          "type": "paragraph",
+          "text": "The standard of care objective test advocated by the American Dental Association to prove whether definite qualitative changes of the saliva are present or not was performed (and the results photographed). A tongue depressor adheres to the inside of Ms. Carraway's cheeks, which conclusively document with certainty that she does indeed have qualitative changes in her saliva, which has resulted in the increased surface tension of the salivary liquid. \"In addition to conducting visual inspection, the dentist can use a tongue blade to assess tissue dryness...\" (Journal of the American Dental Association, August 2003).",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "radiographic_results",
+      "heading": "Radiographic Results",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0107",
+          "type": "paragraph",
+          "text": "To be determined when Ms. Carraway returns to our Hawthorne, Reseda, and/or Anaheim offices for x-rays or presents us with x-rays taken at another dental office.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_photographs",
+      "heading": "Diagnostic Photographs",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0109",
+          "type": "paragraph",
+          "text": "Diagnostic photographs document scalloping on the lateral borders of the tongue. The photographs document bite mark lines on the inside of the cheeks. The photographs document wear on the surfaces of the anterior teeth as well as on the right and left teeth. The photographs document the Xerostomia / Anti-Cholinergic side effect where, due to qualitative changes of the saliva, a tongue depressor sticks to the inside of the cheek - even when not held by hand. The photographs also document swollen and bleeding gum tissues. These findings are accompanied by objectively-disclosed bacterial biofilm deposits on Ms. Carraway's teeth and around her gum tissues.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnosis_of_industrial_related_conditions",
+      "heading": "Diagnosis of Industrial Related Conditions",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0111",
+          "type": "paragraph",
+          "text": "After a review of Ms. Carraway's history and clinical examination, the diagnoses are:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "discussion",
+      "heading": "Discussion",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0113",
+          "type": "paragraph",
+          "text": "Upon examination, I found Ms. Carraway presents with objective clinical findings of bruxism, including tongue scalloping, cheek bite marks, and tooth wear on multiple teeth. These findings are consistent with the clinical presentation of bruxism as documented in the scientific literature.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0114",
+          "type": "paragraph",
+          "text": "Muscle examination of Ms. Carraway's facial muscles revealed tenderness to palpation and palpable taut bands, consistent with a diagnosis of myalgia. The sEMG test results showed elevated muscular activity and dysfunction, with values indicating significant asymmetry between the left and right masseter muscles.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0115",
+          "type": "paragraph",
+          "text": "The Diagnostic Bite Force Analysis revealed a significant disparity between the left (153) and right (126) sides, further supporting the presence of muscular dysfunction.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0116",
+          "type": "paragraph",
+          "text": "The scientific literature has documented that stress can contribute to the development and exacerbation of bruxism. Ms. Carraway reported experiencing significant stress related to her industrial injury, stating that she feels anxious and tense. It is well established that stress can lead to increased muscle activity and bruxism. As Ms. Carraway may not have been aware that she had prior episodes of bruxism, it is with reasonable medical probability that the industrial exposure would have aggravated any preexisting bruxism by at least 1%.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0117",
+          "type": "paragraph",
+          "text": "Phase IV clinical studies of the FDA data have documented that certain medications can contribute to bruxism. Ms. Carraway is currently taking medications that have been associated with bruxism as a side effect. The literature supports that these medications can exacerbate bruxism.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0118",
+          "type": "paragraph",
+          "text": "Periodontal examination findings revealed evidence of inflammation, including swelling and recession. Even if Ms. Carraway had prior inflammation of the gums, there are numerous industrial related factors that, with reasonable medical probability, would be contributing to, aggravating, accelerating and/or lighting up her current periodontal condition. Evaluation of Ms. Carraway's saliva reveals objective evidence of qualitative changes, as demonstrated by the tongue depressor test. The Salivary Flow Stimulated was less than 0.5mL, and the Salivary Flow Unstimulated was less than 0.1mL, indicating hyposalivation. The Amylase Test result was 106, further supporting the presence of salivary gland dysfunction.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0119",
+          "type": "paragraph",
+          "text": "Ms. Carraway's orthopedic pain complaints are connected to her stress and bruxism aggravation in a causal chain. Her stress reports indicate that she experiences increased pain and tension in response to her industrial injury. Therefore, it is with reasonable medical probability that the industrial exposure is a contributing factor to her current dental condition, including bruxism, myalgia, and periodontal inflammation.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0120",
+          "type": "paragraph",
+          "text": "Therefore, it is with reasonable medical probability that Ms. Carraway's industrial exposure is the cause of her current dental condition, including bruxism, myalgia, and periodontal disease, and that her condition will require ongoing treatment and management.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "differential_diagnosis",
+      "heading": "Differential Diagnosis",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0122",
+          "type": "paragraph",
+          "text": "An examining doctor's opinion for causation must be based on a reliable differential diagnosis formed after taking a history, physical examination, diagnostic tests and, if available, a review of prior medical records. I have considered this for Ms. Carraway.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0123",
+          "type": "paragraph",
+          "text": "The reader must remember: Treatment is not apportioned!",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "temporal_connection_between_industrial_exposure_and",
+      "heading": "Temporal Connection Between Industrial Exposure and Dental Conditions",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0125",
+          "type": "paragraph",
+          "text": "In my discussion section above, I discussed how, with reasonable medical probability, the industrial exposure and its resultant orthopedic pain and emotional stressors, have developed consequential and derivative injuries for Ms. Carraway in the area of Dentistry.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0126",
+          "type": "paragraph",
+          "text": "As explained above, even if the medical records reveal Ms. Carraway had these dental problems prior to the industrial exposure, it is with reasonable medical probability that her dental problems were contributed to and aggravated on an industrial basis by at least 1% in response to her industrial pain, any resultant stress, and the side effect of medication taken on an industrial related basis.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0127",
+          "type": "paragraph",
+          "text": "While I understand that one of the arguments a person may bring up is latency of when these dental problems started to occur, one has to understand that latency is individual and depends on the intensity of exposure and predilection of the individual.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "heading": "Conclusion",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "credibility",
+      "heading": "Credibility",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0130",
+          "type": "paragraph",
+          "text": "I observed Ms. Carraway during the course of this evaluation. A comfortable doctor-patient relationship was established which enabled Ms. Carraway to candidly confide the difficulties she experienced as a result of her industrial injuries. I found Ms. Carraway to be a candid and sincere individual. I believe Ms. Carraway has done her best to provide an accurate account of her conditions. Ms. Carraway's subjective complaints matched my objective findings in my evaluation of her. In summation, I find no basis for questioning Ms. Carraway's credibility. It is evident she has suffered dental related injuries as a result of her industrial injuries.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "treatment_plan",
+      "heading": "Treatment Plan",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0132",
+          "type": "paragraph",
+          "text": "Treatment Plan for Jeneen Carraway",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0133",
+          "type": "paragraph",
+          "text": "Please Note: I researched the ACOEM guidelines, the MTUS guidelines, and the ODG guidelines, and the recommended treatment plan is consistent with these evidence-based guidelines. Section 4604.5(d) of the Labor Code states that \"the employer shall provide all medically appropriate and necessary medical treatment.\" The dental specialty of Orofacial Pain has been established by the American Dental Association, and the treatment recommendations are within the standard of care for this specialty.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0134",
+          "type": "paragraph",
+          "text": "Ms. Carraway's diagnosis of bruxism and TMJ symptoms necessitate the use of an Orofacial Pain Occlusal Orthotic Device (CPT code: 21085). The primary purpose of the Orofacial Pain Occlusal Orthotic Device is to relieve facial muscle, ligament, and nerve impingement associated with her bruxism and TMJ symptoms. This appliance is fabricated and customized in our in-house dental laboratory. Given her nighttime bruxism behavior, a Nocturnal Orthopedic Repositioning Device may also be indicated (CPT code: 21110) to manage nocturnal parafunctional activity.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0135",
+          "type": "paragraph",
+          "text": "Due to the inflammation of gums diagnosis, Ms. Carraway will require periodontal treatment and monitoring. Bacteria and inflammatory processes from inflammation of the gums readily enter the bloodstream, posing a risk to overall health. Therefore, Ms. Carraway will require monitoring throughout her lifetime with treatment as necessary on an industrial basis.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0136",
+          "type": "paragraph",
+          "text": "Ms. Carraway's facial muscle pain/myalgia and emotional stressors justify a referral for a psychological examination to assess the impact of these factors on her condition and to guide further treatment.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0137",
+          "type": "paragraph",
+          "text": "Duration of Treatment Frequency of Treatment: 3 months, 1 time per month",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0138",
+          "type": "paragraph",
+          "text": "Estimated date of completion of treatment: April 15, 2026",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0139",
+          "type": "paragraph",
+          "text": "Ms. Carraway is Temporarily Partially Disabled due to her condition. The condition is not Permanent and Stationary. Since Ms. Carraway suffers from Myalgia of the facial musculature, activities should be prophylactically restricted to prevent exacerbation of her condition. Work restrictions will be adjusted based on her progress.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0140",
+          "type": "paragraph",
+          "text": "PLEASE NOTE: Labor Code 5402 (b)(c), requires the employer to authorize all appropriate medical care up to $10,000. I request that the claims adjuster please provide copies of all medical records. Request is hereby made for authorization for the above-mentioned treatment plan, including but not limited to the Orofacial Pain Occlusal Orthotic Device (CPT code: 21085) and any subsequent follow-up care.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0141",
+          "type": "paragraph",
+          "text": "I request that the claims adjuster please provide a written decision regarding this treatment plan within 5 days of receipt.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "disclosure_notice",
+      "heading": "Disclosure Notice",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0143",
+          "type": "paragraph",
+          "text": "In accordance with Labor Code Section 4628, I solely performed the interview with Ms. Carraway. I solely performed the physical examination and I solely took her history of injury and medical history. I performed the examination in its entirety at my office. I reviewed the medical records and personally reviewed and signed this report.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0144",
+          "type": "paragraph",
+          "text": "To the best of my knowledge, the evaluation and the time performing it were in accordance with the guidelines of the Industrial Medical Council of Administrative Director to the extent that those guidelines exist.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0145",
+          "type": "paragraph",
+          "text": "I did not bill for any other medical-legal evaluations or diagnostic procedures or diagnostic services performed by independent contractors.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0146",
+          "type": "paragraph",
+          "text": "\"The undersigned declares under penalty of perjury that to the best of my knowledge I am not in violation of L.C. 5703 or L.C. 139.3. I declare under penalty of perjury that the information contained in this report and its attachments, if any, is true and correct to the best of my knowledge and belief, except as to information that I have indicated that I received from others. As to that information, I declare under penalty of perjury that the information accurately describes the information provided to me and, except as noted herein, that I believe it to be true.\"",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0147",
+          "type": "paragraph",
+          "text": "[Doctor's Signature]",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0148",
+          "type": "paragraph",
+          "text": "[Doctor's Name]",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0149",
+          "type": "paragraph",
+          "text": "[Doctor's Credentials]",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0150",
+          "type": "paragraph",
+          "text": "[Doctor's License Number]",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0151",
+          "type": "paragraph",
+          "text": "[Doctor's Location]",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0152",
+          "type": "paragraph",
+          "text": "[Doctor's Contact Info]",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    }
+  ],
+  "preamble": [],
+  "metadata": {
+    "author": "python-docx"
+  }
+}

@@ -42,7 +42,6 @@ class P1HeartProblemsTypesOptions(str, Enum):
     MITRAL_VALVE_PROBLEM = "Mitral Valve Problem"
     STENT = "Stent"
     PACEMAKER = "Pacemaker"
-    DEFIBRILLATOR = "Defibrillator"
     RHEUMATIC_HEART_DISEASE = "Rheumatic Heart Disease"
 
 class P1InfectiousDiseasesOptions(str, Enum):
@@ -109,32 +108,8 @@ class P1MedicationsForConditionsOptions(str, Enum):
     ANTI_INFLAMMATORY = "Anti-Inflammatory"
     CHOLESTEROL__SEE_ATTACHED_SHEET_ = "Cholesterol (see attached sheet)"
 
-class P3DryMouthOptions(str, Enum):
-    YES = "YES"
-    NO = "NO"
-    SOMETIMES = "Sometimes"
-
-class P3HoarsenessOptions(str, Enum):
-    YES = "YES"
-    NO = "NO"
-    SOMETIMES = "Sometimes"
-
-class P3SalivaTooLittleOptions(str, Enum):
-    YES = "YES"
-    NO = "NO"
-    SOMETIMES = "Sometimes"
-
-class P3DifficultySwallowingOptions(str, Enum):
-    YES = "YES"
-    NO = "NO"
-    SOMETIMES = "Sometimes"
-
-class P3MouthDryEatingOptions(str, Enum):
-    YES = "YES"
-    NO = "NO"
-    SOMETIMES = "Sometimes"
-
-class P3SipLiquidsAidOptions(str, Enum):
+class P4MouthSymptomsOptions(str, Enum):
+    """Shared options for all mouth symptom questions on page 4."""
     YES = "YES"
     NO = "NO"
     SOMETIMES = "Sometimes"
@@ -1142,12 +1117,14 @@ class ExtractedFieldValue(BaseModel):
 
 
 class P1DoctorCompletionTableRow(BaseModel):
-    """Row data for BELOW THE LINE TO BE COMPLETED BY THE DOCTOR:."""
+    """Row data for BELOW THE LINE TO BE COMPLETED BY THE DOCTOR:.
+    Doctor marks X/checkmark/arrow in cells. True = marked, False/None = empty.
+    """
 
-    condition: Optional[str] = Field(default=None, description="Condition")
-    dx_pre_injury: Optional[str] = Field(default=None, description="DX Pre-Injury")
-    increased_after_injury: Optional[str] = Field(default=None, description="Increased After Injury")
-    dx_post_injury: Optional[str] = Field(default=None, description="DX Post-Injury")
+    condition: Optional[str] = Field(default=None, description="Condition name (row label)")
+    dx_pre_injury: Optional[bool] = Field(default=None, description="DX Pre-Injury — True if marked (X, checkmark, or arrow)")
+    increased_after_injury: Optional[bool] = Field(default=None, description="Increased After Injury — True if marked")
+    dx_post_injury: Optional[bool] = Field(default=None, description="DX Post-Injury — True if marked")
     row_label: Optional[str] = Field(default=None, description="Pre-printed row label")
 class P6OrthopedicInjuriesRow(BaseModel):
     """Row data for Orthopedic Injuries."""
@@ -1163,15 +1140,21 @@ class P8MvaInjuryTableRow(BaseModel):
     injured: Optional[str] = Field(default=None, description="Injured")
     no_facial_jaw_problems: Optional[bool] = Field(default=None, description="No facial/Jaw problems or pain")
     residual_problems: Optional[str] = Field(default=None, description="Residual Problems")
-class P11SleepinessScaleRow(BaseModel):
-    """Row data for Sleepiness Scale."""
+class P3EpworthSleepinessScale(BaseModel):
+    """
+    Epworth Sleepiness Scale
+    Each activity scored 0-3: 0=would never doze, 1=slight, 2=moderate, 3=high chance.
+    """
 
-    situation: Optional[str] = Field(default=None, description="Situation")
-    score_0: Optional[bool] = Field(default=None, description="0")
-    score_1: Optional[bool] = Field(default=None, description="1")
-    score_2: Optional[bool] = Field(default=None, description="2")
-    score_3: Optional[bool] = Field(default=None, description="3")
-    row_label: Optional[str] = Field(default=None, description="Pre-printed row label")
+    p3_epworth_sitting_reading: Optional[int] = Field(default=None, description="Sitting and reading (0-3)")
+    p3_epworth_watching_tv: Optional[int] = Field(default=None, description="Watching television (0-3)")
+    p3_epworth_sitting_inactive: Optional[int] = Field(default=None, description="Sitting inactive in a public place (0-3)")
+    p3_epworth_passenger_car: Optional[int] = Field(default=None, description="As a passenger in a car for an hour (0-3)")
+    p3_epworth_lying_down_afternoon: Optional[int] = Field(default=None, description="Lying down to rest in the afternoon (0-3)")
+    p3_epworth_sitting_talking: Optional[int] = Field(default=None, description="Sitting and talking to someone (0-3)")
+    p3_epworth_sitting_after_lunch: Optional[int] = Field(default=None, description="Sitting quietly after lunch (0-3)")
+    p3_epworth_car_traffic: Optional[int] = Field(default=None, description="In a car while stopped in traffic (0-3)")
+    p3_epworth_total_score: Optional[int] = Field(default=None, description="Total Score (0-24, sum of all 8 rows)")
 class P14MusclePalpationTableRow(BaseModel):
     """Row data for Tenderness: Palpable Taut Bands / Trigger Points."""
 
@@ -1251,8 +1234,9 @@ class P1P1MedicalHistory(BaseModel):
     p1_stomach_acids: Optional[str] = Field(default=None, description="Do you feel that stomach acids come up into your mouth or throat?")
     p1_kidney_problems: Optional[str] = Field(default=None, description="Do you have any Kidney problems?")
     p1_thyroid_problem: Optional[str] = Field(default=None, description="Do you have a Thyroid problem?")
-    p1_infectious_diseases: Optional[str] = Field(default=None, description="Do you have or have you had any of the following:")  # Options: HIV, Hepatitis, TB, VD
-    p1_blood_thinners: Optional[str] = Field(default=None, description="Are you taking blood thinners?")
+    p1_infectious_diseases_yn: Optional[str] = Field(default=None, description="8. Do you have or have you had any of the following: HIV, Hepatitis, TB, VD?")  # Options: YES, NO
+    p1_infectious_diseases: Optional[str] = Field(default=None, description="Infectious disease types (if Q8 is YES)")  # Options: HIV, Hepatitis, TB, VD
+    p1_blood_thinners: Optional[str] = Field(default=None, description="9. Are you taking blood thinners?")
     p1_blood_thinners_which: Optional[str] = Field(default=None, description="Which one:")
     p1_breathing_problems: Optional[str] = Field(default=None, description="Do you have any breathing problems?")
     p1_breathing_problems_types: Optional[str] = Field(default=None, description="Breathing problem types")  # Options: Asthma, Shortness of Breath
@@ -1260,8 +1244,9 @@ class P1P1MedicalHistory(BaseModel):
     p1_numbness_location: Optional[str] = Field(default=None, description="Where:")
     p1_liver_problems: Optional[str] = Field(default=None, description="Do you have any Liver problems?")
     p1_urinary_problems: Optional[str] = Field(default=None, description="Do you have any Urinary problems?")
-    p1_awakens_night_urinate: Optional[str] = Field(default=None, description="Awakens at night to urinate: - times per night")
-    p1_sleep_study_test: Optional[str] = Field(default=None, description="Have you ever had a Sleep Study Test?")
+    p1_awakens_night_urinate: Optional[str] = Field(default=None, description="14. Awakens at night to urinate?")  # Options: YES, NO
+    p1_awakens_night_urinate_times: Optional[int] = Field(default=None, description="Times per night (if Q14 is YES)")
+    p1_sleep_study_test: Optional[str] = Field(default=None, description="15. Have you ever had a Sleep Study Test?")
     p1_sleep_study_when: Optional[str] = Field(default=None, description="When:")
     p1_apnea_results: Optional[str] = Field(default=None, description="Apnea Results?")
     p1_cpap_mask: Optional[str] = Field(default=None, description="Have you ever been given a CPAP mask to use at night to help you breathe?")
@@ -1278,7 +1263,9 @@ class P1P1Medications(BaseModel):
     """
 
     p1_current_medications: Optional[str] = Field(default=None, description="Please circle medications you are taking?")  # Options: Pristiq, Wellbutrin, Effexor, Celexa, Cymbalta...
+    p1_additional_medications_written: Optional[str] = Field(default=None, description="Additional medications written by hand near the printed list")
     p1_medications_for_conditions: Optional[str] = Field(default=None, description="Medications For:")  # Options: Diabetes, Sleep, High Blood Pressure, Pain, Anti-Inflammatory...
+    p1_additional_conditions_written: Optional[str] = Field(default=None, description="Additional conditions written by hand below 'Medications For:' line")
 class P2MedicationHistory(BaseModel):
     """
     History of Medication Usage
@@ -1338,17 +1325,18 @@ class P2MedicationsAfterInjury(BaseModel):
     p2_after_thyroid_problem: Optional[str] = Field(default=None, description="Thyroid Problem")
     p2_after_other: Optional[str] = Field(default=None, description="Other")
     p2_patient_call_office: Optional[str] = Field(default=None, description="Patient to call the office with the names of the medications they take")
-class P3MouthSymptoms(BaseModel):
+class P4MouthSymptoms(BaseModel):
     """
-    Mouth Symptoms
+    Mouth Symptoms (physically on page 4 of the form).
+    Each question: YES/NO on the left, 'Sometimes' on the right. Patient circles one.
     """
 
-    p3_dry_mouth: Optional[str] = Field(default=None, description="Do you feel that you have dry mouth?")  # Options: YES, NO, Sometimes
-    p3_hoarseness: Optional[str] = Field(default=None, description="Do you have hoarseness?")  # Options: YES, NO, Sometimes
-    p3_saliva_too_little: Optional[str] = Field(default=None, description="Does the amount of saliva in your mouth seem to be too little?")  # Options: YES, NO, Sometimes
-    p3_difficulty_swallowing: Optional[str] = Field(default=None, description="Do you have any difficulties swallowing?")  # Options: YES, NO, Sometimes
-    p3_mouth_dry_eating: Optional[str] = Field(default=None, description="Does your mouth feel dry when eating a meal?")  # Options: YES, NO, Sometimes
-    p3_sip_liquids_aid: Optional[str] = Field(default=None, description="Do you sip liquids to aid in swallowing dry food?")  # Options: YES, NO, Sometimes
+    p4_dry_mouth: Optional[str] = Field(default=None, description="Do you feel that you have dry mouth?")  # Options: YES, NO, Sometimes
+    p4_hoarseness: Optional[str] = Field(default=None, description="Do you have hoarseness?")  # Options: YES, NO, Sometimes
+    p4_saliva_too_little: Optional[str] = Field(default=None, description="Does the amount of saliva in your mouth seem to be too little?")  # Options: YES, NO, Sometimes
+    p4_difficulty_swallowing: Optional[str] = Field(default=None, description="Do you have any difficulties swallowing?")  # Options: YES, NO, Sometimes
+    p4_mouth_dry_eating: Optional[str] = Field(default=None, description="Does your mouth feel dry when eating a meal?")  # Options: YES, NO, Sometimes
+    p4_sip_liquids_aid: Optional[str] = Field(default=None, description="Do you sip liquids to aid in swallowing dry food?")  # Options: YES, NO, Sometimes
 class P3BadBreath(BaseModel):
     """
     Bad Breath Assessment
@@ -2169,7 +2157,7 @@ class Page3Data(BaseModel):
     Complexity: 7/10
     """
 
-    mouth_symptoms: Optional[P3MouthSymptoms] = Field(default=None, description="Mouth Symptoms")
+    epworth_sleepiness_scale: Optional[P3EpworthSleepinessScale] = Field(default=None, description="Epworth Sleepiness Scale")
     bad_breath: Optional[P3BadBreath] = Field(default=None, description="Bad Breath Assessment")
     halitosis_meter: Optional[P3HalitosisMeter] = Field(default=None, description="Halitosis Meter Reading")
     taste_changes: Optional[P3TasteChanges] = Field(default=None, description="Taste Changes")
@@ -2185,6 +2173,7 @@ class Page4Data(BaseModel):
     p4_daily_activities: Optional[P4P4DailyActivities] = Field(default=None, description="Daily Activities")
     p4_smoking_history: Optional[P4P4SmokingHistory] = Field(default=None, description="Smoking History")
     p4_substance_use: Optional[P4P4SubstanceUse] = Field(default=None, description="Substance Use")
+    p4_mouth_symptoms: Optional[P4MouthSymptoms] = Field(default=None, description="Mouth Symptoms")
     p4_patient_signature: Optional[str] = Field(default=None, description="Patient's Signature")
     p4_signature_date: Optional[date] = Field(default=None, description="Date (Format: MM/DD/YYYY)")
 class Page5Data(BaseModel):
@@ -2252,7 +2241,6 @@ class Page11Data(BaseModel):
     p11_jaw_mouth_symptoms: Optional[P11P11JawMouthSymptoms] = Field(default=None, description="Jaw and Mouth Symptoms")
     p11_oral_symptoms: Optional[P11P11OralSymptoms] = Field(default=None, description="Oral Symptoms")
     p11_additional_symptoms: Optional[P11P11AdditionalSymptoms] = Field(default=None, description="Additional Symptoms")
-    p11_sleepiness_scale: list[P11SleepinessScaleRow] = Field(default_factory=list, description="Sleepiness Scale")
 class Page12Data(BaseModel):
     """
     Page 12: Activities of Daily Living VAS

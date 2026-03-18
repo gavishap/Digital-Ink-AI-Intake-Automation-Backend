@@ -352,7 +352,7 @@ def generate_rules():
     rules_path = RULES_DIR / "report_rules.json"
     generate_from_files(
         patterns_path=patterns_path,
-        corrected_dir=CORRECTED_DIR,
+        reports_dir=SCANNED_DIR,
         correlations_dir=CORRELATIONS_DIR,
         extractions_dir=ext_dir,
         output_path=rules_path,
@@ -363,24 +363,31 @@ def generate_rules():
 # -- validate --------------------------------------------------------------
 
 @cli.command()
-def validate():
+@click.option("--full", is_flag=True,
+              help="Generate actual narrative text via LLM before validation (~$5-10 for 31 reports)")
+def validate(full: bool):
     """Phase 5: Validate rules against known reports."""
     from .rules.rule_validator import validate_all
 
-    console.print(Panel("[bold]Phase 5: Validate Rules[/bold]", expand=False))
+    mode = "FULL (LLM generation)" if full else "placeholder"
+    console.print(Panel(f"[bold]Phase 5: Validate Rules[/bold]\nMode: {mode}", expand=False))
 
     rules_path = RULES_DIR / "report_rules.json"
     if not rules_path.exists():
         console.print(f"[red]Rules file not found: {rules_path}[/red]")
         return
 
-    ext_dir = EXTRACTIONS_TRIMMED_DIR if EXTRACTIONS_TRIMMED_DIR.exists() else EXTRACTIONS_DIR
+    ext_dir = CONDENSED_DIR if CONDENSED_DIR.exists() and list(CONDENSED_DIR.glob("*_condensed.json")) else (
+        EXTRACTIONS_TRIMMED_DIR if EXTRACTIONS_TRIMMED_DIR.exists() else EXTRACTIONS_DIR
+    )
+    console.print(f"  Extractions: {ext_dir}")
     scores_path = RULES_DIR / "validation_scores.json"
     validate_all(
         rules_path=rules_path,
-        corrected_dir=CORRECTED_DIR,
+        reports_dir=SCANNED_DIR,
         extractions_dir=ext_dir,
         output_path=scores_path,
+        full_mode=full,
     )
     console.print(f"\n[green bold]Validation complete -> {scores_path}[/green bold]")
 

@@ -41,8 +41,49 @@ def _build_client() -> instructor.Instructor:
     return instructor.from_anthropic(anthropic.Anthropic(api_key=api_key))
 
 
-def _simulate_section(rule, extraction: dict[str, Any]) -> str:
-    """Produce a textual preview of what the rule would generate."""
+def _generate_narrative_full(
+    rule,
+    extraction: dict[str, Any],
+    client: instructor.Instructor,
+) -> str:
+    """Actually call the LLM to generate narrative text for --full mode."""
+    field_data = {}
+    for fid in rule.source_field_ids:
+        val = _lookup_field(extraction, fid)
+        if val is not None:
+            field_data[fid] = str(val)[:200]
+
+    prompt_parts = [rule.generation_prompt or f"Generate the {rule.title} section."]
+    prompt_parts.append(f"\nPatient data:\n{json.dumps(field_data, indent=2)}")
+
+    if rule.few_shot_examples:
+        ex = rule.few_shot_examples[0]
+        prompt_parts.append(
+            f"\nExample output (for reference only -- use CURRENT patient data):\n{ex.output_text[:500]}"
+        )
+
+    raw = client.client.messages.create(
+        model=CLAUDE_MODEL,
+        max_tokens=rule.max_tokens,
+        messages=[{
+            "role": "user",
+            "content": "\n".join(prompt_parts),
+        }],
+    )
+    return raw.content[0].text if raw.content else ""
+
+
+def _simulate_section(
+    rule,
+    extraction: dict[str, Any],
+    full_mode: bool = False,
+    client: Optional[instructor.Instructor] = None,
+) -> str:
+    """Produce a textual preview of what the rule would generate.
+
+    In full_mode, narrative sections are actually generated via LLM.
+    In default mode, narratives show placeholder text.
+    """
     from .models import ContentType
 
     if rule.content_type == ContentType.STATIC_TEXT:
@@ -59,6 +100,11 @@ def _simulate_section(rule, extraction: dict[str, Any]) -> str:
         return " ".join(vals)
 
     if rule.content_type == ContentType.NARRATIVE:
+        if full_mode and client and rule.generation_prompt:
+            try:
+                return _generate_narrative_full(rule, extraction, client)
+            except Exception as e:
+                return f"[NARRATIVE generation failed: {e}]"
         fields_preview = {
             fid: str(_lookup_field(extraction, fid) or "")[:80]
             for fid in rule.source_field_ids
@@ -123,14 +169,20 @@ def validate_single(
     report: ScannedReport,
     extraction: dict[str, Any],
     client: Optional[instructor.Instructor] = None,
+    full_mode: bool = False,
 ) -> ValidationResult:
-    """Validate rules against a single known report+extraction pair."""
+    """Validate rules against a single known report+extraction pair.
+
+    In full_mode, narrative sections are generated via LLM before comparison.
+    """
     if client is None:
         client = _build_client()
 
     simulated_lines: list[str] = []
     for sr in rules.sections:
-        preview = _simulate_section(sr, extraction)
+        preview = _simulate_section(
+            sr, extraction, full_mode=full_mode, client=client,
+        )
         simulated_lines.append(f"## {sr.title} ({sr.section_id})\n{preview}\n")
     simulated_text = "\n".join(simulated_lines)
 
@@ -170,13 +222,17 @@ def _validate_one(
     rules: ReportRules,
     report: ScannedReport,
     extraction: dict[str, Any],
+    full_mode: bool = False,
 ) -> ValidationResult | None:
     """Worker for parallel validation."""
     label = f"{idx+1}/{total} {report.report_id[:30]}"
-    console.print(f"  [bold]{label}[/bold] ...")
+    mode = "[full]" if full_mode else "[placeholder]"
+    console.print(f"  [bold]{label}[/bold] {mode} ...")
     client = _build_client()
     try:
-        vr = validate_single(rules, report, extraction, client=client)
+        vr = validate_single(
+            rules, report, extraction, client=client, full_mode=full_mode,
+        )
         console.print(f"  [green]{label} -> {vr.overall_score:.0%}[/green]")
         return vr
     except Exception as e:
@@ -251,8 +307,13 @@ def validate_all(
     extractions_dir: Path,
     output_path: Path,
     parallel: int = MAX_PARALLEL,
+    full_mode: bool = False,
 ) -> list[ValidationResult]:
-    """Run validation across all known reports in parallel and save results."""
+    """Run validation across all known reports in parallel and save results.
+
+    full_mode: If True, narrative sections are generated via LLM before
+    comparison (costs ~$5-10 for 31 reports). Default is placeholder mode.
+    """
     rules = ReportRules.model_validate_json(
         rules_path.read_text(encoding="utf-8")
     )
@@ -280,16 +341,21 @@ def validate_all(
             break
 
     count = min(len(reports), len(extractions))
+    mode_label = "FULL (LLM narrative generation)" if full_mode else "placeholder"
     console.print(
-        f"[bold]Validating rules against {count} reports | parallel={parallel}[/bold]"
+        f"[bold]Validating rules against {count} reports | parallel={parallel} | mode={mode_label}[/bold]"
     )
+    if full_mode:
+        parallel = min(parallel, 2)
+        console.print("[yellow]Full mode: reduced parallelism to limit API cost[/yellow]")
 
     indexed_results: list[tuple[int, ValidationResult | None]] = []
 
     with ThreadPoolExecutor(max_workers=parallel) as pool:
         futures = {
             pool.submit(
-                _validate_one, i, count, rules, reports[i], extractions[i]
+                _validate_one, i, count, rules, reports[i], extractions[i],
+                full_mode,
             ): i
             for i in range(count)
         }

@@ -1,0 +1,1723 @@
+{
+  "form_name": "PATRICIA BENTON INIT",
+  "source_file": "PATRICIA BENTON INIT.pdf",
+  "total_pages": 21,
+  "pages": [
+    {
+      "page_number": 1,
+      "fields": {
+        "p1_patient_name": "Patricia Ann Benton",
+        "p1_date": "11/19/2025",
+        "p1_birth_date": "06/16/1957",
+        "p1_gender": {
+          "value": "FEMALE",
+          "is_checked": true
+        },
+        "p1_home_phone": "8",
+        "p1_cell_phone": {
+          "value": "8102797418",
+          "annotation_note": "The patient's cell phone number."
+        },
+        "p1_email": "Pattie benton 616@gmail.com",
+        "p1_address": "8601 Fairmount Ave Unit 303 PDRCA 90293",
+        "p1_attorney_name": "Kimberly",
+        "p1_nurse": "Mishell",
+        "p1_intp": "NO",
+        "p1_heart_problems": {
+          "value": "NO",
+          "is_checked": false
+        },
+        "p1_metal_joint_replacement": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_high_blood_pressure": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_diabetes": {
+          "value": "NO",
+          "is_checked": false
+        },
+        "p1_stomach_acids": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_kidney_problems": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_thyroid_problem": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_blood_thinners": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_breathing_problems": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_breathing_problems_types": {
+          "circled_options": [
+            "Asthma",
+            "Shortness of Breath"
+          ]
+        },
+        "p1_numbness_pins_needles": {
+          "value": "NO",
+          "is_checked": false
+        },
+        "p1_liver_problems": {
+          "value": "NO",
+          "is_checked": false
+        },
+        "p1_urinary_problems": {
+          "value": "NO",
+          "is_checked": false
+        },
+        "p1_sleep_study_test": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_apnea_results": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_cpap_mask": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_morning_headache": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p1_current_medications": {
+          "circled_options": [
+            "Pristiq",
+            "Naproxen",
+            "Omeprazole"
+          ],
+          "value": "Pristiq, Naproxen, Omeprazole"
+        },
+        "p1_medications_for_conditions": {
+          "circled_options": [
+            "Diabetes",
+            "Pain",
+            "Anti-Inflammatory",
+            "Cholesterol"
+          ]
+        },
+        "ann_q2": {
+          "value": "R T KNEE 'Told Joint Replavd'",
+          "annotation": "The patient has a right knee joint replacement."
+        },
+        "ann_q15": {
+          "value": "YES",
+          "annotation": "The patient has had a Sleep Study Test."
+        },
+        "ann_q16": {
+          "value": "YES",
+          "annotation": "The patient has been given a CPAP mask."
+        },
+        "ann_q17": {
+          "value": "YES",
+          "annotation": "The patient awakens with a headache."
+        }
+      },
+      "review_flags": [
+        "p1_cell_phone: field='8102797418' vs annotation='810 279 7418'"
+      ],
+      "items_needing_review": 4,
+      "extraction_review_reasons": [
+        "The extracted date '11/19/2025' is in the future and may be incorrect.",
+        "The primary treating physician's name is missing.",
+        "The attorney's phone number is missing.",
+        "The patient answered 'NO' to having diabetes but is taking medications for diabetes."
+      ]
+    },
+    {
+      "page_number": 2,
+      "fields": {
+        "p2_current_pain": {
+          "value": "Naprosyn 2 times a day for 10 years. Ibuprofen 1 time a day for 10 years.",
+          "annotation_note": "The patient is taking Naprosyn twice a day and Ibuprofen once a day, both for 10 years."
+        },
+        "p2_current_stress": {
+          "value": "Wellbutrin 2 pills per day for 10 years",
+          "annotation_note": "The patient is taking Wellbutrin 2 pills per day for 10 years."
+        },
+        "p2_current_gastric_reflux": {
+          "value": "Omeprazole 1 time a day for 15 years",
+          "annotation_note": "The patient is taking Omeprazole once a day for 15 years."
+        }
+      },
+      "review_flags": [
+        "p2_current_pain: field='Naprosyn 2 times a day for 10 years. Ibuprofen 1 time a day for 10 years.' vs annotation='Naprosyn 2/day, 10 yrs'",
+        "p2_current_pain: field='Naprosyn 2 times a day for 10 years. Ibuprofen 1 time a day for 10 years.' vs annotation='Ultram 1/day, 10 yrs'",
+        "p2_current_stress: field='Wellbutrin 2 pills per day for 10 years' vs annotation='Wellbutrin 2 pills/day, 10 yrs'",
+        "p2_current_gastric_reflux: field='Omeprazole 1 time a day for 15 years' vs annotation='Omeprazole 1/day, 15 yrs'",
+        "p2_current_pain: field='Naprosyn 2 times a day for 10 years. Ibuprofen 1 time a day for 10 years.' vs annotation='Naprosyn 2/dsy. 10yrs. Ibuprofen 1/dy. 10yrs.'",
+        "p2_current_stress: field='Wellbutrin 2 pills per day for 10 years' vs annotation='Wellbutrin 2pills/dsy. 10yrs'",
+        "p2_current_gastric_reflux: field='Omeprazole 1 time a day for 15 years' vs annotation='Omeprazole 1/dy. 15yrs.'"
+      ],
+      "items_needing_review": 3,
+      "extraction_review_reasons": [
+        "The handwriting for 'Ultram 1/day, 10 yrs' is not clearly legible in the provided image.",
+        "The section for medications taken before the work injury is blank.",
+        "The section for medications taken after the work injury is blank."
+      ]
+    },
+    {
+      "page_number": 3,
+      "fields": {
+        "p3_bad_breath_after": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p3_bad_breath_percentage_after": "60",
+        "p3_breath_intensity_after": "6",
+        "p3_people_tell_after": "6",
+        "p3_interfere_others_after": "6",
+        "p3_interfere_family_after": "6",
+        "p3_intimate_kissing_after": "6",
+        "p3_embarrassment_after": "10",
+        "p3_stress_after": "10",
+        "p3_halitosis_reading": {
+          "value": "4 = Strong Odor",
+          "circled_options": [
+            "4 = Strong Odor"
+          ]
+        },
+        "p3_patient_signature": {
+          "value": "Patricia Benton",
+          "annotation_note": "The patient has signed the form, indicating agreement or confirmation of the information provided."
+        },
+        "p3_signature_date": "11/19/2025",
+        "sitting_and_reading": "1",
+        "watching_television": "1",
+        "sitting_inactive_in_public_place": "0",
+        "as_passenger_in_car_for_an_hour_without_break": "1",
+        "lying_down_to_rest_in_afternoon": "2",
+        "sitting_and_talking_to_someone": "0",
+        "sitting_quietly_after_lunch": "1",
+        "in_car_while_stopped_in_traffic": "1",
+        "epworth_sleepiness_scale_total_score": {
+          "value": "3",
+          "annotation_note": "The total score on the Epworth Sleepiness Scale is 3."
+        },
+        "ann_date_filled_out": {
+          "value": "Date filled out: 11/19/2025",
+          "annotation": "The date when the form was completed by the patient."
+        },
+        "ann_halitosis_meter_reading": {
+          "value": "Halitosis Meter Reading: 4",
+          "annotation": "The patient's halitosis was measured and scored as 4, indicating strong odor."
+        },
+        "ann_bad_breath_after_injury": {
+          "value": "Checkmarks in 'After the Injury' section",
+          "annotation": "The patient has indicated 'YES' to having bad breath after the injury."
+        },
+        "ann_bad_breath_intensity_after_injury": {
+          "value": "VAS scores filled in for bad breath intensity, interference, embarrassment, and stress after injury",
+          "annotation": "The patient has rated the intensity of their bad breath and its impact on their life after the injury."
+        },
+        "ann_bad_breath_embarrassment_after_injury": {
+          "value": "VAS scores filled in for bad breath intensity, interference, embarrassment, and stress after injury",
+          "annotation": "The patient has rated the intensity of their bad breath and its impact on their life after the injury."
+        },
+        "ann_bad_breath_stress_after_injury": {
+          "value": "VAS scores filled in for bad breath intensity, interference, embarrassment, and stress after injury",
+          "annotation": "The patient has rated the intensity of their bad breath and its impact on their life after the injury."
+        }
+      },
+      "review_flags": [
+        "p3_patient_signature: field='Patricia Benton' vs annotation='Patient's signature: Patricia Benton'",
+        "epworth_sleepiness_scale_total_score: field='3' vs annotation='Various checkmarks on Epworth Sleepiness Scale'",
+        "epworth_sleepiness_scale_total_score: field='3' vs annotation='Total Score: 3'"
+      ],
+      "items_needing_review": 1,
+      "extraction_review_reasons": [
+        "The date '11/19/2025' is outside the expected range of 2020-2026."
+      ]
+    },
+    {
+      "page_number": 4,
+      "fields": {
+        "p4_hand_dominance": {
+          "value": "Right",
+          "circled_options": [
+            "Right"
+          ],
+          "annotation_note": "The patient is right-hand dominant."
+        },
+        "p4_right_body_parts_injured": {
+          "circled_options": [
+            "Right Shoulder",
+            "Arm",
+            "Hand"
+          ]
+        },
+        "p4_left_body_parts_injured": {
+          "circled_options": [
+            "Left Shoulder",
+            "Arm",
+            "Elbow",
+            "Wrist",
+            "Hand",
+            "Fingers"
+          ]
+        },
+        "p4_difficulty_grip_toothbrush": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_difficulty_floss_teeth": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_difficulty_toothpaste_cap": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_difficulty_squeeze_toothpaste": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p4_difficulty_cut_food": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p4_difficulty_feed_yourself": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_difficulty_raise_arm_comb": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_do_you_smoke": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_have_you_ever_smoked": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p4_when_stop_smoking_years": "10",
+        "p4_years_smoker": "20",
+        "p4_smoking_increase_after_injury": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_drink_alcohol": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_use_recreational_drugs": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_used_amphetamines": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p4_patient_signature": "Patricia Benton",
+        "p4_signature_date": {
+          "value": "11/19/2025",
+          "annotation_note": "The date the form was filled in is 11/19/2025."
+        },
+        "ann_patient's_signature": {
+          "value": "Patient's signature",
+          "annotation": "The patient's signature is present, indicating they have filled out the form.",
+          "annotation_note": "The patient's signature is present again, confirming the information provided."
+        },
+        "ann_in_your_work_injury,_did_you_injure_your:": {
+          "value": "Circled body parts injured",
+          "annotation": "The patient circled multiple body parts indicating injuries."
+        },
+        "ann_do_you_smoke?": {
+          "value": "Checkmarks on 'No' for smoking questions",
+          "annotation": "The patient does not smoke and has answered 'No' to related questions."
+        },
+        "ann_have_you_ever_smoked?": {
+          "value": "Checkmarks on 'No' for smoking questions",
+          "annotation": "The patient does not smoke and has answered 'No' to related questions."
+        },
+        "ann_when_did_you_stop_smoking?": {
+          "value": "Number '10' for years since stopped smoking",
+          "annotation": "The patient stopped smoking 10 years ago."
+        },
+        "ann_how_many_years_were_you_a_smoker?": {
+          "value": "Number '20' for years as a smoker",
+          "annotation": "The patient was a smoker for 20 years."
+        },
+        "ann_do_you_drink_alcohol?": {
+          "value": "Checkmarks on 'No' for alcohol and drug use",
+          "annotation": "The patient does not drink alcohol or use recreational drugs."
+        },
+        "ann_do_you_use_recreational_drugs?": {
+          "value": "Checkmarks on 'No' for alcohol and drug use",
+          "annotation": "The patient does not drink alcohol or use recreational drugs."
+        },
+        "ann_do_you_feel_that_you_have_dry_mouth?": {
+          "value": "Checkmarks on 'No' for additional health questions",
+          "annotation": "The patient answered 'No' to additional health-related questions."
+        },
+        "ann_do_you_have_hoarseness?": {
+          "value": "Checkmarks on 'No' for additional health questions",
+          "annotation": "The patient answered 'No' to additional health-related questions."
+        },
+        "ann_does_the_amount_of_saliva_in_your_mouth_seem_to_be_too_little?": {
+          "value": "Checkmarks on 'No' for additional health questions",
+          "annotation": "The patient answered 'No' to additional health-related questions."
+        },
+        "ann_do_you_have_any_difficulties_swallowing?": {
+          "value": "Checkmarks on 'No' for additional health questions",
+          "annotation": "The patient answered 'No' to additional health-related questions."
+        },
+        "ann_does_your_mouth": {
+          "value": "Checkmarks on 'No' for additional health questions",
+          "annotation": "The patient answered 'No' to additional health-related questions."
+        },
+        "ann_do_you_sip_liquids_to_aid_in_swallowing_dry_food?": {
+          "value": "Checkmarks on 'No' for additional health questions",
+          "annotation": "The patient answered 'No' to additional health-related questions."
+        }
+      },
+      "review_flags": [
+        "p4_signature_date: field='11/19/2025' vs annotation='Date filled in'",
+        "p4_hand_dominance: field='Right' vs annotation='Circled 'Right' for Hand Dominance'",
+        "ann_patient's_signature: field='Patient's signature' vs annotation='Patient's signature again'"
+      ],
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "The date provided (11/19/2025) is in the future relative to the expected year range (2020-2024).",
+        "Several fields are missing values, which could be due to the patient not answering or the extraction process missing the data."
+      ]
+    },
+    {
+      "page_number": 5,
+      "fields": {
+        "p5_name": "Patria Brek",
+        "p5_date": {
+          "value": "11/19/2026",
+          "annotation_note": "The date of the document is likely 11/19/2026, considering the context."
+        },
+        "p5_date_of_injury": {
+          "value": "09/11/2026",
+          "annotation_note": "The date of injury is likely 09/11/2026."
+        },
+        "p5_employed_at": {
+          "value": "Admitted Health with Mandil",
+          "annotation_note": "The patient was employed at 'Admitted Health with Mandil'."
+        },
+        "p5_employment_duration_years": "1",
+        "p5_job_title": "OR/RN",
+        "p5_worked_days_per_week": "5",
+        "p5_worked_hours_per_day": "8",
+        "p5_hand_dominance": {
+          "value": "Right",
+          "is_checked": true,
+          "circled_options": [
+            "Right"
+          ]
+        },
+        "p5_job_duties": "Stressful job; Circulating Nurse",
+        "p5_job_requirements_initial": {
+          "circled_options": [
+            "bending forward",
+            "walking",
+            "pulling",
+            "gripping",
+            "reaching below shoulder level",
+            "twisting"
+          ],
+          "value": "bending forward, pulling, gripping, lifting up to maximum of 50 lbs., carrying up to maximum 50 lbs., walking, reaching below shoulder level, twisting"
+        },
+        "p5_lifting_maximum_lbs": "50",
+        "p5_carrying_maximum_lbs": "50",
+        "p5_current_work_status": {
+          "value": "Disabled, Not Working/Retired",
+          "is_checked": true,
+          "circled_options": [
+            "Disabled",
+            "Not Working/Retired"
+          ],
+          "annotation_note": "The patient is not working or is retired."
+        },
+        "ann_job_description": {
+          "value": "Sheerful job; Circulating Nure",
+          "annotation": "The patient's job is described as stressful and involves being a Circulating Nurse."
+        }
+      },
+      "review_flags": [
+        "p5_date: field='11/19/2026' vs annotation='11/19/2025'",
+        "p5_date_of_injury: field='09/11/2026' vs annotation='9-11-202s'",
+        "p5_employed_at: field='Admitted Health with Mandil' vs annotation='Admilt Health with Mandil'",
+        "p5_current_work_status: field='Disabled, Not Working/Retired' vs annotation='Disabled'",
+        "p5_current_work_status: field='Disabled, Not Working/Retired' vs annotation='Not Working/Retired'"
+      ],
+      "items_needing_review": 5,
+      "extraction_review_reasons": [
+        "The year of injury is potentially incorrect or inconsistent (2026).",
+        "The document date is potentially incorrect or inconsistent (2026).",
+        "The field 'Employed at' contains a spelling error ('Admilt' instead of 'Admitted').",
+        "The field 'Job Duties' contains a spelling error ('Sheerful' instead of 'Stressful', 'Nure' instead of 'Nurse').",
+        "Several required fields are missing or not extracted."
+      ]
+    },
+    {
+      "page_number": 6,
+      "fields": {
+        "p6_injury_description_1": "5-7-202X; Operating intricate things. Continual twisting motion of left =) low back injury",
+        "p6_orthopedic_injuries": {
+          "circled_options": [
+            "Neck",
+            "L Wrist",
+            "Low Back",
+            "R Hip",
+            "L Hip",
+            "R Knee",
+            "L Knee",
+            "R ankle",
+            "L ankle",
+            "R foot",
+            "L Foot"
+          ]
+        },
+        "ann_date": {
+          "value": "5-7-202x; Operating of intricate 10 difft intricate things. Continual twisting motion of left =) low back injury",
+          "annotation": "The patient experienced a low back injury on 5-7-202X due to operating intricate machinery and continual twisting motion of the left side."
+        },
+        "ann_history_of_industrial_injury": {
+          "value": "5-7-202x; Operating of intricate 10 difft intricate things. Continual twisting motion of left =) low back injury",
+          "annotation": "The patient experienced a low back injury on 5-7-202X due to operating intricate machinery and continual twisting motion of the left side."
+        },
+        "ann_ct": {
+          "value": "CT: repetitive trauma resulting in orthopedic injuries",
+          "annotation": "The circled text highlights the clinical finding of repetitive trauma leading to orthopedic injuries."
+        },
+        "ann_orthopedic_injuries_to:": {
+          "value": "Neck, L Wrist, Low Back, R Hip, L Hip, R Knee, L Knee, R ankle, L ankle, R foot, L Foot",
+          "annotation": "The checkmarks indicate the specific body parts affected by orthopedic injuries."
+        }
+      },
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "The date '5-7-202X' is not a valid date due to the 'X' at the end of the year."
+      ]
+    },
+    {
+      "page_number": 7,
+      "fields": {
+        "p7_orthopedic_pain_clenching": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p7_developed_stressors_injury": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p7_clenching_bracing_stress": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p7_bruxism_after_work_pain": {
+          "value": "Yes",
+          "is_checked": true,
+          "annotation_note": "The term 'grind' is noted, likely referring to bruxism."
+        },
+        "p7_clenching_day": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p7_clenching_night": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p7_grinding_day": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p7_grinding_night": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p7_bruxism_percent_time": "75",
+        "p7_bruxism_vas_intensity": "8",
+        "p7_preexisting_bruxism_percent_time": "87",
+        "p7_preexisting_bruxism_intensity_vas": "6",
+        "p7_eating_hard_chewy_food": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p7_speaking_prolonged_periods": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p7_patient_signature": "X",
+        "ann_intensity_of_bruxism_on_vas": {
+          "value": "6",
+          "annotation": "The intensity of bruxism on VAS is 6."
+        },
+        "ann_psychological_therapy": {
+          "value": "Dr. Dorsey",
+          "annotation": "The patient was evaluated by Dr. Dorsey for Psychological Therapy."
+        },
+        "ann_did_the_bruxism_begin_after_the_you_started_having_work_related_pain/stress?": {
+          "value": "at the time of hungs to low back",
+          "annotation": "The bruxism began at the time of injury to the low back."
+        }
+      },
+      "review_flags": [
+        "p7_bruxism_after_work_pain: field='Yes' vs annotation='75%'",
+        "p7_bruxism_after_work_pain: field='Yes' vs annotation='87%'",
+        "p7_bruxism_after_work_pain: field='Yes' vs annotation='grind'"
+      ],
+      "items_needing_review": 3,
+      "extraction_review_reasons": [
+        "Multiple required fields are blank or missing.",
+        "Handwriting is somewhat illegible for the annotation 'at the time of hungs to low back'.",
+        "The connection between bruxism and work-related pain/stress is not clear."
+      ]
+    },
+    {
+      "page_number": 8,
+      "fields": {
+        "p8_past_medical_history": {
+          "value": "Diabetes; Thyroid Gastro acid reflux OSA",
+          "has_correction": true,
+          "original_value": "None",
+          "annotation_note": "The patient has a history of diabetes, thyroid issues, GERD, acid reflux, and OSA."
+        },
+        "p8_past_surgeries": {
+          "value": "Robotic Hysterectomy, C-Section, Nose Job",
+          "has_correction": true,
+          "original_value": "None"
+        },
+        "p8_history_prior_industrial_injuries": {
+          "value": "Low back at USC / Kaiser Medical ~2009",
+          "has_correction": true,
+          "original_value": "None"
+        },
+        "p8_history_non_industrial_injuries": {
+          "is_checked": true,
+          "has_correction": true,
+          "original_value": "None"
+        },
+        "p8_any_injuries_after_industrial_date": {
+          "value": "None",
+          "is_checked": true
+        },
+        "ann_history_of_prior_industrial_injuries": {
+          "value": "Low back at USC / Kaiser Medical ~2009",
+          "annotation": "The patient had a low back injury at USC/Kaiser Medical around 2009."
+        },
+        "ann_history_of_non-industrial_injuries": {
+          "value": "Circle around 'None' in History of Non-Industrial Injuries",
+          "annotation": "The patient has circled 'None' to indicate no history of non-industrial injuries."
+        },
+        "ann_any_injuries_after_the_date_of_industrial_injury": {
+          "value": "Checkmark next to 'None' in Any Injuries After the Date of Industrial Injury",
+          "annotation": "The patient has checked 'None' to indicate no injuries after the date of industrial injury."
+        }
+      },
+      "review_flags": [
+        "p8_past_medical_history: field='Diabetes; Thyroid Gastro acid reflux OSA' vs annotation='Diabetes, Thyroid, GERD, acid reflux, OSA'"
+      ],
+      "items_needing_review": 3,
+      "extraction_review_reasons": [
+        "The confidence levels for the extracted values of 'Past Medical History', 'Past Surgeries', and 'History of Prior Industrial Injuries' are less than 1.0, indicating some uncertainty in the extraction.",
+        "The circled 'None' for 'History of Non-Industrial Injuries' was not captured in the extracted value."
+      ]
+    },
+    {
+      "page_number": 9,
+      "fields": {
+        "p9_last_xray": "6 months ago",
+        "p9_last_teeth_cleaned": "6 months ago",
+        "ann_last_full_mouth_xray_date": {
+          "value": "~ 6 month ago",
+          "annotation": "The patient had a full mouth X-ray approximately 6 months ago.",
+          "annotation_note": "The normalized text confirms the patient had a full mouth X-ray 6 months ago."
+        },
+        "ann_last_teeth_cleaning_date": {
+          "value": "~ 6 month ago",
+          "annotation": "The patient had their teeth cleaned approximately 6 months ago.",
+          "annotation_note": "The normalized text confirms the patient had their teeth cleaned 6 months ago."
+        }
+      },
+      "review_flags": [
+        "ann_last_full_mouth_xray_date: field='~ 6 month ago' vs annotation='6 months ago'",
+        "ann_last_teeth_cleaning_date: field='~ 6 month ago' vs annotation='6 months ago'"
+      ],
+      "items_needing_review": 24,
+      "extraction_review_reasons": [
+        "Multiple fields are missing extracted values.",
+        "The circled selection for 'When was the last time you were seen by a dentist, besides in our office?' is not extracted."
+      ]
+    },
+    {
+      "page_number": 10,
+      "fields": {
+        "p10_weight_loss_lbs": "6",
+        "p10_present_weight_kg": "107.2",
+        "p10_height_cm": "167.0",
+        "p10_snores": {
+          "is_checked": true,
+          "value": "Yes"
+        },
+        "p10_snores_condition": {
+          "circled_options": [
+            "Pre-existing"
+          ]
+        },
+        "p10_gasps_for_air": {
+          "is_checked": true
+        },
+        "p10_gasps_condition": {
+          "circled_options": [
+            "Pre-existing"
+          ]
+        },
+        "p10_palpitations": {
+          "is_checked": false
+        },
+        "p10_breathing_cessation": {
+          "is_checked": true
+        },
+        "p10_breathing_condition": {
+          "circled_options": [
+            "Pre-existing"
+          ]
+        },
+        "p10_sleep_study": {
+          "is_checked": false
+        },
+        "p10_sleep_study_date": "10/04/2024",
+        "p10_headache_locations": {
+          "circled_options": [
+            "On Top of Head"
+          ]
+        },
+        "p10_right_face_pain_frequency": {
+          "circled_options": [
+            "Frequent"
+          ]
+        },
+        "p10_right_face_pain_severity": {
+          "circled_options": [
+            "Severe"
+          ]
+        },
+        "p10_right_face_pain_percent_time": "75",
+        "p10_right_face_pain_vas": "8",
+        "p10_left_face_pain_frequency": {
+          "circled_options": [
+            "Frequent"
+          ]
+        },
+        "p10_left_face_pain_severity": {
+          "circled_options": [
+            "Severe"
+          ]
+        },
+        "p10_left_face_pain_percent_time": "75",
+        "p10_left_face_pain_vas": "8",
+        "p10_left_face_pain_started_approx": "May 7, 2024",
+        "p10_bruxism_caused_face_pain": {
+          "is_checked": true
+        },
+        "p10_noises_in_tmj": {
+          "circled_options": [
+            "Clicking"
+          ]
+        },
+        "p10_right_tmj_pain": {
+          "is_checked": true
+        },
+        "p10_left_tmj_pain": {
+          "is_checked": true
+        },
+        "ann_gasps_for_air_at_night": {
+          "value": "Yes",
+          "annotation": "The patient gasps for air at night."
+        },
+        "ann_palpitations_on_awakening": {
+          "value": "No",
+          "annotation": "The patient does not experience palpitations on awakening."
+        },
+        "ann_breathing_cessation_at_night": {
+          "value": "Yes",
+          "annotation": "The patient experiences breathing cessation at night."
+        },
+        "ann_date_of_sleep_study": {
+          "value": "10/4/2024",
+          "annotation": "The date of the sleep study is October 4, 2024."
+        },
+        "ann_cpap_usage": {
+          "value": "Busy CPAP",
+          "annotation": "The patient uses CPAP and it is busy."
+        },
+        "ann_right_face_pain_%_of_time": {
+          "value": "75",
+          "annotation": "The patient experiences right face pain 75% of the time."
+        },
+        "ann_left_face_pain_started_approx.": {
+          "value": "Thedy 1st or my 5-7-2024",
+          "annotation": "The approximate start date of the left face pain is May 7, 2024."
+        }
+      },
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "The date of the sleep study (10/4/2024) is in the future and may be incorrect or misinterpreted.",
+        "The handwriting for 'Left Face Pain Started Approx.' is difficult to read and interpreted as 'May 7, 2024'."
+      ]
+    },
+    {
+      "page_number": 11,
+      "fields": {
+        "p11_limited_opening_mouth": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p11_locking_frequency": {
+          "value": "No",
+          "circled_options": [
+            "No"
+          ]
+        },
+        "p11_difficult_painful_chew": {
+          "value": "Face, L",
+          "circled_options": [
+            "Face",
+            "L"
+          ]
+        },
+        "p11_bite_feels_off": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p11_facial_pain": {
+          "value": "Smiling",
+          "circled_options": [
+            "Smiling"
+          ]
+        },
+        "p11_soreness_teeth_waking": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p11_soreness_face_jaw_awakening": {
+          "value": "Yes, L",
+          "circled_options": [
+            "Yes",
+            "L"
+          ]
+        },
+        "p11_teeth_sensitive_hot_cold": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p11_bleeding_gums": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p11_ear_problems": {
+          "value": "L",
+          "circled_options": [
+            "L"
+          ]
+        },
+        "p11_sleep_disturbances": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p11_fatigue": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p11_generalized_tenderness": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p11_stress_increases_pain": {
+          "value": "Yes",
+          "is_checked": true
+        },
+        "p11_prior_injuries_face_jaw": {
+          "value": "No",
+          "is_checked": false
+        },
+        "ann_limited_opening_of_the_mouth": {
+          "value": "No",
+          "annotation": "The patient does not have limited opening of the mouth."
+        },
+        "ann_difficult_and_painful_to_chew_hard_food": {
+          "value": "Face",
+          "annotation": "The patient experiences difficulty and pain when chewing hard food, specifically related to the face.",
+          "annotation_note": "The patient experiences pain on the left side when chewing hard food."
+        },
+        "ann_soreness_of_teeth_upon_waking_up_in_the_morning": {
+          "value": "Yes",
+          "annotation": "The patient experiences soreness of teeth upon waking up in the morning."
+        },
+        "ann_soreness_in_face/jaw_upon_awakening": {
+          "value": "Yes",
+          "annotation": "The patient experiences soreness in the face/jaw upon awakening.",
+          "annotation_note": "The soreness in the face/jaw upon awakening is on the left side."
+        },
+        "ann_teeth_are_sensitive_to_hot_and_cold": {
+          "value": "Yes",
+          "annotation": "The patient's teeth are sensitive to hot and cold temperatures."
+        },
+        "ann_generalized_tenderness_all_over_the_body": {
+          "value": "Yes",
+          "annotation": "The patient experiences generalized tenderness all over the body."
+        },
+        "ann_prior_injuries_to_face_/_jaw": {
+          "value": "No",
+          "annotation": "The patient has not had prior injuries to the face or jaw."
+        }
+      },
+      "review_flags": [
+        "ann_difficult_and_painful_to_chew_hard_food: field='Face' vs annotation='L'",
+        "ann_soreness_in_face/jaw_upon_awakening: field='Yes' vs annotation='L'"
+      ],
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "The fields 'Can self-manipulate Jaw to unlock?' and 'Prior Injuries to Face / Jaw' are required but their values are missing in the extracted data.",
+        "The field 'Locking' is marked as 'No', but the frequency fields are not filled."
+      ]
+    },
+    {
+      "page_number": 12,
+      "fields": {
+        "p12_eating_hard_chewy_food_pain": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_eating_hard_chewy_food_vas": "10",
+        "p12_prolonged_speaking_pain": {
+          "value": "NO",
+          "is_checked": false
+        },
+        "p12_prolonged_speaking_vas": "0",
+        "p12_intense_kissing_pain": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_intense_kissing_vas": "10",
+        "p12_sleep_interference": {
+          "value": "YES",
+          "is_checked": true,
+          "annotation_note": "The patient's facial pain interferes with sleep at a level of 8."
+        },
+        "p12_sleep_interference_vas": "8",
+        "p12_social_activities_interference": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_social_activities_vas": "10",
+        "p12_relationship_interference": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_relationship_vas": "10",
+        "p12_concentration_interference": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_concentration_vas": "10",
+        "p12_irritable_angry": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_irritable_angry_vas": "10",
+        "p12_experience_stress": {
+          "value": "YES",
+          "is_checked": true,
+          "annotation_note": "The patient's facial pain causes stress at a level of 10."
+        },
+        "p12_experience_stress_vas": "10",
+        "p12_talking_ability": {
+          "value": "You can talk as much as you want without facial pain, jaw tiredness or discomfort",
+          "circled_options": [
+            "You can talk as much as you want without facial pain, jaw tiredness or discomfort"
+          ]
+        },
+        "p12_eating_ability": {
+          "value": "You must eat only soft foods (consistency of scrambled eggs or less) because of your facial pain, discomfort or jaw tiredness",
+          "circled_options": [
+            "You must eat only soft foods (consistency of scrambled eggs or less) because of your facial pain, discomfort or jaw tiredness"
+          ]
+        },
+        "p12_hard_foods_restriction": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_chewy_foods_restriction": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_soft_foods_only": {
+          "value": "YES",
+          "is_checked": true
+        },
+        "p12_patient_signature": "Patricia Benton",
+        "p12_signature_date": "11/19/2025",
+        "ann_patient's_signature": {
+          "value": "Patient's signature",
+          "annotation": "The patient has signed the form, indicating they have completed it."
+        },
+        "ann_communication/talking": {
+          "value": "You can talk as much as you want without",
+          "annotation": "The patient can talk freely without facial pain."
+        },
+        "ann_eating/chewing": {
+          "value": "You must eat only soft foods",
+          "annotation": "The patient must eat only soft foods due to facial pain."
+        },
+        "ann_pain_level_when_eating_hard/chewy_food": {
+          "value": "10",
+          "annotation": "The patient's pain level when eating hard/chewy food is 10."
+        },
+        "ann_pain_level_when_kissing": {
+          "value": "0",
+          "annotation": "The patient's pain level when kissing is 0."
+        },
+        "ann_interference_with_social_activities": {
+          "value": "10",
+          "annotation": "The patient's facial pain interferes with social activities at a level of 10."
+        },
+        "ann_interference_with_family/significant_other": {
+          "value": "10",
+          "annotation": "The patient's facial pain interferes with family/significant other at a level of 10."
+        },
+        "ann_interference_with_concentration": {
+          "value": "10",
+          "annotation": "The patient's facial pain interferes with concentration at a level of 10."
+        },
+        "ann_irritability": {
+          "value": "10",
+          "annotation": "The patient's facial pain causes irritability at a level of 10."
+        }
+      },
+      "review_flags": [
+        "p12_sleep_interference: field='YES' vs annotation='8'",
+        "p12_experience_stress: field='YES' vs annotation='10'"
+      ],
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "The year in the date field is 2025, which is in the future.",
+        "Some fields are blank or not filled."
+      ]
+    },
+    {
+      "page_number": 13,
+      "fields": {
+        "p13_brushing_teeth_severity": {
+          "value": "Severe",
+          "circled_options": [
+            "Severe"
+          ],
+          "annotation_note": "The reason for difficulty in brushing and flossing teeth is due to shoulder, arm, elbow, wrist, hand, or fingers injury."
+        },
+        "p13_flossing_teeth_severity": {
+          "value": "Severe",
+          "circled_options": [
+            "Severe"
+          ],
+          "annotation_note": "The reason for difficulty in brushing and flossing teeth is due to shoulder, arm, elbow, wrist, hand, or fingers injury."
+        },
+        "p13_speak_extended_period_severity": {
+          "value": "None",
+          "circled_options": [
+            "None"
+          ]
+        },
+        "p13_speaking_difficulty_severity": {
+          "value": "None",
+          "circled_options": [
+            "None"
+          ]
+        },
+        "p13_asked_to_repeat_themselves_severity": {
+          "value": "None",
+          "circled_options": [
+            "None"
+          ]
+        },
+        "p13_mastication_severity": {
+          "value": "Severe",
+          "circled_options": [
+            "Severe"
+          ],
+          "annotation_note": "The severity of difficulty in mastication is marked as severe."
+        },
+        "p13_tasting_severity": {
+          "value": "None",
+          "circled_options": [
+            "None"
+          ]
+        },
+        "p13_swallowing_severity": {
+          "value": "None",
+          "circled_options": [
+            "None"
+          ]
+        },
+        "p13_bruxism_severity": {
+          "value": "Severe",
+          "circled_options": [
+            "Severe"
+          ],
+          "annotation_note": "The reason for bruxism is in response to pain and resultant stress."
+        },
+        "p13_kissing_oral_activities_severity": {
+          "value": "Severe",
+          "circled_options": [
+            "Severe"
+          ]
+        },
+        "sc_Brushing_Teeth_Severity_Severe": true,
+        "sc_Flossing_Teeth_Severity_Severe": true,
+        "sc_Brushing_Teeth_Reasons_Due_to_shoulder,_arm,_elbow,_wrist,_hand,_fingers_injury": true,
+        "sc_Flossing_Teeth_Reasons_Due_to_shoulder,_arm,_elbow,_wrist,_hand,_fingers_injury": true,
+        "sc_Mastication_Severity_Severe": true,
+        "sc_Mastication_Reasons_Due_to_pain_in_facial_musculature": true,
+        "sc_Bruxism_Severity_Moderate": true,
+        "sc_Bruxism_Severity_Severe": true,
+        "sc_Bruxism_Reasons_In_response_to_pain": true,
+        "sc_Bruxism_Reasons_In_response_to_resultant_stress": true,
+        "sc_Kissing_Oral_Activities_Severity_Severe": true,
+        "sc_Kissing_Oral_Activities_Reasons_Due_to_pain_in_facial_musculature": true,
+        "ann_speak_for_extended_period": {
+          "value": "None circled for Speak for Extended Period severity",
+          "annotation": "The severity of difficulty in speaking for an extended period is marked as none."
+        },
+        "ann_kissing,_oral_activities": {
+          "value": "Severe circled for Kissing, Oral Activities severity",
+          "annotation": "The severity of difficulty in kissing or oral activities is marked as severe.",
+          "annotation_note": "The reasons for difficulty in kissing or oral activities are due to pain in facial musculature and halitosis."
+        }
+      },
+      "review_flags": [
+        "p13_brushing_teeth_severity: field='Severe' vs annotation='Severe circled for Brushing Teeth severity'",
+        "p13_flossing_teeth_severity: field='Severe' vs annotation='Severe circled for Flossing Teeth severity'",
+        "p13_mastication_severity: field='Severe' vs annotation='Severe circled for Mastication severity'",
+        "p13_bruxism_severity: field='Severe' vs annotation='Severe circled for Bruxism severity'",
+        "p13_brushing_teeth_severity: field='Severe' vs annotation='Due to shoulder, arm, elbow, wrist, hand, fingers injury circled'",
+        "p13_flossing_teeth_severity: field='Severe' vs annotation='Due to shoulder, arm, elbow, wrist, hand, fingers injury circled'",
+        "p13_bruxism_severity: field='Severe' vs annotation='In response to pain and resultant stress circled'",
+        "ann_kissing,_oral_activities: field='Severe circled for Kissing, Oral Activities severity' vs annotation='Due to pain in facial musculature and Halitosis circled'"
+      ],
+      "items_needing_review": 3,
+      "extraction_review_reasons": [
+        "The 'Max Time Speak' field is blank.",
+        "The extracted values for 'Tasting' and 'Swallowing' severities are 'None', but the document does not explicitly show these fields as circled.",
+        "The 'VAS' field for 'Tasting' is blank and not clearly filled."
+      ]
+    },
+    {
+      "page_number": 14,
+      "fields": {
+        "p14_unspecified_rheumat": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p14_facial_palsy": "Facial Palsy checkmark",
+        "p14_facial_atrophy": "Facial Atrophy checkmark",
+        "p14_facial_hypertrophy": "Facial Hypertrophy checkmark",
+        "p14_dyskinesia": {
+          "value": "Yes",
+          "is_checked": true,
+          "annotation_note": "The patient does not have Dyskinesia."
+        },
+        "p14_tongue_protrusion": {
+          "value": "Straight",
+          "circled_options": [
+            "Straight"
+          ],
+          "annotation_note": "The patient's Tongue Protrusion is straight."
+        },
+        "p14_maximum_interincisal_opening_mm": "43",
+        "p14_max_opening_pain_location": {
+          "circled_options": [
+            "R",
+            "L",
+            "Face"
+          ]
+        },
+        "p14_max_opening_vas": "10",
+        "p14_right_lateral_mm": "2",
+        "p14_right_lateral_pain_location": {
+          "circled_options": [
+            "R",
+            "L",
+            "Face"
+          ]
+        },
+        "p14_right_lateral_vas": "4",
+        "p14_left_lateral_mm": "12",
+        "p14_left_lateral_pain_location": {
+          "circled_options": [
+            "R",
+            "L",
+            "Face"
+          ]
+        },
+        "p14_left_lateral_vas": "4",
+        "p14_protrusion_mm": "2",
+        "p14_protrusion_vas": "0",
+        "p14_capsulitis": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p14_right_lateral_pole_vas": "0",
+        "p14_left_lateral_pole_vas": "0",
+        "p14_right_via_eam_vas": "0",
+        "p14_left_via_eam_vas": "0",
+        "p14_temporalis_right_vas": "0",
+        "p14_temporalis_left_vas": "0",
+        "p14_masseter_right_vas": "10",
+        "p14_masseter_left_vas": "10",
+        "p14_occipitals_right_vas": "0",
+        "p14_occipitals_left_vas": "0",
+        "p14_trapezius_right_vas": "0",
+        "p14_trapezius_left_vas": "0",
+        "p14_scm_right_vas": "0",
+        "p14_scm_left_vas": "0",
+        "ann_unspecified_rheumat.": {
+          "value": "Unspecified Rheumat. checkmark",
+          "annotation": "The patient does not have Unspecified Rheumatism."
+        },
+        "ann_pain:_r": {
+          "value": "Pain R circled",
+          "annotation": "The patient experiences pain on the right side."
+        },
+        "ann_pain:_l": {
+          "value": "Pain L circled",
+          "annotation": "The patient experiences pain on the left side."
+        },
+        "ann_pain:_face": {
+          "value": "Face circled",
+          "annotation": "The patient experiences pain in the face."
+        },
+        "ann_tmj_vas": {
+          "value": "10",
+          "annotation": "The VAS score for TMJ pain is 10."
+        }
+      },
+      "review_flags": [
+        "p14_dyskinesia: field='Yes' vs annotation='Dyskinesia checkmark'",
+        "p14_tongue_protrusion: field='Straight' vs annotation='Straight Tongue Protrusion circled'"
+      ],
+      "items_needing_review": 3,
+      "extraction_review_reasons": [
+        "Several fields were not extracted or were marked as null without clear indication from the document.",
+        "Pain locations for maximum opening, right lateral, and left lateral movements were circled but not clearly extracted."
+      ]
+    },
+    {
+      "page_number": 15,
+      "fields": {
+        "p15_class_selection": {
+          "value": "I",
+          "circled_options": [
+            "I"
+          ],
+          "annotation_note": "The patient is classified as Class I."
+        },
+        "p15_midline_deviation": "0",
+        "p15_bite_type": {
+          "value": "Unstable Bite",
+          "is_checked": true
+        },
+        "p15_scalloping": {
+          "value": "Right, Minimal",
+          "circled_options": [
+            "Right",
+            "Minimal"
+          ],
+          "annotation_note": "The scalloping is minimal."
+        },
+        "p15_buccal_mucosal_ridging": {
+          "value": "Buccal Mucosal Ridging",
+          "is_checked": true
+        },
+        "p15_occlusal_wear": {
+          "value": "Ant., Minimal",
+          "circled_options": [
+            "Ant.",
+            "Minimal"
+          ]
+        },
+        "p15_missing_teeth": {
+          "value": "2, 3, 13, 15, 19, 20, 24, 30, 31",
+          "circled_options": [
+            "2",
+            "3",
+            "13",
+            "15",
+            "19",
+            "20",
+            "24",
+            "30",
+            "31"
+          ],
+          "annotation_note": "Tooth number 2 is missing."
+        },
+        "p15_missing_third_molars": {
+          "value": "1, 16, 17, 32",
+          "circled_options": [
+            "1",
+            "16",
+            "17",
+            "32"
+          ],
+          "annotation_note": "Tooth number 1 is a missing third molar."
+        },
+        "p15_teeth_mobility": "25",
+        "p15_bleeding_gums": {
+          "value": "No",
+          "is_checked": false
+        },
+        "p15_inflamed_gingiva": {
+          "value": "Yes",
+          "is_checked": true,
+          "annotation_note": "The patient has inflamed gingiva."
+        },
+        "p15_malampati": {
+          "value": "4",
+          "annotation_note": "The Malampati score is 4."
+        },
+        "p15_friedman": {
+          "value": "4",
+          "annotation_note": "The Friedman score is 4."
+        },
+        "ann_bite_status": {
+          "value": "Circled 'Unstable Bite'",
+          "annotation": "The patient has an unstable bite."
+        },
+        "ann_teeth_with_mobility": {
+          "value": "Handwritten '2.5' in Teeth with Mobility",
+          "annotation": "The degree of mobility in the teeth is 2.5."
+        }
+      },
+      "review_flags": [
+        "p15_class_selection: field='I' vs annotation='Circled 'I' in Class selection'",
+        "p15_scalloping: field='Right, Minimal' vs annotation='Circled 'Left' in Scalloping'",
+        "p15_scalloping: field='Right, Minimal' vs annotation='Circled 'Minimal' in Scalloping'",
+        "p15_missing_teeth: field='2, 3, 13, 15, 19, 20, 24, 30, 31' vs annotation='Circled '2' in Missing Teeth'",
+        "p15_missing_third_molars: field='1, 16, 17, 32' vs annotation='Circled '1' in Missing Third Molars'",
+        "p15_inflamed_gingiva: field='Yes' vs annotation='Checkmark for 'Yes' in Inflamed Gingiva'",
+        "p15_malampati: field='4' vs annotation='Handwritten '4' in Malampati'",
+        "p15_friedman: field='4' vs annotation='Handwritten '4' in Friedman'"
+      ],
+      "items_needing_review": 17,
+      "extraction_review_reasons": [
+        "Required fields are missing extracted values",
+        "Some fields have low confidence due to potentially illegible handwriting"
+      ]
+    },
+    {
+      "page_number": 16,
+      "fields": {
+        "p16_blood_pressure": "120/67",
+        "p16_no_clicking_was_auscultated": {
+          "is_checked": true
+        },
+        "p16_r_temporalis": "31.6",
+        "p16_l_temporalis": "31.1",
+        "p16_r_masseter": "29.5",
+        "p16_l_masseter": "30.1",
+        "p16_r_scm": "30.6",
+        "p16_l_scm": "29.9",
+        "p16_r_trapezius": "27.7",
+        "p16_l_trapezius": "29.9",
+        "p16_right_masseter_v_rest": "59",
+        "p16_right_masseter_v_contraction": "44",
+        "p16_right_masseter_v_peak": "32",
+        "p16_left_masseter_v_rest": "77",
+        "p16_left_masseter_v_contraction": "77",
+        "p16_left_masseter_v_peak": "93",
+        "p16_right_temporalis_v_rest": "56",
+        "p16_right_temporalis_v_contraction": "56",
+        "p16_right_temporalis_v_peak": "61",
+        "p16_left_temporalis_v_rest": "130",
+        "p16_left_temporalis_v_contraction": "151",
+        "p16_left_temporalis_v_peak": "134",
+        "p16_elevated_muscular_activity": {
+          "is_checked": true,
+          "value": "Yes"
+        },
+        "p16_incoordination_aberrant_function": {
+          "is_checked": true
+        },
+        "p16_right_newtons": "80",
+        "p16_left_newtons": "23",
+        "p16_before_o2": "95",
+        "p16_before_pulse": "88",
+        "p16_after_o2": "97",
+        "p16_after_pulse": "83",
+        "p16_amylase_test": "96",
+        "p16_tissue_analysis_lips": {
+          "circled_options": [
+            "Dry"
+          ]
+        },
+        "p16_tissue_analysis_tongue": {
+          "circled_options": [
+            "Dry"
+          ]
+        },
+        "p16_quality_of_saliva": {
+          "circled_options": [
+            "Cloudy",
+            "Ropey"
+          ],
+          "value": "Cloudy, Ropey"
+        },
+        "p16_saliva_pooling_floor_mouth": {
+          "is_checked": false
+        },
+        "p16_adherence_tongue_depressor": {
+          "is_checked": true
+        },
+        "p16_salivary_flow_unstimulated": {
+          "circled_options": [
+            "Less than 0.1mL"
+          ],
+          "value": "Less than 0.1mL"
+        },
+        "p16_salivary_flow_stimulated": {
+          "circled_options": [
+            "Less than 0.5mL"
+          ],
+          "value": "Less than 0.5mL"
+        },
+        "p16_salivary_ph_analysis": "5.98",
+        "p16_gingival_bleeding": {
+          "is_checked": true,
+          "value": "Yes"
+        },
+        "ann_emg_results": {
+          "value": "EMG results for masseter and temporalis muscles",
+          "annotation": "EMG results show various readings for masseter and temporalis muscles"
+        },
+        "ann_muscle_temperature_in_c\u00b0": {
+          "value": "Muscle temperature readings",
+          "annotation": "Muscle temperatures are recorded for various muscles"
+        },
+        "ann_diagnostic_bite_force_analysis_/_musculoskeletal_functional_capacity": {
+          "value": "Diagnostic bite force analysis results",
+          "annotation": "Bite force analysis shows right: 80 Newtons, left: 23 Newtons"
+        },
+        "ann_diagnostic_autonomic_nervous_system": {
+          "value": "Diagnostic autonomic nervous system results",
+          "annotation": "Autonomic nervous system results show before: O2 95, Pulse 88; after: O2 97, Pulse 83"
+        },
+        "ann_tissue_analysis_of_lips": {
+          "value": "Dry",
+          "annotation": "Tissue analysis of lips indicates dryness"
+        },
+        "ann_tissue_analysis_of_tongue": {
+          "value": "Dry",
+          "annotation": "Tissue analysis of tongue indicates dryness"
+        },
+        "ann_saliva_pooling_at_floor_of_mouth": {
+          "value": "No",
+          "annotation": "Saliva pooling at floor of mouth is negative"
+        },
+        "ann_adherence_of_tongue_depressor_on_inside_of_cheek": {
+          "value": "Yes",
+          "annotation": "Adherence of tongue depressor on inside of cheek is positive"
+        },
+        "ann_incoordination/aberrant_function": {
+          "value": "Yes",
+          "annotation": "Incoordination/Aberrant Function is positive"
+        }
+      },
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "The 'Ultrasound Doppler Analysis' section is blank.",
+        "The contraction values for masseter muscles are significantly different between right and left sides."
+      ]
+    },
+    {
+      "page_number": 17,
+      "fields": {
+        "p17_clinical_impression_1": "WNL",
+        "p17_clinical_impression_2": "WNL",
+        "p17_f45_8": {
+          "is_checked": true
+        },
+        "p17_m79_1": {
+          "is_checked": true
+        },
+        "p17_g51_0_halitosis": {
+          "is_checked": true
+        },
+        "p17_dfv_signature": {
+          "circled_options": [
+            "DFV"
+          ],
+          "value": "DFV"
+        },
+        "ann_diagnosis": {
+          "value": "X",
+          "annotation": "The diagnosis 'Bruxism' is selected."
+        }
+      },
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "Several diagnosis checkboxes are not filled or checked.",
+        "The circled 'DFV' is noted but its significance or connection to other data is not clear."
+      ]
+    },
+    {
+      "page_number": 18,
+      "fields": {
+        "p18_qst_table_vas_score_right_forearm": "4",
+        "p18_qst_table_seconds_right_forearm": "30",
+        "p18_qst_table_vas_score_right_temporalis": "0",
+        "p18_qst_table_seconds_right_temporalis": "30",
+        "p18_qst_table_vas_score_right_tmj": "0",
+        "p18_qst_table_seconds_right_tmj": "30",
+        "p18_qst_table_vas_score_right_masseter": "0",
+        "p18_qst_table_seconds_right_masseter": "30",
+        "p18_qst_table_vas_score_left_temporalis": "0",
+        "p18_qst_table_seconds_left_temporalis": "30",
+        "p18_qst_table_vas_score_left_tmj": "0",
+        "p18_qst_table_seconds_left_tmj": "30",
+        "p18_qst_table_vas_score_left_masseter": "0",
+        "p18_qst_table_seconds_left_masseter": "30",
+        "p18_qst_cold_table_vas_score_right_temporalis": "0",
+        "p18_qst_cold_table_vas_score_right_tmj": "0",
+        "p18_qst_cold_table_vas_score_right_masseter": "0",
+        "p18_qst_cold_table_vas_score_left_temporalis": "0",
+        "p18_qst_cold_table_vas_score_left_tmj": "0",
+        "p18_qst_cold_table_vas_score_left_masseter": "0",
+        "ann_qst_vas": {
+          "value": "Handwritten '0' and '30' in VAS and Seconds fields",
+          "annotation": "The handwritten values '0' and '30' in the VAS and Seconds fields indicate the patient's response to the QST testing. The '0' likely represents a pain score on the Visual Analog Scale (VAS), while '30' represents the duration in seconds."
+        },
+        "ann_qst_seconds": {
+          "value": "Handwritten '0' and '30' in VAS and Seconds fields",
+          "annotation": "The handwritten values '0' and '30' in the VAS and Seconds fields indicate the patient's response to the QST testing. The '0' likely represents a pain score on the Visual Analog Scale (VAS), while '30' represents the duration in seconds."
+        },
+        "ann_qst_cold_vas": {
+          "value": "Handwritten '0' in VAS fields under QST Cold",
+          "annotation": "The handwritten '0' in the VAS fields under QST Cold indicates the patient's pain score for cold stimuli."
+        },
+        "ann_qst_right_forearm": {
+          "value": "Checkmark or handwritten mark next to 'Right Forearm'",
+          "annotation": "The checkmark or handwritten mark next to 'Right Forearm' indicates that this area was tested or relevant for the QST."
+        },
+        "ann_qst_after_bilateral_spgb_pain_quality": {
+          "value": "Circle around 'Sharp' under QST After Bilateral SPGB",
+          "annotation": "The circle around 'Sharp' under QST After Bilateral SPGB highlights or emphasizes the descriptor 'Sharp' for the pain quality."
+        }
+      },
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "The VAS score for Right Forearm is handwritten and legible, but the original value was not captured.",
+        "The seconds field for Right Temporalis in QST After Bilateral SPGB is blank and not filled."
+      ]
+    },
+    {
+      "page_number": 19,
+      "fields": {
+        "p19_buccal_mucosal_ridging": {
+          "is_checked": true,
+          "value": "Buccal Mucosal Ridging"
+        },
+        "p19_occlusal_wear": {
+          "circled_options": [
+            "Anterior"
+          ],
+          "value": "Anterior",
+          "annotation_note": "The presence of occlusal wear, which refers to the loss of tooth structure due to grinding or other occlusal forces."
+        },
+        "sc_Occlusal Wear_Anterior": true,
+        "ann_tongue_blades_adhering_to_inside_of_cheeks": {
+          "value": "Tongue Blades adhering to inside of cheeks",
+          "annotation": "The observation that tongue blades are adhering to the inside of the cheeks, which could indicate a habit or condition affecting oral posture."
+        },
+        "ann_abfractions": {
+          "value": "Abfractions",
+          "annotation": "The presence of abfractions, which are notches or lesions at the gum line of teeth, often associated with occlusal trauma."
+        },
+        "ann_biofilm_on_teeth": {
+          "value": "Biofilm on Teeth",
+          "annotation": "The presence of biofilm on the teeth, which is a complex community of microorganisms adhering to the tooth surface."
+        },
+        "ann_biofilm_on_gums": {
+          "value": "Biofilm on Gums",
+          "annotation": "The presence of biofilm on the gums, indicating potential periodontal issues."
+        },
+        "ann_lateral_border_of_the_tongue_scalloping": {
+          "value": "Lateral Border of the Tongue Scalloping",
+          "annotation": "Scalloping observed on the lateral border of the tongue, which can be indicative of tongue thrusting or other oral habits."
+        }
+      },
+      "review_flags": [
+        "p19_occlusal_wear: field='Anterior' vs annotation='Occlusal Wear'"
+      ],
+      "items_needing_review": 9,
+      "extraction_review_reasons": [
+        "Multiple fields are missing circled selections or values.",
+        "The field 'Missing/Broken Teeth #' is extracted as an empty string with 0.0 confidence."
+      ]
+    },
+    {
+      "page_number": 20,
+      "fields": {
+        "p20_treatment_checkboxes": {
+          "is_checked": true,
+          "circled_options": [
+            "Orthotic Appliance / Resilient Orthotic OAOA OSA TRD Diagnostic Splint",
+            "Craniofacial Exercises",
+            "FMX",
+            "Panorex"
+          ]
+        },
+        "p20_consultations_needed": {
+          "is_checked": true,
+          "circled_options": [
+            "Sleep Study Report Needed",
+            "Polysomnogram Needed",
+            "Psychological Consultation Needed"
+          ]
+        },
+        "p20_ent_consultation_ringing": {
+          "is_checked": true
+        },
+        "p20_internal_medicine_consults": {
+          "is_checked": true,
+          "circled_options": [
+            "GERD"
+          ]
+        },
+        "p20_dental_consultation_reasons": {
+          "value": "25",
+          "is_checked": true,
+          "circled_options": [
+            "Xerostomia / Periodontal Disease"
+          ]
+        },
+        "p20_patient_records_tasks": {
+          "is_checked": true,
+          "circled_options": [
+            "Patient to get Dental Records / FMX",
+            "I NEED ALL MEDICAL AND DENTAL RECORDS"
+          ]
+        },
+        "p20_xray_disclosure": {
+          "is_checked": true
+        },
+        "p20_dental_treatment_disclosure": {
+          "is_checked": true
+        },
+        "p20_doctor_signature": "Xole",
+        "p20_signature_date": "11/19/2023",
+        "ann_dr._signature": {
+          "value": "Xole",
+          "annotation": "The doctor's signature is 'Xole', indicating approval or confirmation of the treatment plan."
+        },
+        "ann_orthotic_appliance": {
+          "value": "X mark next to Orthotic Appliance",
+          "annotation": "The treatment plan includes an Orthotic Appliance."
+        },
+        "ann_resilient_orthotic": {
+          "value": "Circle around Resilient Orthotic",
+          "annotation": "Resilient Orthotic is selected or emphasized in the treatment plan."
+        },
+        "ann_dental_consultation_for:_treatment_for_decay_fractures_teeth_xerostomia_/_periodontal_disease": {
+          "value": "25 next to Xerostomia / Periodontal Disease",
+          "annotation": "The number '25' is associated with Xerostomia / Periodontal Disease, possibly indicating a priority, count, or reference number."
+        }
+      },
+      "items_needing_review": 1,
+      "extraction_review_reasons": [
+        "The field 'Patient to get Prescriptions from Pharmacy' is not checked, but it is not clear if this is an omission or not applicable."
+      ]
+    },
+    {
+      "page_number": 21,
+      "fields": {
+        "diagnostics": {
+          "circled_options": [
+            "SEMG/Bilateral",
+            "Functional Capacity Meas.",
+            "Amylase Test"
+          ]
+        },
+        "physical_medicine_modalities": {
+          "circled_options": [
+            "TRD",
+            "Orthopedic Orthotic",
+            "MAN 2MM"
+          ]
+        },
+        "additional": {
+          "circled_options": [
+            "Full Mouth Radiographs",
+            "Orthopantomogram",
+            "Single PA #25"
+          ]
+        },
+        "dmr": {
+          "is_checked": true
+        },
+        "next_visit_for": {
+          "circled_options": [
+            "DEL 2MM",
+            "DEL 3MM"
+          ]
+        },
+        "doctor_signature": "Silva",
+        "next_visit_date": "11/19/2025",
+        "initial_consultation": {
+          "is_checked": true
+        },
+        "ann_top-right": {
+          "value": "Patricia Benton",
+          "annotation": "The name 'Patricia Benton' is likely the patient's name or the name of the person associated with the medical form."
+        },
+        "ann_top-left": {
+          "value": "Initial Consultation checkmark",
+          "annotation": "The checkmark indicates that the 'Initial Consultation' was performed or noted."
+        },
+        "ann_middle-center": {
+          "value": "Hay",
+          "annotation": "The handwritten text 'Hay' is likely an abbreviation or a note related to the treatment or diagnosis.",
+          "annotation_note": "The notation '#25' likely refers to a specific tooth or dental notation system."
+        },
+        "ann_bottom-center": {
+          "value": "Hay",
+          "annotation": "The handwritten text 'Hay' is likely an abbreviation or a note related to the treatment or diagnosis.",
+          "annotation_note": "The name 'Silva' is likely the name of the doctor or practitioner associated with the form."
+        },
+        "ann_bottom-right": {
+          "value": "11-19-2025",
+          "annotation": "The date '11-19-2025' is likely the date of the next visit or a significant date related to the patient's treatment."
+        }
+      },
+      "review_flags": [
+        "ann_middle-center: field='Hay' vs annotation='Full Mouth Radiographs checkmark'",
+        "ann_middle-center: field='Hay' vs annotation='#25'",
+        "ann_bottom-center: field='Hay' vs annotation='DEL 2MM checkmark'",
+        "ann_bottom-center: field='Hay' vs annotation='Silva'"
+      ],
+      "items_needing_review": 2,
+      "extraction_review_reasons": [
+        "The next visit date is 11-19-2025, which is in the future beyond the expected range (2020-2026).",
+        "The handwritten text 'Hay' is unclear and could refer to multiple things."
+      ]
+    }
+  ]
+}

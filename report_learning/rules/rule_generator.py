@@ -106,10 +106,12 @@ RULE_GENERATION_PROMPT = """Generate rules for automated clinical report generat
 CROSS-REPORT PATTERNS (what's consistent across {n_reports} reports):
 {patterns_summary}
 
+{narrative_patterns_block}
+
 SECTION EXAMPLES (real input/output for each section):
 {section_examples}
 
-For EVERY section, produce a rule:
+For EVERY section listed above, produce a rule:
 - content_type: static_text | direct_fill | formatted_fill | narrative | list | table | conditional_block
 - static_text: exact boilerplate
 - direct_fill/formatted_fill: source_field_ids + template with {{field_id}} placeholders
@@ -118,8 +120,37 @@ For EVERY section, produce a rule:
 - table: columns + row source
 - conditional_block: conditions (field_id, operator, value)
 
+For narrative sections with NARRATIVE PATTERNS provided, incorporate the writing_pattern,
+static_phrases, and data_points into the generation_prompt so the LLM can reproduce the
+exact clinical style. Include all static_phrases that must appear verbatim.
+
 Keep generation_prompt concise but specific about clinical style and sentence patterns.
 Include field_id_glossary mapping every used field_id to a human description."""
+
+
+def _format_narrative_patterns(narrative_patterns: list[dict[str, Any]]) -> str:
+    """Format narrative patterns into a prompt block for sections that have them."""
+    if not narrative_patterns:
+        return ""
+    lines = ["NARRATIVE PATTERNS (detailed writing guidance for specific sections):"]
+    for np in narrative_patterns:
+        sid = np.get("section_id", "?")
+        lines.append(f"\n--- {sid} ({np.get('section_heading', '')}) ---")
+        if np.get("purpose"):
+            lines.append(f"  Purpose: {np['purpose'][:200]}")
+        if np.get("writing_pattern"):
+            lines.append(f"  Writing pattern: {np['writing_pattern'][:400]}")
+        if np.get("data_points_used"):
+            dp_lines = []
+            for dp in np["data_points_used"][:10]:
+                req = "REQUIRED" if dp.get("required") else "optional"
+                dp_lines.append(f"    - {dp['data_point']} ({req}): {dp.get('how_used', '')[:80]}")
+            lines.append("  Data points:\n" + "\n".join(dp_lines))
+        if np.get("static_phrases"):
+            lines.append(f"  Static phrases (must appear verbatim): {np['static_phrases']}")
+        if np.get("variation_notes"):
+            lines.append(f"  Variation notes: {np['variation_notes'][:200]}")
+    return "\n".join(lines)
 
 
 def _summarise_patterns_for_prompt(patterns: CrossReportPatterns) -> str:
@@ -153,11 +184,14 @@ def generate_rules(
     reports: list[ScannedReport],
     correlations: list[PairCorrelation],
     extractions: list[dict[str, Any]],
+    narrative_patterns: Optional[list[dict[str, Any]]] = None,
     client: Optional[instructor.Instructor] = None,
 ) -> ReportRules:
     """Generate complete report rules from patterns and examples."""
     if client is None:
         client = _build_client()
+
+    covered_ids = {sp.section_id for sp in patterns.section_patterns}
 
     all_examples: list[str] = []
     for sp in patterns.section_patterns:
@@ -167,9 +201,22 @@ def generate_rules(
         if examples:
             all_examples.append(f"\n=== {sp.section_id} ({sp.title}) ===\n{examples}")
 
-    patterns_text = _summarise_patterns_for_prompt(patterns)
+    # Also gather examples for sections only in narrative_patterns (not in cross_report_patterns)
+    if narrative_patterns:
+        for np in narrative_patterns:
+            sid = np.get("section_id", "")
+            if sid and sid not in covered_ids:
+                examples = _collect_section_examples(sid, reports, correlations, extractions)
+                heading = np.get("section_heading", sid)
+                if examples:
+                    all_examples.append(f"\n=== {sid} ({heading}) ===\n{examples}")
+                covered_ids.add(sid)
 
-    console.print(f"[dim]Generating rules for {len(patterns.section_patterns)} sections...[/dim]")
+    patterns_text = _summarise_patterns_for_prompt(patterns)
+    narrative_block = _format_narrative_patterns(narrative_patterns or [])
+
+    total_sections = len(covered_ids)
+    console.print(f"[dim]Generating rules for {total_sections} sections ({len(patterns.section_patterns)} from patterns, {total_sections - len(patterns.section_patterns)} from narrative analysis)...[/dim]")
 
     llm_result: LLMReportRulesResult = client.messages.create(
         model=CLAUDE_MODEL,
@@ -179,6 +226,7 @@ def generate_rules(
             "content": RULE_GENERATION_PROMPT.format(
                 n_reports=patterns.total_reports_analysed,
                 patterns_summary=patterns_text,
+                narrative_patterns_block=narrative_block,
                 section_examples="\n".join(all_examples),
             ),
         }],
@@ -216,6 +264,19 @@ def generate_from_files(
         patterns_path.read_text(encoding="utf-8")
     )
 
+    # Load narrative patterns from the rules directory (sibling of output_path)
+    narrative_patterns: list[dict[str, Any]] = []
+    narrative_path = output_path.parent / "narrative_patterns.json"
+    if narrative_path.exists():
+        try:
+            np_data = json.loads(narrative_path.read_text(encoding="utf-8"))
+            narrative_patterns = np_data.get("patterns", [])
+            console.print(f"[bold]Loaded {len(narrative_patterns)} narrative patterns[/bold]")
+        except Exception as e:
+            console.print(f"[yellow]Warning: could not load narrative_patterns.json: {e}[/yellow]")
+    else:
+        console.print("[yellow]No narrative_patterns.json found (run 'narratives' command first)[/yellow]")
+
     reports: list[ScannedReport] = []
     for f in sorted(reports_dir.glob("*.json")):
         text = f.read_text(encoding="utf-8", errors="replace").strip()
@@ -252,7 +313,10 @@ def generate_from_files(
         f"{len(extractions)} extractions[/bold]"
     )
 
-    rules = generate_rules(patterns, reports, correlations, extractions)
+    rules = generate_rules(
+        patterns, reports, correlations, extractions,
+        narrative_patterns=narrative_patterns,
+    )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(rules.model_dump_json(indent=2), encoding="utf-8")

@@ -34,3 +34,7 @@ PyJWT>=2.8.0
 # Report Learning Engine
 python-docx>=1.1.0
 pywin32>=306; sys_platform == 'win32'
+
+# Image analysis (lawyer page detection)
+numpy>=1.24.0
+scipy>=1.11.0

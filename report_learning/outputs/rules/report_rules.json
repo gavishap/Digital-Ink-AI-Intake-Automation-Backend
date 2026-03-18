@@ -4,6 +4,39 @@
   "total_estimated_pages": 29,
   "sections": [
     {
+      "section_id": "initial_report_in_the_field_of",
+      "title": "Initial Report in the Field of Dentistry",
+      "ordering": 0,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "static_text",
+      "static_content": "INITIAL REPORT IN THE FIELD OF DENTISTRY",
+      "source_field_ids": [],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 100,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": {
+        "font_name": "Arial",
+        "font_size": 11.0,
+        "bold": true,
+        "italic": false,
+        "underline": true,
+        "alignment": "center",
+        "color": null,
+        "all_caps": true
+      },
+      "content_formatting": null,
+      "notes": "Static heading only, no content elements in scanned reports."
+    },
+    {
       "section_id": "and_request_for_authorization",
       "title": "Authorization Request Header",
       "ordering": 1,
@@ -13,9 +46,14 @@
       "static_content": null,
       "source_field_ids": [
         "p1_date",
-        "claim_number",
-        "date_of_injury",
-        "p1_patient_name"
+        "ann_claim_number",
+        "p5_date_of_injury",
+        "p1_patient_name",
+        "p1_gender",
+        "p1_birth_date",
+        "p5_job_title",
+        "p1_address",
+        "p1_cell_phone"
       ],
       "template": "DATE: \t\t{p1_date:January 11, 2026}\nCLAIM: \t\t{claim_number}\nWCAB:\t\t{venue}\nCase #:\t\t{case_number}\nDate of Injury: \t{date_of_injury}\nDate of current exam: {exam_date}\nInterpreter:\t{interpreter}\nPatient\nLast Name: \t\t{patient_last_name}\nFirst Name: \t\t{patient_first_name}\nSex: \t\t\t{patient_sex}\nDate of Birth: \t{patient_dob}\nOccupation: \t\t{occupation}\nAddress: \t\t{patient_address}\nCity: \t\t\t{patient_city}\nState: \t\t\t{patient_state}\nZip: \t\t\t{patient_zip}\nPhone No.: \t\t{patient_phone}",
       "format_pattern": null,
@@ -51,28 +89,28 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate a clinical narrative describing the patient's job. Use proper title format (Mr./Ms./Mrs.). Start with job title and employer, then work schedule. Include physical job requirements if available. Use past tense 'worked as' format. Be concise and professional.",
+      "generation_prompt": "Generate the JOB DESCRIPTION section.\n\nPurpose: Documents the patient's occupational demands and physical job requirements to establish baseline functional capacity and identify potential workplace factors contributing to their condition.\n\nWriting pattern: Follows a strict two-paragraph structure. First paragraph states job title, employer, and work schedule using \"states he/she worked as [job title] for [employer]\" followed by hours/days worked. Second paragraph systematically lists physical job demands using \"states his/her job entailed\" followed by a standardized inventory of physical activities and weight limits, presented as a comprehensive comma-separated list.\n\nData points to use:\n- job title (REQUIRED): stated directly after 'worked as'\n- employer name (REQUIRED): stated directly after 'for'\n- hours per day worked (REQUIRED): stated as specific number followed by 'hours per day'\n- days per week worked (REQUIRED): stated as specific number/range followed by 'days per week'\n- physical job activities (REQUIRED): listed systematically in comma-separated format after 'job entailed prolonged'\n- maximum lifting weight (REQUIRED): stated as 'lifting up to a maximum of [X] lbs'\n- maximum carrying weight (REQUIRED): stated as 'carrying up to a maximum of [X] lbs'\n- workstation ergonomics (optional): described in additional sentences when applicable\n- computer equipment use (optional): described in detail including monitor position and mouse hand preference\n\nStatic phrases that MUST appear verbatim:\n- \"states he worked as\"\n- \"states she worked as\"\n- \"He worked\"\n- \"She worked\"\n- \"hours per day\"\n- \"days per week\"\n- \"states his job entailed prolonged\"\n- \"states her job entailed prolonged\"\n- \"lifting up to a maximum of\"\n- \"carrying up to a maximum of\"\n\nVariation notes: Primary variations include specific job titles, employer names, work schedules (hours/days), physical demands present/absent (like driving), weight limits (25-70 lbs), and presence of additional ergonomic details for office workers. The core physical activities list remains largely standardized across patients.\n\nValidation feedback: Update generation_prompt: 'Generate a clinical narrative describing the patient's job. Use proper title format (Mr./Ms./Mrs.). Start with job title and employer, then work schedule (X hours per day, Y days per week). Include physical job requirements in detailed list format: prolonged driving, walking, standing, squatting, twisting, bending forward, side bending, reaching below/above shoulder level, pushing, pulling, gripping, grasping, lifting up to X lbs, carrying up to Y lbs. Use past tense format. Be concise and professional.'\n\nUse {patient_title} {patient_last_name} for the patient. Use he/she, his/her based on gender.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p5_job_title": "Site Inspector",
             "p5_employed_at": "Smith Emery Company",
             "p5_worked_hours_per_day": "8",
             "p5_worked_days_per_week": "5",
             "p5_lifting_maximum_lbs": "40"
           },
-          "output_text": "Mr. Anderson states he worked as a Site Inspector for Smith Emery Company. He worked 8 hours per day, 5 days per week.\nMr. Anderson states his job entailed prolonged driving, walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 40 lbs, and carrying up to"
+          "output_text": "{patient_title} {patient_last_name} states he worked as a Site Inspector for Smith Emery Company. He worked 8 hours per day, 5 days per week.\n{patient_title} {patient_last_name} states his job entailed prolonged driving, walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 40 lbs, and carrying up to"
         },
         {
           "input_fields": {
-            "patient_name": "Bachar, Margalit",
+            "patient_name": "{patient_name}",
             "p5_job_title": "On-Site Property Manager",
             "p5_employed_at": "Euro Cabinet Design & Woodworking",
             "p5_worked_hours_per_day": "24",
             "p5_worked_days_per_week": "7"
           },
-          "output_text": "Ms. Bachar states she worked as an On-Site Property Manager for Euro Cabinet Design & Woodworking. She worked 24 hours per day, 7 days per week.\nMs. Bachar states her job entailed prolonged walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 25 lbs, and"
+          "output_text": "{patient_title} {patient_last_name} states she worked as an On-Site Property Manager for Euro Cabinet Design & Woodworking. She worked 24 hours per day, 7 days per week.\n{patient_title} {patient_last_name} states her job entailed prolonged walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 25 lbs, and"
         }
       ],
       "max_tokens": 500,
@@ -101,23 +139,23 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate a single sentence describing current work status. Use proper title format (Mr./Ms./Mrs.). For 'Disabled/Not Working', include stop date if available. For 'Working for another employer', mention this. For 'Still working same employer', state this clearly.",
+      "generation_prompt": "Generate current work status narrative. Use {patient_title} {patient_last_name}.\n\nStructure by work status:\n- Disabled/Not Working: '{patient_title} {patient_last_name} states that he/she has not returned to work since [date/injury]' or 'is disabled and has not returned to work since [timeframe].'\n- Working for another employer: state new role and employer.\n- Still working same employer: state current role clearly.\n- If working at different company: 'presently working at [company] as [role].'\n\nHandle missing dates gracefully -- use 'since the injury' if no specific date. Use past/present tense appropriately based on status. Be concise.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p5_current_work_status": "Disabled/Not Working",
             "p5_date_stopped_working": "November 5, 2021"
           },
-          "output_text": "Mr. Anderson states that he has not returned to work since November 5, 2021."
+          "output_text": "{patient_title} {patient_last_name} states that he has not returned to work since November 5, 2021."
         },
         {
           "input_fields": {
-            "patient_name": "Canseco Gutierrez, Amador",
+            "patient_name": "{patient_name}",
             "p5_current_work_status": "Working for another employer",
             "p5_presently_working_at_different_company": "driver"
           },
-          "output_text": "Mr. Canseco Gutierrez states that he is working for another employer as a driver."
+          "output_text": "{patient_title} {patient_last_name} states that he is working for another employer as a driver."
         }
       ],
       "max_tokens": 500,
@@ -147,25 +185,25 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate clinical narrative about industrial injury. Start with injury date and circumstances. Use specific dates or cumulative trauma periods. Include how orthopedic pain developed into clenching/bruxism. Mention repetitive work activities for CT cases. Use proper clinical terminology.",
+      "generation_prompt": "Generate the HISTORY OF INDUSTRIAL INJURY section.\n\nPurpose: This section documents the patient's work-related injuries, establishing the causal link between occupational activities and current pain complaints, while specifically connecting orthopedic injuries to orofacial pain through stress-related clenching and bracing behaviors.\n\nWriting pattern: The section follows a structured 4-6 paragraph format: (1) Opening statement with injury dates and work context, (2) Description of mechanism/activities causing injury with specific body parts affected, (3) Pain severity ratings using VAS scale, (4) Mandatory paragraph linking orthopedic pain to emotional stress and facial muscle tension, (5) Optional paragraphs for hand dominance/oral hygiene impact, weight gain, and medications. Each paragraph uses formal medical language with consistent sentence structures.\n\nData points to use:\n- injury date(s) (REQUIRED): stated in opening sentence with specific dates and CT (continuous trauma) periods\n- injury mechanism (REQUIRED): described as either acute incident (slip/fall/trip) or repetitive work activities with detailed list\n- affected body parts (REQUIRED): listed comprehensively in anatomical order\n- pain severity ratings (REQUIRED): quantified using VAS scale (0-10) for each affected body part\n- work activities performed (REQUIRED): detailed list of physical activities (lifting weights, carrying, reaching, etc.)\n- emotional stress response (REQUIRED): standardized description of stress leading to teeth clenching and facial muscle bracing\n- facial pain development (REQUIRED): described as consequence of clenching/bracing behaviors\n- hand dominance (optional): stated as 'right hand dominant' when upper extremity injuries present\n- oral hygiene impact (optional): standardized phrase about compromised ability to brush and floss\n- weight gain (optional): stated as approximate pounds gained since injury\n- industrial medications (optional): listed with dosages and frequency, specified as 'on an industrial basis'\n- non-industrial medications (optional): mentioned separately without industrial designation\n\nStatic phrases that MUST appear verbatim:\n- \"states that on [date], he/she was involved in an industrial injury in the course of performing his/her usual and customary job duties\"\n- \"reports that as a result of performing repetitive work activities such as\"\n- \"rates the severity of pain in [body part] as [number] out of 10, all on a VAS\"\n- \"finds that in response to his/her industrial related orthopedic pain, he/she developed emotional stressors\"\n- \"finds he/she is clenching his/her teeth and bracing his/her facial musculature in response to his/her orthopedic pain, and also in response to the resultant emotional stressors experienced\"\n- \"This has caused him/her to develop [facial pain/headaches/facial and jaw pain]\"\n- \"is right hand dominant\"\n- \"reports these orthopedic injuries are compromising and impairing his/her ability to perform proper and adequate oral hygiene procedures of brushing and flossing of his/her teeth and gums\"\n- \"is taking the medication of [medication], on an industrial basis\"\n\nVariation notes: The main variations are: (1) Single acute injury vs. repetitive trauma with CT periods, (2) Specific mechanism (fall/trip) vs. general repetitive activities, (3) Number and location of affected body parts, (4) Specific pain ratings for each area, (5) Maximum lifting/carrying weights, (6) Presence/absence of hand dominance discussion, (7) Weight gain reporting, (8) Types and frequencies of medications. The emotional stress-to-facial pain connection remains virtually identical across all cases.\n\nValidation feedback: Add missing fields to source_field_ids: injury_mechanism, body_parts_injured, pain_development_timeline. Update generation_prompt to distinguish between specific injury dates and cumulative trauma periods, and include injury mechanism details and affected body parts.\n\nUse {patient_title} {patient_last_name} for the patient. Use he/she, his/her based on gender.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p5_date_of_injury": "November 5, 2021",
             "p6_injury_description_1": "slipped and fell, landing in a splits position; his left leg struck a pile of rebar"
           },
-          "output_text": "Mr. Anderson states that on November 5, 2021, he was involved in an industrial injury in the course of performing his usual and customary job duties.\nMr. Anderson reports that he slipped and fell, landing in a splits position; his left leg struck a pile of rebar. He complains of residual pain in his left elbow, lower back, left leg, left knee and in his left ankle."
+          "output_text": "{patient_title} {patient_last_name} states that on November 5, 2021, he was involved in an industrial injury in the course of performing his usual and customary job duties.\n{patient_title} {patient_last_name} reports that he slipped and fell, landing in a splits position; his left leg struck a pile of rebar. He complains of residual pain in his left elbow, lower back, left leg, left knee and in his left ankle."
         },
         {
           "input_fields": {
-            "patient_name": "Bachar, Margalit",
+            "patient_name": "{patient_name}",
             "p5_date_of_injury": "CT 1/1/10 to 2/28/23"
           },
-          "output_text": "Ms. Bachar states that from CT 1/1/10 to 2/28/23, she was involved in industrial injuries in the course of performing her usual and customary job duties.\nMs. Bachar reports that as a result of performing repetitive work activities such as prolonged walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling"
+          "output_text": "{patient_title} {patient_last_name} states that from CT 1/1/10 to 2/28/23, she was involved in industrial injuries in the course of performing her usual and customary job duties.\n{patient_title} {patient_last_name} reports that as a result of performing repetitive work activities such as prolonged walking, standing, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling"
         }
       ],
-      "max_tokens": 500,
+      "max_tokens": 1000,
       "list_field_id": null,
       "list_bullet_style": "bullet",
       "table_columns": [],
@@ -185,27 +223,31 @@
       "content_type": "narrative",
       "static_content": null,
       "source_field_ids": [
-        "p7_treatments_received",
-        "p7_surgery_body_parts"
+        "p7_tx_received",
+        "p7_surgery_body_parts",
+        "p7_tx_received_physical_therapy",
+        "p7_tx_received_chiropractic_manipulations",
+        "p7_tx_received_acupuncture",
+        "treatments_received_due_to_industrial_injury"
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate narrative listing treatments received for industrial injury. Include physical therapy, chiropractic, acupuncture, surgery as applicable. Use proper clinical format. If no treatment, state 'has received no treatment'.",
+      "generation_prompt": "Generate treatment narrative for industrial injury. Use {patient_title} {patient_last_name}.\n\nStructure: '{patient_title} {patient_last_name} states he/she has received the following treatments due to the industrial injury: [treatments].'\n\nInclude all treatment types present in the data:\n- Physical therapy\n- Chiropractic manipulations\n- Acupuncture\n- Injections (specify type if available)\n- Surgery (specify type, body part, date if available)\n- Medications (list specific medications)\n- Psychological therapy\n\nPresent as a flowing narrative, not a bullet list. If surgery details available, include the specific procedure and approximate date. Use past tense.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p7_surgery_body_parts": "left ankle surgery in 2024",
             "p7_treatments_received": "physical therapy"
           },
-          "output_text": "Mr. Anderson underwent left ankle surgery in 2024.\nMr. Anderson has received treatments of physical therapy."
+          "output_text": "{patient_title} {patient_last_name} underwent left ankle surgery in 2024.\n{patient_title} {patient_last_name} has received treatments of physical therapy."
         },
         {
           "input_fields": {
-            "patient_name": "Canseco Gutierrez, Amador",
+            "patient_name": "{patient_name}",
             "p7_treatments_received": "None"
           },
-          "output_text": "Mr. Canseco Gutierrez has received no treatment."
+          "output_text": "{patient_title} {patient_last_name} has received no treatment."
         }
       ],
       "max_tokens": 500,
@@ -246,27 +288,29 @@
         "p1_diabetes",
         "p1_thyroid_problem",
         "p1_breathing_problems",
-        "p8_past_medical_history"
+        "p8_past_medical_history",
+        "p1_heart_problems",
+        "p1_kidney_problems"
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate clinical narrative of past medical history. Always include stomach acids (gastric reflux) as primary condition. Add other conditions like diabetes, thyroid problems, high blood pressure as applicable. Use clinical terminology and proper sentence structure.",
+      "generation_prompt": "Generate past medical history narrative. Use {patient_title} {patient_last_name}.\n\nStructure: '{patient_title} {patient_last_name} states [his/her] past medical history includes: [conditions].'\n\nInclude all documented conditions: heart problems, high blood pressure, diabetes, stomach/acid reflux, kidney problems, thyroid problems, blood thinners, breathing problems, numbness/tingling, liver problems, urinary problems, sleep apnea.\n\nFor conditions marked YES, list them. For all NO, state 'denies significant past medical history' or 'past medical history is unremarkable.'\nInclude allergies if documented. Include current medications with dosages when available.\nPrioritize relevant conditions naturally rather than forcing any single condition.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p1_stomach_acids": "Yes"
           },
-          "output_text": "Mr. Anderson reports having stomach acids coming up into his mouth.\nHe is allergic to Cortisone and Sulfa."
+          "output_text": "{patient_title} {patient_last_name} reports having stomach acids coming up into his mouth.\nHe is allergic to Cortisone and Sulfa."
         },
         {
           "input_fields": {
-            "patient_name": "Benton, Patricia",
+            "patient_name": "{patient_name}",
             "p1_stomach_acids": "Yes",
             "p1_diabetes": "Yes",
             "p1_thyroid_problem": "Yes"
           },
-          "output_text": "Ms. Benton reports having diabetes and thyroid problems, as well as stomach acids coming up into her mouth.\nShe has undergone sleep study testing."
+          "output_text": "{patient_title} {patient_last_name} reports having diabetes and thyroid problems, as well as stomach acids coming up into her mouth.\nShe has undergone sleep study testing."
         }
       ],
       "max_tokens": 500,
@@ -293,21 +337,21 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate clinical narrative of prior surgeries. If specific surgeries listed, include timeframes. If 'None' or empty, state 'cannot recall prior surgeries' or 'denies prior surgeries'. Use past tense and clinical format.",
+      "generation_prompt": "Generate prior surgery narrative. Use {patient_title} {patient_last_name}.\n\nIf specific surgeries listed: '{patient_title} {patient_last_name} underwent [surgery type] [timeframe if available].'\nIf multiple surgeries, list chronologically.\nIf None/empty: '{patient_title} {patient_last_name} denies prior surgeries.' or 'cannot recall prior surgeries.'\n\nUse past tense throughout. Include body part and approximate date when available.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p8_past_surgeries": "right inguinal hernia repair about 30 years ago"
           },
-          "output_text": "Mr. Anderson underwent a right inguinal hernia repair about 30 years ago."
+          "output_text": "{patient_title} {patient_last_name} underwent a right inguinal hernia repair about 30 years ago."
         },
         {
           "input_fields": {
-            "patient_name": "Benton, Patricia",
+            "patient_name": "{patient_name}",
             "p8_past_surgeries": "right knee surgery, cesarean section, rhinoplasty, hysterectomy"
           },
-          "output_text": "Ms. Benton underwent a right knee surgery, a cesarean section, a rhinoplasty, and a hysterectomy."
+          "output_text": "{patient_title} {patient_last_name} underwent a right knee surgery, a cesarean section, a rhinoplasty, and a hysterectomy."
         }
       ],
       "max_tokens": 500,
@@ -335,21 +379,21 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate clinical narrative of prior injury history. Include both industrial and non-industrial injuries. If 'None', state 'cannot recall prior injuries'. Include recovery status when mentioned. Add disclaimer for injuries outside dental expertise.",
+      "generation_prompt": "Generate prior injuries narrative. Use {patient_title} {patient_last_name}.\n\nSeparate industrial from non-industrial injuries:\n- Prior industrial injuries: '{patient_title} {patient_last_name} states [he/she] has had prior industrial injuries to [body parts].'\n- Non-industrial injuries (MVA, etc.): '{patient_title} {patient_last_name} states [he/she] was involved in a motor vehicle accident on [date] injuring [body parts].'\n\nIf none: '{patient_title} {patient_last_name} denies prior injuries.'\nInclude recovery status when available. For non-dental injuries, include standard disclaimer.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p8_history_prior_industrial_injuries": "None"
           },
-          "output_text": "Mr. Anderson cannot recall sustaining any prior injuries."
+          "output_text": "{patient_title} {patient_last_name} cannot recall sustaining any prior injuries."
         },
         {
           "input_fields": {
-            "patient_name": "Boricean, Maria",
+            "patient_name": "{patient_name}",
             "p8_history_non_industrial_injuries": "motor vehicle accident about 35 years ago, injured neck and back, made full recovery"
           },
-          "output_text": "Ms. Boricean was involved in a motor vehicle accident about 35 years ago and injured her neck and back areas. She had since made a full recovery."
+          "output_text": "{patient_title} {patient_last_name} was involved in a motor vehicle accident about 35 years ago and injured her neck and back areas. She had since made a full recovery."
         }
       ],
       "max_tokens": 500,
@@ -376,14 +420,14 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate clinical narrative about injuries after industrial date. If 'None', state 'has not been involved in any injuries subsequent to the industrial injury'. If injuries present, describe with timeframe.",
+      "generation_prompt": "Generate subsequent injuries narrative. Use {patient_title} {patient_last_name}.\n\nIf subsequent injuries exist after the industrial date: document each with date and details.\nIf none: '{patient_title} {patient_last_name} denies any injuries after the date of industrial injury.'\n\nKeep concise. This section is typically very short.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p8_any_injuries_after_industrial_date": "None"
           },
-          "output_text": "Mr. Anderson states he has not been involved in any injuries subsequent to the industrial injury."
+          "output_text": "{patient_title} {patient_last_name} states he has not been involved in any injuries subsequent to the industrial injury."
         }
       ],
       "max_tokens": 500,
@@ -421,24 +465,24 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate smoking history narrative. If both smoking fields are 'NO', state 'does not smoke and has never been a smoker'. If current smoker, include cigarettes per day and duration. If former smoker, include quit timeframe and previous smoking history.",
+      "generation_prompt": "Generate social history narrative. Use {patient_title} {patient_last_name}.\n\nCover all available topics:\n- Smoking: 'states he/she [does/does not] smoke' with years smoked if applicable. Note if smoking increased after industrial injury.\n- Alcohol: 'states he/she [does/does not] drink alcohol.'\n- Recreational drugs: 'denies use of recreational drugs' or details if present.\n- Hand dominance: 'is [right/left] hand dominant.'\n\nPresent as flowing narrative sentences. Keep clinical and concise.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p4_do_you_smoke": "No",
             "p4_have_you_ever_smoked": "No"
           },
-          "output_text": "Mr. Anderson does not smoke and has never been a smoker."
+          "output_text": "{patient_title} {patient_last_name} does not smoke and has never been a smoker."
         },
         {
           "input_fields": {
-            "patient_name": "Bachar, Margalit",
+            "patient_name": "{patient_name}",
             "p4_do_you_smoke": "Yes",
             "p4_cigarettes_per_day": "1-2",
             "p4_years_smoker": "30"
           },
-          "output_text": "Ms. Bachar has smoked approximately 1-2 cigarettes per day for the past 30 years."
+          "output_text": "{patient_title} {patient_last_name} has smoked approximately 1-2 cigarettes per day for the past 30 years."
         }
       ],
       "max_tokens": 500,
@@ -468,16 +512,16 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate dental history narrative. Include last dentist visit timeframe, dentist name if available, and services received (cleaning, x-rays). End with standard request for prior dental records for comprehensive apportionment assessment.",
+      "generation_prompt": "Generate past dental history narrative. Use {patient_title} {patient_last_name}.\n\nStructure:\n1. Last dental visit: 'states [his/her] last dental visit was [timeframe].'\n2. Dental insurance: 'states [he/she] [does/does not] have dental insurance.'\n3. Prior dental problems: document any pre-existing dental issues.\n4. Include standard language: 'Dr. Schames is requesting the apportionment records from {patient_title} {patient_last_name}\\'s dentist.'\n\nKeep concise and professional.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p9_last_dentist_visit": "1 month",
             "p9_dentist_1_name": "Mary Chester",
             "p9_last_teeth_cleaned": "3-4 years"
           },
-          "output_text": "Mr. Anderson states he was last seen by a dentist approximately 1 month prior to this examination.\nHis private dentist is Mary Chester.\nHe states that he had x-rays taken at his last dental visit, and his teeth cleaned about 3-4 years prior to this examination.\nI welcome the provision of Mr. Anderson's prior dental x-rays and records for the purpose of providing a comprehensive assessment of apportionment once he reaches Permanent and Stationary status."
+          "output_text": "{patient_title} {patient_last_name} states he was last seen by a dentist approximately 1 month prior to this examination.\nHis private dentist is Mary Chester.\nHe states that he had x-rays taken at his last dental visit, and his teeth cleaned about 3-4 years prior to this examination.\nI welcome the provision of {patient_title} {patient_last_name}'s prior dental x-rays and records for the purpose of providing a comprehensive assessment of apportionment once he reaches Permanent and Stationary status."
         }
       ],
       "max_tokens": 500,
@@ -509,11 +553,11 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate detailed subjective complaint narrative. Include headache patterns (location, frequency, severity, VAS scores), facial pain patterns, and dental/bruxism complaints in response to orthopedic pain. Use structured format with clear headings for Headaches, Facial Pain, and Dental sections.",
+      "generation_prompt": "Generate the subjective complaints section. Use {patient_title} {patient_last_name}.\n\nThis is a structured section with subsections. Follow this format:\n\nHEADACHES subsection:\n- Location, frequency, duration, severity (VAS 0-10)\n- Aggravating and relieving factors\n\nFACIAL PAIN subsection:\n- Location (jaw, temple, cheek), severity (VAS)\n- Temporal patterns (morning vs evening, constant vs intermittent)\n\nDENTAL subsection:\n- Tooth sensitivity, gum problems, difficulty chewing\n- Jaw clicking, locking, or limited opening\n\nFor each complaint, use standardized VAS reporting: 'rates the severity as [X] out of 10 on a Visual Analog Scale (VAS).'\nInclude temporal patterns and aggravating/relieving factors when available.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p10_headache_locations": "bilateral temple and forehead",
             "p10_headache_frequency": "occasional slight",
             "p10_headache_vas": "4-5"
@@ -521,7 +565,7 @@
           "output_text": "Headaches\nOccasional slight headaches in the bilateral temple and forehead areas\nHeadache pain described as sharp and dull\nHeadaches occurring about 1% of the time\nHeadache pain intensity of 4-5 on a Visual Analog Scale of 0 to 10\nDental\nClenching and grinding his teeth and bracing his facial musculature in response to the industrial related orthopedic pain and resultant emotional stressors"
         }
       ],
-      "max_tokens": 500,
+      "max_tokens": 1000,
       "list_field_id": null,
       "list_bullet_style": "bullet",
       "table_columns": [],
@@ -549,17 +593,17 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate bad breath complaint narrative since industrial injuries. Include intensity VAS, percentage of time present, embarrassment level, and social interference. Use clinical format with VAS scoring.",
+      "generation_prompt": "Generate the oral malodor (bad breath) complaint section. Use {patient_title} {patient_last_name}.\n\nStructure:\n1. Patient awareness: '{patient_title} {patient_last_name} states [he/she] [does/does not] have bad breath [before/after the injury].'\n2. VAS scores for each impact area:\n   - Intensity of bad breath (VAS)\n   - Embarrassment caused (VAS)\n   - Stress caused (VAS)\n   - Interference with family interaction (VAS)\n   - Interference with intimate kissing (VAS)\n   - Interference with other people (VAS)\n   - Percentage of time with bad breath\n   - How often others mention it (VAS)\n\nReport before-injury and after-injury VAS scores separately when both available.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Benton, Patricia",
+            "patient_name": "{patient_name}",
             "p3_bad_breath_after": "Yes",
             "p3_breath_intensity_after": "6",
             "p3_bad_breath_percentage_after": "60%",
             "p3_embarrassment_after": "10"
           },
-          "output_text": "Ms. Benton states that since the industrial injuries she has experienced bad breath.\nMs. Benton rates the intensity of her bad breath as a 6 on a VAS.\nMs. Benton states that her bad breath is present 60% of the time.\nMs. Benton rates the amount of her bad breath causing her to be embarrassed as a 10 on a VAS."
+          "output_text": "{patient_title} {patient_last_name} states that since the industrial injuries she has experienced bad breath.\n{patient_title} {patient_last_name} rates the intensity of her bad breath as a 6 on a VAS.\n{patient_title} {patient_last_name} states that her bad breath is present 60% of the time.\n{patient_title} {patient_last_name} rates the amount of her bad breath causing her to be embarrassed as a 10 on a VAS."
         }
       ],
       "max_tokens": 500,
@@ -672,7 +716,6 @@
       "content_type": "narrative",
       "static_content": null,
       "source_field_ids": [
-        "p14_joint_noises_crepitus",
         "p14_joint_noises_translational",
         "p14_joint_noises_lateral",
         "p14_right_lateral_pole_vas",
@@ -680,7 +723,7 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate TMJ examination findings narrative. Start with 'Physical examination revealed the following:'. Describe crepitus, clicking, and joint noises during specific movements (translational, lateral). Include palpation pain findings for lateral condyles if VAS > 0.",
+      "generation_prompt": "Generate the TMJ examination section. Use {patient_title} {patient_last_name}.\n\nStructure as systematic bilateral examination:\n1. Palpation findings: '{patient_title} {patient_last_name} exhibited tenderness upon palpation of the [right/left] temporomandibular joint.'\n2. Joint sounds: crepitus, clicking (opening/closing phase)\n3. Range of motion limitations\n4. Pain VAS scores for each finding when available\n5. Joint loading test results\n\nUse proper anatomical terminology (lateral pole, posterior attachment). Report bilateral findings separately. Include VAS scores where documented.",
       "few_shot_examples": [
         {
           "input_fields": {
@@ -741,15 +784,15 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate muscle examination narrative describing taut bands and trigger points in temporalis and masseter muscles. Include statement about pain reproduction when palpating taut bands. Use clinical terminology for bilateral findings.",
+      "generation_prompt": "Generate the muscular system examination section. Use {patient_title} {patient_last_name}.\n\nStructure as systematic bilateral muscle examination. For each muscle group:\n'Upon palpation of the [muscle name], [right/left], tenderness was [present/absent] with a VAS of [X]/10. Palpable taut bands and/or trigger points were [present/absent]. [If trigger points present]: Trigger point referral pattern to [referred area].'\n\nMuscle groups to examine (in order):\n- Temporalis (right and left)\n- Masseter (right and left)\n- Medial Pterygoid (right and left)\n- Lateral Pterygoid (right and left)\n- Sternocleidomastoid (right and left)\n- Trapezius (right and left)\n- Digastric (right and left)\n\nInclude trigger point referral patterns when taut bands are found. Report VAS scores for each tender muscle.",
       "few_shot_examples": [
         {
           "input_fields": {
-            "patient_name": "Anderson, Ronald",
+            "patient_name": "{patient_name}",
             "p14_masseter_right_y_n": "Yes",
             "p14_masseter_left_y_n": "Yes"
           },
-          "output_text": "Subjective pain was elicited and objective palpable taut bands were found upon palpation of the:\nRight masseter muscle\nLeft masseter muscle\nMr. Anderson informed us that when we objectively palpated the taut band in his masseter muscles on the right and left sides, this reproduced his facial pain complaint."
+          "output_text": "Subjective pain was elicited and objective palpable taut bands were found upon palpation of the:\nRight masseter muscle\nLeft masseter muscle\n{patient_title} {patient_last_name} informed us that when we objectively palpated the taut band in his masseter muscles on the right and left sides, this reproduced his facial pain complaint."
         }
       ],
       "max_tokens": 500,
@@ -865,7 +908,7 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate bruxism findings narrative. Include tongue scalloping (bilateral), buccal mucosal ridging of cheeks, and occlusal wear patterns. Use clinical terminology and describe severity/location of findings.",
+      "generation_prompt": "Generate the objective bruxism findings section. Use {patient_title} {patient_last_name}.\n\nTitle should include 'and bracing of the facial musculature'.\n\nStructure as a list of objective findings:\n1. Teeth indentations/scalloping on lateral borders of tongue\n2. Bite mark lines (linea alba) on inside of cheeks (buccal mucosa)\n3. Occlusal wear on tooth surfaces\n4. Tooth fractures or cracked teeth (if present)\n5. Dental restoration damage (if present)\n6. Gingival recession (if present)\n7. Muscle tenderness/hypertrophy findings\n8. Abfractions (if present)\n\nPresent each finding with anatomical location and severity. Use 'objectively noted' or 'objectively documented' language.",
       "few_shot_examples": [
         {
           "input_fields": {
@@ -888,9 +931,42 @@
       "notes": null
     },
     {
+      "section_id": "diagnostic_testing",
+      "title": "Diagnostic Testing",
+      "ordering": 21,
+      "page_break_before": true,
+      "is_required": true,
+      "content_type": "static_text",
+      "static_content": "DIAGNOSTIC TESTING",
+      "source_field_ids": [],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": null,
+      "few_shot_examples": [],
+      "max_tokens": 100,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": {
+        "font_name": "Arial",
+        "font_size": 11.0,
+        "bold": true,
+        "italic": false,
+        "underline": true,
+        "alignment": null,
+        "color": null,
+        "all_caps": true
+      },
+      "content_formatting": null,
+      "notes": "Parent heading for diagnostic subsections. No content, just the heading."
+    },
+    {
       "section_id": "ultrasonic_doppler_auscultation_analysis",
       "title": "Ultrasonic Doppler Auscultation Analysis",
-      "ordering": 21,
+      "ordering": 22,
       "page_break_before": false,
       "is_required": false,
       "content_type": "narrative",
@@ -904,7 +980,7 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate ultrasonic findings narrative. Start with 'The recorded objective data verified and confirmed:'. Describe crepitus sounds in specific TMJ locations during translational and lateral movements. Include confirmation or denial of internal derangements.",
+      "generation_prompt": "Generate the Doppler auscultation analysis section. Use {patient_title} {patient_last_name}.\n\nStructure:\n1. Introduction: 'Ultrasonic Doppler auscultation of the temporomandibular joints was performed to assess joint sounds and internal derangement.'\n2. Right TMJ findings: describe sounds (crepitus, clicking) by movement phase\n   - Translation (opening): [findings]\n   - Lateral (side-to-side): [findings]\n3. Left TMJ findings: same structure\n4. Assessment: 'The findings are consistent with [internal derangement / disc displacement / osteoarthritic changes].'\n\nDistinguish between crepitus (rough, grinding sounds suggesting degenerative changes) and clicking (sharp sounds suggesting disc displacement). Report bilaterally.",
       "few_shot_examples": [
         {
           "input_fields": {
@@ -953,7 +1029,7 @@
     {
       "section_id": "surface_electromyography",
       "title": "Surface Electromyography (sEMG)",
-      "ordering": 22,
+      "ordering": 23,
       "page_break_before": false,
       "is_required": false,
       "content_type": "narrative",
@@ -964,7 +1040,7 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate sEMG findings narrative. State that studies were performed on masseter, anterior temporalis, sternocleidomastoid, and trapezius muscles. Confirm elevated muscular activity and incoordination/aberrant function of facial musculature.",
+      "generation_prompt": "Generate the surface EMG section. Use {patient_title} {patient_last_name}.\n\nStructure:\n1. Introduction: 'Surface electromyography (sEMG) was performed bilaterally on the muscles of mastication.'\n2. For each muscle, report readings in three states:\n   - Rest position: [microvolts]\n   - Maximum voluntary contraction: [microvolts]\n   - Peak activity: [microvolts]\n3. Muscles tested: Right Temporalis, Left Temporalis, Right Masseter, Left Masseter\n4. Bilateral symmetry assessment: compare right vs left\n5. Clinical interpretation: elevated rest values suggest hypertonicity/bruxism\n\nInclude specific microvolt values when available. Note asymmetries between sides.",
       "few_shot_examples": [
         {
           "input_fields": {
@@ -1001,7 +1077,7 @@
     {
       "section_id": "diagnostic_bite_force_testing",
       "title": "Diagnostic Bite Force Testing",
-      "ordering": 23,
+      "ordering": 24,
       "page_break_before": false,
       "is_required": true,
       "content_type": "narrative",
@@ -1012,7 +1088,7 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate bite force testing narrative explaining the procedure using gnathodynamometer, comparing actual measurements to normal values (400+ Newtons), and describing functional implications of reduced bite force in relation to trigeminal nerve function.",
+      "generation_prompt": "Generate the DIAGNOSTIC BITE FORCE TESTING section.\n\nPurpose: To objectively measure and document the patient's maximum bite force using gnathodynamometer testing, correlate findings with patient complaints about eating difficulties, and demonstrate bilateral muscle weakness patterns that support the diagnosis of orofacial pain conditions.\n\nWriting pattern: Follows a rigid 4-paragraph structure: (1) Standardized educational paragraph about muscles of mastication, gnathodynamometer testing, and trigeminal nerve anatomy/function; (2) Patient-specific results comparing their maximum bite force to normal values (400 Newtons) and linking to eating complaints; (3) Bilateral comparison showing asymmetric bite force measurements; (4) Scientific citation followed by transition to next diagnostic test. Each paragraph uses formal medical language with extensive repetition of key terms like \"objectively\" and \"muscles of mastication.\"\n\nData points to use:\n- patient name and gender/title (REQUIRED): inserted into template sentences (Mr./Ms. [Last Name])\n- patient complaint about eating hard/chewy foods (REQUIRED): referenced as confirmation of objective findings\n- maximum bite force measurement (total) (REQUIRED): stated in Newtons as primary finding\n- right side bite force measurement (REQUIRED): specific Newton value for bilateral comparison\n- left side bite force measurement (REQUIRED): specific Newton value for bilateral comparison\n\nStatic phrases that MUST appear verbatim:\n- \"The muscles of mastication were tested for their functional capacity measuring the maximum bite force and strength of these facial muscles.\"\n- \"The measurements were objectively determined with the use of a gnathodynamometer.\"\n- \"The muscles of mastication are innervated by the fifth cranial nerve, the Trigeminal Nerve.\"\n- \"The motor function of the Trigeminal Nerve controls the bite force of the muscles of mastication.\"\n- \"when the normal amount of Newton forces to eat hard and chewy foods should exceed 400 Newtons. (400 Newtons = 90 Pounds Force)\"\n- \"The objective measurements also confirm that\"\n- \"has a weaker force of his bite on one side\"\n- \"\"Gnathodynamometer--a reliable device for assessing jaw bite force.\" Shushma, G., Kantly, R. Journal of Evolution of Medical and Dental Sciences, vol. 5, no. 102, 22 Dec. 2016, pp. 7488+\"\n\nVariation notes: The only variations are: (1) Patient names/gender titles, (2) The three specific bite force measurements in Newtons (total, right side, left side), and (3) Minor pronoun inconsistencies (some patients get \"his bite\" regardless of gender). All other content is identical across patients, including the scientific citation and transition to temperature gradient studies.\n\nValidation feedback: Update generation_prompt to include actual measurements: 'Right bite force: [X] Newtons, Left bite force: [Y] Newtons. Normal values exceed 400 Newtons. Results indicate [normal/reduced] masticatory function.' Add clinical significance interpretation.\n\nUse {patient_title} {patient_last_name} for the patient. Use he/she, his/her based on gender.",
       "few_shot_examples": [
         {
           "input_fields": {
@@ -1022,7 +1098,7 @@
           "output_text": "The muscles of mastication were tested for their functional capacity measuring the maximum bite force and strength of these facial muscles. The measurements were objectively determined with the use of a gnathodynamometer. These measurements objectively determine the maximum bite force of the muscles of mastication used in chewing, comparing one side to the other. The muscles of mastication are innervated by the trigeminal nerve."
         }
       ],
-      "max_tokens": 500,
+      "max_tokens": 800,
       "list_field_id": null,
       "list_bullet_style": "bullet",
       "table_columns": [],
@@ -1036,7 +1112,7 @@
     {
       "section_id": "diagnostic_autonomic_nervous_system_testing",
       "title": "Diagnostic Autonomic Nervous System Testing",
-      "ordering": 24,
+      "ordering": 25,
       "page_break_before": false,
       "is_required": true,
       "content_type": "narrative",
@@ -1050,7 +1126,7 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate autonomic testing narrative describing pulse oximetry during Mueller Maneuver. Include heart rate changes and whether results are within normal limits. Add alpha-amylase enzyme analysis section with KIU/L measurements.",
+      "generation_prompt": "Generate the DIAGNOSTIC AUTONOMIC NERVOUS SYSTEM TESTING section.\n\nPurpose: This section documents the results of two specific diagnostic tests: autonomic nervous system testing using pulse oximetry during Mueller Maneuver, and α-amylase enzyme analysis via spectrophotometry to measure stress-related biomarkers.\n\nWriting pattern: The section follows a rigid two-part structure: First paragraph reports autonomic testing results in a single sentence with standardized phrasing. Second paragraph (under α-AMYLASE subheading) follows identical format - test description, methodology, measured result, and normal reference range. Each test result is presented with technical precision using consistent sentence templates.\n\nData points to use:\n- autonomic nervous system test results (REQUIRED): either stated as 'results within normal limits' or specific heart rate changes\n- baseline heart rate during Mueller Maneuver (optional): stated as specific beats per minute when abnormal results found\n- heart rate change during Mueller Maneuver (optional): stated as specific beats per minute change when abnormal results found\n- α-amylase enzyme concentration (REQUIRED): stated as precise numerical value in KIU/Liter\n- normal α-amylase reference range (REQUIRED): consistently stated as 'less than 45 KIU/Liter'\n\nStatic phrases that MUST appear verbatim:\n- \"Diagnostic Autonomic Nervous System Testing, consisting of Pulse Oximetry during the patient's performance of the Mueller Maneuver, revealed\"\n- \"DIAGNOSTIC α-AMYLASE ENZYME ANALYSIS\"\n- \"Diagnostic α-Amylase Analysis, consisting of laboratory spectrophotometric analysis of the amount of α-amylase enzyme present, was performed, and an α-amylase enzyme concentration of\"\n- \"KIU / Liter was objectively measured\"\n- \"The spectrophotometric testing is calibrated where normal concentrations of α-amylase enzyme should be less than 45 KIU / Liter\"\n\nVariation notes: The main variation is in autonomic testing results - most patients show 'results within normal limits' but one patient (Benton) shows specific abnormal heart rate changes with precise before/after measurements. The α-amylase values vary numerically (106-168 KIU/Liter) but all follow identical reporting format. All measured values exceed the normal threshold, suggesting this test consistently identifies stress/dysfunction in this patient population.\n\nValidation feedback: Update generation_prompt to include specific measurements: 'Heart rate changed from [before] to [after] BPM during Mueller Maneuver. α-amylase concentration: [X] KIU/L [normal range 13-71 KIU/L]. Results suggest [interpretation].'\n\nUse {patient_title} {patient_last_name} for the patient. Use he/she, his/her based on gender.",
       "few_shot_examples": [
         {
           "input_fields": {
@@ -1061,7 +1137,7 @@
           "output_text": "Diagnostic Autonomic Nervous System Testing, consisting of Pulse Oximetry during the patient's performance of the Mueller Maneuver, revealed results within normal limits.\nDIAGNOSTIC α-AMYLASE ENZYME ANALYSIS\nDiagnostic α-Amylase Analysis, consisting of laboratory spectrophotometric analysis of the amount of α-amylase enzyme present, was performed, and an α-amylase enzyme concentration of 114 KIU"
         }
       ],
-      "max_tokens": 500,
+      "max_tokens": 800,
       "list_field_id": null,
       "list_bullet_style": "bullet",
       "table_columns": [],
@@ -1075,7 +1151,7 @@
     {
       "section_id": "diagnostic_salivary_flow_and_buffering_tests",
       "title": "Diagnostic Salivary Flow and Buffering Tests",
-      "ordering": 25,
+      "ordering": 26,
       "page_break_before": false,
       "is_required": true,
       "content_type": "narrative",
@@ -1088,7 +1164,7 @@
       ],
       "template": null,
       "format_pattern": null,
-      "generation_prompt": "Generate salivary testing narrative describing observable dry mouth, lip condition, saliva quality (viscous, cloudy, ropey), and tongue depressor adherence test results. Reference ADA standard of care test.",
+      "generation_prompt": "Generate the DIAGNOSTIC SALIVARY FLOW AND BUFFERING TESTS section.\n\nPurpose: Documents objective clinical findings related to salivary dysfunction, providing standardized test results that support diagnosis of xerostomia (dry mouth) with visual observations and the ADA-recommended tongue blade adhesion test.\n\nWriting pattern: Follows a rigid 4-part structure: (1) Header \"Diagnostic salivary flow and buffering tests revealed:\" (2) Bulleted visual observations of mouth/lip dryness and saliva characteristics (3) Lengthy paragraph describing the ADA standard test, personalizing it with patient's name and results (4) Verbatim ADA journal quote as authoritative support. The section is highly formulaic with minimal variation in sentence structure or phrasing.\n\nData points to use:\n- patient name and gender (REQUIRED): inserted into standardized sentence about tongue depressor test results\n- visual mouth examination findings (REQUIRED): listed as bulleted observations (dry mouth, dry lips, cracked lips)\n- saliva quality assessment (REQUIRED): described with specific adjectives (viscous, cloudy, ropey)\n- tongue blade adhesion test results (REQUIRED): stated as positive finding woven into explanatory paragraph\n\nStatic phrases that MUST appear verbatim:\n- \"Diagnostic salivary flow and buffering tests revealed:\"\n- \"Observable dry mouth, dry lips\"\n- \"The standard of care objective test advocated by the American Dental Association to prove whether definite qualitative changes of the saliva are present or not was performed (and the results photographed)\"\n- \"A tongue depressor adheres to the inside of [Patient's] cheeks, which conclusively document with certainty that [Patient] does indeed have qualitative changes in her/his saliva, which has resulted in the increased surface tension of the salivary liquid\"\n- \"In addition to conducting visual inspection, the dentist can use a tongue blade to assess tissue dryness...\"\n\nVariation notes: Main variations are: (1) presence/absence of \"cracked lips\" finding (2) saliva descriptors - some patients have just \"viscous\" while others have \"cloudy, ropey, and viscous\" (3) minor differences in ADA journal citation month (July vs August 2003). Patient names are personalized but the sentence structure remains identical.\n\nValidation feedback: Add fields: stimulated_flow_rate, unstimulated_flow_rate, buffer_capacity_ph. Update generation_prompt to include quantitative measurements and clinical significance of dry mouth findings with ADA standards reference.\n\nUse {patient_title} {patient_last_name} for the patient. Use he/she, his/her based on gender.",
       "few_shot_examples": [
         {
           "input_fields": {
@@ -1099,7 +1175,7 @@
           "output_text": "Diagnostic salivary flow and buffering tests revealed:\nObservable dry mouth, dry lips, cracked lips\nViscous saliva\nThe standard of care objective test advocated by the American Dental Association to prove whether definite qualitative changes of the saliva are present or not was performed (and the results photographed). A tongue depressor adheres to the inside of the patient's cheeks, which conclusively"
         }
       ],
-      "max_tokens": 500,
+      "max_tokens": 800,
       "list_field_id": null,
       "list_bullet_style": "bullet",
       "table_columns": [],
@@ -1113,7 +1189,7 @@
     {
       "section_id": "diagnostic_direct_fluorescence_visulization_dfv",
       "title": "Diagnostic Direct Fluorescence Visualization (DFV)",
-      "ordering": 26,
+      "ordering": 27,
       "page_break_before": false,
       "is_required": false,
       "content_type": "static_text",
@@ -1142,9 +1218,126 @@
       "notes": null
     },
     {
+      "section_id": "radiographic_results",
+      "title": "Radiographic Results",
+      "ordering": 28,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the radiographic results section. This is typically a short 1-2 sentence section.\n\nDefault (most common): 'To be determined when {patient_title} {patient_last_name} returns to our Hawthorne, Reseda, and/or Anaheim offices for x-rays or presents us with x-rays taken at another dental office.'\n\nIf X-ray findings are available, describe them: 'X-rays taken at [location], on [date], revealed [findings such as bone loss, missing teeth, etc.]'\n\nUse Mr./Ms. based on gender.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "{patient_name}",
+            "p1_gender": "MALE"
+          },
+          "output_text": "To be determined when Mr. {patient_last_name} returns to our Hawthorne, Reseda, and/or Anaheim offices for x-rays or presents us with x-rays taken at another dental office."
+        },
+        {
+          "input_fields": {
+            "patient_name": "{patient_name}",
+            "p1_gender": "FEMALE"
+          },
+          "output_text": "X-rays taken at another dental office, unidentified, on 7/16/25, revealed severe bone loss around the teeth"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Usually pending. When available, describes panoramic X-ray findings."
+    },
+    {
+      "section_id": "diagnostic_photographs",
+      "title": "Diagnostic Photographs",
+      "ordering": 29,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender",
+        "Lateral Border of the Tongue Scalloping",
+        "Buccal_Mucosal_Ridging",
+        "Occlusal_Wear",
+        "Adherence_of_Tongue_Depressor_on_inside_of_cheek",
+        "Inflamed_Gingiva",
+        "Gingival_Bleeding"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the diagnostic photographs findings section. This describes clinical findings documented in intraoral/extraoral photographs. Structure as a single flowing paragraph.\n\nCommon findings to include (if present in data):\n- 'Diagnostic photographs document scalloping on the lateral borders of the tongue.'\n- 'The photographs document bite mark lines on the inside of the cheeks.'\n- 'The photographs document wear on the surfaces of the teeth.' (or 'anterior teeth')\n- 'The photographs document the Xerostomia / Anti-Cholinergic side effect where, due to qualitative changes of the saliva, a tongue depressor sticks to the inside of the cheek - even when not held by hand.'\n- Gum findings: 'receding gum tissues', 'swelling gum tissues', 'swollen and bleeding gum tissues'\n- Always end with: 'objectively-disclosed bacterial biofilm deposits on {patient_title} {patient_last_name}\\'s teeth and around {his_her} gum tissues.'\n\nUse Mr./Ms. and his/her based on gender.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "{patient_name}",
+            "p1_gender": "MALE"
+          },
+          "output_text": "Diagnostic photographs document scalloping on the lateral borders of the tongue. The photographs document bite mark lines on the inside of the cheeks. The photographs document wear on the surfaces of the teeth. The photographs document the Xerostomia / Anti-Cholinergic side effect where, due to qualitative changes of the saliva, a tongue depressor sticks to the inside of the cheek - even when not held by hand. The photographs document receding gum tissues as well as objectively-disclosed bacterial biofilm deposits on Mr. {patient_last_name}'s teeth and around his gum tissues."
+        }
+      ],
+      "max_tokens": 800,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Semi-templated. Core phrases are consistent; specific findings vary per patient."
+    },
+    {
+      "section_id": "review_of_records",
+      "title": "Review of Records",
+      "ordering": 30,
+      "page_break_before": false,
+      "is_required": false,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the review of records section. Only include this section when prior medical records have been provided for review.\n\nAlways begin with the static disclaimer: 'Of the medical records provided for review, only the material immediately following was sufficiently significant to be quoted/paraphrased. The remainder of the material reviewed was either irrelevant to the decisions required today, or was redundant to the information presented in this section.'\n\nThen summarize the key records reviewed, including:\n- Source of records (doctor name, facility)\n- Date of records\n- Key findings, diagnoses, and complaints\n- Treatment recommendations from reviewed records\n\nUse {patient_title} {patient_last_name} for patient references.",
+      "few_shot_examples": [],
+      "max_tokens": 800,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [
+        {
+          "field_id": "review_of_records_available",
+          "operator": "exists",
+          "value": null,
+          "combine": "and"
+        }
+      ],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Conditional section, only present in 7/32 reports."
+    },
+    {
       "section_id": "diagnosis_of_industrial_related_conditions",
       "title": "Diagnosis of Industrial Related Conditions",
-      "ordering": 27,
+      "ordering": 31,
       "page_break_before": false,
       "is_required": true,
       "content_type": "formatted_fill",
@@ -1172,6 +1365,245 @@
       "title_formatting": null,
       "content_formatting": null,
       "notes": null
+    },
+    {
+      "section_id": "discussion",
+      "title": "Discussion",
+      "ordering": 32,
+      "page_break_before": true,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender",
+        "Diagnostic_Bite_Force_Analysis_Left",
+        "Diagnostic_Bite_Force_Analysis_Right",
+        "tenderness_masseter_left",
+        "tenderness_masseter_right",
+        "tenderness_temporalis_left",
+        "tenderness_temporalis_right",
+        "Salivary_Flow_Stimulated",
+        "Salivary_Flow_Unstimulated",
+        "Amylase_Test",
+        "Blood_Pressure"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the Discussion section -- the longest and most complex section of the report. This is a detailed medical-legal analysis connecting the patient's industrial exposure to their dental conditions.\n\nWriting pattern: The section follows a highly structured, repetitive pattern with multiple diagnostic blocks. Each condition is addressed in a standard sequence: 1) Objective findings statement, 2) Acknowledgment of potential pre-existing conditions, 3) Industrial causation argument with \"reasonable medical probability\" language, 4) Extensive literature citations (identical quotes repeated across patients), 5) Patient-specific factors (medications, injuries), 6) Concluding causation statement. The writing is heavily citation-dependent with verbatim scientific quotes and standardized legal language throughout.\n\n\nData points to incorporate:\n- Physical examination findings of bruxism (REQUIRED): Detailed objective findings listed (tongue scalloping, cheek bite marks, tooth wear, muscle palpation)\n- Industrial injury/exposure history (REQUIRED): Referenced as causative factor throughout causal arguments\n- Current medications (REQUIRED): Listed specifically with FDA data citations for bruxism side effects\n- Patient's orthopedic pain complaints (REQUIRED): Connected to stress and bruxism aggravation in causal chain\n- Facial muscle examination findings (REQUIRED): Described as tender with palpable taut bands, linked to myalgia diagnosis\n- TMJ examination findings (optional): Crepitus sounds described and linked to joint degeneration diagnosis\n- sEMG test results (REQUIRED): Cited as showing elevated muscular activity and dysfunction\n- Ultrasonic Doppler Analysis results (optional): Used to confirm TMJ crepitus findings when TMJ involvement present\n- Periodontal examination findings (REQUIRED): Specific findings (swelling, recession) described as inflammation evidence\n- Upper extremity injury details (optional): Listed specifically to explain compromised oral hygiene ability\n- Saliva examination findings (REQUIRED): Tongue depressor test described as evidence of qualitative changes\n- Patient's stress reports (REQUIRED): Quoted directly in causal arguments linking pain to increased stress\n- Halitosis complaints (optional): Patient complaint stated directly when present\n- Patient's self-reported clenching behaviors (optional): Quoted as patient reporting clenching in response to pain/stress\n- Pre-existing risk factors (optional): Acknowledged in 'even if' statements (smoking, gastric reflux, dental neglect)\n\nStatic phrases that should appear verbatim:\n- \"Upon examination, I found [Patient] presents with objective clinical findings of bruxism\"\n- \"may not have been aware that [he/she] had prior episodes of bruxism\"\n- \"However, it is with reasonable medical probability that the industrial exposure\"\n- \"would have aggravated any preexisting bruxism by at least 1%\"\n- \"The scientific literature has documented\"\n- \"Phase IV clinical studies of the FDA data have documented\"\n- \"Therefore, it is with reasonable medical probability\"\n- \"Even if [Patient] had prior inflammation of the gums\"\n- \"there are numerous industrial related factors that, with reasonable medical probability, would be contributing to, aggravating, accelerating and/or lighting up\"\n- \"Evaluation of [Patient]'s saliva reveals objective evidence of qualitative changes\"\n- \"Halitosis is a perceived oral malodor whose intensity is beyond a socially acceptable level\"\n\nThe discussion typically follows this structure:\n1. Opening: Objective clinical findings of bruxism (scalloping, bite marks, wear)\n2. Muscle examination findings (painful palpation, taut bands)\n3. Diagnostic test results (Doppler, sEMG, bite force, ANS testing, salivary flow)\n4. Medical literature citations linking industrial stress to bruxism\n5. Causation analysis connecting orthopedic pain -> emotional stress -> bruxism -> dental damage\n6. Medication side effects (xerostomia from industrial medications)\n7. Summary of industrial causation opinion\n\nUse formal medical-legal language. Reference specific test values from the data. Use {patient_title} {patient_last_name} throughout.",
+      "few_shot_examples": [],
+      "max_tokens": 3000,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Longest section (~6600 chars avg). Requires diagnostic test data and clinical findings."
+    },
+    {
+      "section_id": "differential_diagnosis",
+      "title": "Differential Diagnosis",
+      "ordering": 33,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the differential diagnosis statement. This is a short, nearly static section. Structure:\nParagraph 1: 'An examining doctor\\'s opinion for causation must be based on a reliable differential diagnosis formed after taking a history, physical examination, diagnostic tests and, if available, a review of prior medical records. I have considered this for {patient_title} {patient_last_name}.'\nParagraph 2: 'The reader must remember: Treatment is not apportioned!'\n\nUse Mr./Ms. based on gender. This section is identical across all patients except for the name.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "{patient_name}",
+            "p1_gender": "MALE"
+          },
+          "output_text": "An examining doctor's opinion for causation must be based on a reliable differential diagnosis formed after taking a history, physical examination, diagnostic tests and, if available, a review of prior medical records. I have considered this for Mr. {patient_last_name}.\nThe reader must remember: Treatment is not apportioned!"
+        }
+      ],
+      "max_tokens": 500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Nearly 100% static across all 32 reports. Only the patient name varies."
+    },
+    {
+      "section_id": "temporal_connection_between_industrial_exposure_and",
+      "title": "Temporal Connection Between Industrial Exposure and Dental Conditions",
+      "ordering": 34,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the temporal connection section. This follows a structured 3-paragraph template:\n\nParagraph 1: 'In my discussion section above, I discussed how, with reasonable medical probability, the industrial exposure and its resultant orthopedic pain and emotional stressors, have developed consequential and derivative injuries for {patient_title} {patient_last_name} in the area of Dentistry.'\n\nParagraph 2: 'As explained above, even if the medical records reveal {patient_title} {patient_last_name} had these dental problems prior to the industrial exposure, it is with reasonable medical probability that {his_her} dental problems were contributed to and aggravated on an industrial basis by at least 1% in response to {his_her} industrial pain, any resultant stress, and the side effect of medication taken on an industrial related basis.'\n\nParagraph 3: 'While I understand that one of the arguments a person may bring up is latency of when these dental problems started to occur, one has to understand that latency is individual and depends on the intensity of exposure and predilection of the individual.'\n\nUse Mr./Ms. and he/she/his/her based on gender. If specific medications are known from the patient's history, mention them by name in paragraph 2 (e.g., 'side effect of the Norco medication').",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "{patient_name}",
+            "p1_gender": "MALE"
+          },
+          "output_text": "In my discussion section above, I discussed how, with reasonable medical probability, the industrial exposure and its resultant orthopedic pain and emotional stressors, have developed consequential and derivative injuries for Mr. {patient_last_name} in the area of Dentistry.\nAs explained above, even if the medical records reveal Mr. {patient_last_name} had these dental problems prior to the industrial exposure, it is with reasonable medical probability that his dental problems were contributed to and aggravated on an industrial basis by at least 1% in response to his industrial pain, any resultant stress, and the side effect of medication taken on an industrial related basis.\nWhile I understand that one of the arguments a person may bring up is latency of when these dental problems started to occur, one has to understand that latency is individual and depends on the intensity of exposure and predilection of the individual."
+        }
+      ],
+      "max_tokens": 1000,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Highly templated. Varies by name, pronouns, and optional medication names."
+    },
+    {
+      "section_id": "conclusion",
+      "title": "Conclusion",
+      "ordering": 35,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the conclusion section. This follows a structured 2-paragraph template:\n\nParagraph 1: 'Based on the methodology used by dental physicians in the field of Dentistry, I have: 1) Shown data to support generic causation; 2) Ruled out other well-accepted risk factors in the patient; and 3) Shown a clear temporal relationship between the industrial exposure and trauma, resultant emotional stressors, [optional: side effect(s) of the {medication_names} medication taken on an industrial basis,] and the diagnoses presented regarding {patient_title} {patient_last_name}.'\n\nParagraph 2: 'Based on the available data, the history provided to me by {patient_title} {patient_last_name}, my objective findings, the scientific literature, and my expertise in the field, it is my opinion that, with reasonable medical probability, {patient_title} {patient_last_name}\\'s presenting complaints and clinical symptoms in my area of expertise were caused or aggravated on an industrial basis.'\n\nIf medications are documented in the patient's history, list them specifically in paragraph 1. If no medications, omit that clause. Use Mr./Ms. based on gender.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "{patient_name}",
+            "p1_gender": "MALE"
+          },
+          "output_text": "Based on the methodology used by dental physicians in the field of Dentistry, I have: 1) Shown data to support generic causation; 2) Ruled out other well-accepted risk factors in the patient; and 3) Shown a clear temporal relationship between the industrial exposure and trauma, resultant emotional stressors, and the diagnoses presented regarding Mr. {patient_last_name}.\nBased on the available data, the history provided to me by Mr. {patient_last_name}, my objective findings, the scientific literature, and my expertise in the field, it is my opinion that, with reasonable medical probability, Mr. {patient_last_name}'s presenting complaints and clinical symptoms in my area of expertise were caused or aggravated on an industrial basis."
+        }
+      ],
+      "max_tokens": 1000,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Templated. Key variation: medication names in paragraph 1."
+    },
+    {
+      "section_id": "credibility",
+      "title": "Credibility",
+      "ordering": 36,
+      "page_break_before": false,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the patient credibility assessment. This section follows a strict template:\n\n'I observed {patient_title} {patient_last_name} during the course of this evaluation. A comfortable doctor-patient relationship was established which enabled {patient_title} {patient_last_name} to candidly confide the difficulties {he_she} experienced as a result of {his_her} industrial injuries. I found {patient_title} {patient_last_name} to be a candid and sincere individual. I believe {patient_title} {patient_last_name} has done {his_her} best to provide an accurate account of {his_her} conditions. {patient_title} {patient_last_name}\\'s subjective complaints matched {the_my} objective findings in my evaluation of {him_her}. In summation, I find no basis for questioning {patient_title} {patient_last_name}\\'s credibility. It is evident {he_she} has suffered dental related injuries as a result of {his_her} industrial injuries.'\n\nUse Mr./Ms. based on gender. Use he/she, his/her, him/her accordingly. Some reports also include: '{patient_title} {patient_last_name}\\'s history of industrial injury and the symptoms {he_she} developed have been consistent throughout the medical records provided for my review.' -- include this if review_of_records section is present.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "{patient_name}",
+            "p1_gender": "MALE"
+          },
+          "output_text": "I observed Mr. {patient_last_name} during the course of this evaluation. A comfortable doctor-patient relationship was established which enabled Mr. {patient_last_name} to candidly confide the difficulties he experienced as a result of his industrial injuries. I found Mr. {patient_last_name} to be a candid and sincere individual. I believe Mr. {patient_last_name} has done his best to provide an accurate account of his conditions. Mr. {patient_last_name}'s subjective complaints matched my objective findings in my evaluation of him. In summation, I find no basis for questioning Mr. {patient_last_name}'s credibility. It is evident he has suffered dental related injuries as a result of his industrial injuries."
+        }
+      ],
+      "max_tokens": 800,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Highly templated. Only varies by patient name, pronouns, and optional records-review sentence."
+    },
+    {
+      "section_id": "treatment_plan",
+      "title": "Treatment Plan",
+      "ordering": 37,
+      "page_break_before": true,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the Treatment Plan section -- the second longest section of the report. This details recommended treatments with legal citations.\n\nWriting pattern: The section follows a highly structured template with minimal variation. It begins with extensive legal justification (guidelines research, Labor Code citations, and professional literature quotes), followed by patient-specific treatment recommendations organized by category (appliances, dental treatments, referrals, etc.), then administrative sections covering treatment duration, disability status, work restrictions, and concludes with standardized requests to claims adjusters. The writing is formal, legalistic, and heavily documentation-focused.\n\n\nData points to incorporate:\n- Patient name and gender (REQUIRED): Inserted into standardized treatment plan header and throughout restrictions\n- Bruxism/teeth grinding behavior (REQUIRED): Determines need for orthotic appliances and drives appliance descriptions\n- Inflammation of gums diagnosis (REQUIRED): Justifies periodontal treatments and medical monitoring requirements\n- Facial muscle pain/myalgia (REQUIRED): Drives work restrictions and appliance justifications\n- Headache complaints (optional): Used to establish disability status in some cases\n- Emotional stressors (REQUIRED): Justifies psychological examination referral\n- Sleep-related symptoms (optional): Determines need for nocturnal appliance and pulmonologist referral\n- Pre-existing conditions (diabetes, thyroid) (optional): Incorporated into medical monitoring requirements when present\n- TMJ symptoms (REQUIRED): Supports appliance therapy recommendations\n- Neuropathic pain components (optional): May trigger additional neurologist referral when present\n\nStatic phrases that should appear verbatim:\n- \"Please Note: I researched the ACOEM guidelines, the MTUS guidelines, and the ODG guidelines\"\n- \"Section 4604.5(d) of the Labor Code states\"\n- \"The dental specialty of Orofacial Pain has been established by the American Dental Association\"\n- \"Treatment Plan for [Patient Name]\"\n- \"The primary purpose of the Orofacial Pain Occlusal Orthotic Device is to relieve facial muscle, ligament, and nerve impingement\"\n- \"This appliance is fabricated and customized in our in-house dental laboratory\"\n- \"Bacteria and inflammatory processes from inflammation of the gums readily enter the bloodstream\"\n- \"Therefore, [Patient] will require monitoring throughout [his/her] lifetime with treatment as necessary on an industrial basis\"\n- \"Duration of Treatment Frequency of Treatment: 3 months, 1 time per month\"\n- \"Estimated date of completion of treatment: April 15, 2026\"\n- \"[Patient] is Temporarily Partially Disabled\"\n- \"The condition is not Permanent and Stationary\"\n- \"Since [Patient] suffers from Myalgia of the facial musculature, activities should be prophylactically restricted\"\n- \"PLEASE NOTE: Labor Code 5402 (b)(c), requires the employer to authorize all appropriate medical care up to $10,000\"\n- \"I request that the claims adjuster please provide copies of all medical records\"\n\nThe treatment plan typically includes:\n1. Legal citation: 'Please Note: I researched the ACOEM guidelines, the MTUS guidelines, and the ODG guidelines...' followed by Labor Code Section 4604.5(d)\n2. ADA standard of care citation\n3. Specific treatment recommendations:\n   - Orofacial Pain Occlusal Orthotic Device (with CPT codes)\n   - Nocturnal Orthopedic Repositioning Device (if nighttime bruxism present)\n   - Physical medicine modalities / orthotic training\n   - Referrals (ENT, internal medicine, psychological as indicated)\n   - Follow-up schedule\n4. RFA (Request for Authorization) specifics\n\nUse formal medical-legal language. Include CPT codes where applicable.",
+      "few_shot_examples": [],
+      "max_tokens": 2500,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Second longest section (~7500 chars avg). Heavy legal citations and CPT codes."
+    },
+    {
+      "section_id": "disclosure_notice",
+      "title": "Disclosure Notice",
+      "ordering": 38,
+      "page_break_before": true,
+      "is_required": true,
+      "content_type": "narrative",
+      "static_content": null,
+      "source_field_ids": [
+        "p1_patient_name",
+        "p1_gender"
+      ],
+      "template": null,
+      "format_pattern": null,
+      "generation_prompt": "Generate the legal disclosure notice for a workers' compensation dental report. This section has a highly standardized structure:\n\nParagraph 1: 'In accordance with Labor Code Section 4628, I solely performed the interview with {patient_title} {patient_last_name}. I solely performed the physical examination and I solely took the patient's history of injury and medical history. I performed the examination in its entirety at my office. I reviewed the medical records and personally reviewed and signed this report.'\n\nParagraph 2: 'To the best of my knowledge, the evaluation and the time performing it were in accordance with the guidelines of the Industrial Medical Council of Administrative Director to the extent that those guidelines exist.'\n\nParagraph 3: 'I did not bill for any other medical-legal evaluations or diagnostic procedures or diagnostic services performed by independent contractors.'\n\nParagraph 4: The perjury declaration starting with '\"The undersigned declares under penalty of perjury...\"'\n\nThen the doctor signature block with name, credentials, license number, location, and contact info.\n\nUse {patient_title} {patient_last_name} for the patient reference. Use Mr./Ms. based on gender.",
+      "few_shot_examples": [
+        {
+          "input_fields": {
+            "patient_name": "{patient_name}",
+            "p1_gender": "MALE"
+          },
+          "output_text": "In accordance with Labor Code Section 4628, I solely performed the interview with Mr. {patient_last_name}. I solely performed the physical examination and I solely took the patient's history of injury and medical history. I performed the examination in its entirety at my office. I reviewed the medical records and personally reviewed and signed this report.\nTo the best of my knowledge, the evaluation and the time performing it were in accordance with the guidelines of the Industrial Medical Council of Administrative Director to the extent that those guidelines exist.\nI did not bill for any other medical-legal evaluations or diagnostic procedures or diagnostic services performed by independent contractors.\n\"The undersigned declares under penalty of perjury that to the best of my knowledge I am not in violation of L.C. 5703 or L.C. 139.3. I declare under penalty of perjury that the information contained in this report and its attachments, if any, is true and correct to the best of my knowledge and belief, except as to information that I have indicated that I received from others. As to that information, I declare under penalty of perjury that the information accurately describes the information provided to me and, except as noted herein, that I believe it to be true.\""
+        }
+      ],
+      "max_tokens": 800,
+      "list_field_id": null,
+      "list_bullet_style": "bullet",
+      "table_columns": [],
+      "table_row_source_field": null,
+      "conditions": [],
+      "child_sections": [],
+      "title_formatting": null,
+      "content_formatting": null,
+      "notes": "Nearly identical across all 32 reports. Only patient name and doctor name/credentials vary."
     }
   ],
   "global_formatting": {

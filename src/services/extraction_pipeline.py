@@ -409,14 +409,21 @@ FIELD MAPPING RULES:
 1. **field_id**: Use the EXACT field_id from the schema in your output
 
 2. **yes_no fields**: 
-   - Look for circled "YES" or "NO" next to the question
-   - Output: is_checked=true for YES, is_checked=false for NO
-   - If neither is circled, leave as null
+   - Each question has "YES" and "NO" printed on the form. The patient circles or marks ONE word.
+   - A circle, line, or mark can be ANY color (red, pink, blue, black, etc.).
+   - ONLY the word that is clearly INSIDE a circle or has a mark drawn through/around it is the answer.
+   - If a circle is near a word but the word is not inside it, that word is NOT selected.
+   - If a line touches or crosses through a word, that word IS the selected answer.
+   - If neither YES nor NO has any marking at all, the question was left unanswered — leave as null.
+   - Output: is_checked=true for YES, is_checked=false for NO, null if unanswered.
+   - Read the field's extraction_hints for question-specific guidance.
 
 3. **circled_selection fields** (like medications):
-   - ONLY report options that are in the schema's "options" array AND are visibly circled
+   - ONLY report options where the printed word is clearly INSIDE a drawn circle.
+   - CRITICAL: If a circle is drawn around one word and merely TOUCHES or OVERLAPS an adjacent word, the adjacent word is NOT circled — only the word the circle encloses counts.
    - Output: circled_options=["option1", "option2"] with EXACT spelling from schema
    - If an item appears circled but isn't in the options array, DO NOT include it
+   - If there is handwritten text near the printed options, that is a SEPARATE field (e.g. additional medications written by hand) — do not confuse with circled printed text.
    
 4. **date fields**:
    - Use the schema's expected_format (usually MM/DD/YYYY)
@@ -434,7 +441,8 @@ If schema has: "options": ["Zolpidem", "Ultram", "Tylenol", ...]
 And only "Zolpidem" and "Ultram" are circled, output:
 {{"field_id": "p1_current_medications", "circled_options": ["Zolpidem", "Ultram"]}}
 
-Do NOT include medications that aren't circled, even if they're in the schema."""
+Do NOT include medications that aren't circled, even if they're in the schema.
+If the patient wrote additional medications by hand near the list, put those in the appropriate text field (e.g. p1_additional_medications_written), NOT in the circled_options."""
 
 
 STAGE5_PROMPT_TEMPLATE = """Provide semantic interpretation of extracted annotations.

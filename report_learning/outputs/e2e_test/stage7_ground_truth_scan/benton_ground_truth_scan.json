@@ -1,0 +1,3107 @@
+{
+  "report_id": "benton.patricia.011126.INI",
+  "filename": "benton.patricia.011126.INI.doc",
+  "total_sections": 40,
+  "total_elements": 313,
+  "sections": [
+    {
+      "id": "initial_report_in_the_field_of",
+      "heading": "INITIAL REPORT IN THE FIELD OF DENTISTRY",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "and_request_for_authorization",
+      "heading": "AND REQUEST FOR AUTHORIZATION",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0002",
+          "type": "paragraph",
+          "text": "DATE: \t\tJanuary 11, 2026",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0003",
+          "type": "paragraph",
+          "text": "CLAIM: \t\t4A24056BF8C0001",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0004",
+          "type": "paragraph",
+          "text": "WCAB:\t\tAHM",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0005",
+          "type": "paragraph",
+          "text": "Case #:\t\tADJ20040555; ADJ20423816",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0006",
+          "type": "paragraph",
+          "text": "Date of Injury: \tCT 9/11/23 to 9/11/24; 5/7/24",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0007",
+          "type": "paragraph",
+          "text": "Date of current exam: November 19, 2025",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0008",
+          "type": "paragraph",
+          "text": "Patient",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0009",
+          "type": "paragraph",
+          "text": "Last Name: \t\tBenton",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0010",
+          "type": "paragraph",
+          "text": "First Name: \t\tPatricia",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0011",
+          "type": "paragraph",
+          "text": "Sex: \t\t\tF",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0012",
+          "type": "paragraph",
+          "text": "Date of Birth: \tJune 16, 1957",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0013",
+          "type": "paragraph",
+          "text": "SS: \t\t\txxx-xx-0950",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0014",
+          "type": "paragraph",
+          "text": "Occupation: \t\tOR Registered Nurse",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0015",
+          "type": "paragraph",
+          "text": "Address: \t\t8601 Falmouth Ave #303",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0016",
+          "type": "paragraph",
+          "text": "City: \t\t\tPlaya del Rey",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0017",
+          "type": "paragraph",
+          "text": "State: \t\t\tCA",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0018",
+          "type": "paragraph",
+          "text": "Zip: \t\t\t90293",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0019",
+          "type": "paragraph",
+          "text": "Phone No.: \t\t310-279-7418",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0020",
+          "type": "paragraph",
+          "text": "Claims Administrator/Insurer",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0021",
+          "type": "paragraph",
+          "text": "Name: \t\tSedgwick",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0022",
+          "type": "paragraph",
+          "text": "Address: \t\tP.O. Box 14433",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0023",
+          "type": "paragraph",
+          "text": "City: \t\t\tLexington",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0024",
+          "type": "paragraph",
+          "text": "State: \t\t\tKY",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0025",
+          "type": "paragraph",
+          "text": "Zip: \t\t\t40512",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0026",
+          "type": "paragraph",
+          "text": "Phone:\t\t279-900-3191",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0027",
+          "type": "paragraph",
+          "text": "Employer",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0028",
+          "type": "paragraph",
+          "text": "Name: \t\tAdventist Health White",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0029",
+          "type": "paragraph",
+          "text": "Memorial Medical Center",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0030",
+          "type": "paragraph",
+          "text": "Address: \t\t1720 E. Cesar Chavez Ave",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0031",
+          "type": "paragraph",
+          "text": "City: \t\t\tLos Angeles",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0032",
+          "type": "paragraph",
+          "text": "State: \t\t\tCA",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0033",
+          "type": "paragraph",
+          "text": "Zip: \t\t\t90033",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "initial_report_in_the_field_of",
+      "heading": "INITIAL REPORT IN THE FIELD OF DENTISTRY",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "and_request_for_authorization",
+      "heading": "AND REQUEST FOR AUTHORIZATION",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0036",
+          "type": "paragraph",
+          "text": "THIS IS AN EXAMINATION REPORT. THIS REPORT WILL BE INCORPORATED INTO THE PRIMARY TREATING PHYSICIAN’S PERMANENT AND STATIONARY REPORT AND, AS SUCH, WILL BE RELIED UPON AND WILL BE PART OF THE PRIMARY TREATING PHYSICIAN’S MEDICAL-LEGAL OPINION. USE OF THE CONTENTS OF THIS REPORT AND ITS OPINIONS AND CONCLUSIONS ARE FOR PROVING OR DISPROVING A CONTESTED CLAIM.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0037",
+          "type": "paragraph",
+          "text": "This examination is an extensive oral cranial examination in that one hour was spent in evaluating Ms. Benton, ¼ hour was spent reviewing records, one hour was spent in interpretation of the diagnostic findings, and issues of medical causation are discussed.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0038",
+          "type": "paragraph",
+          "text": "I base my conclusions on the history given by the patient, clinical examination of the patient, diagnostic tests, and review of any medical records made available at the time of examination.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0039",
+          "type": "paragraph",
+          "text": "Demand is hereby made for service of all medical reports and records relating to this claim, pursuant to CCR 10635(c), to be sent to my office for review and comment, as necessary. If no medical records or reports are forwarded for my review, then the parties cannot claim that my reporting is not considered substantial medical evidence by virtue of disregarding this demand.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0040",
+          "type": "paragraph",
+          "text": "I hereby reserve the right to change and/or alter any of my opinions, statements, and conclusions stated herein, following the provision of any new medical and/or dental records not provided at the time of this examination.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "job_description",
+      "heading": "JOB DESCRIPTION",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0042",
+          "type": "paragraph",
+          "text": "Ms. Benton states she worked as an OR Nurse for Adventist Health White Memorial Medical Center.  She worked 8 hours per day, 5 days per week.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0043",
+          "type": "paragraph",
+          "text": "Ms. Benton states her job entailed prolonged walking, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 50 lbs, and carrying up to a maximum of 50 lbs.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "current_work_status",
+      "heading": "CURRENT WORK STATUS",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0045",
+          "type": "paragraph",
+          "text": "Ms.  Benton states that she is not working at this time.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "history_of_industrial_injury",
+      "heading": "HISTORY OF INDUSTRIAL INJURY",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0047",
+          "type": "paragraph",
+          "text": "Ms. Benton states that on 5/7/24, and from CT 9/11/23 to 9/11/24, she was involved in industrial injuries in the course of performing her usual and customary job duties.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0048",
+          "type": "paragraph",
+          "text": "Ms. Benton reports that as a result of performing repetitive work activities such as prolonged walking, squatting, twisting, bending forward, side bending, reaching below shoulder level, reaching above shoulder level, pushing, pulling, gripping, grasping, lifting up to a maximum of 50 lbs, and carrying up to a maximum of 50 lbs., she developed the gradual onset of pain in her neck, shoulders, arms, elbows, wrists, hands, fingers, back, hips, legs, knees, ankles and in her feet.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0049",
+          "type": "paragraph",
+          "text": "Ms. Benton further reports that she worked in a stressful work environment, resulting in the development of emotional stressors. Ms. Benton states that due to the industrial related emotional stressors experienced, she developed resultant physical symptoms of sleep disturbances, anxiety, and depression.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0050",
+          "type": "paragraph",
+          "text": "She states in particular that on 5/7/24, she was opening trays of instruments when she felt an increase of pain in her lower back.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0051",
+          "type": "paragraph",
+          "text": "Ms. Benton rates the severity of pain in her neck, shoulders, arms, elbows, wrists, hands, fingers, back, hips, legs, knees, ankles and feet as a 6 out of 10 on a VAS.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0052",
+          "type": "paragraph",
+          "text": "Ms. Benton finds that in response to her industrial related orthopedic pain, she has also developed emotional stressors. Ms. Benton finds she is clenching her teeth and bracing her facial musculature in response to her orthopedic pain, and also in response to the emotional stressors experienced. This has caused her to develop facial pain.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0053",
+          "type": "paragraph",
+          "text": "Ms. Benton is right hand dominant. Ms. Benton reports that due to the industrial exposure, she has pain and weakness in her shoulders, arms, elbows, wrists, hands, and fingers. Ms. Benton reports these orthopedic injuries are compromising and impairing her ability to perform proper and adequate oral hygiene procedures of brushing and flossing of her teeth and gums.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0054",
+          "type": "paragraph",
+          "text": "Ms. Benton is taking the medication of Naproxen, twice daily, Ibuprofen, once daily, Wellbutrin, two pills daily, and Omeprazole, once daily, on an industrial basis.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "treatment_received_for_the_industrial_injury",
+      "heading": "TREATMENT RECEIVED FOR THE INDUSTRIAL INJURY",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0056",
+          "type": "paragraph",
+          "text": "Ms. Benton has received treatments of physical therapy.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0057",
+          "type": "paragraph",
+          "text": "Ms. Benton has received psychological therapy with Dr. Dorsey.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "past_medical_history",
+      "heading": "PAST MEDICAL HISTORY",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0059",
+          "type": "paragraph",
+          "text": "Ms. Benton reports having diabetes and thyroid problems, as well as stomach acids coming up into her mouth.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0060",
+          "type": "paragraph",
+          "text": "She has undergone sleep study testing.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "prior_surgeries",
+      "heading": "PRIOR SURGERIES",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0062",
+          "type": "paragraph",
+          "text": "Ms. Benton underwent a right knee surgery, a cesarean section, a rhinoplasty, and a hysterectomy.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "prior_injuries",
+      "heading": "PRIOR  INJURIES",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0064",
+          "type": "paragraph",
+          "text": "Ms. Benton injured her right knee in 2009, while working at USC/Keck Medical.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0065",
+          "type": "paragraph",
+          "text": "I defer any further comment to the appropriate physician, as said body part is outside my area of expertise.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "subsequent_injuries",
+      "heading": "SUBSEQUENT INJURIES",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0067",
+          "type": "paragraph",
+          "text": "Ms. Benton states she has not been involved in any injuries subsequent to the industrial injury.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "social_history",
+      "heading": "SOCIAL HISTORY",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0069",
+          "type": "paragraph",
+          "text": "Ms. Benton was a smoker for about 20 years, but quit approximately 10 years ago.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "past_dental_history",
+      "heading": "PAST DENTAL HISTORY",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0071",
+          "type": "paragraph",
+          "text": "Ms. Benton states she was last seen by a private dentist approximately 6 months prior to this examination, the name of whom she does not recall at this time.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0072",
+          "type": "paragraph",
+          "text": "She recalls having her teeth cleaned and x-rays taken at her last dental visit.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0073",
+          "type": "paragraph",
+          "text": "A review of prior x-rays and some dental chart notes are reviewed herein.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "subjective_complaints",
+      "heading": "SUBJECTIVE COMPLAINTS",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0075",
+          "type": "paragraph",
+          "text": "Facial Pain",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0076",
+          "type": "paragraph",
+          "text": "Frequent severe facial pain on the right and left sides",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0077",
+          "type": "paragraph",
+          "text": "Facial pain described as aching",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0078",
+          "type": "paragraph",
+          "text": "Facial pain occurring about 75% of the time",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0079",
+          "type": "paragraph",
+          "text": "Facial pain intensity of 8 on a Visual Analog Scale of 0 to 10",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0080",
+          "type": "paragraph",
+          "text": "Facial pain aggravated by eating hard or chewy foods",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0081",
+          "type": "paragraph",
+          "text": "Facial pain aggravated by intense kissing / oral activities",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0082",
+          "type": "paragraph",
+          "text": "Facial pain interfering with ability to sleep",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0083",
+          "type": "paragraph",
+          "text": "Facial pain interfering with ability to participate in social activities",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0084",
+          "type": "paragraph",
+          "text": "Facial pain interfering with relationship with family members / significant other",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0085",
+          "type": "paragraph",
+          "text": "Facial pain interfering with ability to concentrate",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0086",
+          "type": "paragraph",
+          "text": "Facial pain causing irritability/anger",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0087",
+          "type": "paragraph",
+          "text": "Facial pain causing increased anxiety and stress",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0088",
+          "type": "paragraph",
+          "text": "Dental",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0089",
+          "type": "paragraph",
+          "text": "Clenching and grinding her teeth and bracing her facial musculature in response to the industrial related orthopedic pain and resultant emotional stressors",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0090",
+          "type": "paragraph",
+          "text": "Clenching and grinding her teeth during the day and at night during sleep",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0091",
+          "type": "paragraph",
+          "text": "Difficulty in eating hard foods due to facial pain",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0092",
+          "type": "paragraph",
+          "text": "Difficulty in eating chewy foods due to facial pain",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0093",
+          "type": "paragraph",
+          "text": "Restricted to foods of soft or liquid consistency due to facial pain",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0094",
+          "type": "paragraph",
+          "text": "Facial pain upon smiling",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0095",
+          "type": "paragraph",
+          "text": "Facial pain upon yawning",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0096",
+          "type": "paragraph",
+          "text": "Soreness of teeth upon waking in the morning",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0097",
+          "type": "paragraph",
+          "text": "Soreness of face/jaw upon waking in the morning",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0098",
+          "type": "paragraph",
+          "text": "Bite feels off",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0099",
+          "type": "paragraph",
+          "text": "Bleeding of the gums",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "oral_malodor_complaint",
+      "heading": "ORAL MALODOR COMPLAINT",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0101",
+          "type": "paragraph",
+          "text": "Ms. Benton states that since the industrial injuries she has experienced bad breath.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0102",
+          "type": "paragraph",
+          "text": "Ms. Benton rates the intensity of her bad breath as a 6 on a VAS.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0103",
+          "type": "paragraph",
+          "text": "Ms. Benton states that her bad breath is present 60% of the time.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0104",
+          "type": "paragraph",
+          "text": "Ms. Benton rates the amount of her bad breath causing her to be embarrassed as a 10 on a VAS.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0105",
+          "type": "paragraph",
+          "text": "Ms. Benton rates the amount of her bad breath causing her to be stressed as a 10 on a VAS.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0106",
+          "type": "paragraph",
+          "text": "Sleep Disturbances",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0107",
+          "type": "paragraph",
+          "text": "Snoring",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0108",
+          "type": "paragraph",
+          "text": "Gasping for air during sleep",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0109",
+          "type": "paragraph",
+          "text": "Breathing stops during sleep",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "activities_of_daily_living_adl",
+      "heading": "ACTIVITIES OF DAILY LIVING (ADL)*",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0111",
+          "type": "paragraph",
+          "text": "ACTIVITY\t\t\tEXAMPLE\t\t\tDIFFICULTY",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0112",
+          "type": "paragraph",
+          "text": "Self Care Personal Hygiene\tBrushing Teeth\t\tSevere",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0113",
+          "type": "paragraph",
+          "text": "Due to shoulder arm elbow wrist hand finger injury",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0114",
+          "type": "paragraph",
+          "text": "Flossing Teeth\t\t  \tSevere",
+          "bold": true,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0115",
+          "type": "paragraph",
+          "text": "Due to shoulder arm elbow wrist hand finger injury",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0116",
+          "type": "paragraph",
+          "text": "Communication\t\t\tSpeak for Extended\t\tNone",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0117",
+          "type": "paragraph",
+          "text": "periods of time",
+          "bold": true,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0118",
+          "type": "paragraph",
+          "text": "Speaking\t\t\tNone",
+          "bold": true,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0119",
+          "type": "paragraph",
+          "text": "Indistinct Articulation\t\tNone",
+          "bold": true,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0120",
+          "type": "paragraph",
+          "text": "Motor Function\t\t\tMastication\t\t\tSevere",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0121",
+          "type": "paragraph",
+          "text": "Due to pain in facial musculature",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0122",
+          "type": "paragraph",
+          "text": "Tasting\t\t\t\tNone",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0123",
+          "type": "paragraph",
+          "text": "Swallowing\t\t\tNone",
+          "bold": true,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0124",
+          "type": "paragraph",
+          "text": "Bruxism\t\t\tSevere",
+          "bold": true,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0125",
+          "type": "paragraph",
+          "text": "In response to pain",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0126",
+          "type": "paragraph",
+          "text": "In response to stress",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0127",
+          "type": "paragraph",
+          "text": "May be due to side effect of antidepressant medications taken on an industrial basis",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0128",
+          "type": "paragraph",
+          "text": "Sexual Function\t\t\tKissing, Oral Activities\tSevere",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0129",
+          "type": "paragraph",
+          "text": "Due to pain in facial musculature",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0130",
+          "type": "paragraph",
+          "text": "Due to halitosis",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0131",
+          "type": "paragraph",
+          "text": "*Adapted with changes from the American Medical Association Fifth Edition, 2004",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "clinical_examination_of_the_muscular_system",
+      "heading": "CLINICAL EXAMINATION OF THE MUSCULAR SYSTEM",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0133",
+          "type": "paragraph",
+          "text": "Subjective pain was elicited and objective palpable taut bands were found upon palpation of the:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0134",
+          "type": "paragraph",
+          "text": "Right masseter muscle",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0135",
+          "type": "paragraph",
+          "text": "Left masseter muscle",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0136",
+          "type": "paragraph",
+          "text": "Ms. Benton informed us that when we objectively palpated the taut band in her masseter muscles on the right and left sides, this reproduced her facial pain complaint.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "mandibular_range_of_motion",
+      "heading": "MANDIBULAR RANGE OF MOTION",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0138",
+          "type": "paragraph",
+          "text": "Please Note: According to the State of California Disability Standards, the minimal normal range of motion of opening of the mouth is an interincisal opening of 38.1 mm.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0139",
+          "type": "paragraph",
+          "text": "Upon examination, Ms. Benton was objectively found to exhibit:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0140",
+          "type": "paragraph",
+          "text": "Maximum interincisal opening of 43 mm with pain",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0141",
+          "type": "paragraph",
+          "text": "Maximum right lateral excursion of 12 mm with pain",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0142",
+          "type": "paragraph",
+          "text": "Maximum left lateral excursion of 12 mm with pain",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0143",
+          "type": "paragraph",
+          "text": "Maximum protrusion of 2 mm without pain",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "intraoral_examination",
+      "heading": "INTRA-ORAL EXAMINATION",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0145",
+          "type": "paragraph",
+          "text": "Upon examination, I determined Ms. Benton exhibits:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0146",
+          "type": "paragraph",
+          "text": "At maximum intercuspation:\tClass I occlusion",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0147",
+          "type": "paragraph",
+          "text": "Overbite:    1 mm",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0148",
+          "type": "paragraph",
+          "text": "Overjet:      1 mm",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0149",
+          "type": "paragraph",
+          "text": "Unstable bite",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0150",
+          "type": "paragraph",
+          "text": "Missing Teeth #1, 2, 3, 13-20, 24, 30, 31, and 32",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0151",
+          "type": "paragraph",
+          "text": "Mobile tooth #25",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0152",
+          "type": "paragraph",
+          "text": "Swelling of the gum tissues",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0153",
+          "type": "paragraph",
+          "text": "Objectively-disclosed bacterial biofilm deposits on her teeth and around her gum tissues",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "objective_clinical_findings_confirming_bruxism_clenching",
+      "heading": "OBJECTIVE CLINICAL FINDINGS CONFIRMING BRUXISM / CLENCHING AND BRACING OF THE FACIAL MUSCULATURE",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0155",
+          "type": "paragraph",
+          "text": "Teeth indentations/Scalloping of the right and left lateral borders of the tongue",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0156",
+          "type": "paragraph",
+          "text": "Wear on the surfaces of the anterior teeth",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_testing",
+      "heading": "DIAGNOSTIC TESTING",
+      "heading_level": 2,
+      "elements": []
+    },
+    {
+      "id": "ultrasonic_doppler_auscultation_analysis",
+      "heading": "ULTRASONIC DOPPLER AUSCULTATION ANALYSIS",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0159",
+          "type": "paragraph",
+          "text": "The recorded objective data verified and confirmed:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0160",
+          "type": "paragraph",
+          "text": "No Internal Derangements / dislocations of the discs and crepitus sounds were ultrasonically auscultated in the right and left Temporomandibular Joints upon translational and lateral movements of the mandible",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "surface_electromyography",
+      "heading": "SURFACE ELECTROMYOGRAPHY",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0162",
+          "type": "paragraph",
+          "text": "sEMG studies were performed on the masseter, anterior temporalis, sternocleidomastoid, and trapezius muscles and confirmed:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0163",
+          "type": "paragraph",
+          "text": "Elevated muscular activity; with incoordination and aberrant function of the facial musculature was confirmed",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_bite_force_testing",
+      "heading": "DIAGNOSTIC BITE FORCE TESTING",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0165",
+          "type": "paragraph",
+          "text": "The muscles of mastication were tested for their functional capacity measuring the maximum bite force and strength of these facial muscles. The measurements were objectively determined with the use of a gnathodynamometer. These measurements objectively determine the maximum bite force of the muscles of mastication used in chewing, comparing one side to the other. The muscles of mastication are innervated by the fifth cranial nerve, the Trigeminal Nerve. The Trigeminal Nerve has a motor function and a sensory function. The motor function of the Trigeminal Nerve controls the bite force of the muscles of mastication. The measurements obtained using a gnathodynamometer objectively demonstrate any unequal biting forces of the muscles bilaterally, and also correlate and confirm the applicant’s complaint of not being able to eat hard and chewy foods by objectively quantifying the amount of the applicant’s bite force.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0166",
+          "type": "paragraph",
+          "text": "The objective measurements confirm Ms. Benton’s complaint of not being able to eat hard and chewy foods because Ms. Benton could only apply the maximum bite force of 80 Newtons upon biting, when the normal amount of Newton forces to eat hard and chewy foods should exceed 400 Newtons. (400 Newtons = 90 Pounds Force)",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0167",
+          "type": "paragraph",
+          "text": "The objective measurements also confirm that Ms. Benton has a weaker force of his bite on one side of her muscles of mastication as compared to the other side. The closing force of her right side measured at 80 Newtons, while closing force of the left side of her closing muscles of mastication was 23 Newtons.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0168",
+          "type": "paragraph",
+          "text": "\"Gnathodynamometer--a reliable device for assessing jaw bite force.\"     Shushma, G., Kantly, R. Journal of Evolution of Medical and Dental Sciences, vol. 5, no. 102, 22 Dec. 2016, pp. 7488+",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0169",
+          "type": "paragraph",
+          "text": "Diagnostic Temperature Gradient Studies",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0170",
+          "type": "paragraph",
+          "text": "Temperature Gradient Studies performed for Ms. Benton reveal abnormal temperature readings comparing one side of the facial musculature to the other side.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_autonomic_nervous_system_testing",
+      "heading": "DIAGNOSTIC AUTONOMIC NERVOUS SYSTEM TESTING",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0172",
+          "type": "paragraph",
+          "text": "Diagnostic Autonomic Nervous System Testing, consisting of Pulse Oximetry during the patient’s performance of the Mueller Maneuver, revealed Ms. Benton’s heart rate instantly and dramatically decreased from 88 beats per minute to 83 beats per minute.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0173",
+          "type": "paragraph",
+          "text": "DIAGNOSTIC α-AMYLASE ENZYME ANALYSIS",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0174",
+          "type": "paragraph",
+          "text": "Diagnostic α-Amylase Analysis, consisting of laboratory spectrophotometric analysis of the amount of α-amylase enzyme present, was performed, and an α-amylase enzyme concentration of 106 KIU / Liter was objectively measured. The spectrophotometric testing is calibrated where normal concentrations of α-amylase enzyme should be less than 45 KIU / Liter.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_salivary_flow_and_buffering_tests",
+      "heading": "DIAGNOSTIC SALIVARY FLOW AND BUFFERING TESTS",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0176",
+          "type": "paragraph",
+          "text": "Diagnostic salivary flow and buffering tests revealed:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0177",
+          "type": "paragraph",
+          "text": "Observable dry mouth, dry lips",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0178",
+          "type": "paragraph",
+          "text": "Cloudy, ropey, and viscous saliva",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0179",
+          "type": "paragraph",
+          "text": "The standard of care objective test advocated by the American Dental Association to prove whether definite qualitative changes of the saliva are present or not was performed (and the results photographed).  A tongue depressor adheres to the inside of Ms. Benton’s cheeks, which conclusively document with certainty that Ms. Benton does indeed have qualitative changes in her saliva, which has resulted in the increased surface tension of the salivary liquid.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0180",
+          "type": "paragraph",
+          "text": "“In addition to conducting visual inspection, the dentist can use a tongue blade to assess tissue dryness. To do so, he or she places a dry tongue blade against the buccal mucosa; if the tongue blade adheres to the mucosa while the dentist attempts to lift it away, this is an indication of tissue dryness and reduced salivary secretion. (Journal of the American Dental Association, Vol. 134, July 2003, Page 615).",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_direct_fluorescence_visulization_dfv",
+      "heading": "DIAGNOSTIC  DIRECT FLUORESCENCE VISULIZATION (DFV)",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0182",
+          "type": "paragraph",
+          "text": "Stress, as well as the side effect of medications, causes xerostomia which manifests as qualitative changes of the saliva.  Saliva in its proper form is anti-mutagenic which means it helps decrease the onset of oral cancer. When saliva has been quantitatively changed due to the side effect of medications and/or due to the anti-cholinergic side effect of stress, it has been scientifically documented to contribute to the more rapid onset and proliferation of oral cancer. DFV examines the oral tissues through auto-fluorescence imaging which can detect changes in the oral tissues before any changes are detected by the naked eye.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0183",
+          "type": "paragraph",
+          "text": "Ms. Benton has been examined using DFV, and was found to be negative for any changes in the oral tissues.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "radiographic_results",
+      "heading": "RADIOGRAPHIC RESULTS",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0185",
+          "type": "paragraph",
+          "text": "X-rays taken at another dental office, unidentified, on 7/16/25, revealed severe bone loss around the teeth",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_photographs",
+      "heading": "DIAGNOSTIC PHOTOGRAPHS",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0187",
+          "type": "paragraph",
+          "text": "Diagnostic photographs document scalloping on the lateral borders of the tongue. The photographs document wear on the surfaces of the anterior teeth. The photographs document the Xerostomia / Anti-Cholinergic side effect where, due to qualitative changes of the saliva, a tongue depressor sticks to the inside of the cheek - even when not held by hand.  The photographs document swollen gum tissues as well as objectively-disclosed bacterial biofilm deposits on Ms. Benton’s teeth and around her gum tissues.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "review_of_records",
+      "heading": "REVIEW OF RECORDS:",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0189",
+          "type": "paragraph",
+          "text": "**Of the medical records provided for review, only the material immediately following was sufficiently significant to be quoted/paraphrased. The remainder of the material reviewed was either irrelevant to the decisions required today, or was redundant to the information presented in this section. **",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0190",
+          "type": "paragraph",
+          "text": "Dental Chart Notes dated 07/16/2025",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0191",
+          "type": "paragraph",
+          "text": "TMJ WNL",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0192",
+          "type": "paragraph",
+          "text": "Teeth are sensitive and hurt always",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "clii_mobility",
+      "heading": "CL.II MOBILITY",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0194",
+          "type": "paragraph",
+          "text": "Very stressed about dental TX, claims, she has a lot of anxiety",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0195",
+          "type": "paragraph",
+          "text": "Follow up treating psychiatrist report from E. Richard Dorsey, MD date on September 16, 2025.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0196",
+          "type": "paragraph",
+          "text": "Diagnosis",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0197",
+          "type": "paragraph",
+          "text": "Axis I:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0198",
+          "type": "paragraph",
+          "text": "Major depression",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0199",
+          "type": "paragraph",
+          "text": "Panic disorder with a agoraphobia",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0200",
+          "type": "paragraph",
+          "text": "Treatment plan:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0201",
+          "type": "paragraph",
+          "text": "Wellbutrin SR 300 MG capsules, one q.a.m for depression #30",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0202",
+          "type": "paragraph",
+          "text": "BuSpar XL 15 MG capsules, one b.i.d.p.r.n anxiety #60",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0203",
+          "type": "paragraph",
+          "text": "Doxepin 25mg capsules, 1-2 capsules q.h.s for insomnia, #60",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0204",
+          "type": "paragraph",
+          "text": "Supplemental report from E. Richard Dorsey, MD on September 29, 2025.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0205",
+          "type": "paragraph",
+          "text": "Review and analysis of medical records:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0206",
+          "type": "paragraph",
+          "text": "Causation: the actual events of employment were predominant >50% to all the causes combined to have produced a psychiatric injury. It appears that causation of depression is 80% due to the work-related injury with 10% due to her past history of depression and 10% due to her degenerative spine pathology.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0207",
+          "type": "paragraph",
+          "text": "Comments",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0208",
+          "type": "paragraph",
+          "text": "Dr. Singer and I are in substantial agreement as to diagnosis and anxiety and depression, GAF score 55–60, predominant occupational casualty, and need for further treatment.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "diagnosis_of_industrial_related_conditions",
+      "heading": "DIAGNOSIS OF INDUSTRIAL RELATED CONDITIONS",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0210",
+          "type": "paragraph",
+          "text": "After a review of Ms. Benton's history, clinical examination, and a review of records, the diagnoses are:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0211",
+          "type": "paragraph",
+          "text": "F45.8\t\tAggravated Bruxism / Clenching and Grinding of the Teeth and",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0212",
+          "type": "paragraph",
+          "text": "Bracing of the Facial Muscles of Mastication",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0213",
+          "type": "paragraph",
+          "text": "M79.1\t\tMyalgia of the Facial Muscles of Mastication",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0214",
+          "type": "paragraph",
+          "text": "K05.6\t\tAggravated Inflammation of the Gums",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0215",
+          "type": "paragraph",
+          "text": "R19.6\t\tHalitosis",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "discussion",
+      "heading": "DISCUSSION",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0217",
+          "type": "paragraph",
+          "text": "Upon examination, I found Ms. Benton presents with objective clinical findings of bruxism where Ms. Benton is clenching and bracing her facial musculature. The objective findings were teeth indentations/scalloping on the lateral borders of the tongue bilaterally as well as wear of the surfaces of her anterior teeth.  Upon examination, her facial muscles of mastication, which are involved in bruxism, were found to be painful upon palpation and I objectively palpated taut bands within her facial muscles of mastication.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0218",
+          "type": "paragraph",
+          "text": "Ms. Benton may not have been aware that she had prior episodes of bruxism which can be due to obstructions of the airway during sleep or due to a prior non-industrial habit of bruxism due to extra-pyramidal occurrences in the brain. These preexisting episodes of bruxism can be present and not necessarily cause any facial pain, headaches, or TMJ area pain.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0219",
+          "type": "paragraph",
+          "text": "However, it is with reasonable medical probability that the industrial exposure which caused Ms. Benton to have resultant orthopedic pain with resultant stress would have aggravated any preexisting bruxism by at least 1% The scientific literature has documented that a person can have bruxism in response to pain. Ms. Benton reports she finds she is clenching her teeth and bracing her facial musculature in response to her orthopedic pain and in response to stress.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0220",
+          "type": "paragraph",
+          "text": "“Patients who experience deep pain input seem to find themselves clenching more.”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0221",
+          "type": "paragraph",
+          "text": "Management of Temporomandibular Disorders and Occlusion. Okeson, JP. Elsevier Publishing Co. 2013, page 305.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0222",
+          "type": "paragraph",
+          "text": "\"Many patients will increase their level of tooth clenching and grinding when they experience emotional stress, psychological imbalance or pain.\"",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0223",
+          "type": "paragraph",
+          "text": "http://www.aaop.org/content.aspx?page_id=22&club_id=508439&module_id=108085",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0224",
+          "type": "paragraph",
+          "text": "American Dental Association’s Specialty Board of Orofacial Pain --American Academy of Orofacial Pain",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0225",
+          "type": "paragraph",
+          "text": "“According to Seraidarian et al., pain state, mainly chronic, has been described by the literature as a factor associated with bruxism. The results of this present study corroborate this finding because we verified a statistically significant correlation between sleep bruxism and chronic pain (p < 0.001). It is noteworthy to mention that 52% of the patients with sleep bruxism exhibited chronic pain.”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0226",
+          "type": "paragraph",
+          "text": "Evaluation of correlation among sleep bruxism and depression levels, chronic pain and nonspecific physical symptoms according to axis II of the Research Diagnostic Criteria/Temporomandibular Disorders. RSBO. 2014 Oct-Dec;11(4):352-9 Dias et al.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0227",
+          "type": "paragraph",
+          "text": "Ms. Benton states her resultant facial and jaw pain have caused increased stress.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0228",
+          "type": "paragraph",
+          "text": "It is with reasonable medical probability that the industrial exposure which caused Ms. Benton to have resultant stress would have aggravated any preexisting bruxism. The scientific literature has documented that a person can have bruxism in response to stress.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0229",
+          "type": "paragraph",
+          "text": "“It’s called bruxism, and often it happens as we sleep, caused not just by stress and anxiety...”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0230",
+          "type": "paragraph",
+          "text": "Position paper of the American Dental Association",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0231",
+          "type": "paragraph",
+          "text": "http://www.ada.org/public/topics/grinding.asp",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0232",
+          "type": "paragraph",
+          "text": "“A major cause of Bruxism is stress.”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0233",
+          "type": "paragraph",
+          "text": "Position paper of the California Dental Association",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0234",
+          "type": "paragraph",
+          "text": "http://www.cda.org/popup/Grinding_of_Teeth",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0235",
+          "type": "paragraph",
+          "text": "“Therefore, chronic psychological stress may contribute to symptoms of TMJ diseases by a variety of mechanisms. These may include an increased occurrence of parafunctional habits such as clenching and bruxism that intensify or sustain joint loading.”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0236",
+          "type": "paragraph",
+          "text": "Temporomandibular Disorders, an Evidence-Based Approach to Diagnosis and Treatment, Laskin DM, Greene CS, Hylander WL. Quintessence Publishing Co.  page 117",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0237",
+          "type": "paragraph",
+          "text": "\"Many patients will increase their level of tooth clenching and grinding when they experience emotional stress, psychological imbalance or pain.\"",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0238",
+          "type": "paragraph",
+          "text": "http://www.aaop.org/content.aspx?page_id=22&club_id=508439&module_id=108085",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0239",
+          "type": "paragraph",
+          "text": "American Dental Association’s Specialty Board of Orofacial Pain --American Academy of Orofacial Pain",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0240",
+          "type": "paragraph",
+          "text": "Additionally, Ms. Benton has been taking the medication of Naproxen, Ibuprofen, Wellbutrin, and Omeprazole on an industrial basis. Phase IV clinical studies of the FDA data have documented that each of these medications has a side effect of bruxism.  Phase IV trials are used to detect adverse drug outcomes and monitor drug effectiveness in the real world. These Phase IV clinical studies have been referenced on 600+ medical publications including The Lancet, Mayo Clinic Proceedings, and Nature.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0241",
+          "type": "paragraph",
+          "text": "“Teeth grinding is found among people who take Naproxen”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0242",
+          "type": "paragraph",
+          "text": "“The phase IV clinical study analyzes which people take Naproxen and have Teeth grinding.” It is based on reports of 54,594 people who have side effects when taking Naproxen from the FDA.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0243",
+          "type": "paragraph",
+          "text": "Naproxen and Teeth Grinding – a phase IV clinical study of FDA data",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0244",
+          "type": "paragraph",
+          "text": "https://www.ehealthme.com/ds/naproxen/teeth-grinding/",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0245",
+          "type": "paragraph",
+          "text": "“Bruxism is found among people who take Profen, especially for people who are female, 20-29 old, have been taking the drug for 1 - 6 months.”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0246",
+          "type": "paragraph",
+          "text": "“The phase IV clinical study analyzes which people take Profen and have Bruxism.” It is based on reports of 204,671 people who have side effects when taking Profen from the FDA.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0247",
+          "type": "paragraph",
+          "text": "Profen and Bruxism - a phase IV clinical study of FDA data",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0248",
+          "type": "paragraph",
+          "text": "https://www.ehealthme.com/ds/profen/bruxism/",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0249",
+          "type": "paragraph",
+          "text": "“Bruxism is found among people who take Omeprazole”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0250",
+          "type": "paragraph",
+          "text": "“The phase IV clinical study analyzes which people take Omeprazole and have Bruxism.” It is based on reports of 351,142 people who have side effects when taking Omeprazole from the FDA.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0251",
+          "type": "paragraph",
+          "text": "Omeprazole and Bruxism - a phase IV clinical study of FDA data",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0252",
+          "type": "paragraph",
+          "text": "https://www.ehealthme.com/ds/omeprazole/bruxism/",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0253",
+          "type": "paragraph",
+          "text": "“Bruxism is found among people who take Wellbutrin”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0254",
+          "type": "paragraph",
+          "text": "“The phase IV clinical study analyzes which people take Wellbutrin and have Bruxism.” It is based on reports of 93,097 people who have side effects when taking Wellbutrin from the FDA.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0255",
+          "type": "paragraph",
+          "text": "Wellbutrin and Bruxism - a phase IV clinical study of FDA data",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0256",
+          "type": "paragraph",
+          "text": "https://www.ehealthme.com/ds/wellbutrin/bruxism/",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0257",
+          "type": "paragraph",
+          "text": "The drugs that are used for depression “produce the side effect of increased clenching and bruxism” (Journal of the California Dental Association, Vol.34. NO.8 August 2006, pages 660-661.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0258",
+          "type": "paragraph",
+          "text": "“Patients receiving anti-depressants may develop a movement disorder that includes clenching, grinding of the teeth (bruxism) or both, further worsening the periodontal condition.” Journal of the American Dental Association. Vol. 132, May 2001, pages633-634.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0259",
+          "type": "paragraph",
+          "text": "Therefore, it is with reasonable medical probability that Ms. Benton’s bruxism was contributed to and aggravated by at least 1% in response to her industrial orthopedic pain, any industrial related stress, and as a side effect of the medication she has taken on an industrial basis.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0260",
+          "type": "paragraph",
+          "text": "Upon examination, I found Ms. Benton has Myalgia of her facial muscles of mastication where palpation of the musculature evoked subjective tenderness and there were objective palpable taut bands within the musculature. A sEMG, which is approved by the American Dental Association to be used as an aid in the diagnosis of Orofacial Disorders, revealed elevated muscular activity with incoordination and aberrant function of the facial musculature.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0261",
+          "type": "paragraph",
+          "text": "Upon oral examination, I found Ms. Benton’s periodontal health reveals swelling of the gum tissues, which are objective findings of Ms. Benton having inflammation of the gums.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0262",
+          "type": "paragraph",
+          "text": "Even if Ms. Benton had prior inflammation of the gums due to prior gastric reflux and dental neglect, there are numerous industrial related factors that, with reasonable medical probability, would be contributing to, aggravating, accelerating and/or lighting up any prior inflammation of the gums by at least 1%.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0263",
+          "type": "paragraph",
+          "text": "As discussed above, Ms. Benton states she has industrial related injuries to her shoulders, arms, elbows, wrists, hands, and fingers. Proper oral hygiene of brushing and flossing of the teeth and gums requires fine hand manipulation and manual dexterity using both hands raised up to the mouth. Given Ms. Benton’s industrial injuries, coupled with her indication that she experiences difficulty brushing and flossing her teeth due to facial pain, it is with reasonable medical probability that Ms. Benton is not performing proper and adequate oral hygiene. Therefore, with reasonable medical probability, the inflammation of Ms. Benton’s gums has been contributed to by the industrial injury.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0264",
+          "type": "paragraph",
+          "text": "Evaluation of Ms. Benton’s saliva reveals objective evidence of qualitative changes of the saliva where a tongue depressor sticks to the inside of her cheeks. Ms. Benton is taking the medication of Naproxen, Ibuprofen, Wellbutrin, and Omeprazole which are each documented to have the major adverse and key side effect of causing qualitative changes of the saliva. Stress also causes qualitative changes of the saliva. These qualitative changes of the saliva have been documented in the scientific literature to contribute to dental decay and inflammation of the gums. (Position Paper of the American Dental Association’s Council of Scientific Affairs. Journal of the American Dental Association, Vol. 134, July 2003)",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0265",
+          "type": "paragraph",
+          "text": "The scientific literature has also documented that inflammation of the gums can be aggravated by stress, increased production of salivary amylase caused by stress and pain, a loss of sleep, gastric acids refluxed up into the oral environment, and the body’s increased production of cortisol due to pain. The scientific literature has also documented that bruxism aggravates inflammation of the gums.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0266",
+          "type": "paragraph",
+          "text": "Ms. Benton complains she is suffering from Halitosis / Oral Malodor emanating from a bodily orifice.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0267",
+          "type": "paragraph",
+          "text": "Halitosis is a perceived oral malodor whose intensity is beyond a socially acceptable level. Halitosis can be measured or, in some cases, is a “Pseudohalitosis” which is defined as a self perception of an obvious malodor that is not perceived by others, although the patient stubbornly complains of its existence.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0268",
+          "type": "paragraph",
+          "text": "Oral production of malodorous substances is most commonly associated with the by-products of oral bacterial metabolic degradation. These products result from the oral bacteria fermentation of proteins, peptides and mucins. The most malodorous compounds are volatile sulfur compounds, among which are hydrogen sulfide, methyl mercaptan, and dimethyl sulfide.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0269",
+          "type": "paragraph",
+          "text": "With reasonable medical probability, oral malodor has been caused or contributed to by Ms. Benton’s inability to perform proper and adequate oral hygiene procedures of brushing and flossing of her teeth and gums due to her industrial related upper extremity injuries.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0270",
+          "type": "paragraph",
+          "text": "The science has documented that Halitosis can also be caused by other industrial related factors:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0271",
+          "type": "paragraph",
+          "text": "Oral malodor can be caused or contributed by inflammation of the gums.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0272",
+          "type": "paragraph",
+          "text": "Oral malodor can be caused or contributed by the side effect of medications.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0273",
+          "type": "paragraph",
+          "text": "Oral malodor can be caused or contributed by qualitative changes of saliva caused as a side effect of medications or by the anti-cholinergic side effect of stress.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0274",
+          "type": "paragraph",
+          "text": "Oral malodor can be caused or contributed by increased levels of cortisol produced by the body in response to pain and/or stress.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0275",
+          "type": "paragraph",
+          "text": "Oral malodor can be caused or contributed by gastric reflux, where stomach acids enter the oral environment.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0276",
+          "type": "paragraph",
+          "text": "Therefore, there are numerous industrial related factors which, with reasonable medical probability, have contributed to the Ms. Benton’s Halitosis by at least 1%.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "differential_diagnosis",
+      "heading": "DIFFERENTIAL DIAGNOSIS",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0278",
+          "type": "paragraph",
+          "text": "An examining doctor’s opinion for causation must be based on a reliable differential diagnosis formed after taking a history, physical examination, diagnostic tests and, if available, a review of prior medical records. I have considered this for Ms. Benton.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0279",
+          "type": "paragraph",
+          "text": "The reader must remember: Treatment is not apportioned!",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "temporal_connection_between_industrial_exposure_and",
+      "heading": "TEMPORAL CONNECTION BETWEEN INDUSTRIAL EXPOSURE AND THE SUBSEQUENT INJURIES IN MY AREA OF EXPERTISE",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0281",
+          "type": "paragraph",
+          "text": "In my discussion section above, I discussed how, with reasonable medical probability, the industrial exposure and its resultant orthopedic pain and emotional stressors have developed consequential and derivative injuries for Ms. Benton in the area of Dentistry.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0282",
+          "type": "paragraph",
+          "text": "As explained above, even if the medical records reveal Ms. Benton had these dental problems prior to the industrial exposure, it is with reasonable medical probability that her dental problems were contributed to and aggravated on an industrial basis by at least 1% in response to her industrial pain, any resultant stress, and the side effect of medications taken on an industrial related basis.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0283",
+          "type": "paragraph",
+          "text": "While I understand that one of the arguments a person may bring up is latency of when these dental problems started to occur, one has to understand that latency is individual and depends on the intensity of exposure and predilection of the individual.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "heading": "CONCLUSION",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0285",
+          "type": "paragraph",
+          "text": "Based on the methodology used by dental physicians in the field of Dentistry, I have: 1) Shown data to support generic causation; 2) Ruled out other well-accepted risk factors in the patient; and 3) Shown a clear temporal relationship between the industrial exposure and trauma, resultant emotional stressors, side effects of the Naproxen, Ibuprofen, Wellbutrin, and Omeprazole medication taken on an industrial basis, and the diagnoses presented regarding Ms. Benton.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0286",
+          "type": "paragraph",
+          "text": "Based on the available data, the history provided to me by Ms. Benton, my objective findings, the scientific literature, and my expertise in the field, it is my opinion that, with reasonable medical probability, Ms. Benton’s presenting complaints and clinical symptoms in my area of expertise were caused or aggravated on an industrial basis.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "credibility",
+      "heading": "CREDIBILITY",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0288",
+          "type": "paragraph",
+          "text": "I observed Ms. Benton during the course of this evaluation. A comfortable doctor-patient relationship was established which enabled Ms. Benton to candidly confide the difficulties she has experienced as a result of her industrial injuries. I found Ms. Benton to be a candid and sincere individual. I believe Ms. Benton has done her best to provide an accurate account of her conditions. Ms. Benton’s subjective complaints matched the objective findings in my evaluation of her. Ms. Benton’s history of industrial injury and the symptoms she developed have been consistent throughout the medical records provided for my review. In summation, I find no basis for questioning Ms. Benton’s credibility. It is evident she suffered dental related injuries as a result of her industrial injuries.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "treatment_plan",
+      "heading": "TREATMENT PLAN",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0290",
+          "type": "paragraph",
+          "text": "Please Note: I researched the ACOEM guidelines, the MTUS guidelines, and the ODG guidelines, where, to the best of my knowledge, none of these guidelines discuss the treatment of inflammation of the gums, and treatment with an Orofacial Pain Occlusal Orthotic Device.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0291",
+          "type": "paragraph",
+          "text": "Section 4604.5(d) of the Labor Code states: “for all injuries not covered by the official utilization schedule adopted pursuant to Section 5307.27, authorized treatment shall be in accordance with other evidence-based medical treatment guidelines that are recognized generally by the national medical community and scientifically based.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0292",
+          "type": "paragraph",
+          "text": "The dental specialty of Orofacial Pain has been established by the American Dental Association, and its specialty association has published standard of care guidelines for the assessment, diagnosis, and management of Orofacial Pain in the following text:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0293",
+          "type": "paragraph",
+          "text": "Orofacial Pain Guidelines for Assessment, Diagnosis, and Management, Sixth Edition. Leeuw, Reny de, editor. | Klasser, Gary D., editor.  American Academy of Orofacial Pain.2018 Quintessence Publishing Co, Inc.",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0294",
+          "type": "paragraph",
+          "text": "On page 170 it states:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0295",
+          "type": "paragraph",
+          "text": "“Conservative (ie. reversible), noninvasive treatment such as self-management instructions, behavioral modification, physical therapy, medications, and orthopedic appliances are endorsed for the initial care of nearly all TMDs.”",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0296",
+          "type": "paragraph",
+          "text": "Greene CS. Managing the care of patients with temporomandibular disorders: A new guideline for care. J Am Dent Assoc 2010; 141:1086–1088",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0297",
+          "type": "paragraph",
+          "text": "On page 181 of the Sixth Edition of the Orofacial Pain Guidelines for Assessment, Diagnosis. and Management published by the American Academy of Orofacial Pain, it states:",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0298",
+          "type": "paragraph",
+          "text": "“Orthopedic appliances, including interocclusal splints, orthotics, orthoses, bite guards, bite planes, night guards, or bruxism appliances, are routinely used in the treatment of TMDs. Based on current theory, removable acrylic resin appliances that cover the teeth have traditionally been used to alter occlusal relationships and to redistribute occlusal forces, to prevent wear and mobility of the teeth, to reduce bruxism and parafunction, to treat masticatory muscle pain and dysfunction, to treat painful TMJs, and to alter structural relationships in the TMJ.”",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0299",
+          "type": "paragraph",
+          "text": "Treatment Plan for Ms. Benton",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0300",
+          "type": "paragraph",
+          "text": "Orofacial Pain Occlusal Orthotic Device for Daytime Use",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0301",
+          "type": "paragraph",
+          "text": "The primary purpose of the Orofacial Pain Occlusal Orthotic Device is to relieve facial muscle, ligament, and nerve impingement. This appliance serves to maintain the stomatognathic musculature at their proper resting length, from origin to insertion, thus decreasing pain and improving function. The appliance also decreases the inter-capsular joint pressure placed upon the TMJ from clenching and bracing of the facial musculature. The appliance also protects wearing down and fracture of the teeth from the extreme pressures placed on the teeth from bruxism. This appliance is fabricated and customized in our in-house dental laboratory with a multiple-day process inclusive of in-person adjustments as necessary.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0302",
+          "type": "paragraph",
+          "text": "Treatments for Inflammation of the Gums",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0303",
+          "type": "paragraph",
+          "text": "Dental treatment of Scaling of the teeth and gums with fluoride and Saliva Substitutes; one time only",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0304",
+          "type": "paragraph",
+          "text": "Craniofacial Exercises",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0305",
+          "type": "paragraph",
+          "text": "Physical Medicine Modalities as needed",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0306",
+          "type": "paragraph",
+          "text": "Full mouth series radiographs",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0307",
+          "type": "paragraph",
+          "text": "Panorex",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0308",
+          "type": "paragraph",
+          "text": "Radiological Referral for Functional MRI (fMRI) of the Thalamus and Brain. An RFA requesting this fMRI will be submitted along with this report. (The benefits of which are discussed in the Chronic Pain Medical Treatment Guidelines, 8 C.C.R. 9792.20-9792.26, Pg. 48 of 127)",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0309",
+          "type": "paragraph",
+          "text": "Internal / Occupational Medicine Consultation and Monitoring",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0310",
+          "type": "paragraph",
+          "text": "Bacteria and inflammatory processes from inflammation of the gums readily enter the bloodstream and have been implicated in an increased risk of heart problems, high blood pressure, high cholesterol, stroke, arthritic conditions, kidney disease, and diabetes, as well as a significantly increased risk for the development of cancer throughout the body.",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0311",
+          "type": "paragraph",
+          "text": "Additionally, the scientific literature has documented that diabetes and thyroid problems contribute to and complicate inflammation of the gums. Even if Ms. Benton’s diabetes and thyroid problems are non-industrial, the diabetes and thyroid problems must now be monitored and treated on an industrial basis in order to manage and relieve the industrially-aggravated inflammation of her gums.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0312",
+          "type": "paragraph",
+          "text": "Therefore, Ms. Benton will require monitoring throughout her lifetime with treatment as necessary on an industrial basis.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0313",
+          "type": "paragraph",
+          "text": "Sleep Study Results",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0314",
+          "type": "paragraph",
+          "text": "I request that my office be provided with a copy of her sleep study results for my review and comment, as necessary.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0315",
+          "type": "paragraph",
+          "text": "Psychological Examination and Treatment",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0316",
+          "type": "paragraph",
+          "text": "To address Ms. Benton’s complaints of emotional stressors.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0317",
+          "type": "paragraph",
+          "text": "Duration of Treatment Frequency of Treatment",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0318",
+          "type": "paragraph",
+          "text": "3 months",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0319",
+          "type": "paragraph",
+          "text": "1 time per month",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0320",
+          "type": "paragraph",
+          "text": "Estimated date of completion of treatment:     April 15, 2026",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0321",
+          "type": "paragraph",
+          "text": "Disability Status in My Area of Expertise",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0322",
+          "type": "paragraph",
+          "text": "Ms. Benton is Temporarily Partially Disabled.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0323",
+          "type": "paragraph",
+          "text": "Ms. Benton has not been discharged.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0324",
+          "type": "paragraph",
+          "text": "The condition is not Permanent and Stationary.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0325",
+          "type": "paragraph",
+          "text": "Preclusions/Work Restrictions in my Area of Expertise",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0326",
+          "type": "paragraph",
+          "text": "Since Ms. Benton suffers from Myalgia of the facial musculature, activities should be prophylactically restricted so as not to aggravate her musculature. The work restrictions are designed to avoid or prevent undue pain, avoid causing an increase in symptoms that would lead to a longer period of temporary disability, avoid causing increased permanent disability, and prevent exacerbation that would increase the need for medical care.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0327",
+          "type": "paragraph",
+          "text": "These activities include:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0328",
+          "type": "paragraph",
+          "text": "Avoidance of a cold environment which will cause increased myalgia and Trigeminal",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0329",
+          "type": "paragraph",
+          "text": "Nerve Neuropathic Pain",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0330",
+          "type": "paragraph",
+          "text": "Avoidance of cradling a phone by bending the head to the side",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0331",
+          "type": "paragraph",
+          "text": "Avoidance of extensive talking of 15 minutes straight, without a 10 minute rest",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0332",
+          "type": "paragraph",
+          "text": "Avoidance of improper posture due to a non-ergonomically designed environment",
+          "bold": false,
+          "alignment": "left",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0333",
+          "type": "paragraph",
+          "text": "Since Ms. Benton is clenching and grinding her teeth and bracing her facial musculature, restrictions involving emotional stress must be given consideration. These restrictions contemplate Ms. Benton avoiding undue emotional stress and strain.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0334",
+          "type": "paragraph",
+          "text": "Thank you for your confidence in our office.",
+          "bold": true,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0335",
+          "type": "paragraph",
+          "text": "If I can be of any further assistance, or if you have any questions, please contact our office.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0336",
+          "type": "paragraph",
+          "text": "PLEASE NOTE: Labor Code 5402 (b)(c), requires the employer to authorize all appropriate medical care up to $10,000 until the liability for the claimed injury is accepted or rejected. As of 6/01/04, Labor Code 5814 mandates a 25% penalty on the amount of payment unreasonably delayed (10% if self-imposed). Accordingly, it would be requested that the defendant please provide immediate payment.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0337",
+          "type": "paragraph",
+          "text": "I request that the claims adjuster please provide copies of all medical records, personnel records, investigative reports or any other relevant discovery materials. These data are essential to evaluating complex matters of causation and apportionment. It would also be appreciated if the claims adjuster would provide notification of any scheduled dental Agreed Medical Examinations, defense dental QME examinations or panel dental QME examinations, and/or any reluctance to make reimbursement for a comprehensive permanent and stationary evaluation from this office. I request that the adjuster please advise this office if the applicant is not an employee, was the initial aggressor, did not timely report the injury, filed a fraudulent claim or was otherwise not legally eligible for benefits. I request that the adjuster please also submit any information relevant to any important upcoming court dates, in particular any expedited hearings or Mandatory Settlement Conferences; and please provide notification of any dentist’s depositions.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0338",
+          "type": "paragraph",
+          "text": "If there are any valid objections such that there would not be authorization for the requested treatment at this office, I request that the adjuster please report the basis for such denial within seven days.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    },
+    {
+      "id": "disclosure_notice",
+      "heading": "DISCLOSURE NOTICE",
+      "heading_level": 2,
+      "elements": [
+        {
+          "id": "e0340",
+          "type": "paragraph",
+          "text": "In accordance with Labor Code Section 4628, I solely performed the interview with Ms. Benton.  I solely performed the physical examination and I solely took the patient’s history of injury and medical history.  I performed the examination in its entirety at my office.  I reviewed the medical records personally reviewed and signed this report.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0341",
+          "type": "paragraph",
+          "text": "To the best of my knowledge, the evaluation and the time performing it were in accordance with the guidelines of the Industrial Medical Council of Administrative Director to the extent that those guidelines exist.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0342",
+          "type": "paragraph",
+          "text": "I did not bill for any other medical-legal evaluations or diagnostic procedures or diagnostic services performed by independent contractors.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0343",
+          "type": "paragraph",
+          "text": "“The undersigned declares under penalty of perjury that to the best of my knowledge I am not in violation of L.C. 5703 or L.C. 139.3. I declare under penalty of perjury that the information contained in this report and its attachments, if any, is true and correct to the best of my knowledge and belief, except as to information that I have indicated that I received from others. As to that information, I declare under penalty of perjury that the information accurately describes the information provided to me and, except as noted herein, that I believe it to be true.”",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0344",
+          "type": "paragraph",
+          "text": "Mayer Schames, D.D.S.",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0345",
+          "type": "paragraph",
+          "text": "Fellow: International College of Craniomandibular Orthopaedics",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0346",
+          "type": "paragraph",
+          "text": "Clinical Director: White Memorial Craniofacial Pain TMJ Clinic",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0347",
+          "type": "paragraph",
+          "text": "CA Lic. # 28234",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0348",
+          "type": "paragraph",
+          "text": "Executed at: Hawthorne, CA",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0349",
+          "type": "paragraph",
+          "text": "Date:",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0350",
+          "type": "paragraph",
+          "text": "Address: 12243 S. Hawthorne Blvd., Hawthorne, CA 90250",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0351",
+          "type": "paragraph",
+          "text": "Telephone: (310) 644-6456",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        },
+        {
+          "id": "e0352",
+          "type": "paragraph",
+          "text": "Fax: (310) 644-5963",
+          "bold": false,
+          "alignment": "justify",
+          "heading_level": null,
+          "table_cells": null
+        }
+      ]
+    }
+  ],
+  "preamble": [],
+  "metadata": {
+    "author": "Shames Dental",
+    "title": "CONSULTATION REPORT"
+  }
+}
