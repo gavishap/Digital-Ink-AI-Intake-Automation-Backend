@@ -408,7 +408,12 @@ FIELD MAPPING RULES:
 
 1. **field_id**: Use the EXACT field_id from the schema in your output
 
-2. **yes_no fields**: 
+2. **CANCELLED/VOIDED marks (applies to ALL field types)**:
+   - If you see a circle with a line, slash, or X drawn THROUGH it (a strikethrough circle, like a "no entry" symbol), this means the entry is CANCELLED or void — return null for that field.
+   - Determine which field is cancelled by its position: which row, line, or labeled section the strikethrough circle is on or directly above.
+   - A circle with a line through it is DIFFERENT from a normal circle around a word — a normal circle selects; a crossed-out circle cancels.
+
+3. **yes_no fields**: 
    - Each question has "YES" and "NO" printed on the form. The patient circles or marks ONE word.
    - A circle, line, or mark can be ANY color (red, pink, blue, black, etc.).
    - ONLY the word that is clearly INSIDE a circle or has a mark drawn through/around it is the answer.
@@ -418,18 +423,19 @@ FIELD MAPPING RULES:
    - Output: is_checked=true for YES, is_checked=false for NO, null if unanswered.
    - Read the field's extraction_hints for question-specific guidance.
 
-3. **circled_selection fields** (like medications):
+4. **circled_selection fields** (like medications):
    - ONLY report options where the printed word is clearly INSIDE a drawn circle.
    - CRITICAL: If a circle is drawn around one word and merely TOUCHES or OVERLAPS an adjacent word, the adjacent word is NOT circled — only the word the circle encloses counts.
+   - A circle with a line/slash/X through it means CANCELLED — remove that item from the selected list.
    - Output: circled_options=["option1", "option2"] with EXACT spelling from schema
    - If an item appears circled but isn't in the options array, DO NOT include it
    - If there is handwritten text near the printed options, that is a SEPARATE field (e.g. additional medications written by hand) — do not confuse with circled printed text.
    
-4. **date fields**:
+5. **date fields**:
    - Use the schema's expected_format (usually MM/DD/YYYY)
    - Output the date in that format
 
-5. **text fields**:
+6. **text fields**:
    - Transcribe the handwritten text exactly
    - Note if the field appears empty
 

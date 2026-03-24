@@ -83,13 +83,13 @@ FIELD_NAME_MAP: dict[str, str] = {
     # --- Treatment / stressors (p7) ---
     "developed_stressors_in_response_to_industrial_orthopedic_injuries": "p7_developed_stressors_injury",
     "orthopedic_pain_causing_clenching_bracing_of_facial_muscles": "p7_orthopedic_pain_clenching",
-    "treatments_received_due_to_industrial_injury_tx_received": "p7_treatments_received",
+    "treatments_received_due_to_industrial_injury_tx_received": "p8_tx_received",
     "treatments_received_due_to_industrial_injury_surgery": "p7_surgery_body_parts",
-    "treatments_received": "p7_tx_received",
-    "treatments_received_due_to_industrial_injury": "p7_tx_received",
-    "tx_received_acupuncture": "p7_tx_received_acupuncture",
-    "tx_received_chiropractic": "p7_tx_received_chiropractic_manipulations",
-    "tx_received_physical_therapy": "p7_tx_received_physical_therapy",
+    "treatments_received": "p8_tx_received",
+    "treatments_received_due_to_industrial_injury": "p8_tx_received",
+    "tx_received_acupuncture": "p8_tx_received",
+    "tx_received_chiropractic": "p8_tx_received",
+    "tx_received_physical_therapy": "p8_tx_received",
 
     # --- Past medical history (p8) ---
     "Past Medical History": "p8_past_medical_history",
@@ -211,16 +211,16 @@ FIELD_NAME_MAP: dict[str, str] = {
     # --- Intraoral photos (p19) ---
     "p19_occlusal_wear_photo": "p19_occlusal_wear",
 
-    # --- Epworth (p3 canonical IDs from schema) ---
-    "p3_epworth_sitting_reading": "epworth_sitting_reading",
-    "p3_epworth_watching_tv": "epworth_watching_tv",
-    "p3_epworth_sitting_inactive": "epworth_sitting_inactive",
-    "p3_epworth_passenger_car": "epworth_passenger_car",
-    "p3_epworth_lying_down_afternoon": "epworth_lying_down_afternoon",
-    "p3_epworth_sitting_talking": "epworth_sitting_talking",
-    "p3_epworth_sitting_after_lunch": "epworth_sitting_after_lunch",
-    "p3_epworth_car_traffic": "epworth_car_traffic",
-    "p3_epworth_total_score": "epworth_sleepiness_scale_total_score",
+    # --- Epworth (p11 canonical IDs from schema) ---
+    "p11_epworth_sitting_reading": "epworth_sitting_reading",
+    "p11_epworth_watching_tv": "epworth_watching_tv",
+    "p11_epworth_sitting_inactive": "epworth_sitting_inactive",
+    "p11_epworth_passenger_car": "epworth_passenger_car",
+    "p11_epworth_lying_down_afternoon": "epworth_lying_down_afternoon",
+    "p11_epworth_sitting_talking": "epworth_sitting_talking",
+    "p11_epworth_sitting_after_lunch": "epworth_sitting_after_lunch",
+    "p11_epworth_car_traffic": "epworth_car_traffic",
+    "p11_epworth_total_score": "epworth_sleepiness_scale_total_score",
     "epworth_sleepiness_scale_responses": "epworth_activities",
     "total_score": "epworth_sleepiness_scale_total_score",
 
@@ -567,16 +567,16 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
     if dx_items:
         derived["diagnosis_list"] = "\n".join(f"{i+1}. {dx}" for i, dx in enumerate(dx_items))
 
-    # --- Epworth activities list (try p3_ canonical IDs first, then legacy) ---
+    # --- Epworth activities list (try p11_ canonical IDs first, then legacy) ---
     epworth_fields = [
-        ("Sitting and reading", "p3_epworth_sitting_reading", "epworth_sitting_reading"),
-        ("Watching TV", "p3_epworth_watching_tv", "epworth_watching_tv"),
-        ("Sitting inactive in a public place", "p3_epworth_sitting_inactive", "epworth_sitting_inactive"),
-        ("Passenger in a car for 1 hour", "p3_epworth_passenger_car", "epworth_passenger_car"),
-        ("Lying down in the afternoon", "p3_epworth_lying_down_afternoon", "epworth_lying_down_afternoon"),
-        ("Sitting and talking to someone", "p3_epworth_sitting_talking", "epworth_sitting_talking"),
-        ("Sitting quietly after lunch", "p3_epworth_sitting_after_lunch", "epworth_sitting_after_lunch"),
-        ("In a car, stopped in traffic", "p3_epworth_car_traffic", "epworth_car_traffic"),
+        ("Sitting and reading", "p11_epworth_sitting_reading", "epworth_sitting_reading"),
+        ("Watching TV", "p11_epworth_watching_tv", "epworth_watching_tv"),
+        ("Sitting inactive in a public place", "p11_epworth_sitting_inactive", "epworth_sitting_inactive"),
+        ("Passenger in a car for 1 hour", "p11_epworth_passenger_car", "epworth_passenger_car"),
+        ("Lying down in the afternoon", "p11_epworth_lying_down_afternoon", "epworth_lying_down_afternoon"),
+        ("Sitting and talking to someone", "p11_epworth_sitting_talking", "epworth_sitting_talking"),
+        ("Sitting quietly after lunch", "p11_epworth_sitting_after_lunch", "epworth_sitting_after_lunch"),
+        ("In a car, stopped in traffic", "p11_epworth_car_traffic", "epworth_car_traffic"),
     ]
     epworth_items = []
     epworth_total = 0
@@ -593,7 +593,7 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
         derived["epworth_activities"] = "\n".join(epworth_items)
         derived["epworth_sleepiness_scale_total_score"] = str(epworth_total)
     elif not epworth_items:
-        raw_total = _lookup_field(pages, "p3_epworth_total_score") or _lookup_field(pages, "Epworth_Sleepiness_Scale_Total_Score")
+        raw_total = _lookup_field(pages, "p11_epworth_total_score") or _lookup_field(pages, "Epworth_Sleepiness_Scale_Total_Score")
         if raw_total is not None:
             derived["epworth_sleepiness_scale_total_score"] = str(raw_total).strip()
 

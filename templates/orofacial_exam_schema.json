@@ -330,7 +330,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -348,13 +351,25 @@
               "field_type": "checkbox_multi",
               "data_type": "string",
               "expected_format": null,
-              "options": ["Murmur", "Mitral Valve Problem", "Stent", "Pacemaker", "Defibrillator", "Rheumatic Heart Disease"],
+              "options": [
+                "Murmur",
+                "Mitral Valve Problem",
+                "Stent",
+                "Pacemaker",
+                "Defibrillator",
+                "Rheumatic Heart Disease"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p1_heart_problems",
-              "conditional_logic": {"depends_on_field": "p1_heart_problems", "condition": "equals", "condition_value": "YES", "action": "show"},
+              "conditional_logic": {
+                "depends_on_field": "p1_heart_problems",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
               "extraction_hints": "Sub-options for Q1. Listed in italics below the question: Murmur, Mitral Valve Problem, Stent, Pacemaker, Rheumatic Heart Disease. Only extract if the parent Q1 is YES.",
@@ -366,7 +381,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -384,7 +402,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -402,7 +423,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -420,7 +444,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -438,7 +465,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -456,7 +486,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -474,7 +507,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -492,13 +528,23 @@
               "field_type": "checkbox_multi",
               "data_type": "string",
               "expected_format": null,
-              "options": ["HIV", "Hepatitis", "TB", "VD"],
+              "options": [
+                "HIV",
+                "Hepatitis",
+                "TB",
+                "VD"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p1_infectious_diseases_yn",
-              "conditional_logic": {"depends_on_field": "p1_infectious_diseases_yn", "condition": "equals", "condition_value": "YES", "action": "show"},
+              "conditional_logic": {
+                "depends_on_field": "p1_infectious_diseases_yn",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
               "extraction_hints": "Sub-options for Q8. Listed in italics below the question: HIV, Hepatitis, TB, VD. Only extract if the parent Q8 yes/no is YES.",
@@ -510,7 +556,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -534,7 +583,12 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p1_blood_thinners",
-              "conditional_logic": {"depends_on_field": "p1_blood_thinners", "condition": "equals", "condition_value": "YES", "action": "show"},
+              "conditional_logic": {
+                "depends_on_field": "p1_blood_thinners",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
               "extraction_hints": "Handwritten text on the same line as Q9, after 'Which one:'. Only extract if Q9 is YES.",
@@ -546,7 +600,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -564,13 +621,21 @@
               "field_type": "checkbox_multi",
               "data_type": "string",
               "expected_format": null,
-              "options": ["Asthma", "Shortness of Breath"],
+              "options": [
+                "Asthma",
+                "Shortness of Breath"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p1_breathing_problems",
-              "conditional_logic": {"depends_on_field": "p1_breathing_problems", "condition": "equals", "condition_value": "YES", "action": "show"},
+              "conditional_logic": {
+                "depends_on_field": "p1_breathing_problems",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
               "extraction_hints": "Sub-options for Q10. Listed in italics below: Asthma, Shortness of Breath. Only extract if Q10 is YES.",
@@ -582,7 +647,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -606,7 +674,12 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p1_numbness_pins_needles",
-              "conditional_logic": {"depends_on_field": "p1_numbness_pins_needles", "condition": "equals", "condition_value": "YES", "action": "show"},
+              "conditional_logic": {
+                "depends_on_field": "p1_numbness_pins_needles",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
               "extraction_hints": "Handwritten text on the line below Q11, after 'Where:'. Only extract if Q11 is YES.",
@@ -618,7 +691,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -636,7 +712,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -654,7 +733,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -678,7 +760,12 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p1_awakens_night_urinate",
-              "conditional_logic": {"depends_on_field": "p1_awakens_night_urinate", "condition": "equals", "condition_value": "YES", "action": "show"},
+              "conditional_logic": {
+                "depends_on_field": "p1_awakens_night_urinate",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
               "extraction_hints": "Handwritten number on the same line as Q14, in the blank space before 'times per night'. Only extract if Q14 yes/no is YES.",
@@ -690,7 +777,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -714,7 +804,12 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p1_sleep_study_test",
-              "conditional_logic": {"depends_on_field": "p1_sleep_study_test", "condition": "equals", "condition_value": "YES", "action": "show"},
+              "conditional_logic": {
+                "depends_on_field": "p1_sleep_study_test",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
               "extraction_hints": "Handwritten text on the line below Q15, after 'When:'. Only extract if Q15 is YES.",
@@ -726,13 +821,21 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p1_sleep_study_test",
-              "conditional_logic": {"depends_on_field": "p1_sleep_study_test", "condition": "equals", "condition_value": "YES", "action": "show"},
+              "conditional_logic": {
+                "depends_on_field": "p1_sleep_study_test",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
               "extraction_hints": "On the same line as 'When:', after 'Apnea Results?'. YES/NO sub-field of Q15. Only extract if Q15 is YES.",
@@ -744,7 +847,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -762,7 +868,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": ["YES", "NO"],
+              "options": [
+                "YES",
+                "NO"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -993,73 +1102,9 @@
       "page_title": "History of Medication Usage",
       "sections": [
         {
-          "section_id": "medication_history",
-          "section_title": "History of Medication Usage",
-          "instructions": "Questions about frequency, duration, and dosage of medications",
-          "fields": [
-            {
-              "field_id": "p2_times_per_day",
-              "field_label": "How many times per Day?",
-              "field_type": "text_numeric",
-              "data_type": "Optional[int]",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Number of daily medication doses",
-              "helper_text": null
-            },
-            {
-              "field_id": "p2_medication_duration",
-              "field_label": "For how long have they taken the Medication?",
-              "field_type": "text_short",
-              "data_type": "Optional[str]",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Duration of medication use (days, weeks, months, years)",
-              "helper_text": null
-            },
-            {
-              "field_id": "p2_dosage",
-              "field_label": "Dosage?",
-              "field_type": "text_short",
-              "data_type": "Optional[str]",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Medication dosage amount and units",
-              "helper_text": null
-            }
-          ],
-          "tables": [],
-          "subsections": [],
-          "position_description": "top of page"
-        },
-        {
           "section_id": "medications_before_injury",
           "section_title": "Medications Before Work Injury",
-          "instructions": null,
+          "instructions": "Section title: \"What medications were you taking before the work injury?\" The first line has two checkable options: \"The patient cannot remember at this time\" (left) and \"None\" (right). If either has an X or mark, all category lines below will be blank. Below that are 9 category lines (Pain, Inflammation, Stress, Sleep, Gastric Reflux, Diabetes, High Blood Pressure, Thyroid Problem, Other) each with a horizontal line where the patient writes medication names. Each medication category has a printed label on the LEFT (e.g. \"Pain\", \"Inflammation\", \"Stress\") followed by a horizontal line. Handwritten medication names appear ON that same horizontal line, to the RIGHT of the label. Attribute handwritten text to whichever printed label is on the SAME horizontal line. If text is slightly above or below a line, associate it with the nearest category label.",
           "fields": [
             {
               "field_id": "p2_before_cannot_remember",
@@ -1076,7 +1121,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Look for an X, checkmark, or mark on the blank line next to this printed text. If marked, the patient cannot remember their medications and ALL category lines below should be empty. This is mutually exclusive with filling in specific medication names.",
               "helper_text": null
             },
             {
@@ -1094,7 +1139,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Look for an X, checkmark, or mark on the blank line next to \"None\". If marked, the patient took NO medications and ALL category lines below should be empty. This is mutually exclusive with filling in specific medication names.",
               "helper_text": null
             },
             {
@@ -1112,7 +1157,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Pain medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Pain\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Pain medications taken before injury",
               "helper_text": null
             },
             {
@@ -1130,7 +1175,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Anti-inflammatory medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Inflammation\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Anti-inflammatory medications taken before injury",
               "helper_text": null
             },
             {
@@ -1148,7 +1193,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Stress-related medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Stress\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Stress-related medications taken before injury",
               "helper_text": null
             },
             {
@@ -1166,7 +1211,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Sleep medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Sleep\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Sleep medications taken before injury",
               "helper_text": null
             },
             {
@@ -1184,7 +1229,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Gastric reflux medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Gastric Reflux\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Gastric reflux medications taken before injury",
               "helper_text": null
             },
             {
@@ -1202,7 +1247,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Diabetes medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Diabetes\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Diabetes medications taken before injury",
               "helper_text": null
             },
             {
@@ -1220,7 +1265,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Blood pressure medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"High Blood Pressure\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Blood pressure medications taken before injury",
               "helper_text": null
             },
             {
@@ -1238,7 +1283,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Thyroid medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Thyroid Problem\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Thyroid medications taken before injury",
               "helper_text": null
             },
             {
@@ -1256,7 +1301,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Other medications taken before injury",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Other\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Other medications taken before injury",
               "helper_text": null
             }
           ],
@@ -1267,7 +1312,7 @@
         {
           "section_id": "medications_currently_taking",
           "section_title": "Medications Currently Taking",
-          "instructions": null,
+          "instructions": "Section title: \"What medications are you presently taking?\" Same layout as the before-injury section. First line: \"cannot remember\" (left) and \"None\" (right). If either has an X, all lines below blank. Then 9 category lines with horizontal lines for medication names. Each medication category has a printed label on the LEFT (e.g. \"Pain\", \"Inflammation\", \"Stress\") followed by a horizontal line. Handwritten medication names appear ON that same horizontal line, to the RIGHT of the label. Attribute handwritten text to whichever printed label is on the SAME horizontal line. If text is slightly above or below a line, associate it with the nearest category label.",
           "fields": [
             {
               "field_id": "p2_current_cannot_remember",
@@ -1284,7 +1329,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Look for an X, checkmark, or mark on the blank line next to this printed text. If marked, the patient cannot remember their medications and ALL category lines below should be empty. This is mutually exclusive with filling in specific medication names.",
               "helper_text": null
             },
             {
@@ -1302,7 +1347,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Look for an X, checkmark, or mark on the blank line next to \"None\". If marked, the patient took NO medications and ALL category lines below should be empty. This is mutually exclusive with filling in specific medication names.",
               "helper_text": null
             },
             {
@@ -1320,7 +1365,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Pain medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Pain\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Pain medications currently taking",
               "helper_text": null
             },
             {
@@ -1338,7 +1383,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Anti-inflammatory medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Inflammation\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Anti-inflammatory medications currently taking",
               "helper_text": null
             },
             {
@@ -1356,7 +1401,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Stress-related medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Stress\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Stress-related medications currently taking",
               "helper_text": null
             },
             {
@@ -1374,7 +1419,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Sleep medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Sleep\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Sleep medications currently taking",
               "helper_text": null
             },
             {
@@ -1392,7 +1437,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Gastric reflux medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Gastric Reflux\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Gastric reflux medications currently taking",
               "helper_text": null
             },
             {
@@ -1410,7 +1455,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Diabetes medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Diabetes\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Diabetes medications currently taking",
               "helper_text": null
             },
             {
@@ -1428,7 +1473,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Blood pressure medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"High Blood Pressure\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Blood pressure medications currently taking",
               "helper_text": null
             },
             {
@@ -1446,7 +1491,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Thyroid medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Thyroid Problem\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Thyroid medications currently taking",
               "helper_text": null
             },
             {
@@ -1464,7 +1509,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Other medications currently taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Other\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Other medications currently taking",
               "helper_text": null
             }
           ],
@@ -1475,7 +1520,7 @@
         {
           "section_id": "medications_after_injury",
           "section_title": "Medications After Work Injury",
-          "instructions": "Medications taken after the work injury (but no longer taking). How many times per Day? For how long have you taken the medication for?",
+          "instructions": "Section title: \"What medications were you taking after the work injury (But are no longer taking)\" with printed reminder: \"How many times per Day? For how long have you taken the medication for?\" -- those are instructions, NOT fields. Same layout: cannot remember / None checkboxes, then 9 category lines. Also has a final line: \"Patient to call the office with the names of the medications they take\". Each medication category has a printed label on the LEFT (e.g. \"Pain\", \"Inflammation\", \"Stress\") followed by a horizontal line. Handwritten medication names appear ON that same horizontal line, to the RIGHT of the label. Attribute handwritten text to whichever printed label is on the SAME horizontal line. If text is slightly above or below a line, associate it with the nearest category label.",
           "fields": [
             {
               "field_id": "p2_after_cannot_remember",
@@ -1492,7 +1537,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Look for an X, checkmark, or mark on the blank line next to this printed text. If marked, the patient cannot remember their medications and ALL category lines below should be empty. This is mutually exclusive with filling in specific medication names.",
               "helper_text": null
             },
             {
@@ -1510,7 +1555,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Look for an X, checkmark, or mark on the blank line next to \"None\". If marked, the patient took NO medications and ALL category lines below should be empty. This is mutually exclusive with filling in specific medication names.",
               "helper_text": null
             },
             {
@@ -1528,7 +1573,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Pain medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Pain\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Pain medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1546,7 +1591,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Anti-inflammatory medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Inflammation\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Anti-inflammatory medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1564,7 +1609,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Stress-related medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Stress\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Stress-related medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1582,7 +1627,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Sleep medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Sleep\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Sleep medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1600,7 +1645,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Gastric reflux medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Gastric Reflux\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Gastric reflux medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1618,7 +1663,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Diabetes medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Diabetes\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Diabetes medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1636,7 +1681,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Blood pressure medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"High Blood Pressure\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Blood pressure medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1654,7 +1699,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Thyroid medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Thyroid Problem\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Thyroid medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1672,7 +1717,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Other medications taken after injury but no longer taking",
+              "extraction_hints": "Handwritten text on the horizontal line to the RIGHT of the printed label \"Other\". Only extract text that is on the SAME horizontal line as this label. If the \"None\" or \"cannot remember\" checkbox above is marked, this should be null. Other medications taken after injury but no longer taking",
               "helper_text": null
             },
             {
@@ -1709,170 +1754,140 @@
       "page_title": "Orofacial Exam - Page 3",
       "sections": [
         {
-          "section_id": "epworth_sleepiness_scale",
-          "section_title": "Epworth Sleepiness Scale",
-          "instructions": "How likely are you to doze off or fall asleep in the following situations? 0=would never doze, 1=slight chance, 2=moderate chance, 3=high chance of dozing.",
+          "section_id": "p3_mouth_symptoms",
+          "section_title": "Mouth Symptoms",
+          "instructions": "Each question has YES/NO on the left side and 'Sometimes' on the right side. The patient circles one option. If 'Sometimes' is circled on the right, neither YES nor NO should be selected.",
           "fields": [
             {
-              "field_id": "p3_epworth_sitting_reading",
-              "field_label": "Sitting and reading",
+              "field_id": "p3_dry_mouth",
+              "field_label": "Do you feel that you have dry mouth?",
               "field_type": "circled_selection",
-              "data_type": "int",
+              "data_type": "string",
               "expected_format": null,
-              "options": ["0", "1", "2", "3"],
-              "scale_min": 0,
-              "scale_max": 3,
-              "scale_labels": {"0": "Would never doze", "3": "High chance of dozing"},
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting and reading'.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p3_epworth_watching_tv",
-              "field_label": "Watching television",
-              "field_type": "circled_selection",
-              "data_type": "int",
-              "expected_format": null,
-              "options": ["0", "1", "2", "3"],
-              "scale_min": 0,
-              "scale_max": 3,
-              "scale_labels": {"0": "Would never doze", "3": "High chance of dozing"},
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Watching television'.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p3_epworth_sitting_inactive",
-              "field_label": "Sitting inactive in a public place - for example, a theater or meeting",
-              "field_type": "circled_selection",
-              "data_type": "int",
-              "expected_format": null,
-              "options": ["0", "1", "2", "3"],
-              "scale_min": 0,
-              "scale_max": 3,
-              "scale_labels": {"0": "Would never doze", "3": "High chance of dozing"},
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting inactive in a public place'.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p3_epworth_passenger_car",
-              "field_label": "As a passenger in a car for an hour without a break",
-              "field_type": "circled_selection",
-              "data_type": "int",
-              "expected_format": null,
-              "options": ["0", "1", "2", "3"],
-              "scale_min": 0,
-              "scale_max": 3,
-              "scale_labels": {"0": "Would never doze", "3": "High chance of dozing"},
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'As a passenger in a car'.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p3_epworth_lying_down_afternoon",
-              "field_label": "Lying down to rest in the afternoon",
-              "field_type": "circled_selection",
-              "data_type": "int",
-              "expected_format": null,
-              "options": ["0", "1", "2", "3"],
-              "scale_min": 0,
-              "scale_max": 3,
-              "scale_labels": {"0": "Would never doze", "3": "High chance of dozing"},
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Lying down to rest in the afternoon'.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p3_epworth_sitting_talking",
-              "field_label": "Sitting and talking to someone",
-              "field_type": "circled_selection",
-              "data_type": "int",
-              "expected_format": null,
-              "options": ["0", "1", "2", "3"],
-              "scale_min": 0,
-              "scale_max": 3,
-              "scale_labels": {"0": "Would never doze", "3": "High chance of dozing"},
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting and talking to someone'.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p3_epworth_sitting_after_lunch",
-              "field_label": "Sitting quietly after lunch (when you've had no alcohol)",
-              "field_type": "circled_selection",
-              "data_type": "int",
-              "expected_format": null,
-              "options": ["0", "1", "2", "3"],
-              "scale_min": 0,
-              "scale_max": 3,
-              "scale_labels": {"0": "Would never doze", "3": "High chance of dozing"},
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting quietly after lunch'.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p3_epworth_car_traffic",
-              "field_label": "In a car while stopped in traffic",
-              "field_type": "circled_selection",
-              "data_type": "int",
-              "expected_format": null,
-              "options": ["0", "1", "2", "3"],
-              "scale_min": 0,
-              "scale_max": 3,
-              "scale_labels": {"0": "Would never doze", "3": "High chance of dozing"},
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'In a car while stopped in traffic'.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p3_epworth_total_score",
-              "field_label": "Total Score",
-              "field_type": "text_short",
-              "data_type": "int",
-              "expected_format": null,
-              "options": null,
-              "scale_min": 0,
-              "scale_max": 24,
+              "options": [
+                "YES",
+                "NO",
+                "Sometimes"
+              ],
+              "scale_min": null,
+              "scale_max": null,
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": null,
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Handwritten total score (sum of all 8 rows, range 0-24). Usually written next to 'Total Score:' at the bottom right of the Epworth table.",
+              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_hoarseness",
+              "field_label": "Do you have hoarseness?",
+              "field_type": "circled_selection",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "YES",
+                "NO",
+                "Sometimes"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_saliva_too_little",
+              "field_label": "Does the amount of saliva in your mouth seem to be too little?",
+              "field_type": "circled_selection",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "YES",
+                "NO",
+                "Sometimes"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_difficulty_swallowing",
+              "field_label": "Do you have any difficulties swallowing?",
+              "field_type": "circled_selection",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "YES",
+                "NO",
+                "Sometimes"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_mouth_dry_eating",
+              "field_label": "Does your mouth feel dry when eating a meal?",
+              "field_type": "circled_selection",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "YES",
+                "NO",
+                "Sometimes"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p3_sip_liquids_aid",
+              "field_label": "Do you sip liquids to aid in swallowing dry food?",
+              "field_type": "circled_selection",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "YES",
+                "NO",
+                "Sometimes"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
               "helper_text": null
             }
           ],
@@ -1883,7 +1898,7 @@
         {
           "section_id": "bad_breath",
           "section_title": "Bad Breath Assessment",
-          "instructions": null,
+          "instructions": "This section has two columns: 'Before the Injury' (left) and 'After the Injury' (right). The first row is 'Do you have bad breath?' with YES/NO for each column. If the answer is NO for a column, ALL remaining rows in that column (percentage, VAS scores) should be empty/null — do not extract values for that column. Each subsequent row has the question text on the LEFT, then a 'Before' value field in the MIDDLE column, and an 'After' value field in the RIGHT column. Match handwritten values to the correct column based on horizontal position. VAS fields expect a number 0-10. Percentage fields expect 0-100.",
           "fields": [
             {
               "field_id": "p3_bad_breath_before",
@@ -1903,7 +1918,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "First row, 'Before the Injury' column (left/middle). YES and NO appear side by side. The patient circles one. Look for a circle around either word — any color. If NO is circled, ALL 'Before' fields below (percentage, VAS scores) should be null.",
               "helper_text": null
             },
             {
@@ -1924,7 +1939,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "First row, 'After the Injury' column (right). YES and NO appear side by side. The patient circles one. Look for a circle around either word — any color. If NO is circled, ALL 'After' fields below (percentage, VAS scores) should be null.",
               "helper_text": null
             },
             {
@@ -1938,11 +1953,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_before",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_before",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Before the Injury' column (left/middle) on the row for: What percentage of time do you have bad breath?. Handwritten number on the line in the BEFORE column. Only extract if the parent 'Do you have bad breath? (Before)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -1956,11 +1976,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_after",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_after",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'After the Injury' column (right) on the row for: What percentage of time do you have bad breath?. Handwritten number on the line in the AFTER column. Only extract if the parent 'Do you have bad breath? (After)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -1974,11 +1999,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_before",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_before",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Before the Injury' column (left/middle) on the row for: How intense is your bad breath?. Handwritten number on the line in the BEFORE column. Only extract if the parent 'Do you have bad breath? (Before)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -1992,11 +2022,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_after",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_after",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'After the Injury' column (right) on the row for: How intense is your bad breath?. Handwritten number on the line in the AFTER column. Only extract if the parent 'Do you have bad breath? (After)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2010,11 +2045,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_before",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_before",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Before the Injury' column (left/middle) on the row for: How often do people tell you that you have bad breath?. Handwritten number on the line in the BEFORE column. Only extract if the parent 'Do you have bad breath? (Before)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2028,11 +2068,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_after",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_after",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'After the Injury' column (right) on the row for: How often do people tell you that you have bad breath?. Handwritten number on the line in the AFTER column. Only extract if the parent 'Do you have bad breath? (After)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2046,11 +2091,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_before",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_before",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Before the Injury' column (left/middle) on the row for: Does your bad breath interfere with your ability to interact with other people?. Handwritten number on the line in the BEFORE column. Only extract if the parent 'Do you have bad breath? (Before)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2064,11 +2114,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_after",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_after",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'After the Injury' column (right) on the row for: Does your bad breath interfere with your ability to interact with other people?. Handwritten number on the line in the AFTER column. Only extract if the parent 'Do you have bad breath? (After)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2082,11 +2137,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_before",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_before",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Before the Injury' column (left/middle) on the row for: Does your bad breath interfere with your ability to interact with your family?. Handwritten number on the line in the BEFORE column. Only extract if the parent 'Do you have bad breath? (Before)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2100,11 +2160,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_after",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_after",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'After the Injury' column (right) on the row for: Does your bad breath interfere with your ability to interact with your family?. Handwritten number on the line in the AFTER column. Only extract if the parent 'Do you have bad breath? (After)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2118,11 +2183,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_before",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_before",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Before the Injury' column (left/middle) on the row for: Does your bad breath interfere with your ability to have intimate kissing with your significant other?. Handwritten number on the line in the BEFORE column. Only extract if the parent 'Do you have bad breath? (Before)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2136,11 +2206,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_after",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_after",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'After the Injury' column (right) on the row for: Does your bad breath interfere with your ability to have intimate kissing with your significant other?. Handwritten number on the line in the AFTER column. Only extract if the parent 'Do you have bad breath? (After)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2154,11 +2229,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_before",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_before",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Before the Injury' column (left/middle) on the row for: Does your bad breath cause you embarrassment?. Handwritten number on the line in the BEFORE column. Only extract if the parent 'Do you have bad breath? (Before)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2172,11 +2252,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_after",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_after",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'After the Injury' column (right) on the row for: Does your bad breath cause you embarrassment?. Handwritten number on the line in the AFTER column. Only extract if the parent 'Do you have bad breath? (After)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2190,11 +2275,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_before",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_before",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Before the Injury' column (left/middle) on the row for: Does your bad breath cause you stress?. Handwritten number on the line in the BEFORE column. Only extract if the parent 'Do you have bad breath? (Before)' is YES. If parent is NO, return null.",
               "helper_text": null
             },
             {
@@ -2208,11 +2298,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p3_bad_breath_after",
+              "conditional_logic": {
+                "depends_on_field": "p3_bad_breath_after",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'After the Injury' column (right) on the row for: Does your bad breath cause you stress?. Handwritten number on the line in the AFTER column. Only extract if the parent 'Do you have bad breath? (After)' is YES. If parent is NO, return null.",
               "helper_text": null
             }
           ],
@@ -2456,7 +2551,7 @@
         {
           "section_id": "p4_hand_dominance",
           "section_title": "Hand Dominance",
-          "instructions": null,
+          "instructions": "'Hand Dominance' with two options: 'Right' and 'Left' printed side by side. The patient circles exactly ONE. Only one can be selected.",
           "fields": [
             {
               "field_id": "p4_hand_dominance",
@@ -2476,7 +2571,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Right' is on the LEFT, 'Left' is on the RIGHT. The patient circles one. Only the word INSIDE the circle is the answer. If the circle touches the other word, that word is NOT selected. The circle can be any color.",
               "helper_text": null
             }
           ],
@@ -2487,7 +2582,7 @@
         {
           "section_id": "p4_work_injury",
           "section_title": "Work Injury",
-          "instructions": "In your work injury, did you injure your:",
+          "instructions": "'In your work injury, did you injure your:' — Two rows: 'Right' row and 'Left' row. Each row lists body parts: Shoulder, Arm, Elbow, Wrist, Hand, Fingers. The patient can circle MULTIPLE body parts in each row. CRITICAL: Only include a body part if its name is clearly INSIDE a circle on THAT row. If a circle on the Right row touches or overlaps a word on the Left row, that Left row word is NOT circled — only body parts on the SAME horizontal row count. The Right row is the TOP row, the Left row is the BOTTOM row.",
           "fields": [
             {
               "field_id": "p4_right_body_parts_injured",
@@ -2511,7 +2606,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Right (TOP row): Look at the body part names on this row only. The patient circles one or more body parts. Only include a body part if its name is clearly INSIDE a circle ON THIS ROW. If a circle from the other row touches a word on this row, it does NOT count. Circles can be any color.",
               "helper_text": null
             },
             {
@@ -2536,7 +2631,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Left (BOTTOM row): Look at the body part names on this row only. The patient circles one or more body parts. Only include a body part if its name is clearly INSIDE a circle ON THIS ROW. If a circle from the other row touches a word on this row, it does NOT count. Circles can be any color.",
               "helper_text": null
             }
           ],
@@ -2547,7 +2642,7 @@
         {
           "section_id": "p4_daily_activities",
           "section_title": "Daily Activities",
-          "instructions": null,
+          "instructions": "Series of Yes/No questions about daily activity difficulties. Each question is on its own line with 'Yes' and 'No' printed at the far RIGHT end. The patient circles ONE answer per row. Only the word enclosed by the circle on THAT specific row is the answer. Do not confuse circles from adjacent rows.",
           "fields": [
             {
               "field_id": "p4_difficulty_grip_toothbrush",
@@ -2555,7 +2650,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2564,7 +2662,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Do you have any difficulty using your hands to adequately gr...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2573,7 +2671,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2582,7 +2683,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Do you have any difficulty using hands/fingers to adequately...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2591,7 +2692,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2600,7 +2704,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Does shoulder pain cause you any difficulty brushing and/or ...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2609,7 +2713,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2618,7 +2725,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Do you have any difficulty holding a toothpaste tube with on...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2627,7 +2734,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2636,7 +2746,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Do you have any difficulty squeezing toothpaste with one han...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2645,7 +2755,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2654,7 +2767,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Do you have any difficulty using your hands to cut your food...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2663,7 +2776,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2672,7 +2788,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Do you have any difficulty using your hands to feed yourself...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2681,7 +2797,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2690,7 +2809,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Do you have any difficulty raising up your arm to comb or br...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             }
           ],
@@ -2701,7 +2820,7 @@
         {
           "section_id": "p4_smoking_history",
           "section_title": "Smoking History",
-          "instructions": null,
+          "instructions": "Smoking history questions. 'Do you Smoke?' and 'Have you ever smoked?' are standalone Yes/No. The follow-up fields (when stopped, cigarettes/day, years smoker) are only relevant if the patient smokes or has smoked. 'Did your smoking usage increase after the industrial injury?' has a conditional 'If yes, ___ cigarettes per day' on the same row.",
           "fields": [
             {
               "field_id": "p4_do_you_smoke",
@@ -2709,7 +2828,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2718,7 +2840,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Do you Smoke?' — Yes and No appear to the RIGHT of the question on the SAME row. The patient circles ONE. Only the word clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2727,7 +2849,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2736,7 +2861,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Have you ever smoked?' — Yes and No appear to the RIGHT of the question on the SAME row. The patient circles ONE. Only the word clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2750,11 +2875,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p4_have_you_ever_smoked",
+              "conditional_logic": {
+                "depends_on_field": "p4_have_you_ever_smoked",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on the line after 'When did you stop smoking? ___ months ago'. Only extract if 'Have you ever smoked?' is Yes.",
               "helper_text": null
             },
             {
@@ -2768,11 +2898,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p4_have_you_ever_smoked",
+              "conditional_logic": {
+                "depends_on_field": "p4_have_you_ever_smoked",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on the line after '___ years ago' on the same row as 'months ago'. Only extract if 'Have you ever smoked?' is Yes.",
               "helper_text": null
             },
             {
@@ -2786,11 +2921,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p4_do_you_smoke",
+              "conditional_logic": {
+                "depends_on_field": "p4_do_you_smoke",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on the line after 'How much do you smoke? ___ cigarettes/day'. Only extract if 'Do you Smoke?' is Yes.",
               "helper_text": null
             },
             {
@@ -2804,11 +2944,16 @@
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
+              "parent_field_id": "p4_have_you_ever_smoked",
+              "conditional_logic": {
+                "depends_on_field": "p4_have_you_ever_smoked",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on the line after 'How many years were you a smoker? ___'. Only extract if 'Have you ever smoked?' is Yes.",
               "helper_text": null
             },
             {
@@ -2817,7 +2962,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2826,7 +2974,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Did your smoking usage increase after the industrial injury?' — Yes and No appear to the RIGHT of the question. Yes and No appear to the RIGHT of the question on the SAME row. The patient circles ONE. Only the word clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected. The circle can be any color. If neither is circled, return null. If Yes, there is a conditional 'If yes, ___ cigarettes per day' on the same line.",
               "helper_text": null
             },
             {
@@ -2841,10 +2989,15 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p4_smoking_increase_after_injury",
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p4_smoking_increase_after_injury",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number after 'If yes, ___ cigarettes per day' on the SAME row as 'Did your smoking usage increase after the industrial injury?'. Only extract if that question is Yes.",
               "helper_text": null
             }
           ],
@@ -2855,7 +3008,7 @@
         {
           "section_id": "p4_substance_use",
           "section_title": "Substance Use",
-          "instructions": null,
+          "instructions": "Substance use questions. Each is a Yes/No with an 'If yes' follow-up on the SAME row. The Yes/No appears after the question text. The 'If yes' fill-in appears further to the RIGHT on the same horizontal line. Only extract the 'If yes' field if the parent Yes/No is Yes.",
           "fields": [
             {
               "field_id": "p4_drink_alcohol",
@@ -2863,7 +3016,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2872,7 +3028,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Do You Drink Alcohol?' — Yes and No appear to the RIGHT of the question on the SAME row. The patient circles ONE. Only the word clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected. The circle can be any color. If neither is circled, return null. If Yes, 'If yes, How much? ___' appears to the right on the same line.",
               "helper_text": null
             },
             {
@@ -2887,10 +3043,15 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p4_drink_alcohol",
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p4_drink_alcohol",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten text after 'If yes, How much? ___' on the SAME row as 'Do You Drink Alcohol?'. Only extract if 'Do You Drink Alcohol?' is Yes. May include frequency (e.g. '4x/year') and/or amount (e.g. '12 drinks').",
               "helper_text": null
             },
             {
@@ -2899,7 +3060,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2908,7 +3072,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Do you use recreational drugs?' — Yes and No appear to the RIGHT of the question on the SAME row. The patient circles ONE. Only the word clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected. The circle can be any color. If neither is circled, return null. If Yes, 'if yes, describe: ___' appears to the right on the same line.",
               "helper_text": null
             },
             {
@@ -2923,10 +3087,15 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p4_use_recreational_drugs",
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p4_use_recreational_drugs",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten text after 'if yes, describe: ___' on the SAME row as 'Do you use recreational drugs?'. Only extract if that question is Yes.",
               "helper_text": null
             },
             {
@@ -2935,7 +3104,10 @@
               "field_type": "yes_no",
               "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -2944,7 +3116,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'Have you used amphetamines?' — Yes and No appear to the RIGHT of the question on the SAME row. The patient circles ONE. Only the word clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected. The circle can be any color. If neither is circled, return null. If Yes, 'if yes, When? ___' appears to the right on the same line.",
               "helper_text": null
             },
             {
@@ -2959,134 +3131,21 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p4_used_amphetamines",
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p4_used_amphetamines",
+                "condition": "equals",
+                "condition_value": "YES",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten text after 'if yes, When? ___' on the SAME row as 'Have you used amphetamines?'. Only extract if that question is Yes.",
               "helper_text": null
             }
           ],
           "tables": [],
           "subsections": [],
           "position_description": null
-        },
-        {
-          "section_id": "p4_mouth_symptoms",
-          "section_title": "Mouth Symptoms",
-          "instructions": "Each question has YES/NO on the left side and 'Sometimes' on the right side. The patient circles one option. If 'Sometimes' is circled on the right, neither YES nor NO should be selected.",
-          "fields": [
-            {
-              "field_id": "p4_dry_mouth",
-              "field_label": "Do you feel that you have dry mouth?",
-              "field_type": "circled_selection",
-              "data_type": "string",
-              "expected_format": null,
-              "options": ["YES", "NO", "Sometimes"],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p4_hoarseness",
-              "field_label": "Do you have hoarseness?",
-              "field_type": "circled_selection",
-              "data_type": "string",
-              "expected_format": null,
-              "options": ["YES", "NO", "Sometimes"],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p4_saliva_too_little",
-              "field_label": "Does the amount of saliva in your mouth seem to be too little?",
-              "field_type": "circled_selection",
-              "data_type": "string",
-              "expected_format": null,
-              "options": ["YES", "NO", "Sometimes"],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p4_difficulty_swallowing",
-              "field_label": "Do you have any difficulties swallowing?",
-              "field_type": "circled_selection",
-              "data_type": "string",
-              "expected_format": null,
-              "options": ["YES", "NO", "Sometimes"],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p4_mouth_dry_eating",
-              "field_label": "Does your mouth feel dry when eating a meal?",
-              "field_type": "circled_selection",
-              "data_type": "string",
-              "expected_format": null,
-              "options": ["YES", "NO", "Sometimes"],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
-              "helper_text": null
-            },
-            {
-              "field_id": "p4_sip_liquids_aid",
-              "field_label": "Do you sip liquids to aid in swallowing dry food?",
-              "field_type": "circled_selection",
-              "data_type": "string",
-              "expected_format": null,
-              "options": ["YES", "NO", "Sometimes"],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": "YES and NO appear on the LEFT side of the question. 'Sometimes' appears on the RIGHT side. Patient circles exactly one. If 'Sometimes' is circled, the answer is 'Sometimes' — not YES or NO.",
-              "helper_text": null
-            }
-          ],
-          "tables": [],
-          "subsections": [],
-          "position_description": "bottom of page, below substance use section"
         }
       ],
       "standalone_fields": [
@@ -3136,9 +3195,80 @@
       "page_title": "Employment History",
       "sections": [
         {
+          "section_id": "p5_office_location",
+          "section_title": "Office Location",
+          "instructions": "Top of page — a row of office location names printed in all caps. The patient or staff circles ONE location. Only the name clearly INSIDE the circle is selected.",
+          "fields": [
+            {
+              "field_id": "p5_location",
+              "field_label": "Office location",
+              "field_type": "circled_selection",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "HAWTHORNE",
+                "RESEDA",
+                "ANAHEIM",
+                "REDLANDS",
+                "SACRAMENTO"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": "first row at very top of page",
+              "extraction_hints": "Row of office locations printed in all caps across the top of the page. Only ONE should be circled. Only the word clearly INSIDE the circle counts — if the circle touches an adjacent word, that word is NOT selected. The circle can be any color.",
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": "top of page"
+        },
+        {
+          "section_id": "p5_evaluation_type",
+          "section_title": "Evaluation Type",
+          "instructions": "Second row below office location — a row of evaluation type abbreviations. The patient or staff circles ONE type. Only the abbreviation clearly INSIDE the circle is selected.",
+          "fields": [
+            {
+              "field_id": "p5_eval_type",
+              "field_label": "Evaluation type",
+              "field_type": "circled_selection",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "PRIVATE",
+                "WCAB",
+                "QME",
+                "PQME",
+                "APQME",
+                "AME",
+                "UNREPRESENTED",
+                "PERSONAL INJURY"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": "second row, below office location row",
+              "extraction_hints": "Row of evaluation type abbreviations printed below the office location row. Only ONE should be circled. Only the word/abbreviation clearly INSIDE the circle counts — if the circle touches an adjacent word, that word is NOT selected. The circle can be any color.",
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": "top of page, below office location"
+        },
+        {
           "section_id": "header_info",
           "section_title": "Header Information",
-          "instructions": null,
+          "instructions": "Row of demographic fields below the office location and evaluation type rows. Layout: 'Name: ___' then 'M___ F___' then 'Date: ___/___/202___' then 'Interpreter: ___' all on the same line. Below that: 'Date of Injury: ___' then 'PTP: DR___' on the next line. Each field label is printed and the handwritten answer appears on the horizontal line to the RIGHT of that label.",
           "fields": [
             {
               "field_id": "p5_name",
@@ -3155,13 +3285,13 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten patient name on the line after 'Name:'. This is on the third row of the page (below office location and evaluation type). The name appears to the LEFT on this row, before 'M_F_'.",
               "helper_text": null
             },
             {
               "field_id": "p5_gender",
               "field_label": "M___F___",
-              "field_type": "radio_group",
+              "field_type": "circled_selection",
               "data_type": "string",
               "expected_format": null,
               "options": [
@@ -3176,7 +3306,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "'M' and 'F' appear on the same row as 'Name:', to the RIGHT of the name. The patient circles ONE — either M or F. Only the letter clearly INSIDE the circle is the answer. The circle can be any color. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -3184,7 +3314,7 @@
               "field_label": "Date:",
               "field_type": "date",
               "data_type": "date",
-              "expected_format": "____/____/202___",
+              "expected_format": "MM/DD/YYYY",
               "options": null,
               "scale_min": null,
               "scale_max": null,
@@ -3194,7 +3324,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten date on the same row as Name and M/F, to the RIGHT. Format is ___/___/202___ (MM/DD/YYYY). The '202' is pre-printed — the patient fills in the month, day, and last digit(s) of the year.",
               "helper_text": null
             },
             {
@@ -3212,7 +3342,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten interpreter name on the same row as Name/Date, at the far RIGHT. After 'Interpreter:'. If no interpreter was used, this line will be blank — return null.",
               "helper_text": null
             },
             {
@@ -3220,7 +3350,7 @@
               "field_label": "Date of Injury:",
               "field_type": "date",
               "data_type": "date",
-              "expected_format": null,
+              "expected_format": "MM/DD/YYYY",
               "options": null,
               "scale_min": null,
               "scale_max": null,
@@ -3230,7 +3360,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten date on the SECOND row (below the Name/M/F/Date row). After 'Date of Injury:'. This is on the LEFT side of this row.",
               "helper_text": null
             },
             {
@@ -3248,18 +3378,18 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten doctor name on the SECOND row, to the RIGHT of 'Date of Injury'. After 'PTP: DR'. PTP = Primary Treating Physician.",
               "helper_text": null
             }
           ],
           "tables": [],
           "subsections": [],
-          "position_description": "top of page"
+          "position_description": "below the evaluation type row, above employment history"
         },
         {
           "section_id": "employment_history",
           "section_title": "Employment History",
-          "instructions": null,
+          "instructions": "Employment History section. Layout is a structured form with printed labels and horizontal lines. Row 1: 'Employed at: ___' (employer name) then 'for ___ years ___ months' on the same line. Row 2: 'Job Title: ___' — handwritten job title on the line, may overflow with additional text to the right describing the role. Row 3: 'Worked ___ Days per week;' on the LEFT, then 'Worked ___ Hours per day' on the RIGHT of the same line. Row 4: 'Right Left Hand Dominant' — patient circles one. Row 5: 'What did patient do at the job?' — the answer is handwritten BELOW this question on the following line(s), not to the right. The handwritten text may span multiple lines. All text below this question and above the next printed section belongs to this field.",
           "fields": [
             {
               "field_id": "p5_employed_at",
@@ -3276,7 +3406,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten employer name on the line after 'Employed at:'. This is on Row 1 of the employment section, on the LEFT side. The employer name may be long and take up most of the line. Do NOT confuse with the 'for ___ years ___ months' that appears to the RIGHT on the same line.",
               "helper_text": null
             },
             {
@@ -3294,7 +3424,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on Row 1, to the RIGHT of the employer name, after 'for' and before 'years'. This is the number of years employed. May be blank if only months are filled in.",
               "helper_text": null
             },
             {
@@ -3312,7 +3442,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on Row 1, at the far RIGHT, before 'months'. This is the number of months employed. May be blank if only years are filled in.",
               "helper_text": null
             },
             {
@@ -3330,7 +3460,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten job title on the line after 'Job Title:' on Row 2. The title may be short (e.g. 'OSP', 'Care Giver') or may overflow to the right with additional descriptive text (e.g. 'Direct supervisor, professional, home manager'). Capture ALL handwritten text on this row as the job title — it describes their role.",
               "helper_text": null
             },
             {
@@ -3348,7 +3478,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on Row 3, on the LEFT side, between 'Worked' and 'Days per week;'. Usually a single digit (e.g. 5, 7). May include a range (e.g. '3-5').",
               "helper_text": null
             },
             {
@@ -3366,13 +3496,13 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on Row 3, on the RIGHT side, between 'Worked' and 'Hours per day'. Usually a number like 8, 10, 24. May also have additional text like 'lbs' or 'week' written nearby — ignore that, only extract the hours number on this line between the printed labels.",
               "helper_text": null
             },
             {
               "field_id": "p5_hand_dominance",
               "field_label": "Right Left Hand Dominant",
-              "field_type": "radio_group",
+              "field_type": "circled_selection",
               "data_type": "string",
               "expected_format": null,
               "options": [
@@ -3387,7 +3517,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row 4: 'Right' and 'Left' printed side by side, followed by 'Hand Dominant'. The patient circles ONE — either Right or Left. Only the word INSIDE the circle counts. If the circle touches the other word, that word is NOT selected. Circle can be any color.",
               "helper_text": null
             },
             {
@@ -3405,7 +3535,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "IMPORTANT: The answer to 'What did patient do at the job?' is written BELOW the question, or to the right of it. Look for handwritten text on the line(s) UNDER this printed question. The handwritten text describes the patient's job duties and may span 1-3 lines. Common content: physical activities, job responsibilities, equipment used. Capture ALL handwritten text below or to the right of this question until the next printed section begins.",
               "helper_text": null
             },
             {
@@ -3656,161 +3786,6 @@
               "position_description": null,
               "extraction_hints": null,
               "helper_text": null
-            },
-            {
-              "field_id": "p5_job_requirements_current",
-              "field_label": "Job Requirements:",
-              "field_type": "checkbox_multi",
-              "data_type": "List[str]",
-              "expected_format": null,
-              "options": [
-                "driving",
-                "walking",
-                "standing",
-                "sitting",
-                "squatting",
-                "twisting",
-                "bending forward",
-                "side bending",
-                "reaching below shoulder level",
-                "reaching above shoulder level",
-                "pushing",
-                "pulling",
-                "grasping",
-                "gripping"
-              ],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p5_current_lifting_maximum_lbs",
-              "field_label": "lifting up to maximum of ___lbs.",
-              "field_type": "text_numeric",
-              "data_type": "int",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p5_current_carrying_maximum_lbs",
-              "field_label": "carrying up to maximum ___lbs.",
-              "field_type": "text_numeric",
-              "data_type": "int",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p5_current_computer_mouse_hand",
-              "field_label": "using a computer mouse: R L",
-              "field_type": "radio_group",
-              "data_type": "string",
-              "expected_format": null,
-              "options": [
-                "R",
-                "L"
-              ],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p5_current_workstation_type",
-              "field_label": "non-ergonomic: desk chair work station",
-              "field_type": "checkbox_multi",
-              "data_type": "List[str]",
-              "expected_format": null,
-              "options": [
-                "desk",
-                "chair",
-                "work station"
-              ],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p5_current_monitor_location",
-              "field_label": "computer monitor located in: F R L",
-              "field_type": "radio_group",
-              "data_type": "string",
-              "expected_format": null,
-              "options": [
-                "F",
-                "R",
-                "L"
-              ],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p5_current_phone_cradle_hand",
-              "field_label": "cradling the phone on: R L",
-              "field_type": "radio_group",
-              "data_type": "string",
-              "expected_format": null,
-              "options": [
-                "R",
-                "L"
-              ],
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
             }
           ],
           "tables": [],
@@ -3912,8 +3887,29 @@
         {
           "section_id": "p6_industrial_injury",
           "section_title": "History of Industrial Injury",
-          "instructions": null,
+          "instructions": "This page has two parts side by side. LEFT: A table of body parts with Freq-% and VAS columns. RIGHT: Three numbered free-form writing sections (1, 2, 3) for describing the injury. IMPORTANT: A body part row is 'active' when the patient has circled the body part name OR written values in its Freq-% or VAS cells. Only extract rows where there is a circle around the body part label OR handwritten values in the Freq-% or VAS columns — blank rows should be null. Each row's Freq-% and VAS values belong ONLY to that row's body part. The numbered sections on the right each have a printed number (1) (2) (3) — all handwritten text under each number belongs to that numbered description. At the bottom right is the pre-printed text 'CT: repetitive trauma resulting in orthopedic injuries' — this is static text, not a field. At the top right is '(Patient is a Poor Historian: Yes No)' — the patient or doctor circles one.",
           "fields": [
+            {
+              "field_id": "p6_patient_poor_historian",
+              "field_label": "Patient is a Poor Historian",
+              "field_type": "yes_no",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": "top right, next to the page title",
+              "extraction_hints": "Printed at the top right of the page: '(Patient is a Poor Historian: Yes No)'. One of the two options is circled. Only the word clearly INSIDE the circle is the answer. Circle can be any color.",
+              "helper_text": null
+            },
             {
               "field_id": "p6_injury_description_1",
               "field_label": "Injury Description 1",
@@ -3929,7 +3925,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": "right side, numbered section 1",
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten text in the RIGHT portion of the page, starting at the circled or printed number '1)'. Capture ALL handwritten text between '1)' and '2)'. This describes the first injury event — typically includes a date (e.g. '11-5-21') and what happened. The handwriting may span multiple lines and may be partially illegible. Transcribe as accurately as possible.",
               "helper_text": null
             },
             {
@@ -3947,7 +3943,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": "right side, numbered section 2",
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten text in the RIGHT portion of the page, between '2)' and '3)'. Describes additional injury details or a second injury event. May be blank if the patient only filled in section 1.",
               "helper_text": null
             },
             {
@@ -3965,7 +3961,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": "right side, numbered section 3",
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten text in the RIGHT portion of the page, below '3)' down to the 'CT: repetitive trauma' line. Describes further injury details or treatment history. May be blank.",
               "helper_text": null
             }
           ],
@@ -3983,7 +3979,7 @@
                 {
                   "column_id": "frequency",
                   "header": "Freq.%",
-                  "data_type": "string",
+                  "data_type": "int",
                   "width_hint": "narrow"
                 },
                 {
@@ -3994,7 +3990,7 @@
                 }
               ],
               "row_type": "fixed",
-              "expected_rows": 25,
+              "expected_rows": 26,
               "row_labels": [
                 "Neck",
                 "R Shoulder",
@@ -4024,7 +4020,7 @@
                 "L Foot"
               ],
               "section_name": null,
-              "extraction_hints": "Track injury locations with frequency percentages and VAS pain scores"
+              "extraction_hints": "LEFT side of the page — a table with 26 rows (body parts) and 3 columns: body part name, Freq-%, VAS. A row is relevant ONLY if: (a) the body part name is circled, OR (b) there are handwritten numbers in the Freq-% or VAS cells for that row. CRITICAL: Match handwritten values to the CORRECT row by horizontal alignment — the Freq-% value is in the MIDDLE column on the SAME horizontal line as the body part label, and the VAS value is in the RIGHT column on the SAME horizontal line. Do NOT assign values from one row to a different row. VAS may be a single number (e.g. '8') or a range (e.g. '5-6'). Freq-% is a percentage number (e.g. '50', '100'). Rows with no circle and no handwritten values should be reported as empty/null."
             }
           ],
           "subsections": [],
@@ -4301,60 +4297,17 @@
         {
           "section_id": "p7_pain_stress_section",
           "section_title": "Pain and Stress Related Questions",
-          "instructions": null,
+          "instructions": "Page 7 — Pain, stress, and bruxism questions. The first 4 questions are bold-text Yes/No questions — Yes and No appear to the RIGHT of each question. 'Stressors at Work' is a multi-select where the patient circles one or more items from a list across 2 rows. The Clenching/Bracing Yes/No question may have handwritten notes to its right (extract those in p7_clenching_bracing_notes). The bruxism question about Days after / Weeks after has those fill-ins on the SAME line to the right of 'No'. The Bruxism table (Clenching / Grinding / Bracing Facial Musculature) has 3 rows each with 'Day' and 'Night' — the patient circles whichever applies, can circle both Day and Night for the same row. At the bottom: 'Bruxism: ___ % of Time ___ VAS Intensity' — two fill-in numbers on the same line.",
           "fields": [
             {
               "field_id": "p7_orthopedic_pain_clenching",
               "field_label": "Orthopedic pain causing clenching/bracing of facial muscles",
               "field_type": "yes_no",
-              "data_type": "bool",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p7_developed_stressors_injury",
-              "field_label": "Developed stressors in response to industrial orthopedic injuries",
-              "field_type": "yes_no",
-              "data_type": "bool",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p7_stressors_work",
-              "field_label": "Stressors at Work",
-              "field_type": "checkbox_multi",
-              "data_type": "List[str]",
+              "data_type": "string",
               "expected_format": null,
               "options": [
-                "Heavy workload",
-                "Long or inflexible hours",
-                "Tight deadlines",
-                "Lack of control",
-                "Conflicting or uncertain job expectations",
-                "Night shifts",
-                "Lack of support",
-                "Bullying",
-                "Poor relationships"
+                "Yes",
+                "No"
               ],
               "scale_min": null,
               "scale_max": null,
@@ -4364,16 +4317,66 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Bold question at the top: 'Orthopedic pain causing clenching/bracing of facial muscles'. Yes and No appear to the RIGHT of the question text. The patient circles ONE. Only the word clearly INSIDE the circle counts — if a circle touches the adjacent word, that word is NOT selected. Circle can be any color. If neither is circled, return null.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p7_developed_stressors_injury",
+              "field_label": "Developed stressors in response to industrial orthopedic injuries",
+              "field_type": "yes_no",
+              "data_type": "string",
+              "expected_format": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Bold question: 'Developed stressors in response to industrial orthopedic injuries'. Yes and No appear to the RIGHT of the question text. The patient circles ONE. Only the word clearly INSIDE the circle counts — if a circle touches the adjacent word, that word is NOT selected. Circle can be any color. If neither is circled, return null.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p7_stressors_work",
+              "field_label": "Stressors at Work",
+              "field_type": "checkbox_multi",
+              "data_type": "List[str]",
+              "expected_format": null,
+              "options": [
+                "Heavy Workload",
+                "Long or inflexible hours",
+                "Tight deadlines",
+                "Lack of Control",
+                "Conflicting or uncertain job expectations",
+                "Lack of support",
+                "Poor Relationships"
+              ],
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Label 'Stressors at Work' is bold and printed on the LEFT. The stressor options are printed across 2 rows to the right: Row 1: Heavy Workload, Long or inflexible hours, Tight deadlines, Lack of Control. Row 2: Conflicting or uncertain job expectations, Lack of support, Poor Relationships (with a fill-in line after it). The patient CIRCLES one or more — only circle the items clearly INSIDE a circle. There is also a fill-in line after 'Poor Relationships' for writing in a custom stressor. Do not include items that are not circled even if near a circle.",
               "helper_text": null
             },
             {
               "field_id": "p7_clenching_bracing_stress",
               "field_label": "Clenching/Bracing of facial muscles in response to stress",
               "field_type": "yes_no",
-              "data_type": "bool",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4382,25 +4385,56 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Bold question: 'Clenching/Bracing of facial muscles in response to stress'. Yes and No appear to the RIGHT of the question text. The patient circles ONE. Only the word clearly INSIDE the circle counts — if a circle touches the adjacent word, that word is NOT selected. Circle can be any color. If neither is circled, return null. NOTE: The patient sometimes writes additional notes or context to the RIGHT of Yes/No on this line (e.g. 'Stress from assault', 'when stressed at work as care giver'). Capture those notes in p7_clenching_bracing_notes if present.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p7_clenching_bracing_notes",
+              "field_label": "Additional notes next to Clenching/Bracing response",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p7_clenching_bracing_stress",
+              "conditional_logic": {
+                "depends_on_field": "p7_clenching_bracing_stress",
+                "condition": "equals",
+                "condition_value": "Yes",
+                "action": "show"
+              },
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Handwritten notes written to the RIGHT of the Yes/No on the 'Clenching/Bracing in response to stress' line. Examples: 'Stress from assault', 'when stressed at work as care giver'. If present, transcribe exactly. May be null.",
               "helper_text": null
             },
             {
               "field_id": "p7_bruxism_after_work_pain",
               "field_label": "Did the bruxism begin after the you started having work related pain/stress?",
               "field_type": "yes_no",
-              "data_type": "bool",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": null,
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p7_clenching_bracing_stress",
+                "condition": "equals",
+                "condition_value": "Yes",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Bold question: 'Did the bruxism begin after the you started having work related pain/stress?' Yes and No appear to the RIGHT of the question text. The patient circles ONE. Only the word clearly INSIDE the circle counts — if a circle touches the adjacent word, that word is NOT selected. Circle can be any color. If neither is circled, return null. If Yes, there may be handwritten notes to the right. After Yes/No there are also fill-in blanks: '___ Days after ___ Weeks after' — those are separate fields p7_bruxism_days_after and p7_bruxism_weeks_after.",
               "helper_text": null
             },
             {
@@ -4415,10 +4449,15 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p7_bruxism_after_work_pain",
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p7_bruxism_after_work_pain",
+                "condition": "equals",
+                "condition_value": "Yes",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on the same line as the bruxism onset question, after 'No' and before 'Days after'. Only extract if p7_bruxism_after_work_pain is Yes. Sometimes the patient writes a range or approximate (e.g. '~1/2 year' or '90') — transcribe exactly.",
               "helper_text": null
             },
             {
@@ -4433,19 +4472,27 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p7_bruxism_after_work_pain",
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p7_bruxism_after_work_pain",
+                "condition": "equals",
+                "condition_value": "Yes",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number after 'Days after' and before 'Weeks after' on the same line. Only extract if p7_bruxism_after_work_pain is Yes. May be blank.",
               "helper_text": null
             },
             {
               "field_id": "p7_clenching_day",
               "field_label": "Clenching - Day",
-              "field_type": "yes_no",
-              "data_type": "bool",
+              "field_type": "circled_selection",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Day",
+                "Night"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4454,16 +4501,19 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row 1 of the Bruxism table: 'Clenching'. The patient can circle 'Day', 'Night', both, or neither. This field is TRUE if 'Day' is circled on the Clenching row. Only the word INSIDE a circle counts. Circle can be any color.",
               "helper_text": null
             },
             {
               "field_id": "p7_clenching_night",
               "field_label": "Clenching - Night",
-              "field_type": "yes_no",
-              "data_type": "bool",
+              "field_type": "circled_selection",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Day",
+                "Night"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4472,16 +4522,19 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row 1 of the Bruxism table: 'Clenching'. This field is TRUE if 'Night' is circled on the Clenching row. Check the Clenching row specifically — do not confuse with the Grinding or Bracing rows below it.",
               "helper_text": null
             },
             {
               "field_id": "p7_grinding_day",
               "field_label": "Grinding - Day",
-              "field_type": "yes_no",
-              "data_type": "bool",
+              "field_type": "circled_selection",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Day",
+                "Night"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4490,16 +4543,19 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row 2 of the Bruxism table: 'Grinding'. TRUE if 'Day' is circled on the Grinding row. The Grinding row is directly BELOW the Clenching row — verify you are on the correct row.",
               "helper_text": null
             },
             {
               "field_id": "p7_grinding_night",
               "field_label": "Grinding - Night",
-              "field_type": "yes_no",
-              "data_type": "bool",
+              "field_type": "circled_selection",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Day",
+                "Night"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4508,16 +4564,19 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row 2 of the Bruxism table: 'Grinding'. TRUE if 'Night' is circled on the Grinding row.",
               "helper_text": null
             },
             {
               "field_id": "p7_bracing_facial_day",
               "field_label": "Bracing Facial Musculature - Day",
-              "field_type": "yes_no",
-              "data_type": "bool",
+              "field_type": "circled_selection",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Day",
+                "Night"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4526,16 +4585,19 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row 3 of the Bruxism table: 'Bracing Facial Musculature'. TRUE if 'Day' is circled on the Bracing Facial Musculature row — the BOTTOM row of the 3.",
               "helper_text": null
             },
             {
               "field_id": "p7_bracing_facial_night",
               "field_label": "Bracing Facial Musculature - Night",
-              "field_type": "yes_no",
-              "data_type": "bool",
+              "field_type": "circled_selection",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Day",
+                "Night"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4544,14 +4606,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row 3 of the Bruxism table: 'Bracing Facial Musculature'. TRUE if 'Night' is circled on the Bracing Facial Musculature row.",
               "helper_text": null
             },
             {
               "field_id": "p7_bruxism_percent_time",
               "field_label": "Bruxism: % of Time",
               "field_type": "percentage",
-              "data_type": "Optional[float]",
+              "data_type": "int",
               "expected_format": null,
               "options": null,
               "scale_min": null,
@@ -4562,14 +4624,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number on the bottom line before '% of Time'. Format: 'Bruxism: ___ % of Time'. This is on the SAME horizontal line as VAS Intensity — the percent value comes FIRST (left of '% of Time'), the VAS comes SECOND (right of 'VAS Intensity').",
               "helper_text": null
             },
             {
               "field_id": "p7_bruxism_vas_intensity",
               "field_label": "VAS Intensity",
               "field_type": "vas_scale",
-              "data_type": "Optional[float]",
+              "data_type": "int",
               "expected_format": null,
               "options": null,
               "scale_min": 0,
@@ -4580,7 +4642,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten number after '% of Time' and before 'VAS Intensity' on the bottom line. This is the SECOND number on this line — do not confuse with the % of Time value to the left. VAS range 0-10. Sometimes written as a single digit or with a dash (e.g. '6-7').",
               "helper_text": null
             }
           ],
@@ -4591,13 +4653,13 @@
         {
           "section_id": "p7_preexisting_conditions",
           "section_title": "Pre-Existing Conditions",
-          "instructions": null,
+          "instructions": "Pre-existing conditions section. Each condition has its own row with a specific layout. ROW LAYOUT for Headaches, Facial Pain, TMJ Pain, Bruxism: The condition label is on the LEFT, then '___ % of time' fill-in in the MIDDLE, then '___ intensity of [condition] on VAS' fill-in to the RIGHT, then a quality/character description line at the far RIGHT. CRITICAL: Match handwritten numbers to the CORRECT row by horizontal alignment — do not assign values from one condition's row to another condition. A circle with a line through it (strikethrough circle) on any row means that value is CANCELLED — return null. The vertex/headache location row has R, L, Forehead, Temple, Occiput, Behind Eyes as circled options. Facial Pain and TMJ Pain rows have R, L, B (both) on the LEFT before the condition label. The nightguard section is below: year made fill-in, 'Still uses? Y N', and reason stopped. Last two questions are standalone Yes/No.",
           "fields": [
             {
               "field_id": "p7_headaches_percent_time",
               "field_label": "Headaches % of time",
               "field_type": "percentage",
-              "data_type": "Optional[float]",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": null,
@@ -4608,14 +4670,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Headaches'. Handwritten value in the blank BEFORE '% of time' on the Headaches row. May be a single number (e.g. '15') or a range (e.g. '10-15'). A strikethrough circle on this field means cancelled — return null.",
               "helper_text": null
             },
             {
               "field_id": "p7_headaches_intensity_vas",
               "field_label": "intensity of Headache on VAS",
               "field_type": "vas_scale",
-              "data_type": "Optional[float]",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": 0,
@@ -4626,7 +4688,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Headaches'. Handwritten number AFTER '% of time' and BEFORE 'intensity of Headache on VAS'. This is the SECOND number on the Headaches row. May be a range (e.g. '7-8'). A strikethrough circle means cancelled — return null.",
               "helper_text": null
             },
             {
@@ -4651,16 +4713,19 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Vertex'. Located BELOW the Headaches row. Options printed in order: R, L, Forehead, then R, L, Temple, then R, L, Occiput, then R, L, Behind Eyes. The patient circles the applicable options. CRITICAL: The R/L before 'Forehead' applies to Forehead, the R/L before 'Temple' applies to Temple, etc. — only include what is clearly circled on THIS row. A strikethrough circle means that item is cancelled.",
               "helper_text": null
             },
             {
               "field_id": "p7_migraine_diagnosis",
               "field_label": "Have you ever been diagnosed with migraines?",
               "field_type": "yes_no",
-              "data_type": "bool",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4669,7 +4734,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Question about migraine diagnosis. Yes and No appear to the RIGHT of the question. The patient circles ONE. Only the word clearly INSIDE the circle counts. A circle with a line/slash/X THROUGH it means CANCELLED — return null. Circle can be any color.",
               "helper_text": null
             },
             {
@@ -4684,10 +4749,15 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": "p7_migraine_diagnosis",
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p7_migraine_diagnosis",
+                "condition": "equals",
+                "condition_value": "Yes",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten details about migraines, to the right of Yes/No. Only if migraine diagnosis is Yes.",
               "helper_text": null
             },
             {
@@ -4709,14 +4779,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Facial Pain'. The R, L, B options appear at the VERY LEFT of this row before the label. R = right side, L = left side, B = both sides. Patient circles one or more. Only include options clearly circled ON THIS ROW. A strikethrough circle means cancelled.",
               "helper_text": null
             },
             {
               "field_id": "p7_facial_pain_percent_time",
               "field_label": "Facial Pain % of time",
               "field_type": "percentage",
-              "data_type": "Optional[float]",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": null,
@@ -4727,14 +4797,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Facial Pain'. Handwritten value BEFORE '% of time' on the Facial Pain row. May be a range (e.g. '10-15'). This row is BELOW the Vertex row — verify you are on the correct row. A strikethrough circle means cancelled — return null.",
               "helper_text": null
             },
             {
               "field_id": "p7_facial_pain_intensity_vas",
               "field_label": "intensity of Facial Pain on VAS",
               "field_type": "vas_scale",
-              "data_type": "Optional[float]",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": 0,
@@ -4745,7 +4815,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Facial Pain'. Handwritten number AFTER '% of time' and BEFORE 'intensity of Facial Pain on VAS'. Second number on the Facial Pain row. May be a range (e.g. '3-7'). A strikethrough circle means cancelled — return null.",
               "helper_text": null
             },
             {
@@ -4767,14 +4837,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'TMJ Pain'. R, L, B options at the LEFT of the row before the label. Only include options circled ON THIS ROW — do not confuse with the Facial Pain row above. A strikethrough circle means cancelled.",
               "helper_text": null
             },
             {
               "field_id": "p7_tmj_pain_percent_time",
-              "field_label": "TMJ Pain % of time",
+              "field_label": "TMJ Pain ___ % of time",
               "field_type": "percentage",
-              "data_type": "Optional[float]",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": null,
@@ -4785,14 +4855,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'TMJ Pain'. Handwritten value BEFORE '% of time' on the TMJ Pain row. May be blank. A strikethrough circle means cancelled — return null.",
               "helper_text": null
             },
             {
               "field_id": "p7_tmj_pain_intensity_vas",
               "field_label": "intensity of TMJ Pain on VAS",
               "field_type": "vas_scale",
-              "data_type": "Optional[float]",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": 0,
@@ -4803,14 +4873,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'TMJ Pain'. Handwritten number BEFORE 'intensity of TMJ Pain on VAS'. May be blank. A strikethrough circle means cancelled — return null.",
               "helper_text": null
             },
             {
               "field_id": "p7_preexisting_bruxism_percent_time",
               "field_label": "Bruxism: % of time",
               "field_type": "percentage",
-              "data_type": "Optional[float]",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": null,
@@ -4821,14 +4891,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Bruxism' (in the pre-existing section, BELOW the TMJ row). Handwritten value BEFORE '% of time' on the Bruxism pre-existing row. A strikethrough circle means cancelled — return null. Note: There is also a Bruxism % field in the section above — this one is specifically for pre-existing Bruxism before the injury.",
               "helper_text": null
             },
             {
               "field_id": "p7_preexisting_bruxism_intensity_vas",
               "field_label": "intensity of Bruxism on VAS",
               "field_type": "vas_scale",
-              "data_type": "Optional[float]",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": 0,
@@ -4839,7 +4909,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Bruxism' (pre-existing). Handwritten number BEFORE 'intensity of Bruxism on VAS'. May be blank. A strikethrough circle means cancelled — return null.",
               "helper_text": null
             },
             {
@@ -4857,16 +4927,19 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Italic text row: 'If a nightguard was made (year made) ___'. Handwritten year in the blank after '(year made)'. A strikethrough circle on the blank means not applicable — return null.",
               "helper_text": null
             },
             {
               "field_id": "p7_nightguard_still_uses",
               "field_label": "Still uses a nightguard?",
               "field_type": "yes_no",
-              "data_type": "Optional[bool]",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Y",
+                "N"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4875,7 +4948,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "On the same italic row as 'nightguard made': 'Still uses a nightguard? Y N'. Patient circles Y or N. Only the letter INSIDE the circle counts. A strikethrough circle means cancelled — return null.",
               "helper_text": null
             },
             {
@@ -4895,19 +4968,27 @@
               "scale_labels": null,
               "is_required": false,
               "parent_field_id": null,
-              "conditional_logic": null,
+              "conditional_logic": {
+                "depends_on_field": "p7_nightguard_still_uses",
+                "condition": "equals",
+                "condition_value": "N",
+                "action": "show"
+              },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Row: 'Reason stopped using nightguard?' with 4 printed options: Does not fit, Lost, Wore Out, Broken. Patient circles ONE. Only the option clearly INSIDE the circle counts. Only extract if nightguard_still_uses is N. A strikethrough circle means cancelled.",
               "helper_text": null
             },
             {
               "field_id": "p7_eating_hard_chewy_food",
               "field_label": "Did you have any prior problems eating hard or chewy food?",
               "field_type": "yes_no",
-              "data_type": "bool",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4916,16 +4997,19 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Question: 'Did you have any prior problems eating hard or chewy food?' Yes and No at the RIGHT. Yes and No appear to the RIGHT of the question. The patient circles ONE. Only the word clearly INSIDE the circle counts. A circle with a line/slash/X THROUGH it means CANCELLED — return null. Circle can be any color.",
               "helper_text": null
             },
             {
               "field_id": "p7_speaking_prolonged_periods",
               "field_label": "Did you have any prior problems speaking for prolonged periods of time?",
               "field_type": "yes_no",
-              "data_type": "bool",
+              "data_type": "string",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Yes",
+                "No"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -4934,7 +5018,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Question: 'Did you have any prior problems speaking for prolonged periods of time?' Yes and No at the RIGHT. Yes and No appear to the RIGHT of the question. The patient circles ONE. Only the word clearly INSIDE the circle counts. A circle with a line/slash/X THROUGH it means CANCELLED — return null. Circle can be any color.",
               "helper_text": null
             }
           ],
@@ -4991,7 +5075,7 @@
         {
           "section_id": "p7_treatments_received",
           "section_title": "Treatments Received Due to the Industrial Injury",
-          "instructions": null,
+          "instructions": "Surgery section. The label 'Surgery to:' is followed by two rows of body parts. Each body part is preceded by 'R' and 'L' (for Right and Left side). The patient circles EITHER 'R' or 'L' or both to indicate which side was operated on, or circles the body part name itself if side doesn't apply (e.g. 'Back', 'Neck'). The circled letter or body part name is what was selected. CRITICAL: 'R' and 'L' always belong to the NEXT word to their RIGHT on the same row. Example: 'R L Shoulder' — if R is circled, that means 'R Shoulder' (right shoulder). Example: 'R L Elbow' — if L is circled, that means 'L Elbow' (left elbow). Example: 'R Wrist' circled as a group — means right wrist. The doctor may also write a year (e.g. '2023, 2024') ABOVE the circled body part to indicate when the surgery occurred — capture that in p7_surgery_year. A strikethrough circle means CANCELLED — that body part should NOT be included.",
           "fields": [
             {
               "field_id": "p7_surgery_body_parts",
@@ -5035,14 +5119,32 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Two-row grid of body parts: Row 1: Neck, R L Shoulder, R L Arm, R L Elbow, R L Wrist, R L Hand, R L Fingers. Row 2: R L Thumb, Back, R L Hip, R L Knee, R L Leg, R L Feet, R L Ankles. For each 'R L [Body Part]' group: the R belongs to the RIGHT side of that body part, the L belongs to the LEFT side. ONLY the circled letter/word counts. Examples: 'R L Shoulder' with R circled → 'R Shoulder'. 'R L Wrist' with both R and Wrist circled as a group → 'R Wrist'. 'Back' circled → 'Back'. A strikethrough circle means CANCELLED — exclude that item. A large X across the whole section means no surgery was performed — return empty list.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p7_surgery_year",
+              "field_label": "Surgery year(s)",
+              "field_type": "text_short",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": "p7_surgery_body_parts",
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Handwritten year(s) written ABOVE the circled body parts (e.g. '2023', '2023, 2024'). Usually written in red ink above the surgery section. May list multiple years separated by commas. If no year is written, return null.",
               "helper_text": null
             },
             {
               "field_id": "p7_surgery_how_many_times",
               "field_label": "How many times?",
-              "field_type": "text_numeric",
-              "data_type": "Optional[int]",
+              "field_type": "text_short",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": null,
@@ -5053,7 +5155,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Fill-in line after 'How many times?' at the bottom of the surgery section. May be a number (e.g. '2'), an X mark, or a written word (e.g. '2x'). A strikethrough circle or large X drawn across the line means NOT APPLICABLE — return null. A year written here (e.g. '2024') is the year of surgery, capture in p7_surgery_year instead.",
               "helper_text": null
             }
           ],
@@ -5074,15 +5176,23 @@
         {
           "section_id": "tx_received",
           "section_title": "Tx Received",
-          "instructions": null,
+          "instructions": "This section has a single row of treatment options that the patient CIRCLES — they can circle multiple. The options on Row 1 are: Physical Therapy, Chiropractic Manipulations, Acupuncture, Injections, Steroid, Spinal, Trigger Point. The patient circles one or more by drawing a circle around the entire name. Only include a treatment if its name is clearly INSIDE a circle. Below that are two specialist rows: 'Psychological Therapy: Evaluated by ___' and 'Neurologist: Evaluated by ___'. The 'Evaluated by' line may have handwritten text that OVERFLOWS off the printed line and continues below it or to the side — capture ALL connected handwritten text as belonging to that field.",
           "fields": [
             {
-              "field_id": "p8_tx_physical_therapy",
-              "field_label": "Physical Therapy",
-              "field_type": "checkbox_single",
-              "data_type": "bool",
+              "field_id": "p8_tx_received",
+              "field_label": "Tx Received (treatments circled)",
+              "field_type": "circled_selection",
+              "data_type": "List[str]",
               "expected_format": null,
-              "options": null,
+              "options": [
+                "Physical Therapy",
+                "Chiropractic Manipulations",
+                "Acupuncture",
+                "Injections",
+                "Steroid",
+                "Spinal",
+                "Trigger Point"
+              ],
               "scale_min": null,
               "scale_max": null,
               "scale_labels": null,
@@ -5090,123 +5200,15 @@
               "parent_field_id": null,
               "conditional_logic": null,
               "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p8_tx_chiropractic_manipulations",
-              "field_label": "Chiropractic Manipulations",
-              "field_type": "checkbox_single",
-              "data_type": "bool",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p8_tx_acupuncture",
-              "field_label": "Acupuncture",
-              "field_type": "checkbox_single",
-              "data_type": "bool",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p8_tx_injections",
-              "field_label": "Injections",
-              "field_type": "checkbox_single",
-              "data_type": "bool",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p8_tx_steroid",
-              "field_label": "Steroid",
-              "field_type": "checkbox_single",
-              "data_type": "bool",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p8_tx_spinal",
-              "field_label": "Spinal",
-              "field_type": "checkbox_single",
-              "data_type": "bool",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
-              "helper_text": null
-            },
-            {
-              "field_id": "p8_tx_trigger_point",
-              "field_label": "Trigger Point",
-              "field_type": "checkbox_single",
-              "data_type": "bool",
-              "expected_format": null,
-              "options": null,
-              "scale_min": null,
-              "scale_max": null,
-              "scale_labels": null,
-              "is_required": false,
-              "parent_field_id": null,
-              "conditional_logic": null,
-              "section_name": null,
-              "position_description": null,
-              "extraction_hints": null,
+              "position_description": "single row of treatment options",
+              "extraction_hints": "One row of printed treatment names. The patient circles one or more by drawing a circle around the full name. Only include a treatment if its printed name is clearly INSIDE a circle — if the circle merely touches an adjacent treatment name, that adjacent name is NOT selected. Multiple can be selected. Circle can be any color.",
               "helper_text": null
             },
             {
               "field_id": "p8_psychological_therapy_evaluated_by",
               "field_label": "Psychological Therapy: Evaluated by",
-              "field_type": "text_short",
-              "data_type": "Optional[str]",
+              "field_type": "text_long",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": null,
@@ -5217,14 +5219,14 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten text starting on the line after 'Psychological Therapy: Evaluated by'. IMPORTANT: Handwriting may start on the line but then continue BELOW the line or wrap to subsequent lines. Track ALL handwritten text that visually connects to or flows from this line — even if it dips below, curves away, or continues on the next line. The full entry is one connected piece of text. Do not stop at the end of the printed line.",
               "helper_text": null
             },
             {
               "field_id": "p8_neurologist_evaluated_by",
               "field_label": "Neurologist: Evaluated by",
-              "field_type": "text_short",
-              "data_type": "Optional[str]",
+              "field_type": "text_long",
+              "data_type": "string",
               "expected_format": null,
               "options": null,
               "scale_min": null,
@@ -5235,7 +5237,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": null,
+              "extraction_hints": "Handwritten text on the line after 'Neurologist: Evaluated by'. IMPORTANT: Handwriting may start on the line but then continue BELOW the line or wrap to subsequent lines. Track ALL handwritten text that visually connects to or flows from this line — even if it dips below, curves away, or continues on the next line. The full entry is one connected piece of text. Do not stop at the end of the printed line.",
               "helper_text": null
             }
           ],
@@ -5246,7 +5248,7 @@
         {
           "section_id": "prior_history",
           "section_title": "Prior History",
-          "instructions": null,
+          "instructions": "This section has the bold centered heading 'Prior History'. Below it are 4 large free-text sections, each with a bold label followed by a colon and a large blank area. The sections are stacked VERTICALLY in this order: 'Past Medical History:', 'Past Surgeries:', 'History of Prior Industrial Injuries:', 'History of Non-Industrial Injuries:'. CRITICAL: Use the bold label as the boundary marker — any handwritten text that appears BELOW a bold label and ABOVE the NEXT bold label belongs exclusively to that label's field. Do not assign text to the wrong field based on vertical proximity. If a section shows the printed word 'None' and no handwriting, return 'None' for that field.",
           "fields": [
             {
               "field_id": "p8_past_medical_history",
@@ -5263,7 +5265,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Large text area for medical history details",
+              "extraction_hints": "Bold label 'Past Medical History:' on page 8. Large blank area below it. IMPORTANT: The printed word 'None' appears next to this label. If that word 'None' is CIRCLED (a circle drawn around it), it means there is NOTHING to report — return 'None'. If 'None' is not circled and there is handwritten text, transcribe the handwritten text. If neither is circled and there is no handwriting, the section was left blank — return null. Handwritten text extends until the next bold label 'Past Surgeries:'. Only capture text vertically between those two labels.",
               "helper_text": null
             },
             {
@@ -5281,7 +5283,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Large text area for surgical history",
+              "extraction_hints": "Bold label 'Past Surgeries:' on page 8. Large blank area below it. IMPORTANT: The printed word 'None' appears next to this label. If that word 'None' is CIRCLED (a circle drawn around it), it means there is NOTHING to report — return 'None'. If 'None' is not circled and there is handwritten text, transcribe the handwritten text. If neither is circled and there is no handwriting, the section was left blank — return null. Handwritten text extends until 'History of Prior Industrial Injuries:'. Only capture text vertically between those two labels.",
               "helper_text": null
             },
             {
@@ -5299,7 +5301,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Large text area for industrial injury history",
+              "extraction_hints": "Bold label 'History of Prior Industrial Injuries:' on page 8. Large blank area below it. IMPORTANT: The printed word 'None' appears next to this label. If that word 'None' is CIRCLED (a circle drawn around it), it means there is NOTHING to report — return 'None'. If 'None' is not circled and there is handwritten text, transcribe the handwritten text. If neither is circled and there is no handwriting, the section was left blank — return null. Handwritten text extends until 'History of Non-Industrial Injuries:'. Only capture text vertically between those two labels.",
               "helper_text": null
             },
             {
@@ -5317,7 +5319,25 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Large text area for non-industrial injury history",
+              "extraction_hints": "Bold label 'History of Non-Industrial Injuries:' on page 8. Large blank area below it. IMPORTANT: The printed word 'None' appears next to this label. If that word 'None' is CIRCLED (a circle drawn around it), it means there is NOTHING to report — return 'None'. If 'None' is not circled and there is handwritten text, transcribe the handwritten text. If neither is circled and there is no handwriting, the section was left blank — return null. Below this label is also a set of 4 MVA fill-in rows (MVA / Injured / No facial-jaw problems / Residual Problems) — those are captured separately in p8_mva_rows. Only capture the free-text handwritten notes between this label and the MVA rows.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p8_mva_rows",
+              "field_label": "MVA rows (Motor Vehicle Accident history)",
+              "field_type": "text_long",
+              "data_type": "string",
+              "expected_format": null,
+              "options": null,
+              "scale_min": null,
+              "scale_max": null,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": "below History of Non-Industrial Injuries",
+              "extraction_hints": "Below 'History of Non-Industrial Injuries' there are 4 pre-printed fill-in rows for motor vehicle accidents. Each row has this structure: 'MVA___ Injured___ No facial/Jaw problems or pain   Residual Problems: None___'. For each row: - 'MVA' is followed by a fill-in for the year or date of the accident. - 'Injured' is followed by a fill-in for what was injured (e.g. 'Fractured Pelvis'). - 'No facial/Jaw problems or pain' — if this text is circled, it means no face/jaw issues from this MVA. - 'Residual Problems: None' — fill-in for any lasting problems. If 'None' is circled or written, no residual problems. There may also be handwritten notes ABOVE the rows (e.g. injury description, percentage, VAS) — capture those as part of the relevant row based on vertical position. Only extract rows that have any handwriting — blank rows return null. Summarize all filled rows as a JSON-like string: e.g. 'Row 1: MVA 2018, Injured: Fractured Pelvis, No facial/jaw issues, Residual: R hip pain 30% 8VAS'.",
               "helper_text": null
             }
           ],
@@ -5342,49 +5362,13 @@
           "conditional_logic": null,
           "section_name": null,
           "position_description": null,
-          "extraction_hints": "Large text area for injuries occurring after the industrial injury date",
+          "extraction_hints": "Bold label 'Any Injuries After the Date of Industrial Injury (Industrial or Non-Industrial):' on page 8. IMPORTANT: The printed word 'None' appears next to this label. If that word 'None' is CIRCLED (a circle drawn around it), it means there is NOTHING to report — return 'None'. If 'None' is not circled and there is handwritten text, transcribe the handwritten text. If neither is circled and there is no handwriting, the section was left blank — return null. If 'None' is circled (a circle drawn around the word 'None' below the heading), return 'None'. If there is handwritten text below this heading, transcribe it. This section is BELOW the MVA rows and is the last section on the page.",
           "helper_text": null
         }
       ],
-      "standalone_tables": [
-        {
-          "table_id": "p8_mva_injury_table",
-          "table_title": "MVA Injury Details",
-          "columns": [
-            {
-              "column_id": "mva_line",
-              "header": "MVA",
-              "data_type": "string",
-              "width_hint": "narrow"
-            },
-            {
-              "column_id": "injured",
-              "header": "Injured",
-              "data_type": "string",
-              "width_hint": "medium"
-            },
-            {
-              "column_id": "no_facial_jaw_problems",
-              "header": "No facial/Jaw problems or pain",
-              "data_type": "bool",
-              "width_hint": "medium"
-            },
-            {
-              "column_id": "residual_problems",
-              "header": "Residual Problems",
-              "data_type": "string",
-              "width_hint": "medium"
-            }
-          ],
-          "row_type": "fixed",
-          "expected_rows": 4,
-          "row_labels": null,
-          "section_name": null,
-          "extraction_hints": "4 pre-printed MVA rows for recording motor vehicle accident details"
-        }
-      ],
+      "standalone_tables": [],
       "complexity_score": 6,
-      "notes": "This page continues the prior history section from previous pages with treatment received, medical history, and injury history details including an MVA table."
+      "notes": "Page 8 continues with prior history sections. Each prior history label has a printed 'None' next to it — if that word is circled, it means there is nothing to report for that section."
     },
     {
       "page_number": 9,
@@ -7704,6 +7688,242 @@
           "tables": [],
           "subsections": [],
           "position_description": null
+        },
+        {
+          "section_id": "epworth_sleepiness_scale",
+          "section_title": "Epworth Sleepiness Scale",
+          "instructions": "This is a table with 8 rows and 4 columns (0, 1, 2, 3). Each row is a situation (e.g. 'Sitting and reading'). The situation text is on the LEFT side of the row. The numbers 0, 1, 2, 3 are in cells to the RIGHT on the SAME row. The patient circles ONE number per row. To determine which number is circled for a given situation: find the situation text, then look at the 4 number cells on that SAME horizontal row — the circled number is the answer for that situation. The circle can be any color. If no number is circled in a row, that row was left unanswered. Scale: 0=would never doze, 1=slight chance, 2=moderate chance, 3=high chance of dozing. The Total Score is handwritten to the right of the last row.",
+          "fields": [
+            {
+              "field_id": "p11_epworth_sitting_reading",
+              "field_label": "Sitting and reading",
+              "field_type": "circled_selection",
+              "data_type": "int",
+              "expected_format": null,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "scale_min": 0,
+              "scale_max": 3,
+              "scale_labels": {
+                "0": "Would never doze",
+                "3": "High chance of dozing"
+              },
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting and reading'.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p11_epworth_watching_tv",
+              "field_label": "Watching television",
+              "field_type": "circled_selection",
+              "data_type": "int",
+              "expected_format": null,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "scale_min": 0,
+              "scale_max": 3,
+              "scale_labels": {
+                "0": "Would never doze",
+                "3": "High chance of dozing"
+              },
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Watching television'.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p11_epworth_sitting_inactive",
+              "field_label": "Sitting inactive in a public place - for example, a theater or meeting",
+              "field_type": "circled_selection",
+              "data_type": "int",
+              "expected_format": null,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "scale_min": 0,
+              "scale_max": 3,
+              "scale_labels": {
+                "0": "Would never doze",
+                "3": "High chance of dozing"
+              },
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting inactive in a public place'.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p11_epworth_passenger_car",
+              "field_label": "As a passenger in a car for an hour without a break",
+              "field_type": "circled_selection",
+              "data_type": "int",
+              "expected_format": null,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "scale_min": 0,
+              "scale_max": 3,
+              "scale_labels": {
+                "0": "Would never doze",
+                "3": "High chance of dozing"
+              },
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Patient circles one number (0-3) in the table row for 'As a passenger in a car'.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p11_epworth_lying_down_afternoon",
+              "field_label": "Lying down to rest in the afternoon",
+              "field_type": "circled_selection",
+              "data_type": "int",
+              "expected_format": null,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "scale_min": 0,
+              "scale_max": 3,
+              "scale_labels": {
+                "0": "Would never doze",
+                "3": "High chance of dozing"
+              },
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Lying down to rest in the afternoon'.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p11_epworth_sitting_talking",
+              "field_label": "Sitting and talking to someone",
+              "field_type": "circled_selection",
+              "data_type": "int",
+              "expected_format": null,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "scale_min": 0,
+              "scale_max": 3,
+              "scale_labels": {
+                "0": "Would never doze",
+                "3": "High chance of dozing"
+              },
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting and talking to someone'.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p11_epworth_sitting_after_lunch",
+              "field_label": "Sitting quietly after lunch (when you've had no alcohol)",
+              "field_type": "circled_selection",
+              "data_type": "int",
+              "expected_format": null,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "scale_min": 0,
+              "scale_max": 3,
+              "scale_labels": {
+                "0": "Would never doze",
+                "3": "High chance of dozing"
+              },
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting quietly after lunch'.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p11_epworth_car_traffic",
+              "field_label": "In a car while stopped in traffic",
+              "field_type": "circled_selection",
+              "data_type": "int",
+              "expected_format": null,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "scale_min": 0,
+              "scale_max": 3,
+              "scale_labels": {
+                "0": "Would never doze",
+                "3": "High chance of dozing"
+              },
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Patient circles one number (0-3) in the table row for 'In a car while stopped in traffic'.",
+              "helper_text": null
+            },
+            {
+              "field_id": "p11_epworth_total_score",
+              "field_label": "Total Score",
+              "field_type": "text_short",
+              "data_type": "int",
+              "expected_format": null,
+              "options": null,
+              "scale_min": 0,
+              "scale_max": 24,
+              "scale_labels": null,
+              "is_required": false,
+              "parent_field_id": null,
+              "conditional_logic": null,
+              "section_name": null,
+              "position_description": null,
+              "extraction_hints": "Handwritten total score (sum of all 8 rows, range 0-24). Usually written next to 'Total Score:' at the bottom right of the Epworth table.",
+              "helper_text": null
+            }
+          ],
+          "tables": [],
+          "subsections": [],
+          "position_description": "bottom of page, below Prior Injuries to Face/Jaw"
         }
       ],
       "standalone_fields": [],
