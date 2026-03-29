@@ -1,331 +1,277 @@
 """
-Clinical report generator using learned rules.
+Clinical report generator using learned rules (v3 — schema-driven resolution).
 
 Loads report_rules.json, processes extraction data through each section rule,
-calls Together AI / Fireworks for narrative generation, and assembles a DOCX.
+calls Together AI / Fireworks for narrative generation with hallucination guard,
+and assembles a DOCX.
+
+Field resolution uses a dynamic alias map built from the form schema at startup.
+Confidence scores propagate through the pipeline: low-confidence fields are
+annotated or excluded depending on thresholds.
 """
 
 import json
 import logging
 import os
 import re
+from io import BytesIO
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 from docx import Document as DocxDocument
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.shared import Pt, Inches
+from docx.oxml.ns import qn
+from docx.shared import Pt, Inches, Cm, RGBColor
 from openai import OpenAI
 
 logger = logging.getLogger(__name__)
 
 RULES_PATH = Path(__file__).parent.parent.parent / "report_learning" / "outputs" / "rules" / "report_rules.json"
+_DEFAULT_SCHEMA_PATH = Path(__file__).parent.parent.parent / "templates" / "orofacial_exam_schema.json"
 
-# Maps production extraction field names -> rule field IDs.
-# The rules were trained with p1_/p5_/p8_ prefixed IDs; the production pipeline
-# uses descriptive names. This bridge lets both systems work together.
-FIELD_NAME_MAP: dict[str, str] = {
-    # --- Patient demographics (p1) ---
-    "patient_name": "p1_patient_name",
-    "Participant name": "p1_patient_name",
-    "name": "p1_patient_name",
-    "date": "p1_date",
-    "date_of_birth": "p1_birth_date",
-    "gender": "p1_gender",
-    "address": "p1_address",
-    "home_phone": "p1_home_phone",
-    "cell_phone": "p1_cell_phone",
-    "heart_problems": "p1_heart_problems",
-    "high_blood_pressure": "p1_high_blood_pressure",
-    "diabetes": "p1_diabetes",
-    "stomach_acids": "p1_stomach_acids",
-    "thyroid_problem": "p1_thyroid_problem",
-    "breathing_problems": "p1_breathing_problems",
-    "blood_thinners": "p1_blood_thinners",
-    "kidney_problems": "p1_kidney_problems",
-    "liver_problems": "p1_liver_problems",
-    "numbness_or_tingling": "p1_numbness_pins_needles",
 
-    # --- Halitosis / bad breath (p3) ---
-    "bad_breath_before_injury": "p3_bad_breath_after",
-    "bad_breath_percentage_after": "p3_bad_breath_percentage_after",
-    "breath_intensity_after": "p3_breath_intensity_after",
-    "embarrassment_after": "p3_embarrassment_after",
-    "interfere_others_after": "p3_interfere_others_after",
+# =============================================================================
+# Confidence thresholds (Part 5)
+# =============================================================================
 
-    # --- Social history (p4) ---
-    "do_you_smoke": "p4_do_you_smoke",
-    "have_you_ever_smoked": "p4_have_you_ever_smoked",
-    "do_you_drink_alcohol": "p4_do_you_drink_alcohol",
-    "cigarettes_per_day": "p4_cigarettes_per_day",
-    "years_smoker": "p4_years_smoker",
-    "when_stop_smoking": "p4_when_stop_smoking_years",
+CONFIDENCE_USE_NORMALLY = 0.85
+CONFIDENCE_INCLUDE_NO_FLAG = 0.60
+CONFIDENCE_UNCERTAIN = 0.40
 
-    # --- Employment / injury (p5) ---
-    "employer": "p5_employed_at",
-    "Employer": "p5_employed_at",
-    "job_title": "p5_job_title",
-    "job_description": "p5_job_requirements_initial",
-    "job_requirements": "p5_job_requirements_initial",
-    "current_work_status": "p5_current_work_status",
-    "years_employed": "p5_worked_days_per_week",
-    "hours_per_day": "p5_worked_hours_per_day",
-    "lifting_max": "p5_lifting_maximum_lbs",
-    "carrying_max": "p5_carrying_maximum_lbs",
-    "Date of injury": "p5_date_of_injury",
-    "date_of_injury": "p5_date_of_injury",
-    "presently_working_different_company": "p5_presently_working_at_different_company",
+_LEGALLY_SIGNIFICANT_FIELDS = frozenset({
+    "date_of_injury", "case_number", "claim_number", "patient_dob",
+    "p1_birth_date", "p5_date_of_injury", "p1_date",
+})
 
-    # --- Injury history (p6) ---
-    "history_of_industrial_injury": "p6_injury_description_1",
-    "work_injury_body_parts": "p6_injury_body_parts",
 
-    # --- Treatment / stressors (p7) ---
-    "developed_stressors_in_response_to_industrial_orthopedic_injuries": "p7_developed_stressors_injury",
-    "orthopedic_pain_causing_clenching_bracing_of_facial_muscles": "p7_orthopedic_pain_clenching",
-    "treatments_received_due_to_industrial_injury_tx_received": "p8_tx_received",
-    "treatments_received_due_to_industrial_injury_surgery": "p7_surgery_body_parts",
-    "treatments_received": "p8_tx_received",
-    "treatments_received_due_to_industrial_injury": "p8_tx_received",
-    "tx_received_acupuncture": "p8_tx_received",
-    "tx_received_chiropractic": "p8_tx_received",
-    "tx_received_physical_therapy": "p8_tx_received",
+# =============================================================================
+# Static legal / cover-page / preamble text constants
+# =============================================================================
 
-    # --- Past medical history (p8) ---
-    "Past Medical History": "p8_past_medical_history",
-    "Past Surgeries": "p8_past_surgeries",
-    "History of Prior Industrial Injuries": "p8_history_prior_industrial_injuries",
-    "History of Non-Industrial Injuries": "p8_history_non_industrial_injuries",
-    "Any Injuries After the Date of Industrial Injury": "p8_any_injuries_after_industrial_date",
-    "MVA Injuries": "p8_mva_injuries",
+_LEGAL_DEMAND_BOX = (
+    "Demand is hereby made for service of all medical reports relating to this claim, "
+    "pursuant to CCR 10635(c).\n\n"
+    "Please note:\nIf payment of this bill is denied, we will pursue provisions under L.C. 4603.2\n\n"
+    "Please note:\nLabor Code 5402 (b)(c), requires the employer to authorize all appropriate "
+    "medical care up to $10,000 until the liability for the claimed injury is accepted or rejected. "
+    "As of 6/01/04, Labor Code 5814 mandates a 25% penalty on the amount of payment unreasonably "
+    "delayed (10% if self-imposed).\n"
+    "Accordingly, it would be requested that the defendant please provide immediate payment.\n\n"
+    "Please note:\nAny report necessary for the billing company to fulfill its business obligation "
+    "to the insurance company should be secured from the insurance company."
+)
 
-    # --- Dental history (p9) ---
-    "last_time_seen_by_dentist": "p9_last_dentist_visit",
-    "last_dental_checkup": "p9_last_dentist_visit",
-    "last_teeth_cleaned": "p9_last_teeth_cleaned",
-    "last_xray": "p9_last_xray",
-    "dentist_name": "p9_dentist_1_name",
+_PREAMBLE_DISCLAIMER = (
+    "THIS IS AN EXAMINATION REPORT. THIS REPORT WILL BE INCORPORATED INTO THE PRIMARY TREATING "
+    "PHYSICIAN'S PERMANENT AND STATIONARY REPORT AND, AS SUCH, WILL BE RELIED UPON AND WILL BE "
+    "PART OF THE PRIMARY TREATING PHYSICIAN'S MEDICAL-LEGAL OPINION. USE OF THE CONTENTS OF THIS "
+    "REPORT AND ITS OPINIONS AND CONCLUSIONS ARE FOR PROVING OR DISPROVING A CONTESTED CLAIM."
+)
 
-    # --- Headache / pain (p10) ---
-    "headache_vas": "p10_headache_vas",
-    "headache_location": "p10_headache_locations",
-    "headache_frequency": "p10_headache_frequency",
-    "headache_percent_time": "p10_headache_frequency",
-    "left_face_pain_vas": "p10_left_face_pain_frequency",
-    "right_face_pain_vas": "p10_right_face_pain_frequency",
+_PREAMBLE_EXAM_INTRO = (
+    "This examination is an extensive oral cranial examination in that one hour was spent in "
+    "evaluating {patient_title} {patient_last_name}, one hour was spent in interpretation of "
+    "the diagnostic findings, and issues of medical causation are discussed."
+)
 
-    # --- Functional limitations (p13) ---
-    "mastication": "p13_mastication_severity",
-    "brushing_teeth": "p13_brushing_teeth_severity",
-    "flossing_teeth": "p13_flossing_teeth_severity",
-    "swallowing": "p13_swallowing_severity",
-    "speak_for_extended_period_of_time": "p13_speak_extended_period_severity",
-    "bruxism": "p13_bruxism_severity",
+_PREAMBLE_CONCLUSIONS_BASIS = (
+    "I base my conclusions on the history given by the patient, clinical examination of the "
+    "patient, diagnostic tests, and review of any medical records made available at the time "
+    "of examination."
+)
 
-    # --- Clinical exam (p14) ---
-    "Maximum Interincisal Opening": "p14_maximum_interincisal_opening_mm",
-    "Left Lateral": "p14_left_lateral_mm",
-    "Right Lateral": "p14_right_lateral_mm",
-    "Protrusion": "p14_protrusion_mm",
-    "Pain on Maximum Interincisal Opening": "p14_max_opening_vas",
-    "Left Lateral Pole pain VAS": "p14_left_lateral_pole_vas",
-    "Right Lateral Pole pain VAS": "p14_right_lateral_pole_vas",
-    "Masseter tenderness score": "p14_masseter_right_vas",
-    "Temporalis tenderness score": "p14_temporalis_right_vas",
-    "Temporalis Right tenderness": "p14_temporalis_right_y_n",
-    "Temporalis Left tenderness": "p14_temporalis_left_y_n",
-    "Masseter Right tenderness": "p14_masseter_right_y_n",
-    "Masseter Left tenderness": "p14_masseter_left_y_n",
-    "temporalis_right_vas": "p14_temporalis_right_vas",
-    "temporalis_left_vas": "p14_temporalis_left_vas",
-    "masseter_right_vas": "p14_masseter_right_vas",
-    "masseter_left_vas": "p14_masseter_left_vas",
-    "Joint Noises Lateral": "p14_joint_noises_lateral",
-    "Joint Noises Translational": "p14_joint_noises_translational",
-    "tenderness_masseter_left": "p14_masseter_left_vas",
-    "tenderness_masseter_right": "p14_masseter_right_vas",
-    "tenderness_temporalis_left": "p14_temporalis_left_vas",
-    "tenderness_temporalis_right": "p14_temporalis_right_vas",
+_PREAMBLE_RECORDS_DEMAND = (
+    "Demand is hereby made for service of all medical reports and records relating to this "
+    "claim, pursuant to CCR 10635(c), to be sent to my office for review and comment, as "
+    "necessary. If no medical records or reports are forwarded for my review, then the parties "
+    "cannot claim that my reporting is not considered substantial medical evidence by virtue of "
+    "disregarding this demand."
+)
 
-    # --- Intraoral exam (p15) ---
-    "Occlusion": "p15_class_selection",
-    "classification": "p15_class_selection",
-    "Occlusal Wear": "p15_occlusal_wear",
-    "occlusal_wear": "p15_occlusal_wear",
-    "missing_teeth": "p15_missing_teeth",
-    "Missing Teeth": "p15_missing_teeth",
-    "Buccal Mucosal Ridging": "p15_buccal_mucosal_ridging",
-    "buccal_mucosal_ridging": "Buccal_Mucosal_Ridging",
-    "Midline Deviation": "p15_midline_deviation",
-    "midline_deviation": "p15_midline_deviation",
-    "overbite_mm": "p15_overbite_mm",
-    "overjet_mm": "p15_overjet_mm",
-    "scalloping": "p15_scalloping",
-    "Lateral Border of the Tongue Scalloping": "p15_scalloping",
-    "inflamed_gingiva": "p15_inflamed_gingiva",
-    "gingival_bleeding": "Gingival_Bleeding",
+_PREAMBLE_RESERVE_RIGHTS = (
+    "I hereby reserve the right to change and/or alter any of my opinions, statements, and "
+    "conclusions stated herein, following the provision of any new medical and/or dental "
+    "records not provided at the time of examination."
+)
 
-    # --- Diagnostic tests (p16) ---
-    "adherence_of_tongue_depressor": "p16_adherence_tongue_depressor",
-    "Tongue Blades adhering to inside of cheeks": "p16_adherence_tongue_depressor",
-    "Tongue Depressor Adherence": "Adherence_of_Tongue_Depressor_on_inside_of_cheek",
-    "amylase_test": "p16_amylase_test",
-    "Amylase Test": "Amylase_Test",
-    "amylase_test_result": "Amylase_Test",
-    "quality_of_saliva": "p16_quality_of_saliva",
-    "tissue_analysis_of_lips": "p16_tissue_analysis_lips",
-    "tissue_analysis_of_tongue": "p16_tissue_analysis_tongue",
-    "diagnostic_bite_force_left": "p16_left_newtons",
-    "diagnostic_bite_force_right": "p16_right_newtons",
-    "Bite Force Left": "Diagnostic_Bite_Force_Analysis_Left",
-    "Bite Force Right": "Diagnostic_Bite_Force_Analysis_Right",
-    "bite_force_left": "Diagnostic_Bite_Force_Analysis_Left",
-    "bite_force_right": "Diagnostic_Bite_Force_Analysis_Right",
-    "diagnostic_autonomic_nervous_system_before_o2": "p16_before_o2",
-    "diagnostic_autonomic_nervous_system_before_pulse": "p16_before_pulse",
-    "diagnostic_autonomic_nervous_system_after_o2": "p16_after_o2",
-    "diagnostic_autonomic_nervous_system_after_pulse": "p16_after_pulse",
-    "elevated_muscular_activity": "p16_elevated_muscular_activity",
-    "incoordination_aberrant_function": "p16_incoordination_aberrant_function",
-    "Salivary Flow Stimulated": "Salivary_Flow_Stimulated",
-    "Salivary Flow Unstimulated": "Salivary_Flow_Unstimulated",
-    "salivary_flow_stimulated": "Salivary_Flow_Stimulated",
-    "salivary_flow_unstimulated": "Salivary_Flow_Unstimulated",
-    "Blood Pressure": "Blood_Pressure",
-    "blood_pressure": "Blood_Pressure",
-    "No Clicking Auscultated": "p16_no_clicking_was_auscultated",
-    "Damage Translation R": "p16_damage_translation_r",
-    "Damage Translation L": "p16_damage_translation_l",
-    "Damage Lateral R": "p16_damage_lateral_r",
-    "Damage Lateral L": "p16_damage_lateral_l",
+_COVER_SKIP_SECTION_IDS = frozenset({
+    "initial_report_in_the_field_of",
+    "and_request_for_authorization",
+})
 
-    # --- Diagnosis (p17) ---
-    "diagnosis_bruxism": "p17_f45_8",
-    "diagnosis_myalgia_of_facial_muscles": "p17_m79_1",
-    "diagnosis_capsulitis_inflammation": "p17_m65_80",
-    "diagnosis_trigeminal_nerve_neuropathic_pain": "p17_g50_0",
-    "Halitosis diagnosis": "p17_g51_0_halitosis",
-    "Gingival disease": "p17_k05_6",
-    "Osteoarthritis": "p17_m26_69_osteoarthritis",
 
-    # --- Intraoral photos (p19) ---
-    "p19_occlusal_wear_photo": "p19_occlusal_wear",
+# =============================================================================
+# Schema-driven field alias map + legacy aliases
+# =============================================================================
 
-    # --- Epworth (p11 canonical IDs from schema) ---
-    "p11_epworth_sitting_reading": "epworth_sitting_reading",
-    "p11_epworth_watching_tv": "epworth_watching_tv",
-    "p11_epworth_sitting_inactive": "epworth_sitting_inactive",
-    "p11_epworth_passenger_car": "epworth_passenger_car",
-    "p11_epworth_lying_down_afternoon": "epworth_lying_down_afternoon",
-    "p11_epworth_sitting_talking": "epworth_sitting_talking",
-    "p11_epworth_sitting_after_lunch": "epworth_sitting_after_lunch",
-    "p11_epworth_car_traffic": "epworth_car_traffic",
-    "p11_epworth_total_score": "epworth_sleepiness_scale_total_score",
-    "epworth_sleepiness_scale_responses": "epworth_activities",
-    "total_score": "epworth_sleepiness_scale_total_score",
-
-    # --- Lawyer page aliases ---
-    "Injured worker first name": "patient_first_name",
-    "Injured worker last name": "patient_last_name",
-    "injured_worker_name": "p1_patient_name",
-    "case_number": "ann_case_number",
-    "EAMS case number": "ann_case_number",
-    "Case location": "ann_venue",
-    "case_location": "ann_venue",
-    "applicant_attorney_name": "ann_applicant_attorney",
-    "body_parts": "ann_body_parts",
-    "injury_claim_number": "ann_claim_number",
-    "injury_wcab_number": "ann_case_number",
-    "injury_date_of_injury": "p5_date_of_injury",
-    "injury_injured_body_parts": "ann_body_parts",
+_LEGACY_ALIASES: dict[str, str] = {
+    "Diagnostic_Bite_Force_Analysis_Left": "p16_left_newtons",
+    "Diagnostic_Bite_Force_Analysis_Right": "p16_right_newtons",
+    "p17_m26_69_osteoarthritis": "p17_m26_69_osteoarthrosis",
+    "p7_tx_received": "p8_tx_received",
 }
 
-_VAS_FIELD_HINTS = frozenset({"vas", "intensity", "interfere", "embarrass", "stress", "percent_of_time"})
+
+def _build_field_map_from_schema(schema_path: Path | None = None) -> dict[str, str]:
+    """Build field aliases dynamically from the form schema."""
+    path = schema_path or _DEFAULT_SCHEMA_PATH
+    if not path.exists():
+        logger.warning("Schema not found at %s — field alias map will be empty", path)
+        return {}
+
+    schema = json.loads(path.read_text(encoding="utf-8"))
+    field_map: dict[str, str] = {}
+
+    for page in schema.get("pages", []):
+        for field in page.get("standalone_fields", []):
+            _register_field(field, field_map)
+        for section in page.get("sections", []):
+            for field in section.get("fields", []):
+                _register_field(field, field_map)
+            for sub in section.get("subsections", []):
+                for field in sub.get("fields", []):
+                    _register_field(field, field_map)
+        for table in page.get("tables", []):
+            for col in table.get("columns", []):
+                if col.get("column_id"):
+                    col_id = col["column_id"]
+                    header = col.get("header", "")
+                    if header:
+                        label_key = header.lower().replace(" ", "_")
+                        field_map.setdefault(label_key, f"{table['table_id']}_{col_id}")
+
+    return field_map
 
 
-def _is_vas_field(field_id: str) -> bool:
-    fid_lower = field_id.lower()
-    return any(hint in fid_lower for hint in _VAS_FIELD_HINTS)
+def _register_field(field: dict, field_map: dict[str, str]) -> None:
+    fid = field.get("field_id", "")
+    label = field.get("field_label", "")
+    if not fid:
+        return
+    if label:
+        label_key = label.lower().replace(" ", "_").replace("(", "").replace(")", "")
+        field_map.setdefault(label_key, fid)
+    if "_" in fid:
+        short = fid.split("_", 1)[1]
+        field_map.setdefault(short, fid)
 
 
-def _normalize_extraction(pages: list[dict]) -> list[dict]:
-    """Normalize raw production extraction data to match the training condensed format.
+_FIELD_MAP: dict[str, str] = _build_field_map_from_schema()
 
-    Handles:
-      - Flattening nested field_values dicts
-      - Recovering YES/NO from spatial_connections
-      - VAS normalization (e.g. "67" -> "6-7")
-      - Merging free_form_annotations into fields
-    """
-    normalized = []
+
+# =============================================================================
+# Field value helpers
+# =============================================================================
+
+def _unwrap_field_value(fv: Any) -> Any:
+    """Extract a scalar from a nested extraction field dict."""
+    if not isinstance(fv, dict):
+        return fv
+    val = fv.get("value")
+    if val is not None and val != "":
+        return val
+    checked = fv.get("is_checked")
+    if checked is not None:
+        return "Yes" if checked else "No"
+    options = fv.get("circled_options")
+    if options:
+        return ", ".join(str(o) for o in options) if isinstance(options, list) else str(options)
+    return val
+
+
+def _get_confidence(fv: Any) -> float:
+    """Extract the confidence score from a field value (1.0 for non-dict values)."""
+    if isinstance(fv, dict):
+        return float(fv.get("confidence", 1.0))
+    return 1.0
+
+
+def _flatten_all_fields(pages: list[dict]) -> dict[str, Any]:
+    """Flatten all pages' field_values into a single dict."""
+    all_fields: dict[str, Any] = {}
     for page in pages:
-        fields: dict[str, Any] = {}
-
-        for fid, fv in page.get("field_values", {}).items():
-            if isinstance(fv, dict):
-                val = fv.get("value")
-                if val is not None and str(val).strip():
-                    fields[fid] = val
-                elif fv.get("is_checked") is not None:
-                    fields[fid] = "Yes" if fv["is_checked"] else "No"
-                elif fv.get("circled_options"):
-                    opts = fv["circled_options"]
-                    fields[fid] = ", ".join(str(o) for o in opts) if isinstance(opts, list) else str(opts)
-                elif val is not None:
-                    fields[fid] = val
-            else:
-                fields[fid] = fv
-
-        for conn in page.get("spatial_connections", []):
-            if conn.get("relationship_meaning") != "Selection":
+        for fid, fv in (page.get("field_values") or {}).items():
+            if fid.startswith("__"):
                 continue
-            cid = conn.get("connector_element_id", "")
-            for suffix in ("_yes", "_no"):
-                if cid.endswith(suffix):
-                    field_key = cid[: -len(suffix)]
-                    answer = suffix.lstrip("_").upper()
-                    sc_key = f"sc_{field_key}"
-                    if sc_key not in fields and field_key not in fields:
-                        fields[sc_key] = answer
-                    break
+            all_fields[fid] = fv
+    return all_fields
 
-        for ann in page.get("free_form_annotations", []):
-            raw_text = ann.get("raw_text", "")
-            normalized_text = ann.get("normalized_text", "")
-            related = ann.get("relates_to_field_ids") or []
-            if not raw_text and not normalized_text:
-                continue
-            for rel_fid in related:
-                matched = None
-                rel_key = rel_fid.lower().replace(" ", "_")
-                for fid in fields:
-                    if rel_key in fid.lower():
-                        matched = fid
-                        break
-                if matched:
-                    existing = fields[matched]
-                    if not existing or (isinstance(existing, str) and not existing.strip()):
-                        fields[matched] = raw_text
-                else:
-                    ann_key = f"ann_{rel_key}"
-                    if ann_key not in fields:
-                        fields[ann_key] = raw_text
 
-        for fid in list(fields):
-            val = fields[fid]
-            raw = str(val).strip() if val is not None else ""
-            if _is_vas_field(fid) and re.fullmatch(r"\d{2}", raw):
-                a, b = int(raw[0]), int(raw[1])
-                if b > a and a <= 10 and b <= 10:
-                    fields[fid] = f"{raw[0]}-{raw[1]}"
+def _resolve_field(
+    field_id: str,
+    all_fields: dict[str, Any],
+    derived: dict[str, str],
+    field_map: dict[str, str] | None = None,
+) -> Any:
+    """Resolve a field value through a 4-level lookup chain."""
+    fm = field_map if field_map is not None else _FIELD_MAP
 
-        normalized.append({
-            "page_number": page.get("page_number"),
-            "fields": fields,
-            "field_values": fields,
-        })
-    return normalized
+    fv = all_fields.get(field_id)
+    if fv is not None:
+        return _unwrap_field_value(fv)
 
+    val = derived.get(field_id)
+    if val is not None:
+        return val
+
+    fid_lower = field_id.lower().replace(" ", "_")
+    canonical = fm.get(field_id) or fm.get(fid_lower) or _LEGACY_ALIASES.get(field_id)
+    if canonical and canonical != field_id:
+        fv = all_fields.get(canonical)
+        if fv is not None:
+            return _unwrap_field_value(fv)
+
+    for key in all_fields:
+        if key.lower() == fid_lower:
+            return _unwrap_field_value(all_fields[key])
+
+    return None
+
+
+def _resolve_field_with_confidence(
+    field_id: str,
+    all_fields: dict[str, Any],
+    field_map: dict[str, str] | None = None,
+) -> tuple[Any, float]:
+    """Resolve a field and return (unwrapped_value, confidence)."""
+    fm = field_map if field_map is not None else _FIELD_MAP
+
+    fv = all_fields.get(field_id)
+    if fv is not None:
+        return _unwrap_field_value(fv), _get_confidence(fv)
+
+    fid_lower = field_id.lower().replace(" ", "_")
+    canonical = fm.get(field_id) or fm.get(fid_lower) or _LEGACY_ALIASES.get(field_id)
+    if canonical and canonical != field_id:
+        fv = all_fields.get(canonical)
+        if fv is not None:
+            return _unwrap_field_value(fv), _get_confidence(fv)
+
+    for key in all_fields:
+        if key.lower() == fid_lower:
+            fv = all_fields[key]
+            return _unwrap_field_value(fv), _get_confidence(fv)
+
+    return None, 1.0
+
+
+def _collect_low_confidence_fields(all_fields: dict[str, Any]) -> list[dict]:
+    """Scan all_fields for values below CONFIDENCE_INCLUDE_NO_FLAG."""
+    results = []
+    for fid, fv in all_fields.items():
+        if fid.startswith("__"):
+            continue
+        conf = _get_confidence(fv)
+        if conf < CONFIDENCE_INCLUDE_NO_FLAG:
+            val = _unwrap_field_value(fv)
+            if val is not None:
+                results.append({"field_id": fid, "value": str(val), "confidence": round(conf, 3)})
+    return results
+
+
+# =============================================================================
+# LLM client setup
+# =============================================================================
 
 TOGETHER_MODEL = "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8"
 TOGETHER_BASE_URL = "https://api.together.xyz/v1"
@@ -350,102 +296,16 @@ def _load_rules(rules_path: Path | None = None) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _build_reverse_map() -> dict[str, str]:
-    """Build reverse lookup: rule_field_id -> production_field_name."""
-    rev: dict[str, str] = {}
-    for prod_name, rule_id in FIELD_NAME_MAP.items():
-        rev.setdefault(rule_id, prod_name)
-    return rev
+# =============================================================================
+# Conditions, templates, lists
+# =============================================================================
 
-
-_REVERSE_MAP: dict[str, str] = _build_reverse_map()
-
-
-_MIXED_CASE_TO_CANONICAL: dict[str, str] = {
-    "Diagnostic_Bite_Force_Analysis_Left": "p16_left_newtons",
-    "Diagnostic_Bite_Force_Analysis_Right": "p16_right_newtons",
-    "Salivary_Flow_Stimulated": "p16_salivary_flow_stimulated",
-    "Salivary_Flow_Unstimulated": "p16_salivary_flow_unstimulated",
-    "Amylase_Test": "p16_amylase_test",
-    "Blood_Pressure": "p16_blood_pressure",
-    "Adherence_of_Tongue_Depressor_on_inside_of_cheek": "p16_adherence_tongue_depressor",
-    "Buccal_Mucosal_Ridging": "p15_buccal_mucosal_ridging",
-    "Gingival_Bleeding": "p16_gingival_bleeding",
-    "Inflamed_Gingiva": "p15_inflamed_gingiva",
-    "Occlusal_Wear": "p15_occlusal_wear",
-    "Lateral Border of the Tongue Scalloping": "p15_scalloping",
-    # p14 muscle palpation: rules use per-muscle names, condensed uses table aggregates
-    "p14_masseter_right_vas": "p14_muscle_palpation_table_right_vas",
-    "p14_masseter_left_vas": "p14_muscle_palpation_table_left_vas",
-    "p14_temporalis_right_vas": "p14_muscle_palpation_table_right_vas",
-    "p14_temporalis_left_vas": "p14_muscle_palpation_table_left_vas",
-    "tenderness_masseter_left": "p14_muscle_palpation_table_left_vas",
-    "tenderness_masseter_right": "p14_muscle_palpation_table_right_vas",
-    "tenderness_temporalis_left": "p14_muscle_palpation_table_left_vas",
-    "tenderness_temporalis_right": "p14_muscle_palpation_table_right_vas",
-    # p17 diagnosis naming discrepancy (rule uses -itis, condensed uses -osis)
-    "p17_m26_69_osteoarthritis": "p17_m26_69_osteoarthrosis",
-    # p10 headache/face pain frequency aliases
-    "p10_headache_frequency": "p10_headache_percent_time",
-    "p10_headache_locations": "p10_headache_quality",
-    "p10_left_face_pain_frequency": "p10_left_face_pain_percent_time",
-    "p10_right_face_pain_frequency": "p10_right_face_pain_percent_time",
-    # p9 dental history
-    "p9_last_dentist_visit": "p9_last_teeth_cleaned",
-    # p19 occlusal wear from intraoral photos
-    "p19_occlusal_wear": "p19_biofilm_on_teeth",
-    # Epworth total score (mixed-case in condensed data)
-    "Epworth_Sleepiness_Scale_Total_Score": "epworth_sleepiness_scale_total_score",
-}
-
-
-def _lookup_field(pages: list[dict[str, Any]], field_id: str) -> Any:
-    """Find a field value across all pages of an extraction.
-
-    Resolution order: exact match -> FIELD_NAME_MAP alias -> REVERSE_MAP alias
-    -> mixed-case canonical mapping -> annotation fallback (ann_ prefix).
-    """
-    aliases = [field_id]
-    if field_id in _REVERSE_MAP:
-        aliases.append(_REVERSE_MAP[field_id])
-    mapped = FIELD_NAME_MAP.get(field_id)
-    if mapped and mapped not in aliases:
-        aliases.append(mapped)
-    canonical = _MIXED_CASE_TO_CANONICAL.get(field_id)
-    if canonical and canonical not in aliases:
-        aliases.append(canonical)
-
-    for page in pages:
-        source = page.get("fields") or page.get("field_values") or {}
-        fv = None
-        for alias in aliases:
-            fv = source.get(alias)
-            if fv is not None:
-                break
-        if fv is None:
-            fid_lower = field_id.lower()
-            for key in source:
-                if key.lower() == fid_lower:
-                    fv = source[key]
-                    break
-        if fv is None:
-            continue
-        if isinstance(fv, dict):
-            val = fv.get("value")
-            if val is not None and str(val).strip():
-                return val
-            checked = fv.get("is_checked")
-            if checked is not None:
-                return "Yes" if checked else "No"
-            opts = fv.get("circled_options")
-            if opts:
-                return ", ".join(str(o) for o in opts) if isinstance(opts, list) else str(opts)
-            return val
-        return fv
-    return None
-
-
-def _check_conditions(conditions: list[dict], pages: list[dict]) -> bool:
+def _check_conditions(
+    conditions: list[dict],
+    all_fields: dict[str, Any],
+    derived: dict[str, str],
+    field_map: dict[str, str],
+) -> bool:
     """Evaluate section conditions against extraction data."""
     if not conditions:
         return True
@@ -455,7 +315,7 @@ def _check_conditions(conditions: list[dict], pages: list[dict]) -> bool:
         fid = cond.get("field_id", "")
         op = cond.get("operator", "exists")
         expected = cond.get("value")
-        val = _lookup_field(pages, fid)
+        val = _resolve_field(fid, all_fields, derived, field_map)
 
         if op == "exists":
             results.append(val is not None)
@@ -476,24 +336,103 @@ def _check_conditions(conditions: list[dict], pages: list[dict]) -> bool:
             results.append(True)
 
     combine = conditions[0].get("combine", "and") if conditions else "and"
-    if combine == "or":
-        return any(results)
-    return all(results)
+    return any(results) if combine == "or" else all(results)
 
 
-def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[str, str]:
-    """Build derived/alias fields that the rules template expects but extraction doesn't have directly."""
+def _fill_template(
+    template: str,
+    all_fields: dict[str, Any],
+    derived: dict[str, str],
+    field_map: dict[str, str],
+) -> str:
+    """Replace {field_id} and {field_id:default} placeholders.
+
+    Legally significant fields with confidence < 0.60 are wrapped with
+    [VERIFY: ...] so clinicians notice them immediately.
+    """
+    def replacer(match):
+        token = match.group(1)
+        parts = token.split(":")
+        fid = parts[0]
+        default = parts[1] if len(parts) > 1 else ""
+        val, conf = _resolve_field_with_confidence(fid, all_fields, field_map)
+        if val is None:
+            val = derived.get(fid)
+            conf = 1.0
+        if val is None:
+            return default
+        if fid in _LEGALLY_SIGNIFICANT_FIELDS and conf < CONFIDENCE_INCLUDE_NO_FLAG:
+            return f"[VERIFY: {val}]"
+        return str(val)
+
+    return re.sub(r"\{([^}]+)\}", replacer, template)
+
+
+def _build_list_content(
+    section_rule: dict,
+    all_fields: dict[str, Any],
+    derived: dict[str, str],
+    field_map: dict[str, str],
+) -> str:
+    """Build list content from extraction data."""
+    fid = section_rule.get("list_field_id")
+    if not fid:
+        return ""
+    val = _resolve_field(fid, all_fields, derived, field_map)
+    if isinstance(val, list):
+        return "\n".join(f"• {item}" for item in val)
+    return f"• {val}" if val else ""
+
+
+# =============================================================================
+# Derived fields
+# =============================================================================
+
+def _build_diagnosis_list(all_fields: dict[str, Any], schema_path: Path | None = None) -> str:
+    """Build diagnosis list from schema fields marked is_diagnosis_code."""
+    path = schema_path or _DEFAULT_SCHEMA_PATH
+    if not path.exists():
+        return ""
+    schema = json.loads(path.read_text(encoding="utf-8"))
+    dx_items: list[str] = []
+    for page in schema.get("pages", []):
+        for section in page.get("sections", []):
+            for field in section.get("fields", []):
+                if not field.get("is_diagnosis_code"):
+                    continue
+                fid = field["field_id"]
+                label = field.get("field_label", fid)
+                val = _unwrap_field_value(all_fields.get(fid))
+                if val and str(val).strip().lower() not in ("no", "false", "none", ""):
+                    code = field.get("icd_code", "")
+                    desc = field.get("icd_description", label)
+                    dx_items.append(f"{code} — {desc}" if code else desc)
+    if dx_items:
+        return "\n".join(f"{i+1}. {dx}" for i, dx in enumerate(dx_items))
+    return ""
+
+
+def _derive_fields(
+    all_fields: dict[str, Any],
+    field_map: dict[str, str],
+    patient_name: str | None = None,
+    patient_context: dict[str, str] | None = None,
+) -> dict[str, str]:
+    """Build derived/alias fields that rule templates expect but extraction doesn't provide directly."""
     derived: dict[str, str] = {}
+    pctx = patient_context or {}
 
-    full_name = patient_name or _lookup_field(pages, "p1_patient_name") or ""
+    def _get(fid: str) -> Any:
+        return _resolve_field(fid, all_fields, derived, field_map)
+
+    full_name = patient_name or _get("p1_patient_name") or ""
     if full_name:
         parts = str(full_name).strip().split()
         derived["patient_first_name"] = parts[0] if parts else ""
         derived["patient_last_name"] = parts[-1] if len(parts) > 1 else ""
         derived["patient_name"] = str(full_name).strip()
 
-    # --- Simple aliases ---
-    aliases = {
+    simple_aliases = {
         "patient_dob": ["p1_birth_date", "p1_dob"],
         "patient_sex": ["p1_gender", "p1_sex"],
         "patient_phone": ["p1_cell_phone", "p1_home_phone"],
@@ -501,15 +440,14 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
         "occupation": ["p5_job_title"],
         "exam_date": ["p1_date"],
     }
-    for target, sources in aliases.items():
+    for target, sources in simple_aliases.items():
         for src in sources:
-            val = _lookup_field(pages, src)
+            val = _get(src)
             if val is not None and str(val).strip():
                 derived[target] = str(val)
                 break
 
-    # --- Gender-based derived fields ---
-    gender = _lookup_field(pages, "p1_gender") or ""
+    gender = _get("p1_gender") or ""
     gender_lower = str(gender).strip().lower()
     if gender_lower in ("male", "m"):
         derived["patient_title"] = "Mr."
@@ -524,8 +462,7 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
         derived["his_her"] = "his/her"
         derived["he_she"] = "he/she"
 
-    # --- Pain qualifier (from mandibular range of motion VAS) ---
-    vas_raw = _lookup_field(pages, "p14_max_opening_vas")
+    vas_raw = _get("p14_max_opening_vas")
     if vas_raw is not None:
         try:
             vas_val = float(str(vas_raw).split("-")[0])
@@ -542,32 +479,33 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
     else:
         derived["pain_qualifier"] = "painless"
 
-    # --- Midline text ---
-    midline = _lookup_field(pages, "p15_midline_deviation")
+    midline = _get("p15_midline_deviation")
     if midline and str(midline).strip().lower() not in ("none", "no", "centered", "0", ""):
         derived["midline_text"] = f"deviated to the {midline}"
     else:
         derived["midline_text"] = "centered"
 
-    # --- Diagnosis list (from p17 ICD-10 checkboxes) ---
-    dx_codes = {
-        "p17_f45_8": ("F45.8", "Bruxism"),
-        "p17_m79_1": ("M79.1", "Myalgia of Facial Muscles"),
-        "p17_m65_80": ("M65.80", "Capsulitis/Inflammation of the TMJ"),
-        "p17_g50_0": ("G50.0", "Trigeminal Nerve Neuropathic Pain"),
-        "p17_m26_69_osteoarthritis": ("M26.69", "Osteoarthritis of the TMJ"),
-        "p17_g51_0_halitosis": ("G51.0", "Halitosis"),
-        "p17_k05_6": ("K05.6", "Gingival/Periodontal Disease"),
-    }
-    dx_items = []
-    for fid, (code, desc) in dx_codes.items():
-        val = _lookup_field(pages, fid)
-        if val and str(val).strip().lower() not in ("no", "false", "none", ""):
-            dx_items.append(f"{code} — {desc}")
-    if dx_items:
-        derived["diagnosis_list"] = "\n".join(f"{i+1}. {dx}" for i, dx in enumerate(dx_items))
+    schema_dx = _build_diagnosis_list(all_fields)
+    if schema_dx:
+        derived["diagnosis_list"] = schema_dx
+    else:
+        dx_codes = {
+            "p17_f45_8": ("F45.8", "Bruxism"),
+            "p17_m79_1": ("M79.1", "Myalgia of Facial Muscles"),
+            "p17_m65_80": ("M65.80", "Capsulitis/Inflammation of the TMJ"),
+            "p17_g50_0": ("G50.0", "Trigeminal Nerve Neuropathic Pain"),
+            "p17_m26_69_osteoarthritis": ("M26.69", "Osteoarthritis of the TMJ"),
+            "p17_g51_0_halitosis": ("G51.0", "Halitosis"),
+            "p17_k05_6": ("K05.6", "Gingival/Periodontal Disease"),
+        }
+        dx_items = []
+        for fid, (code, desc) in dx_codes.items():
+            val = _get(fid)
+            if val and str(val).strip().lower() not in ("no", "false", "none", ""):
+                dx_items.append(f"{code} — {desc}")
+        if dx_items:
+            derived["diagnosis_list"] = "\n".join(f"{i+1}. {dx}" for i, dx in enumerate(dx_items))
 
-    # --- Epworth activities list (try p11_ canonical IDs first, then legacy) ---
     epworth_fields = [
         ("Sitting and reading", "p11_epworth_sitting_reading", "epworth_sitting_reading"),
         ("Watching TV", "p11_epworth_watching_tv", "epworth_watching_tv"),
@@ -581,7 +519,7 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
     epworth_items = []
     epworth_total = 0
     for label, canonical_fid, legacy_fid in epworth_fields:
-        val = _lookup_field(pages, canonical_fid) or _lookup_field(pages, legacy_fid)
+        val = _get(canonical_fid) or _get(legacy_fid)
         if val is not None:
             try:
                 score = int(str(val).strip())
@@ -592,26 +530,28 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
     if epworth_items:
         derived["epworth_activities"] = "\n".join(epworth_items)
         derived["epworth_sleepiness_scale_total_score"] = str(epworth_total)
-    elif not epworth_items:
-        raw_total = _lookup_field(pages, "p11_epworth_total_score") or _lookup_field(pages, "Epworth_Sleepiness_Scale_Total_Score")
+    else:
+        raw_total = _get("p11_epworth_total_score") or _get("Epworth_Sleepiness_Scale_Total_Score")
         if raw_total is not None:
             derived["epworth_sleepiness_scale_total_score"] = str(raw_total).strip()
 
-    # --- Lawyer-sourced case demographic fields ---
-    for target, sources in {
-        "case_number": ["ann_case_number", "injury_wcab_number", "case_number"],
-        "claim_number": ["ann_claim_number", "injury_claim_number", "claim_number"],
-        "venue": ["ann_venue", "venue", "case_location"],
-        "date_of_injury": ["p5_date_of_injury", "injury_date_of_injury", "date_of_injury"],
-        "interpreter": ["p1_interpreter", "interpreter"],
-    }.items():
+    case_sources = {
+        "case_number": ["case_number"],
+        "claim_number": ["claim_number"],
+        "venue": ["wcab_venue", "venue"],
+        "date_of_injury": ["injury_date", "p5_date_of_injury", "date_of_injury"],
+        "interpreter": ["interpreter_language", "interpreter"],
+    }
+    for target, sources in case_sources.items():
+        if pctx.get(target):
+            derived[target] = pctx[target]
+            continue
         for src in sources:
-            val = _lookup_field(pages, src)
+            val = _get(src)
             if val is not None and str(val).strip():
                 derived[target] = str(val)
                 break
 
-    # --- Date formatting (MM/DD/YYYY -> Month Day, Year) ---
     for date_key in ("exam_date", "patient_dob", "date_of_injury"):
         raw = derived.get(date_key, "")
         m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", raw)
@@ -623,7 +563,6 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
             except ValueError:
                 pass
 
-    # --- Address parsing ---
     addr = derived.get("patient_address", "")
     if addr:
         parts = [p.strip() for p in str(addr).split(",")]
@@ -644,40 +583,26 @@ def _derive_fields(pages: list[dict], patient_name: str | None = None) -> dict[s
                 derived.setdefault("patient_zip", addr_parts[-1] if addr_parts[-1].isdigit() else "")
                 derived.setdefault("patient_state", addr_parts[-2] if len(addr_parts[-2]) == 2 else "")
 
-    # --- Tenderness Y/N derived from VAS values ---
     for muscle, vas_field in [
         ("p14_masseter_right_y_n", "p14_masseter_right_vas"),
         ("p14_masseter_left_y_n", "p14_masseter_left_vas"),
         ("p14_temporalis_right_y_n", "p14_temporalis_right_vas"),
         ("p14_temporalis_left_y_n", "p14_temporalis_left_vas"),
     ]:
-        vas = _lookup_field(pages, vas_field)
+        vas = _get(vas_field)
         if vas is not None:
             try:
                 derived[muscle] = "Yes" if float(str(vas).split("-")[0]) > 0 else "No"
             except (ValueError, TypeError):
                 derived[muscle] = "Yes" if str(vas).strip() else "No"
 
-    # --- Default for conditional fields ---
     derived.setdefault("additional_findings", "")
-
     return derived
 
 
-def _fill_template(template: str, pages: list[dict], derived: dict[str, str] | None = None) -> str:
-    """Replace {field_id} placeholders in a template with extraction values."""
-    extra = derived or {}
-
-    def replacer(match):
-        token = match.group(1)
-        parts = token.split(":")
-        fid = parts[0]
-        default = parts[1] if len(parts) > 1 else ""
-        val = extra.get(fid) or _lookup_field(pages, fid)
-        return str(val) if val is not None else default
-
-    return re.sub(r"\{([^}]+)\}", replacer, template)
-
+# =============================================================================
+# Narrative generation + hallucination guard
+# =============================================================================
 
 _PREAMBLE_PATTERNS = re.compile(
     r"^(here is|here's|based on|i will|i'll|the following|below is|let me|"
@@ -706,30 +631,48 @@ def _clean_narrative(text: str) -> str:
 
 def _generate_narrative(
     section_rule: dict,
-    pages: list[dict],
+    all_fields: dict[str, Any],
+    derived: dict[str, str],
+    field_map: dict[str, str],
     patient_name: str,
     llm_clients: list[tuple[OpenAI, str]],
-    derived: dict[str, str] | None = None,
 ) -> str:
-    """Generate narrative text for a section, trying each LLM client in order."""
+    """Generate narrative text using a full-context pass with confidence filtering.
+
+    Fields below CONFIDENCE_UNCERTAIN (0.40) are excluded.
+    Fields between 0.40-0.59 are annotated with [UNCERTAIN].
+    """
     prompt = section_rule.get("generation_prompt", "")
-    field_ids = section_rule.get("source_field_ids", [])
+    source_ids = section_rule.get("source_field_ids", [])
     examples = section_rule.get("few_shot_examples", [])
-    d = derived or {}
 
-    field_values = {}
-    for fid in field_ids:
-        val = d.get(fid) or _lookup_field(pages, fid)
+    relevant: dict[str, str] = {}
+    for fid in source_ids:
+        val = _resolve_field(fid, all_fields, derived, field_map)
         if val is not None:
-            field_values[fid] = str(val)
+            relevant[fid] = str(val)
 
-    if not field_values:
+    threshold = min(3, len(source_ids)) if source_ids else 1
+    if len(relevant) < threshold:
         return ""
 
-    patient_last = d.get("patient_last_name", patient_name.split()[-1] if patient_name else "")
-    title = d.get("patient_title", "Mr./Ms.")
-    pronoun_he = d.get("he_she", "he/she")
-    pronoun_his = d.get("his_her", "his/her")
+    context: dict[str, str] = {}
+    for fid, fv in all_fields.items():
+        conf = _get_confidence(fv)
+        if conf < CONFIDENCE_UNCERTAIN:
+            continue
+        unwrapped = _unwrap_field_value(fv)
+        if unwrapped is not None and str(unwrapped).strip():
+            val_str = str(unwrapped)
+            if conf < CONFIDENCE_INCLUDE_NO_FLAG:
+                val_str = f"{val_str} [UNCERTAIN]"
+            context[fid] = val_str
+    context.update(derived)
+
+    patient_last = derived.get("patient_last_name", patient_name.split()[-1] if patient_name else "")
+    title = derived.get("patient_title", "Mr./Ms.")
+    pronoun_he = derived.get("he_she", "he/she")
+    pronoun_his = derived.get("his_her", "his/her")
 
     system_content = (
         f"You are an expert clinical report writer generating a section of an orofacial pain evaluation report.\n\n"
@@ -743,6 +686,7 @@ def _generate_narrative(
         f"- Write in third person using {title} {patient_last}.\n"
         f"- Use pronouns '{pronoun_he}' and '{pronoun_his}'.\n"
         f"- If a field value is missing or empty, omit that detail rather than inventing data.\n"
+        f"- Fields marked [UNCERTAIN] should be referenced as 'reportedly' and recommended for verification.\n"
         f"- Be concise, professional, and use clinical terminology appropriate for a medical-legal report.\n"
     )
 
@@ -762,11 +706,11 @@ def _generate_narrative(
 
     messages.append({
         "role": "user",
-        "content": f"Generate section from: {json.dumps(field_values)}",
+        "content": f"Generate section from: {json.dumps(context)}",
     })
 
     if not llm_clients:
-        return f"[Narrative placeholder — LLM not configured]\nFields: {json.dumps(field_values, indent=2)}"
+        return f"[Narrative placeholder — LLM not configured]\nFields: {json.dumps(relevant, indent=2)}"
 
     last_error = None
     for client, model in llm_clients:
@@ -785,59 +729,273 @@ def _generate_narrative(
                            section_rule.get("section_id"), model, e)
 
     logger.error("All LLM providers failed for %s: %s", section_rule.get("section_id"), last_error)
-    return f"[Generation failed: {last_error}]\nFields: {json.dumps(field_values)}"
+    return f"[Generation failed: {last_error}]\nFields: {json.dumps(relevant)}"
 
 
-def _build_list_content(section_rule: dict, pages: list[dict]) -> str:
-    """Build list content from extraction data."""
-    fid = section_rule.get("list_field_id")
-    if not fid:
-        return ""
-    val = _lookup_field(pages, fid)
-    if isinstance(val, list):
-        return "\n".join(f"• {item}" for item in val)
-    return f"• {val}" if val else ""
+def _verify_narrative(
+    narrative_text: str,
+    source_fields: dict[str, str],
+    section_title: str,
+    llm_clients: list[tuple[OpenAI, str]],
+) -> str:
+    """Self-RAG hallucination guard: verify every factual claim against source data."""
+    if not narrative_text or not llm_clients:
+        return narrative_text
 
+    prompt = (
+        f"You generated this clinical report section:\n\n"
+        f"SECTION: {section_title}\n"
+        f"GENERATED TEXT: {narrative_text}\n\n"
+        f"SOURCE DATA (the ONLY facts permitted to appear in this section):\n"
+        f"{json.dumps(source_fields, indent=2)}\n\n"
+        f"Check every factual claim in the generated text against the source data:\n"
+        f"- If a fact IS in source data: KEEP it exactly as written\n"
+        f"- If a fact is NOT in source data: REMOVE it (hallucination)\n"
+        f"- If a fact CONTRADICTS source data: CORRECT it to match source data\n\n"
+        f"Return only the verified text. Do not add new content. Do not explain changes."
+    )
+
+    for client, model in llm_clients:
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=800,
+                temperature=0.0,
+            )
+            verified = response.choices[0].message.content.strip()
+            if verified:
+                return _clean_narrative(verified)
+        except Exception as e:
+            logger.warning("Verification failed for '%s' with %s: %s", section_title, model, e)
+
+    return narrative_text
+
+
+# =============================================================================
+# Cover page + preamble builder
+# =============================================================================
+
+def _add_title_headings(doc: DocxDocument) -> None:
+    """Add the two centered bold underlined title lines."""
+    for text in ("INITIAL REPORT IN THE FIELD OF DENTISTRY",
+                 "AND REQUEST FOR AUTHORIZATION"):
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        run = p.add_run(text)
+        run.bold = True
+        run.underline = True
+        run.font.name = "Arial"
+        run.font.size = Pt(11)
+
+
+def _set_cell_border(cell, **kwargs):
+    """Set borders on a table cell. kwargs: top, bottom, left, right with values like '0' or '4'."""
+    tc = cell._tc
+    tc_pr = tc.get_or_add_tcPr()
+    borders = tc_pr.find(qn("w:tcBorders"))
+    if borders is None:
+        borders = tc_pr.makeelement(qn("w:tcBorders"), {})
+        tc_pr.append(borders)
+    for edge, val in kwargs.items():
+        el = borders.find(qn(f"w:{edge}"))
+        if el is None:
+            el = borders.makeelement(qn(f"w:{edge}"), {})
+            borders.append(el)
+        el.set(qn("w:val"), "single" if val != "0" else "none")
+        el.set(qn("w:sz"), val)
+        el.set(qn("w:space"), "0")
+        el.set(qn("w:color"), "000000")
+
+
+def _add_field_line(cell, label: str, value: str) -> None:
+    """Append a 'Label:\\tValue' line to a table cell."""
+    p = cell.add_paragraph()
+    p.paragraph_format.space_before = Pt(0)
+    p.paragraph_format.space_after = Pt(1)
+    run = p.add_run(f"{label}\t{value}")
+    run.font.name = "Arial"
+    run.font.size = Pt(10)
+
+
+def _add_section_header(cell, text: str) -> None:
+    """Add a bold section label (Patient, Claims Administrator, etc.) to a cell."""
+    p = cell.add_paragraph()
+    p.paragraph_format.space_before = Pt(4)
+    p.paragraph_format.space_after = Pt(1)
+    run = p.add_run(text)
+    run.bold = True
+    run.font.name = "Arial"
+    run.font.size = Pt(10)
+
+
+def _build_cover_page(
+    doc: DocxDocument,
+    derived: dict[str, str],
+    patient_context: dict[str, str] | None = None,
+) -> None:
+    """Build cover sheet (page 1) and preamble (page 2) matching training reports."""
+    pctx = patient_context or {}
+
+    def _val(key: str) -> str:
+        return derived.get(key, "") or pctx.get(key, "")
+
+    # -- Page 1: Cover sheet --------------------------------------------------
+    _add_title_headings(doc)
+
+    table = doc.add_table(rows=1, cols=2)
+    table.autofit = False
+    table.columns[0].width = Inches(4.2)
+    table.columns[1].width = Inches(2.3)
+
+    left_cell = table.rows[0].cells[0]
+    right_cell = table.rows[0].cells[1]
+
+    _set_cell_border(left_cell, top="0", bottom="0", left="0", right="0")
+    _set_cell_border(right_cell, top="4", bottom="4", left="4", right="4")
+
+    # Left column: case info
+    _add_field_line(left_cell, "DATE:", _val("exam_date"))
+    _add_field_line(left_cell, "CLAIM:", _val("claim_number"))
+    _add_field_line(left_cell, "WCAB:", _val("venue"))
+    _add_field_line(left_cell, "Case #:", _val("case_number"))
+    _add_field_line(left_cell, "Date of Injury:", _val("date_of_injury"))
+    _add_field_line(left_cell, "Date of current exam:", _val("exam_date"))
+    _add_field_line(left_cell, "Interpreter:", _val("interpreter"))
+
+    # Left column: patient info
+    _add_section_header(left_cell, "Patient")
+    _add_field_line(left_cell, "Last Name:", _val("patient_last_name"))
+    _add_field_line(left_cell, "First Name:", _val("patient_first_name"))
+    _add_field_line(left_cell, "Sex:", _val("patient_sex"))
+    _add_field_line(left_cell, "Date of Birth:", _val("patient_dob"))
+    _add_field_line(left_cell, "Occupation:", _val("occupation"))
+    _add_field_line(left_cell, "Address:", _val("patient_address"))
+    _add_field_line(left_cell, "City:", _val("patient_city"))
+    _add_field_line(left_cell, "State:", _val("patient_state"))
+    _add_field_line(left_cell, "Zip:", _val("patient_zip"))
+    _add_field_line(left_cell, "Phone No.:", _val("patient_phone"))
+
+    # Left column: claims administrator
+    _add_section_header(left_cell, "Claims Administrator/Insurer")
+    _add_field_line(left_cell, "Name:", pctx.get("claims_admin_name", ""))
+    _add_field_line(left_cell, "Address:", pctx.get("claims_admin_address", ""))
+    _add_field_line(left_cell, "City:", pctx.get("claims_admin_city", ""))
+    _add_field_line(left_cell, "State:", pctx.get("claims_admin_state", ""))
+    _add_field_line(left_cell, "Zip:", pctx.get("claims_admin_zip", ""))
+    _add_field_line(left_cell, "Phone:", pctx.get("claims_admin_phone", ""))
+
+    # Left column: employer
+    _add_section_header(left_cell, "Employer")
+    _add_field_line(left_cell, "Name:", pctx.get("employer_name", ""))
+    _add_field_line(left_cell, "Address:", pctx.get("employer_address", ""))
+    _add_field_line(left_cell, "City:", pctx.get("employer_city", ""))
+    _add_field_line(left_cell, "State:", pctx.get("employer_state", ""))
+    _add_field_line(left_cell, "Zip:", pctx.get("employer_zip", ""))
+
+    # Right column: legal demand box
+    for para in right_cell.paragraphs:
+        right_cell._tc.remove(para._element)
+    p = right_cell.add_paragraph()
+    p.paragraph_format.space_before = Pt(2)
+    run = p.add_run(_LEGAL_DEMAND_BOX)
+    run.font.name = "Arial"
+    run.font.size = Pt(7)
+
+    doc.add_page_break()
+
+    # -- Page 2: Preamble -----------------------------------------------------
+    _add_title_headings(doc)
+
+    # Disclaimer (all-caps, justified)
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    run = p.add_run(_PREAMBLE_DISCLAIMER)
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+
+    # Exam intro (with patient name insertion)
+    intro_text = _PREAMBLE_EXAM_INTRO.format(
+        patient_title=_val("patient_title") or "Mr./Ms.",
+        patient_last_name=_val("patient_last_name") or "Patient",
+    )
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    run = p.add_run(intro_text)
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+
+    # Conclusions basis
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    run = p.add_run(_PREAMBLE_CONCLUSIONS_BASIS)
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+
+    # Records demand (italic)
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    run = p.add_run(_PREAMBLE_RECORDS_DEMAND)
+    run.italic = True
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+
+    # Reserve rights
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    run = p.add_run(_PREAMBLE_RESERVE_RIGHTS)
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+
+    # Conditional interpreter line
+    interpreter_name = _val("interpreter")
+    if interpreter_name.strip():
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+        run = p.add_run(f"{interpreter_name} served as an interpreter during this examination.")
+        run.font.name = "Arial"
+        run.font.size = Pt(11)
+
+    doc.add_page_break()
+
+
+# =============================================================================
+# Main report generation
+# =============================================================================
 
 def generate_clinical_report(
     extraction_data: dict[str, Any],
-    lawyer_data: dict[str, Any] | None = None,
+    patient_context: dict[str, str] | None = None,
     rules_path: Path | None = None,
-) -> bytes:
+) -> tuple[bytes, list[dict]]:
     """Generate a clinical DOCX report from extraction data using learned rules.
 
     Args:
         extraction_data: Extraction result with pages[].field_values
-        lawyer_data: Optional lawyer cover extraction
+        patient_context: Optional case demographics from patient_medical_history
         rules_path: Override path to report_rules.json
 
     Returns:
-        DOCX file as bytes
+        Tuple of (DOCX file bytes, low_confidence_fields list)
     """
     rules = _load_rules(rules_path)
     sections = rules.get("sections", [])
     global_fmt = rules.get("global_formatting", {})
 
-    pages = _normalize_extraction(extraction_data.get("pages", []))
-    if lawyer_data and lawyer_data.get("pages"):
-        lawyer_pages = _normalize_extraction(lawyer_data["pages"])
-        pages = lawyer_pages + pages
+    all_fields = _flatten_all_fields(extraction_data.get("pages", []))
+    field_map = _FIELD_MAP
 
     patient_name = (
         extraction_data.get("patient_name")
-        or _lookup_field(pages, "p1_patient_name")
+        or _resolve_field("p1_patient_name", all_fields, {}, field_map)
         or "Patient"
     )
+    if isinstance(patient_name, str):
+        patient_name = patient_name.strip()
 
-    if lawyer_data and lawyer_data.get("pages"):
-        for lf in ("injured_worker_name", "p1_patient_name", "patient_name", "Participant name"):
-            lawyer_name = _lookup_field(pages, lf)
-            if lawyer_name and str(lawyer_name).strip():
-                patient_name = str(lawyer_name).strip()
-                break
-
-    derived = _derive_fields(pages, patient_name)
+    derived = _derive_fields(all_fields, field_map, patient_name, patient_context)
     llm_clients = _build_llm_clients()
+    low_confidence = _collect_low_confidence_fields(all_fields)
 
     if llm_clients:
         logger.info("LLM providers configured: %s", [m for _, m in llm_clients])
@@ -857,11 +1015,16 @@ def generate_clinical_report(
         section.left_margin = Inches(1)
         section.right_margin = Inches(1)
 
+    _build_cover_page(doc, derived, patient_context)
+
     for sec_rule in sections:
+        if sec_rule.get("section_id") in _COVER_SKIP_SECTION_IDS:
+            continue
+
         content_type = sec_rule.get("content_type", "")
         conditions = sec_rule.get("conditions", [])
 
-        if conditions and not _check_conditions(conditions, pages):
+        if conditions and not _check_conditions(conditions, all_fields, derived, field_map):
             continue
 
         title = sec_rule.get("title", "")
@@ -889,21 +1052,26 @@ def generate_clinical_report(
         elif content_type in ("direct_fill", "formatted_fill"):
             template = sec_rule.get("template", "")
             if template:
-                filled = _fill_template(template, pages, derived)
+                filled = _fill_template(template, all_fields, derived, field_map)
                 for line in filled.split("\n"):
                     p = doc.add_paragraph(line)
                     p.paragraph_format.space_after = Pt(2)
 
         elif content_type == "narrative":
-            text = _generate_narrative(sec_rule, pages, patient_name, llm_clients, derived)
+            text = _generate_narrative(sec_rule, all_fields, derived, field_map, patient_name, llm_clients)
             if text:
+                source_ids = sec_rule.get("source_field_ids", [])
+                relevant = {fid: str(v) for fid in source_ids
+                            if (v := _resolve_field(fid, all_fields, derived, field_map)) is not None}
+                text = _verify_narrative(text, relevant, sec_rule.get("title", ""), llm_clients)
+
                 for para in text.split("\n"):
                     if para.strip():
                         p = doc.add_paragraph(para.strip())
                         p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
         elif content_type == "list":
-            text = _build_list_content(sec_rule, pages)
+            text = _build_list_content(sec_rule, all_fields, derived, field_map)
             if text:
                 for line in text.split("\n"):
                     doc.add_paragraph(line, style="List Bullet")
@@ -920,13 +1088,12 @@ def generate_clinical_report(
             child_sections = sec_rule.get("child_sections", [])
             for child in child_sections:
                 child_conds = child.get("conditions", [])
-                if child_conds and not _check_conditions(child_conds, pages):
+                if child_conds and not _check_conditions(child_conds, all_fields, derived, field_map):
                     continue
                 child_text = child.get("static_content") or ""
                 if child_text:
                     doc.add_paragraph(child_text)
 
-    from io import BytesIO
     buffer = BytesIO()
     doc.save(buffer)
-    return buffer.getvalue()
+    return buffer.getvalue(), low_confidence

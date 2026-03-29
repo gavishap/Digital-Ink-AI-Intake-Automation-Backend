@@ -528,8 +528,8 @@ def extract(
             blank_image_paths = blank_image_paths[start_page - 1:actual_end]
         
         # Initialize extraction pipeline
-        console.print("\n[bold]Step 2: Running Multi-Stage Extraction Pipeline[/bold]")
-        console.print("[dim]6 stages per page: Visual Detection > OCR > Spatial Analysis > Field Mapping > Semantic Understanding > Validation[/dim]\n")
+        console.print("\n[bold]Step 2: Running Extraction Pipeline[/bold]")
+        console.print("[dim]2 stages per page: Unified Visual Extraction > Self-Verification[/dim]\n")
         
         pipeline = ExtractionPipeline(api_key=api_key, model=model)
         
@@ -573,18 +573,7 @@ def extract(
             for page in result.pages:
                 f.write(f"\nPage {page.page_number}:\n")
                 f.write(f"  Fields extracted: {len(page.field_values)}\n")
-                f.write(f"  Annotation groups: {len(page.annotation_groups)}\n")
-                f.write(f"  Free-form annotations: {len(page.free_form_annotations)}\n")
-                f.write(f"  Spatial connections: {len(page.spatial_connections)}\n")
-                f.write(f"  Cross-page references: {len(page.cross_page_references)}\n")
                 f.write(f"  Confidence: {page.overall_confidence:.1%}\n")
-                
-                if page.annotation_groups:
-                    f.write(f"\n  Annotation Groups:\n")
-                    for group in page.annotation_groups:
-                        f.write(f"    - {group.interpretation}\n")
-                        if group.annotation_text:
-                            f.write(f"      Note: \"{group.annotation_text}\"\n")
                 
                 if page.review_reasons:
                     f.write(f"\n  [!] Items for review:\n")

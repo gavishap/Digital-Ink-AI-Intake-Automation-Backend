@@ -77,6 +77,7 @@ def save_page_result(
         "unknown_marks": page_data.get("unknown_marks", []),
         "overall_confidence": page_data.get("overall_confidence", 0),
         "items_needing_review": page_data.get("items_needing_review", 0),
+        "extraction_version": "v3",
     }
 
     n_fields = len(page_data.get("field_values", {}))

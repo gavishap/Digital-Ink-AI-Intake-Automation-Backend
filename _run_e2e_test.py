@@ -135,17 +135,15 @@ def stage2_normalize(patient: dict, raw: dict) -> dict:
         for p in raw["lawyer"].get("pages", [])
     ]
 
-    norm_exam = crg._normalize_extraction(exam_pages)
-    norm_lawyer = crg._normalize_extraction(lawyer_pages)
-    combined = norm_lawyer + norm_exam
+    all_pages = lawyer_pages + exam_pages
+    all_fields = crg._flatten_all_fields(all_pages)
 
-    snapshot = {"exam_pages": len(norm_exam), "lawyer_pages": len(norm_lawyer), "pages": combined}
+    snapshot = {"exam_pages": len(exam_pages), "lawyer_pages": len(lawyer_pages), "all_fields_count": len(all_fields)}
     _save_json(out_dir / f"{patient['slug']}_normalized.json", snapshot)
 
-    total_fields = sum(len(p.get("fields", {})) for p in combined)
-    print(f"  Normalized: {len(combined)} total pages, {total_fields} fields")
+    print(f"  Flattened: {len(all_pages)} total pages, {len(all_fields)} fields")
 
-    return {"pages": combined}
+    return {"all_fields": all_fields, "pages": all_pages}
 
 
 # ---------------------------------------------------------------------------
@@ -156,7 +154,8 @@ def stage3_derive(patient: dict, normalized: dict) -> dict:
     _print_stage(3, "DERIVE FIELDS", patient["name"])
     out_dir = OUT / "stage3_derived"
 
-    derived = crg._derive_fields(normalized["pages"], patient["name"])
+    all_fields = normalized.get("all_fields", crg._flatten_all_fields(normalized.get("pages", [])))
+    derived = crg._derive_fields(all_fields, crg._FIELD_MAP, patient["name"])
     _save_json(out_dir / f"{patient['slug']}_derived.json", derived)
 
     key_fields = [
@@ -186,9 +185,10 @@ def stage4_field_audit(patient: dict, normalized: dict, derived: dict) -> dict:
     for sec in rules.get("sections", []):
         all_field_ids.update(sec.get("source_field_ids", []))
 
+    all_fields = normalized.get("all_fields", crg._flatten_all_fields(normalized.get("pages", [])))
     resolution = {}
     for fid in sorted(all_field_ids):
-        val = derived.get(fid) or crg._lookup_field(normalized["pages"], fid)
+        val = crg._resolve_field(fid, all_fields, derived, crg._FIELD_MAP)
         resolution[fid] = str(val) if val is not None else None
 
     _save_json(out_dir / f"{patient['slug']}_field_resolution.json", resolution)
@@ -223,7 +223,7 @@ def stage5_generate_docx(patient: dict, raw: dict) -> Path:
             for p in raw["condensed"].get("pages", [])
         ],
     }
-    lawyer_data = {
+    _unused_lawyer_data = {
         "pages": [
             {"page_number": p["page_number"], "field_values": p.get("field_values", {})}
             for p in raw["lawyer"].get("pages", [])
@@ -233,7 +233,7 @@ def stage5_generate_docx(patient: dict, raw: dict) -> Path:
     print(f"  Calling generate_clinical_report() with real LLM...")
     print(f"  This will make ~30 LLM calls — expect 3-5 minutes...")
     t0 = time.time()
-    docx_bytes = crg.generate_clinical_report(extraction_data, lawyer_data)
+    docx_bytes, _low_conf = crg.generate_clinical_report(extraction_data)
     elapsed = time.time() - t0
 
     docx_path = out_dir / f"{patient['slug']}_report.docx"

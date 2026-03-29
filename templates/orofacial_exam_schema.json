@@ -2809,7 +2809,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Row: 'Do you have any difficulty raising up your arm to comb or br...' — Yes and No appear at the END of the question row, on the RIGHT side. The patient circles ONE — either Yes or No. Only the word that is clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected — only the word enclosed by the circle counts. Each row is independent — check which word is circled on THIS specific row. The circle can be any color. If neither is circled, return null.",
+              "extraction_hints": "Last row in the daily activities section: 'Do you have any difficulty raising up your arm to comb or brush your hair?' — Yes and No appear on the RIGHT side of the row, same layout as all other questions on this page. YES is to the left of NO. The patient circles one. Extract whichever word has a circle around it.",
               "helper_text": null
             }
           ],
@@ -2974,7 +2974,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "'Did your smoking usage increase after the industrial injury?' — Yes and No appear to the RIGHT of the question. Yes and No appear to the RIGHT of the question on the SAME row. The patient circles ONE. Only the word clearly INSIDE the circle is the answer. If a circle touches or is near the other word, that other word is NOT selected. The circle can be any color. If neither is circled, return null. If Yes, there is a conditional 'If yes, ___ cigarettes per day' on the same line.",
+              "extraction_hints": "'Did your smoking usage increase after the industrial injury?' — Yes and No appear to the RIGHT of the question text. The patient circles one. Only the word clearly INSIDE the circle is the answer. If YES is circled, there will also be a handwritten value in the 'If yes, ___ cigarettes per day' blank on the same line — that confirms YES. If neither is circled, return null.",
               "helper_text": null
             },
             {
@@ -2997,7 +2997,7 @@
               },
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Handwritten number after 'If yes, ___ cigarettes per day' on the SAME row as 'Did your smoking usage increase after the industrial injury?'. Only extract if that question is Yes.",
+              "extraction_hints": "Handwritten number or range in the blank after 'If yes, ___' on the SAME row as 'Did your smoking usage increase after the industrial injury?'. The blank comes before the printed words 'cigarettes per day'. Extract ONLY what is handwritten in the blank (e.g. '1-2', '2', '10') — ignore any circles drawn around the printed words 'cigarettes' or 'per day', those are not the value.",
               "helper_text": null
             }
           ],
@@ -3907,7 +3907,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": "top right, next to the page title",
-              "extraction_hints": "Printed at the top right of the page: '(Patient is a Poor Historian: Yes No)'. One of the two options is circled. Only the word clearly INSIDE the circle is the answer. Circle can be any color.",
+              "extraction_hints": "Printed at the top right of the page: '(Patient is a Poor Historian: Yes No)'. If neither Yes nor No has a visible circle drawn around it, return null — do NOT guess or default to either option. Only report a value if you can clearly see a circle enclosing one of the two words.",
               "helper_text": null
             },
             {
@@ -4051,7 +4051,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": "MVA section, first line",
-              "extraction_hints": null,
+              "extraction_hints": "This entire 'If MVA' section is ONLY relevant if the patient was in a motor vehicle accident. Options are: Driver, Passenger, Right Rear Seat, Left Rear Seat. Only report an option if it has a visible mark (circle, underline, checkmark) on or around it. Stray ink marks, margin annotations, or marks on adjacent lines do NOT count. If nothing is clearly marked, return an empty list.",
               "helper_text": null
             },
             {
@@ -7717,7 +7717,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting and reading'.",
+              "extraction_hints": "EPWORTH ROW 1 — 'Sitting and reading'. The table has 4 printed columns: 0, 1, 2, 3. The patient makes ONE pen mark (circle or slash) on exactly one number. The columns 0, 1, 2, 3 are PRINTED on EVERY row — do NOT report a number just because it is printed there. Only report the number that has a visible hand-drawn mark on it. If no mark is visible, return empty circled_options.",
               "helper_text": null
             },
             {
@@ -7743,7 +7743,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Watching television'.",
+              "extraction_hints": "EPWORTH ROW 2 — 'Watching television'. The table has 4 printed columns: 0, 1, 2, 3. Only report the number that has a visible hand-drawn mark (circle or slash) on it. The other printed numbers are NOT selected.",
               "helper_text": null
             },
             {
@@ -7769,7 +7769,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting inactive in a public place'.",
+              "extraction_hints": "EPWORTH ROW 3 — 'Sitting inactive in a public place'. The table has 4 printed columns: 0, 1, 2, 3. Only report the number that has a visible hand-drawn mark (circle or slash) on it. The other printed numbers are NOT selected.",
               "helper_text": null
             },
             {
@@ -7795,7 +7795,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'As a passenger in a car'.",
+              "extraction_hints": "EPWORTH ROW 4 — 'As a passenger in a car'. The table has 4 printed columns: 0, 1, 2, 3. Only report the number that has a visible hand-drawn mark (circle or slash) on it. The other printed numbers are NOT selected.",
               "helper_text": null
             },
             {
@@ -7821,7 +7821,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Lying down to rest in the afternoon'.",
+              "extraction_hints": "EPWORTH ROW 5 — 'Lying down to rest in the afternoon'. The table has 4 printed columns: 0, 1, 2, 3. Only report the number that has a visible hand-drawn mark (circle or slash) on it. The other printed numbers are NOT selected.",
               "helper_text": null
             },
             {
@@ -7847,7 +7847,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting and talking to someone'.",
+              "extraction_hints": "EPWORTH ROW 6 — 'Sitting and talking to someone'. The table has 4 printed columns: 0, 1, 2, 3. Only report the number that has a visible hand-drawn mark (circle or slash) on it. The other printed numbers are NOT selected.",
               "helper_text": null
             },
             {
@@ -7873,7 +7873,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'Sitting quietly after lunch'.",
+              "extraction_hints": "EPWORTH ROW 7 — 'Sitting quietly after lunch'. The table has 4 printed columns: 0, 1, 2, 3. Only report the number that has a visible hand-drawn mark (circle or slash) on it. The other printed numbers are NOT selected.",
               "helper_text": null
             },
             {
@@ -7899,7 +7899,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Patient circles one number (0-3) in the table row for 'In a car while stopped in traffic'.",
+              "extraction_hints": "EPWORTH ROW 8 — 'In a car while stopped in traffic'. The table has 4 printed columns: 0, 1, 2, 3. Only report the number that has a visible hand-drawn mark (circle or slash) on it. The other printed numbers are NOT selected.",
               "helper_text": null
             },
             {
@@ -7917,7 +7917,7 @@
               "conditional_logic": null,
               "section_name": null,
               "position_description": null,
-              "extraction_hints": "Handwritten total score (sum of all 8 rows, range 0-24). Usually written next to 'Total Score:' at the bottom right of the Epworth table.",
+              "extraction_hints": "Handwritten total score (sum of all 8 rows, range 0-24). Usually written next to 'Total Score:' at the bottom right of the Epworth table. IMPORTANT: Use this total as a cross-check — after reading all 8 rows, verify that their sum equals this total. If the sum does not match, re-examine the rows where 0 vs 1 is ambiguous and adjust accordingly.",
               "helper_text": null
             }
           ],
@@ -12048,6 +12048,9 @@
             {
               "field_id": "p17_s09_93xa",
               "field_label": "S09.93XA Traumatic Injury to Face Mandible Teeth #",
+              "is_diagnosis_code": true,
+              "icd_code": "S09.93XA",
+              "icd_description": "Traumatic Injury to Face/Mandible/Teeth",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12084,6 +12087,9 @@
             {
               "field_id": "p17_g51_0",
               "field_label": "G51.0 Facial Palsy Right Left",
+              "is_diagnosis_code": true,
+              "icd_code": "G51.0",
+              "icd_description": "Facial Palsy",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12102,6 +12108,9 @@
             {
               "field_id": "p17_g50_0",
               "field_label": "G50.0 Trigeminal Nerve Neuropathic Pain / Central Sensitization",
+              "is_diagnosis_code": true,
+              "icd_code": "G50.0",
+              "icd_description": "Trigeminal Nerve Neuropathic Pain",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12120,6 +12129,9 @@
             {
               "field_id": "p17_f45_8",
               "field_label": "F45.8 Bruxism",
+              "is_diagnosis_code": true,
+              "icd_code": "F45.8",
+              "icd_description": "Bruxism",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12138,6 +12150,9 @@
             {
               "field_id": "p17_m79_1",
               "field_label": "M79.1 Myalgia of Facial Muscles",
+              "is_diagnosis_code": true,
+              "icd_code": "M79.1",
+              "icd_description": "Myalgia of Facial Muscles",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12156,6 +12171,9 @@
             {
               "field_id": "p17_m65_80",
               "field_label": "M65.80 Capsulitis / Inflammation Right Left",
+              "is_diagnosis_code": true,
+              "icd_code": "M65.80",
+              "icd_description": "Capsulitis/Inflammation of the TMJ",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12174,6 +12192,9 @@
             {
               "field_id": "p17_m26_69_internal_derangement",
               "field_label": "M26.69 Internal Derangement Right Left",
+              "is_diagnosis_code": true,
+              "icd_code": "M26.69",
+              "icd_description": "Internal Derangement of the TMJ",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12192,6 +12213,9 @@
             {
               "field_id": "p17_m26_69_osteoarthrosis",
               "field_label": "M26.69 Osteoarthrosis Right Left",
+              "is_diagnosis_code": true,
+              "icd_code": "M26.69",
+              "icd_description": "Osteoarthritis of the TMJ",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12210,6 +12234,9 @@
             {
               "field_id": "p17_m26_69_osteoarthritis",
               "field_label": "M26.69 Osteoarthritis Right Left",
+              "is_diagnosis_code": true,
+              "icd_code": "M26.69",
+              "icd_description": "Osteoarthritis of the TMJ",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12228,6 +12255,9 @@
             {
               "field_id": "p17_k11_7",
               "field_label": "K11.7 Xerostomia",
+              "is_diagnosis_code": true,
+              "icd_code": "K11.7",
+              "icd_description": "Xerostomia",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12246,6 +12276,9 @@
             {
               "field_id": "p17_k05_6",
               "field_label": "K05.6 Inflammation of the Gums",
+              "is_diagnosis_code": true,
+              "icd_code": "K05.6",
+              "icd_description": "Gingival/Periodontal Disease",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12264,6 +12297,9 @@
             {
               "field_id": "p17_g51_0_halitosis",
               "field_label": "G51.0 Halitosis / Oral Malodor",
+              "is_diagnosis_code": true,
+              "icd_code": "G51.0",
+              "icd_description": "Halitosis",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,
@@ -12282,6 +12318,9 @@
             {
               "field_id": "p17_r19_6",
               "field_label": "R19.6 Suggestions of an Unspecified Rheumatological / Systemic Condition",
+              "is_diagnosis_code": true,
+              "icd_code": "R19.6",
+              "icd_description": "Unspecified Rheumatological/Systemic Condition",
               "field_type": "checkbox_single",
               "data_type": "string",
               "expected_format": null,

@@ -41,58 +41,6 @@ from src.services.supabase_client import get_supabase
 BASE_DIR = Path(__file__).parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 
-EXAM_START_THRESHOLD = 0.6
-
-
-def _page_similarity(img_path: Path, blank_path: Path, size=(300, 390)) -> float:
-    """Combined max(correlation, SSIM) for robust page matching against a blank template."""
-    try:
-        import numpy as np
-        from scipy.ndimage import uniform_filter
-        from PIL import Image
-    except ImportError:
-        logger.warning("numpy/scipy not available — skipping page similarity check")
-        return 1.0
-
-    with Image.open(img_path) as img, Image.open(blank_path) as blank:
-        a = np.array(img.resize(size).convert("L"), dtype=np.float64)
-        b = np.array(blank.resize(size).convert("L"), dtype=np.float64)
-
-    a_blur = uniform_filter(a, size=15)
-    b_blur = uniform_filter(b, size=15)
-    af, bf = a_blur.flatten(), b_blur.flatten()
-    am, bm = af.mean(), bf.mean()
-    num_c = np.sum((af - am) * (bf - bm))
-    den_c = np.sqrt(np.sum((af - am) ** 2) * np.sum((bf - bm) ** 2))
-    corr = float(num_c / den_c) if den_c > 0 else 0.0
-
-    C1 = (0.01 * 255) ** 2
-    C2 = (0.03 * 255) ** 2
-    win = 11
-    mu_a = uniform_filter(a, size=win)
-    mu_b = uniform_filter(b, size=win)
-    sig_a2 = uniform_filter(a * a, size=win) - mu_a * mu_a
-    sig_b2 = uniform_filter(b * b, size=win) - mu_b * mu_b
-    sig_ab = uniform_filter(a * b, size=win) - mu_a * mu_b
-    num_s = (2 * mu_a * mu_b + C1) * (2 * sig_ab + C2)
-    den_s = (mu_a ** 2 + mu_b ** 2 + C1) * (sig_a2 + sig_b2 + C2)
-    ssim_val = float(np.mean(num_s / den_s))
-
-    return max(corr, ssim_val)
-
-
-def _find_exam_start(image_paths: list[Path], blank1_path: Path) -> int:
-    """Return the 0-based index of the first orofacial exam page."""
-    for i, img_path in enumerate(image_paths):
-        score = _page_similarity(img_path, blank1_path)
-        logger.info("  Page %d vs blank_1: %.3f %s", i + 1, score,
-                     "← exam start" if score >= EXAM_START_THRESHOLD else "(lawyer)")
-        if score >= EXAM_START_THRESHOLD:
-            return i
-    logger.warning("Could not detect exam start; defaulting to page 0")
-    return 0
-
-
 ALLOWED_ORIGINS = [o.strip() for o in os.getenv("ALLOWED_ORIGINS", "").split(",") if o.strip()] if os.getenv("ALLOWED_ORIGINS") else []
 ALLOWED_ORIGINS += [
     "http://localhost:3000",
@@ -326,12 +274,7 @@ def run_extraction_images(
     page_info: List[str],
     schema_path: Optional[str] = None,
 ):
-    """Run the extraction pipeline on a batch of images with parallel processing.
-
-    When a schema is provided the pipeline detects lawyer cover pages via image
-    similarity and extracts them in full_page mode (all printed text).  Exam
-    pages are extracted in differential mode using blank templates.
-    """
+    """Run the extraction pipeline on a batch of images with parallel processing."""
     start_time = datetime.utcnow()
     logger.info("[BG] run_extraction_images started: job=%s, %d pages", job_id[:8], len(image_paths))
     try:
@@ -346,72 +289,32 @@ def run_extraction_images(
 
         job_manager.update_job(job_id, total_pages=len(image_paths), progress=0)
 
-        exam_start = 0
-        blank1_path = TEMPLATES_DIR / "orofacial_exam_blank_page_1.png"
-        if form_schema and blank1_path.exists() and len(image_paths) > 1:
-            job_manager.update_job(job_id, current_stage="Detecting lawyer/exam pages")
-            exam_start = _find_exam_start(image_paths, blank1_path)
-            logger.info("Lawyer/exam split: %d lawyer page(s), exam starts at page %d",
-                        exam_start, exam_start + 1)
-
-        lawyer_paths = image_paths[:exam_start]
-        exam_paths = image_paths[exam_start:]
-
         completed_pages = 0
         total = len(image_paths)
 
-        def _update_progress(label: str):
+        def _update_progress(done, tot, pct):
             nonlocal completed_pages
-            completed_pages += 1
-            pct = round(completed_pages / total * 100, 1)
+            completed_pages = done
+            label = page_info[done - 1] if (done - 1) < len(page_info) else f"Page {done}"
             job_manager.update_job(
-                job_id, progress=completed_pages, percentage=pct,
+                job_id, progress=done, percentage=pct,
                 current_stage=f"Analyzing: {label} ({pct}% complete)",
             )
 
-        all_page_results = []
-
-        if lawyer_paths:
-            job_manager.update_job(job_id, current_stage=f"Extracting {len(lawyer_paths)} lawyer page(s) (full text)")
-            for i, lp in enumerate(lawyer_paths):
-                page_num = i + 1
-                try:
-                    page_result = pipeline.extract_page(
-                        lp, page_num, extraction_mode="full_page",
-                    )
-                except Exception as e:
-                    logger.error("Lawyer page %d extraction failed: %s", page_num, e)
-                    from src.models import PageExtractionResult
-                    page_result = PageExtractionResult(
-                        page_number=page_num, overall_confidence=0.0,
-                        items_needing_review=1, review_reasons=[f"Lawyer page failed: {e}"],
-                    )
-                all_page_results.append(("lawyer", page_result))
-                _update_progress(f"Lawyer page {page_num}")
-
-        if exam_paths:
-            job_manager.update_job(job_id, current_stage=f"Extracting {len(exam_paths)} exam page(s) (differential)")
-            exam_result = pipeline.extract_form(
-                image_paths=exam_paths,
-                form_schema=form_schema,
-                form_name=name,
-                max_workers=4,
-                progress_callback=lambda done, tot, pct: _update_progress(
-                    page_info[exam_start + done - 1] if (exam_start + done - 1) < len(page_info)
-                    else f"Exam page {done}"
-                ),
-                blank_image_paths=blank_image_paths,
-            )
-            for page in exam_result.pages:
-                page.page_number = exam_start + page.page_number
-                all_page_results.append(("exam", page))
+        job_manager.update_job(job_id, current_stage=f"Extracting {total} page(s)")
+        result = pipeline.extract_form(
+            image_paths=image_paths,
+            form_schema=form_schema,
+            form_name=name,
+            max_workers=4,
+            progress_callback=_update_progress,
+            blank_image_paths=blank_image_paths,
+        )
 
         job_manager.update_job(job_id, current_stage="Saving results", percentage=95)
 
-        for page_type, page in all_page_results:
+        for page in result.pages:
             page_data = page.model_dump(mode="json")
-            if page_type == "lawyer":
-                page_data.setdefault("field_values", {})["__page_type"] = "lawyer"
             job_manager.save_page_result(
                 job_id=job_id,
                 document_id=document_id,
@@ -433,14 +336,13 @@ def run_extraction_images(
             details={
                 "document_id": document_id,
                 "model": pipeline.model_used,
-                "pages": len(all_page_results),
-                "lawyer_pages": exam_start,
+                "pages": len(result.pages),
                 "elapsed_ms": elapsed_ms,
             },
         )
 
-        logger.info("[BG] run_extraction_images DONE: job=%s, model=%s, %d lawyer + %d exam pages",
-                     job_id[:8], pipeline.model_used, len(lawyer_paths), len(exam_paths))
+        logger.info("[BG] run_extraction_images DONE: job=%s, model=%s, %d pages",
+                     job_id[:8], pipeline.model_used, len(result.pages))
 
     except Exception as e:
         logger.error("[BG] run_extraction_images FAILED: job=%s — %s", job_id[:8], e, exc_info=True)
@@ -882,6 +784,55 @@ async def get_patient_detail(patient_id: str, user_id: str = Depends(_require_us
     return detail
 
 
+class CaseInfoRequest(BaseModel):
+    claim_number: Optional[str] = None
+    wcab_venue: Optional[str] = None
+    case_number: Optional[str] = None
+    injury_date: Optional[str] = None
+    interpreter_language: Optional[str] = None
+    employer_name: Optional[str] = None
+    occupation: Optional[str] = None
+    employer_address: Optional[str] = None
+    employer_city: Optional[str] = None
+    employer_state: Optional[str] = None
+    employer_zip: Optional[str] = None
+    claims_admin_name: Optional[str] = None
+    claims_admin_address: Optional[str] = None
+    claims_admin_city: Optional[str] = None
+    claims_admin_state: Optional[str] = None
+    claims_admin_zip: Optional[str] = None
+    claims_admin_phone: Optional[str] = None
+
+
+@app.post("/api/patients/{patient_id}/case-info")
+async def save_case_info(
+    patient_id: str,
+    body: CaseInfoRequest,
+    user_id: str = Depends(_require_user),
+):
+    """Upsert case/legal info into patient_medical_history for report generation."""
+    sb = get_supabase()
+    row = {k: v for k, v in body.model_dump().items() if v is not None}
+    if not row:
+        raise HTTPException(status_code=400, detail="No fields provided")
+    row["patient_id"] = patient_id
+
+    existing = sb.table("patient_medical_history").select("id").eq("patient_id", patient_id).limit(1).execute()
+    if existing.data:
+        sb.table("patient_medical_history").update(row).eq("id", existing.data[0]["id"]).execute()
+    else:
+        sb.table("patient_medical_history").insert(row).execute()
+
+    job_manager.write_audit_log(
+        action="case_info_saved",
+        resource_type="patient",
+        resource_id=patient_id,
+        user_id=user_id,
+        details={"fields_updated": list(row.keys())},
+    )
+    return {"status": "ok", "patient_id": patient_id}
+
+
 # =============================================================================
 # Document Management
 # =============================================================================
@@ -1137,35 +1088,48 @@ async def generate_clinical_report_endpoint(
         {
             "page_number": p["page_number"],
             "field_values": p.get("field_values", {}),
-            "annotation_groups": p.get("annotation_groups", []),
-            "free_form_annotations": p.get("free_form_annotations", []),
-            "spatial_connections": p.get("spatial_connections", []),
         }
         for p in pages
     ]
-
-    exam_pages = [p for p in all_pages if p.get("field_values", {}).get("__page_type") != "lawyer"]
-    lawyer_pages = [p for p in all_pages if p.get("field_values", {}).get("__page_type") == "lawyer"]
 
     extraction_data = {
         "patient_name": patient_info.get("patient_name"),
         "patient_dob": patient_info.get("patient_dob"),
         "form_date": patient_info.get("form_date"),
-        "pages": exam_pages,
+        "pages": all_pages,
     }
-    lawyer_data = {"pages": lawyer_pages} if lawyer_pages else None
-
-    logger.info("Generating clinical report for job %s (%s) — %d exam pages, %d lawyer pages",
-                job_id, patient_info.get("patient_name"), len(exam_pages), len(lawyer_pages))
-
-    try:
-        docx_bytes = generate_clinical_report(extraction_data, lawyer_data=lawyer_data)
-    except Exception as e:
-        logger.error("Clinical report generation failed: %s", e, exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Report generation failed: {e}")
 
     if not document_id:
         document_id = job.get("document_id")
+
+    patient_id = None
+    patient_context = None
+    if document_id:
+        sb = get_supabase()
+        doc = sb.table("documents").select("patient_id").eq("id", document_id).execute()
+        if doc.data and doc.data[0].get("patient_id"):
+            patient_id = doc.data[0]["patient_id"]
+            try:
+                pmh = sb.table("patient_medical_history").select("*").eq("patient_id", patient_id).limit(1).execute()
+                if pmh.data:
+                    row = pmh.data[0]
+                    patient_context = {
+                        k: str(v) for k, v in row.items()
+                        if v is not None and k not in ("id", "patient_id", "created_at", "updated_at")
+                    }
+            except Exception as e:
+                logger.debug("patient_medical_history fetch skipped: %s", e)
+
+    logger.info("Generating clinical report for job %s (%s) — %d pages",
+                job_id, patient_info.get("patient_name"), len(all_pages))
+
+    try:
+        docx_bytes, low_confidence_fields = generate_clinical_report(
+            extraction_data, patient_context=patient_context,
+        )
+    except Exception as e:
+        logger.error("Clinical report generation failed: %s", e, exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Report generation failed: {e}")
 
     patient_name = (patient_info.get("patient_name") or "patient").replace(" ", "_")
     timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
@@ -1180,13 +1144,6 @@ async def generate_clinical_report_endpoint(
     except Exception as e:
         logger.error("Failed to upload clinical report: %s", e)
         raise HTTPException(status_code=500, detail="Failed to upload report")
-
-    patient_id = None
-    if document_id:
-        sb = get_supabase()
-        doc = sb.table("documents").select("patient_id").eq("id", document_id).execute()
-        if doc.data and doc.data[0].get("patient_id"):
-            patient_id = doc.data[0]["patient_id"]
 
     report_id = job_manager.save_report(
         document_id=document_id,
@@ -1206,7 +1163,12 @@ async def generate_clinical_report_endpoint(
     )
 
     logger.info("Clinical report saved — report_id=%s, path=%s", report_id, storage_path)
-    return {"report_id": report_id, "storage_path": storage_path, "filename": filename}
+    return {
+        "report_id": report_id,
+        "storage_path": storage_path,
+        "filename": filename,
+        "low_confidence_fields": low_confidence_fields,
+    }
 
 
 # =============================================================================
