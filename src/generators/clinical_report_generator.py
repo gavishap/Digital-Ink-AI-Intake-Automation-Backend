@@ -368,6 +368,35 @@ def _fill_template(
     return re.sub(r"\{([^}]+)\}", replacer, template)
 
 
+_ADL_ROW_DEFS = [
+    ("Self Care Personal Hygiene", "Brushing Teeth", "p13_brushing_teeth_severity"),
+    ("", "Flossing Teeth", "p13_flossing_teeth_severity"),
+    ("Communication", "Speak for Extended periods of time", "p13_speak_extended_period_severity"),
+    ("", "Speaking", "p13_speaking_difficulty_severity"),
+    ("", "Indistinct Articulation", "p13_asked_to_repeat_themselves_severity"),
+    ("Motor Function", "Mastication", "p13_mastication_severity"),
+    ("", "Tasting", "p13_tasting_severity"),
+    ("", "Swallowing", "p13_swallowing_severity"),
+    ("", "Bruxism", "p13_bruxism_severity"),
+    ("Sexual Function", "Kissing, Oral Activities", "p13_kissing_oral_activities_severity"),
+]
+
+
+def _build_adl_rows(
+    section_rule: dict,
+    all_fields: dict[str, Any],
+    derived: dict[str, str],
+    field_map: dict[str, str],
+) -> list[list[str]]:
+    """Build ADL table data rows from extraction fields."""
+    rows = []
+    for activity, example, fid in _ADL_ROW_DEFS:
+        severity = _resolve_field(fid, all_fields, derived, field_map)
+        difficulty = str(severity).strip() if severity else "None"
+        rows.append([activity, example, difficulty])
+    return rows
+
+
 def _build_list_content(
     section_rule: dict,
     all_fields: dict[str, Any],
@@ -425,12 +454,18 @@ def _derive_fields(
     def _get(fid: str) -> Any:
         return _resolve_field(fid, all_fields, derived, field_map)
 
-    full_name = patient_name or _get("p1_patient_name") or ""
-    if full_name:
-        parts = str(full_name).strip().split()
-        derived["patient_first_name"] = parts[0] if parts else ""
-        derived["patient_last_name"] = parts[-1] if len(parts) > 1 else ""
-        derived["patient_name"] = str(full_name).strip()
+    if pctx.get("patient_first_name") and pctx.get("patient_last_name"):
+        derived["patient_first_name"] = pctx["patient_first_name"]
+        derived["patient_last_name"] = pctx["patient_last_name"]
+        derived["patient_name"] = f"{pctx['patient_first_name']} {pctx['patient_last_name']}"
+        full_name = derived["patient_name"]
+    else:
+        full_name = patient_name or _get("p1_patient_name") or ""
+        if full_name:
+            parts = str(full_name).strip().split()
+            derived["patient_first_name"] = parts[0] if parts else ""
+            derived["patient_last_name"] = parts[-1] if len(parts) > 1 else ""
+            derived["patient_name"] = str(full_name).strip()
 
     simple_aliases = {
         "patient_dob": ["p1_birth_date", "p1_dob"],
@@ -441,6 +476,9 @@ def _derive_fields(
         "exam_date": ["p1_date"],
     }
     for target, sources in simple_aliases.items():
+        if pctx.get(target):
+            derived[target] = pctx[target]
+            continue
         for src in sources:
             val = _get(src)
             if val is not None and str(val).strip():
@@ -541,6 +579,16 @@ def _derive_fields(
         "venue": ["wcab_venue", "venue"],
         "date_of_injury": ["injury_date", "p5_date_of_injury", "date_of_injury"],
         "interpreter": ["interpreter_language", "interpreter"],
+        "patient_city": ["patient_city"],
+        "patient_state": ["patient_state"],
+        "patient_zip": ["patient_zip"],
+        "employer_name": ["employer_name"],
+        "claims_admin_name": ["claims_admin_name"],
+        "claims_admin_address": ["claims_admin_address"],
+        "claims_admin_city": ["claims_admin_city"],
+        "claims_admin_state": ["claims_admin_state"],
+        "claims_admin_zip": ["claims_admin_zip"],
+        "claims_admin_phone": ["claims_admin_phone"],
     }
     for target, sources in case_sources.items():
         if pctx.get(target):
@@ -610,22 +658,121 @@ _PREAMBLE_PATTERNS = re.compile(
     re.IGNORECASE,
 )
 
+_REASONING_PATTERNS = re.compile(
+    r"(^becomes$|^is not needed|^the correct response is|^the final answer is|"
+    r"^the text is verified|^since ['\"]?p\d+_|^the generated text|^no changes|"
+    r"^verified text:|^corrected text:|^output:$|^SECTION:\s|^GENERATED TEXT:)",
+    re.IGNORECASE,
+)
+
+_INLINE_COMMENTARY = re.compile(
+    r"\s*(is inconsistent with.*?[;.]|is an approximation.*?[;.]|should be understood that.*?[;.]|"
+    r"therefore,?\s+it\s+should|note:.*?[;.]|this\s+is\s+because.*?[;.])",
+    re.IGNORECASE,
+)
+
+_FIELD_ID_LINE = re.compile(r"['\"]?p\d+_\w+['\"]?\s*[:=]")
+
 
 def _clean_narrative(text: str) -> str:
-    """Strip LLM artifacts from generated narrative text."""
+    """Strip LLM artifacts and verification reasoning from generated narrative text."""
     lines = text.strip().split("\n")
     cleaned = []
     for line in lines:
         stripped = line.strip()
+        if not stripped:
+            cleaned.append(line)
+            continue
         if _PREAMBLE_PATTERNS.match(stripped):
+            continue
+        if _REASONING_PATTERNS.match(stripped):
+            continue
+        if _FIELD_ID_LINE.search(stripped):
             continue
         if stripped.startswith("#"):
             line = stripped.lstrip("#").strip()
         line = re.sub(r"\*{1,3}([^*]+)\*{1,3}", r"\1", line)
-        cleaned.append(line)
+        line = _INLINE_COMMENTARY.sub("", line)
+        if line.strip():
+            cleaned.append(line)
     result = "\n".join(cleaned).strip()
     if result.startswith('"') and result.endswith('"'):
         result = result[1:-1]
+    return result
+
+
+def _generate_hybrid(
+    section_rule: dict,
+    all_fields: dict[str, Any],
+    derived: dict[str, str],
+    field_map: dict[str, str],
+    patient_name: str,
+    llm_clients: list[tuple[OpenAI, str]],
+    _log: dict | None = None,
+) -> str:
+    """Fill deterministic parts of a hybrid template, send only [BRIDGE] gaps to LLM."""
+    template = section_rule.get("hybrid_template", "")
+    source_ids = section_rule.get("source_field_ids", [])
+
+    relevant: dict[str, str] = {}
+    for fid in source_ids:
+        val = _resolve_field(fid, all_fields, derived, field_map)
+        if val is not None:
+            relevant[fid] = str(val)
+
+    threshold = section_rule.get("min_required_fields", 1)
+    if _log is not None:
+        _log["fields_resolved_count"] = len(relevant)
+        _log["fields_total_count"] = len(source_ids)
+        _log["min_fields_threshold"] = threshold
+        _log["min_fields_passed"] = len(relevant) >= threshold
+
+    if len(relevant) < threshold:
+        return ""
+
+    filled = _fill_template(template, all_fields, derived, field_map)
+
+    bridges = re.findall(r'\[BRIDGE:\s*(.+?)\]', filled)
+    if not bridges or not llm_clients:
+        result = re.sub(r'\[BRIDGE:\s*.+?\]', '', filled).strip()
+        if _log is not None:
+            _log["narrative_generated"] = bool(result)
+            _log["narrative_raw_length"] = len(result)
+            _log["narrative_clean_length"] = len(result)
+        return result
+
+    patient_last = derived.get("patient_last_name", patient_name.split()[-1] if patient_name else "")
+    title_prefix = derived.get("patient_title", "Mr./Ms.")
+    temperature = section_rule.get("temperature", 0.1)
+
+    for bridge_instruction in bridges:
+        context_window = filled[max(0, filled.index(f"[BRIDGE: {bridge_instruction}]") - 200):
+                                 filled.index(f"[BRIDGE: {bridge_instruction}]") + 200]
+        prompt = (
+            f"You are writing a short connecting phrase for a clinical report about {title_prefix} {patient_last}.\n"
+            f"Surrounding context:\n{context_window}\n\n"
+            f"Instruction: {bridge_instruction}\n\n"
+            f"Write ONLY the connecting phrase (10-30 words). No explanations."
+        )
+        bridge_text = ""
+        for client, model in llm_clients:
+            try:
+                resp = client.chat.completions.create(
+                    model=model, max_tokens=100, temperature=temperature,
+                    messages=[{"role": "user", "content": prompt}],
+                )
+                bridge_text = resp.choices[0].message.content.strip()
+                bridge_text = _clean_narrative(bridge_text)
+                break
+            except Exception:
+                continue
+        filled = filled.replace(f"[BRIDGE: {bridge_instruction}]", bridge_text, 1)
+
+    result = filled.strip()
+    if _log is not None:
+        _log["narrative_generated"] = True
+        _log["narrative_raw_length"] = len(result)
+        _log["narrative_clean_length"] = len(result)
     return result
 
 
@@ -636,6 +783,7 @@ def _generate_narrative(
     field_map: dict[str, str],
     patient_name: str,
     llm_clients: list[tuple[OpenAI, str]],
+    _log: dict | None = None,
 ) -> str:
     """Generate narrative text using a full-context pass with confidence filtering.
 
@@ -652,7 +800,14 @@ def _generate_narrative(
         if val is not None:
             relevant[fid] = str(val)
 
-    threshold = min(3, len(source_ids)) if source_ids else 1
+    threshold = section_rule.get("min_required_fields", 1)
+
+    if _log is not None:
+        _log["fields_resolved_count"] = len(relevant)
+        _log["fields_total_count"] = len(source_ids)
+        _log["min_fields_threshold"] = threshold
+        _log["min_fields_passed"] = len(relevant) >= threshold
+
     if len(relevant) < threshold:
         return ""
 
@@ -710,6 +865,10 @@ def _generate_narrative(
     })
 
     if not llm_clients:
+        if _log is not None:
+            _log["narrative_generated"] = False
+            _log["narrative_raw_length"] = 0
+            _log["narrative_clean_length"] = 0
         return f"[Narrative placeholder — LLM not configured]\nFields: {json.dumps(relevant, indent=2)}"
 
     last_error = None
@@ -719,16 +878,25 @@ def _generate_narrative(
                 model=model,
                 messages=messages,
                 max_tokens=section_rule.get("max_tokens", 500),
-                temperature=0.3,
+                temperature=section_rule.get("temperature", 0.3),
             )
             raw = response.choices[0].message.content.strip()
-            return _clean_narrative(raw)
+            cleaned = _clean_narrative(raw)
+            if _log is not None:
+                _log["narrative_generated"] = True
+                _log["narrative_raw_length"] = len(raw)
+                _log["narrative_clean_length"] = len(cleaned)
+            return cleaned
         except Exception as e:
             last_error = e
             logger.warning("LLM call failed for %s with %s: %s — trying next provider",
                            section_rule.get("section_id"), model, e)
 
     logger.error("All LLM providers failed for %s: %s", section_rule.get("section_id"), last_error)
+    if _log is not None:
+        _log["narrative_generated"] = False
+        _log["narrative_raw_length"] = 0
+        _log["narrative_clean_length"] = 0
     return f"[Generation failed: {last_error}]\nFields: {json.dumps(relevant)}"
 
 
@@ -737,44 +905,113 @@ def _verify_narrative(
     source_fields: dict[str, str],
     section_title: str,
     llm_clients: list[tuple[OpenAI, str]],
+    _log: dict | None = None,
 ) -> str:
     """Self-RAG hallucination guard: verify every factual claim against source data."""
     if not narrative_text or not llm_clients:
+        if _log is not None:
+            _log["verified"] = False
+            _log["verified_length"] = len(narrative_text) if narrative_text else 0
         return narrative_text
 
     prompt = (
         f"You generated this clinical report section:\n\n"
         f"SECTION: {section_title}\n"
         f"GENERATED TEXT: {narrative_text}\n\n"
-        f"SOURCE DATA (the ONLY facts permitted to appear in this section):\n"
+        f"PATIENT-SPECIFIC DATA (values extracted from the patient's form):\n"
         f"{json.dumps(source_fields, indent=2)}\n\n"
-        f"Check every factual claim in the generated text against the source data:\n"
-        f"- If a fact IS in source data: KEEP it exactly as written\n"
-        f"- If a fact is NOT in source data: REMOVE it (hallucination)\n"
-        f"- If a fact CONTRADICTS source data: CORRECT it to match source data\n\n"
-        f"Return only the verified text. Do not add new content. Do not explain changes."
+        f"Verify the generated text. The rules are:\n"
+        f"- KEEP all standard clinical boilerplate, medical explanations, anatomical descriptions, and procedural methodology text — these are expected in every report.\n"
+        f"- KEEP all academic citations, journal references, and legal references verbatim.\n"
+        f"- KEEP all standard threshold values (e.g. '400 Newtons', 'normal limits') — these are clinical constants, not patient data.\n"
+        f"- CHECK patient-specific values (measurements, names, dates, scores) against the source data above. If a patient-specific value CONTRADICTS the source data, CORRECT it.\n"
+        f"- REMOVE any patient-specific claims that are completely fabricated (not derivable from the source data).\n"
+        f"- Do NOT remove medical explanations, test descriptions, or citations just because they aren't in the source data — they are standard clinical content.\n\n"
+        f"CRITICAL: Output ONLY the final verified clinical text, nothing else. "
+        f"Do NOT include any reasoning, explanations, field names, comparisons, "
+        f"intermediate steps, or commentary. Do NOT write words like 'becomes', "
+        f"'the correct response is', 'is not needed', or 'Since'. "
+        f"Your entire response must read as a polished clinical report paragraph."
     )
+
+    verify_max_tokens = max(1500, len(narrative_text) // 3)
 
     for client, model in llm_clients:
         try:
             response = client.chat.completions.create(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=800,
+                max_tokens=verify_max_tokens,
                 temperature=0.0,
             )
             verified = response.choices[0].message.content.strip()
             if verified:
-                return _clean_narrative(verified)
+                result = _clean_narrative(verified)
+                if len(result) < len(narrative_text) * 0.3:
+                    logger.warning(
+                        "Verification stripped >70%% of '%s' (%d -> %d chars) — keeping unverified",
+                        section_title, len(narrative_text), len(result),
+                    )
+                    if _log is not None:
+                        _log["verified"] = True
+                        _log["verified_length"] = len(narrative_text)
+                        _log["verification_reverted"] = True
+                    return narrative_text
+                if _log is not None:
+                    _log["verified"] = True
+                    _log["verified_length"] = len(result)
+                return result
         except Exception as e:
             logger.warning("Verification failed for '%s' with %s: %s", section_title, model, e)
 
+    if _log is not None:
+        _log["verified"] = False
+        _log["verified_length"] = len(narrative_text)
     return narrative_text
 
 
 # =============================================================================
 # Cover page + preamble builder
 # =============================================================================
+
+_SUBSECTION_HEADERS = {
+    "headaches", "facial pain", "temporomandibular joint", "dental",
+    "sleep disturbances", "other relating complaints are:",
+}
+
+
+def _render_narrative_text(doc: DocxDocument, text: str) -> None:
+    """Render narrative text with proper formatting: subsection headers, bullets, paragraphs."""
+    for para in text.split("\n"):
+        stripped = para.strip()
+        if not stripped:
+            continue
+
+        is_bullet = stripped.startswith("\u2022") or stripped.startswith("- ") or stripped.startswith("* ")
+        clean_text = stripped.lstrip("\u2022-* ").strip() if is_bullet else stripped
+
+        is_subsection_header = stripped.lower().rstrip(":") in _SUBSECTION_HEADERS or stripped.lower() in _SUBSECTION_HEADERS
+
+        if is_subsection_header:
+            p = doc.add_paragraph()
+            run = p.add_run(stripped)
+            run.font.name = "Arial"
+            run.font.size = Pt(12)
+            run.bold = True
+            run.underline = True
+            run.font.color.rgb = RGBColor(0, 0, 0)
+        elif is_bullet:
+            p = doc.add_paragraph(clean_text, style="List Bullet")
+            for run in p.runs:
+                run.font.name = "Arial"
+                run.font.size = Pt(11)
+        else:
+            p = doc.add_paragraph(stripped)
+            p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+            for run in p.runs:
+                run.font.name = "Arial"
+                run.font.size = Pt(11)
+
 
 def _add_title_headings(doc: DocxDocument) -> None:
     """Add the two centered bold underlined title lines."""
@@ -967,7 +1204,7 @@ def generate_clinical_report(
     extraction_data: dict[str, Any],
     patient_context: dict[str, str] | None = None,
     rules_path: Path | None = None,
-) -> tuple[bytes, list[dict]]:
+) -> tuple[bytes, list[dict], dict]:
     """Generate a clinical DOCX report from extraction data using learned rules.
 
     Args:
@@ -976,7 +1213,7 @@ def generate_clinical_report(
         rules_path: Override path to report_rules.json
 
     Returns:
-        Tuple of (DOCX file bytes, low_confidence_fields list)
+        Tuple of (DOCX file bytes, low_confidence_fields list, generation_log dict)
     """
     rules = _load_rules(rules_path)
     sections = rules.get("sections", [])
@@ -1017,14 +1254,32 @@ def generate_clinical_report(
 
     _build_cover_page(doc, derived, patient_context)
 
-    for sec_rule in sections:
-        if sec_rule.get("section_id") in _COVER_SKIP_SECTION_IDS:
-            continue
+    generation_log: dict[str, dict] = {}
 
+    for sec_rule in sections:
+        section_id = sec_rule.get("section_id", "")
         content_type = sec_rule.get("content_type", "")
         conditions = sec_rule.get("conditions", [])
+        slog: dict[str, Any] = {
+            "content_type": content_type,
+            "source_field_ids": sec_rule.get("source_field_ids", []),
+            "has_generation_prompt": bool(sec_rule.get("generation_prompt")),
+            "has_few_shot": bool(sec_rule.get("few_shot_examples")),
+        }
 
-        if conditions and not _check_conditions(conditions, all_fields, derived, field_map):
+        if section_id in _COVER_SKIP_SECTION_IDS:
+            slog["skipped_cover"] = True
+            slog["conditions_result"] = True
+            slog["final_text_length"] = 0
+            generation_log[section_id] = slog
+            continue
+        slog["skipped_cover"] = False
+
+        cond_result = not conditions or _check_conditions(conditions, all_fields, derived, field_map)
+        slog["conditions_result"] = cond_result
+        if not cond_result:
+            slog["final_text_length"] = 0
+            generation_log[section_id] = slog
             continue
 
         title = sec_rule.get("title", "")
@@ -1032,8 +1287,12 @@ def generate_clinical_report(
             heading = doc.add_heading(title, level=2)
             for run in heading.runs:
                 run.font.name = "Arial"
-                run.font.size = Pt(12)
+                run.font.size = Pt(14)
                 run.bold = True
+                run.underline = True
+                run.font.color.rgb = RGBColor(0, 0, 0)
+
+        final_text = ""
 
         if content_type == "static_text":
             text = sec_rule.get("static_content", "")
@@ -1042,12 +1301,15 @@ def generate_clinical_report(
                     heading = doc.add_heading(title, level=2)
                     for run in heading.runs:
                         run.font.name = "Arial"
-                        run.font.size = Pt(12)
+                        run.font.size = Pt(14)
                         run.bold = True
+                        run.underline = True
+                        run.font.color.rgb = RGBColor(0, 0, 0)
                 for line in text.split("\n"):
                     p = doc.add_paragraph(line)
                     p.style.font.name = "Arial"
                     p.style.font.size = Pt(11)
+            final_text = text or ""
 
         elif content_type in ("direct_fill", "formatted_fill"):
             template = sec_rule.get("template", "")
@@ -1056,33 +1318,58 @@ def generate_clinical_report(
                 for line in filled.split("\n"):
                     p = doc.add_paragraph(line)
                     p.paragraph_format.space_after = Pt(2)
+                final_text = filled
+            slog["template_filled"] = bool(template)
 
         elif content_type == "narrative":
-            text = _generate_narrative(sec_rule, all_fields, derived, field_map, patient_name, llm_clients)
+            if sec_rule.get("hybrid_template"):
+                text = _generate_hybrid(sec_rule, all_fields, derived, field_map, patient_name, llm_clients, _log=slog)
+            else:
+                text = _generate_narrative(sec_rule, all_fields, derived, field_map, patient_name, llm_clients, _log=slog)
             if text:
-                source_ids = sec_rule.get("source_field_ids", [])
-                relevant = {fid: str(v) for fid in source_ids
-                            if (v := _resolve_field(fid, all_fields, derived, field_map)) is not None}
-                text = _verify_narrative(text, relevant, sec_rule.get("title", ""), llm_clients)
+                # Strip duplicate heading if the generated text starts with the section title
+                if title:
+                    for prefix in (title, title.upper(), title.title()):
+                        if text.strip().startswith(prefix):
+                            text = text.strip()[len(prefix):].lstrip("\n").lstrip()
+                            break
 
-                for para in text.split("\n"):
-                    if para.strip():
-                        p = doc.add_paragraph(para.strip())
-                        p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+                # Skip verification for pure hybrid templates or sections that opt out
+                hybrid_tmpl = sec_rule.get("hybrid_template") or ""
+                is_pure_hybrid = hybrid_tmpl and "[BRIDGE:" not in hybrid_tmpl
+                skip_verify = sec_rule.get("skip_verification", False)
+                if not is_pure_hybrid and not skip_verify:
+                    source_ids = sec_rule.get("source_field_ids", [])
+                    relevant = {fid: str(v) for fid in source_ids
+                                if (v := _resolve_field(fid, all_fields, derived, field_map)) is not None}
+                    text = _verify_narrative(text, relevant, sec_rule.get("title", ""), llm_clients, _log=slog)
+
+                _render_narrative_text(doc, text)
+            final_text = text or ""
 
         elif content_type == "list":
             text = _build_list_content(sec_rule, all_fields, derived, field_map)
             if text:
                 for line in text.split("\n"):
                     doc.add_paragraph(line, style="List Bullet")
+            final_text = text or ""
 
         elif content_type == "table":
             columns = sec_rule.get("table_columns", [])
             if columns:
-                table = doc.add_table(rows=1, cols=len(columns))
+                table_rows = _build_adl_rows(sec_rule, all_fields, derived, field_map)
+                table = doc.add_table(rows=1 + len(table_rows), cols=len(columns))
                 table.style = "Table Grid"
                 for i, col in enumerate(columns):
-                    table.rows[0].cells[i].text = col.get("header", "")
+                    cell = table.rows[0].cells[i]
+                    cell.text = col.get("header", "")
+                    for p in cell.paragraphs:
+                        for run in p.runs:
+                            run.bold = True
+                for row_idx, row_data in enumerate(table_rows, start=1):
+                    for col_idx, val in enumerate(row_data):
+                        table.rows[row_idx].cells[col_idx].text = val
+                final_text = str(table_rows)
 
         elif content_type == "conditional_block":
             child_sections = sec_rule.get("child_sections", [])
@@ -1093,7 +1380,11 @@ def generate_clinical_report(
                 child_text = child.get("static_content") or ""
                 if child_text:
                     doc.add_paragraph(child_text)
+                    final_text += child_text + "\n"
+
+        slog["final_text_length"] = len(final_text)
+        generation_log[section_id] = slog
 
     buffer = BytesIO()
     doc.save(buffer)
-    return buffer.getvalue(), low_confidence
+    return buffer.getvalue(), low_confidence, generation_log

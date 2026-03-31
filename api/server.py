@@ -1124,7 +1124,7 @@ async def generate_clinical_report_endpoint(
                 job_id, patient_info.get("patient_name"), len(all_pages))
 
     try:
-        docx_bytes, low_confidence_fields = generate_clinical_report(
+        docx_bytes, low_confidence_fields, _gen_log = generate_clinical_report(
             extraction_data, patient_context=patient_context,
         )
     except Exception as e:

@@ -93,8 +93,20 @@ class SectionRule(BaseModel):
         default=None,
         description="System prompt for LLM narrative generation",
     )
+    hybrid_template: Optional[str] = Field(
+        default=None,
+        description="Template with {field} placeholders + [BRIDGE: instruction] markers for LLM-generated connective prose",
+    )
     few_shot_examples: list[FewShotExample] = Field(default_factory=list)
     max_tokens: int = 500
+    min_required_fields: int = Field(
+        default=1,
+        description="Minimum source fields that must resolve for narrative generation to proceed",
+    )
+    temperature: float = Field(
+        default=0.3,
+        description="LLM temperature for this section (0.0 for data-heavy, 0.3 for prose-heavy)",
+    )
 
     # For LIST
     list_field_id: Optional[str] = Field(

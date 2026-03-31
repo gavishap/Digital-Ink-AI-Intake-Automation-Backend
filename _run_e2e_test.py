@@ -233,7 +233,7 @@ def stage5_generate_docx(patient: dict, raw: dict) -> Path:
     print(f"  Calling generate_clinical_report() with real LLM...")
     print(f"  This will make ~30 LLM calls — expect 3-5 minutes...")
     t0 = time.time()
-    docx_bytes, _low_conf = crg.generate_clinical_report(extraction_data)
+    docx_bytes, _low_conf, _gen_log = crg.generate_clinical_report(extraction_data)
     elapsed = time.time() - t0
 
     docx_path = out_dir / f"{patient['slug']}_report.docx"
