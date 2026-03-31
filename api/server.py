@@ -792,6 +792,7 @@ class CaseInfoRequest(BaseModel):
     exam_date: Optional[str] = None
     interpreter_language: Optional[str] = None
     patient_sex: Optional[str] = None
+    patient_ss_last4: Optional[str] = None
     employer_name: Optional[str] = None
     occupation: Optional[str] = None
     patient_address: Optional[str] = None
