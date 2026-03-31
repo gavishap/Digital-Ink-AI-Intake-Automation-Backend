@@ -789,9 +789,15 @@ class CaseInfoRequest(BaseModel):
     wcab_venue: Optional[str] = None
     case_number: Optional[str] = None
     injury_date: Optional[str] = None
+    exam_date: Optional[str] = None
     interpreter_language: Optional[str] = None
+    patient_sex: Optional[str] = None
     employer_name: Optional[str] = None
     occupation: Optional[str] = None
+    patient_address: Optional[str] = None
+    patient_city: Optional[str] = None
+    patient_state: Optional[str] = None
+    patient_zip: Optional[str] = None
     employer_address: Optional[str] = None
     employer_city: Optional[str] = None
     employer_state: Optional[str] = None
@@ -1119,6 +1125,22 @@ async def generate_clinical_report_endpoint(
                     }
             except Exception as e:
                 logger.debug("patient_medical_history fetch skipped: %s", e)
+
+            try:
+                pt = sb.table("patients").select("first_name, last_name, date_of_birth, phone_primary").eq("id", patient_id).limit(1).execute()
+                if pt.data:
+                    p = pt.data[0]
+                    patient_context = patient_context or {}
+                    if p.get("first_name"):
+                        patient_context["patient_first_name"] = p["first_name"]
+                    if p.get("last_name"):
+                        patient_context["patient_last_name"] = p["last_name"]
+                    if p.get("date_of_birth"):
+                        patient_context["patient_dob"] = p["date_of_birth"]
+                    if p.get("phone_primary"):
+                        patient_context["patient_phone"] = p["phone_primary"]
+            except Exception as e:
+                logger.debug("patients table fetch skipped: %s", e)
 
     logger.info("Generating clinical report for job %s (%s) — %d pages",
                 job_id, patient_info.get("patient_name"), len(all_pages))
